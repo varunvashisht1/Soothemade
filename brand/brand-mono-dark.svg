@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <title>Soothemade — Mono Dark</title>
+  <desc>Single-color charcoal brand mark for single-color print, formal contexts, and embossing. Transparent canvas.</desc>
+  <path d="M 400 215 Q 397 175 401 130" stroke="#3D3935" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="386" cy="190" rx="11" ry="4" fill="#3D3935" transform="rotate(-45 386 190)"/>
+  <ellipse cx="414" cy="160" rx="11" ry="4" fill="#3D3935" transform="rotate(45 414 160)"/>
+  <text x="400" y="290" font-family="'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif" font-style="italic" font-size="46" fill="#3D3935" text-anchor="middle" letter-spacing="0.5">soothemade</text>
+</svg>

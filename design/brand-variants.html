@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soothemade — Brand mark variants</title>
+  <style>
+    :root {
+      --cream: #F5EFE6;
+      --kraft: #FBF6EE;
+      --umber: #2E2A24;
+      --charcoal: #3D3935;
+      --sage: #7A8B6F;
+      --sage-doc: #8C9B7A;
+      --terracotta: #B4654A;
+      --wheat: #D4A574;
+      --stone: #A89A8C;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--umber);
+      line-height: 1.55;
+    }
+    .page { max-width: 1100px; margin: 0 auto; padding: 56px 32px 96px; }
+
+    /* Header */
+    header h1 {
+      font-family: 'Fraunces', 'Times New Roman', serif;
+      font-weight: 500;
+      font-size: 40px;
+      letter-spacing: -0.01em;
+      margin: 0 0 8px;
+      color: var(--umber);
+    }
+    header p.lede {
+      margin: 0 0 8px;
+      color: var(--stone);
+      font-size: 15px;
+      max-width: 620px;
+    }
+    header .meta {
+      font-size: 12px;
+      color: var(--stone);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 24px 0 0;
+    }
+    .rule {
+      height: 1px;
+      background: var(--stone);
+      opacity: 0.35;
+      margin: 28px 0 40px;
+    }
+
+    /* Section heads */
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin: 56px 0 18px;
+    }
+    .section-head .num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      color: var(--terracotta);
+      font-size: 22px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 24px;
+      color: var(--umber);
+    }
+    .section-head .filename {
+      font-family: ui-monospace, 'SF Mono', Consolas, monospace;
+      font-size: 12px;
+      color: var(--stone);
+      margin-left: auto;
+    }
+
+    /* Tile grid */
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .tile {
+      border-radius: 10px;
+      aspect-ratio: 2 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+    .tile svg { max-width: 88%; max-height: 80%; height: auto; }
+    .tile .label {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.55;
+    }
+    .tile.cream { background: var(--cream); color: var(--umber); border: 1px solid rgba(0,0,0,0.06); }
+    .tile.kraft { background: var(--kraft); color: var(--umber); border: 1px solid rgba(0,0,0,0.06); }
+    .tile.white { background: #ffffff; color: var(--umber); border: 1px solid rgba(0,0,0,0.08); }
+    .tile.umber { background: var(--umber); color: var(--cream); }
+    .tile.charcoal { background: var(--charcoal); color: var(--cream); }
+    .tile.terracotta { background: var(--terracotta); color: var(--cream); }
+    .tile.sage { background: var(--sage); color: var(--cream); }
+    .tile.wheat { background: var(--wheat); color: var(--umber); }
+
+    /* Big card for the cream-rect primary */
+    .primary-frame {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      align-items: stretch;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .primary-frame .preview {
+      flex: 1;
+      background: var(--kraft);
+      border-radius: 8px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+    }
+    .primary-frame .preview svg { width: 70%; height: auto; }
+    .primary-frame .notes {
+      flex: 1;
+      font-size: 14px;
+      color: var(--umber);
+    }
+    .primary-frame .notes h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .primary-frame .notes p { margin: 0 0 10px; color: #4a443c; }
+    .primary-frame .notes code {
+      background: rgba(46, 42, 36, 0.06);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12.5px;
+    }
+
+    /* Real-world mock cards */
+    .real-world {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .mock {
+      border-radius: 10px;
+      padding: 28px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .mock.product-cover { background: var(--cream); color: var(--umber); }
+    .mock.dark-hero { background: var(--umber); color: var(--cream); border-color: transparent; }
+    .mock.terracotta-block { background: var(--terracotta); color: var(--cream); border-color: transparent; }
+    .mock.kraft-pin { background: var(--kraft); color: var(--umber); }
+    .mock .corner-logo { height: 28px; align-self: flex-start; }
+    .mock .corner-logo svg { height: 100%; width: auto; }
+    .mock .corner-logo-r { align-self: flex-end; }
+    .mock .mock-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      max-width: 80%;
+    }
+    .mock .mock-meta {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* Caption row */
+    .caption {
+      font-size: 12.5px;
+      color: var(--stone);
+      margin: 10px 0 0;
+      max-width: 720px;
+    }
+    .caption strong { color: var(--umber); font-weight: 600; }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      font-size: 13px;
+      color: var(--stone);
+    }
+    footer code { font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Brand mark — variant evaluation</h1>
+      <p class="lede">Four variants of the Soothemade brand mark, sized to cater to different screen modes, print contexts, and theme backgrounds. Geometry is identical; only colors and the optional cream frame differ.</p>
+      <p class="meta">Soothemade · 2026-05-19</p>
+      <div class="rule"></div>
+    </header>
+
+    <!-- 1. PRIMARY -->
+    <section>
+      <div class="section-head">
+        <span class="num">01</span>
+        <h2>Primary — color on cream card</h2>
+        <span class="filename">brand/brand.svg</span>
+      </div>
+      <div class="primary-frame">
+        <div class="preview">
+          <object type="image/svg+xml" data="../brand/brand.svg" aria-label="Soothemade primary mark"></object>
+        </div>
+        <div class="notes">
+          <h3>The canonical mark</h3>
+          <p>Sage sprig + italic Palatino wordmark on a baked-in cream <code>#F5EFE6</code> card. The cream frame acts as a self-contained block — drop it on anything and the logo carries its own light surface with it.</p>
+          <p><strong>Use for:</strong> product PDF covers, Etsy listing thumbnails, Pinterest pins where you want a contained block, business cards.</p>
+          <p><strong>Avoid on:</strong> non-cream light backgrounds (creates a visible cream card edge), busy photos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ON DARK -->
+    <section>
+      <div class="section-head">
+        <span class="num">02</span>
+        <h2>On dark — color on transparent</h2>
+        <span class="filename">brand/brand-on-dark.svg</span>
+      </div>
+      <div class="tiles">
+        <div class="tile umber">
+          <span class="label">on umber</span>
+          <object type="image/svg+xml" data="../brand/brand-on-dark.svg" aria-label="On dark variant on umber"></object>
+        </div>
+        <div class="tile charcoal">
+          <span class="label">on charcoal</span>
+          <object type="image/svg+xml" data="../brand/brand-on-dark.svg" aria-label="On dark variant on charcoal"></object>
+        </div>
+        <div class="tile terracotta">
+          <span class="label">on terracotta</span>
+          <object type="image/svg+xml" data="../brand/brand-on-dark.svg" aria-label="On dark variant on terracotta"></object>
+        </div>
+      </div>
+      <p class="caption">Sage sprig stays; wordmark goes cream <code>#F5EFE6</code> for legibility. <strong>Check:</strong> does sage <code>#7A8B6F</code> have enough contrast on the umber tile for you? If not, we can lift it to a brighter sage for dark contexts.</p>
+    </section>
+
+    <!-- 3. MONO DARK -->
+    <section>
+      <div class="section-head">
+        <span class="num">03</span>
+        <h2>Mono dark — single color on transparent</h2>
+        <span class="filename">brand/brand-mono-dark.svg</span>
+      </div>
+      <div class="tiles">
+        <div class="tile cream">
+          <span class="label">on cream</span>
+          <object type="image/svg+xml" data="../brand/brand-mono-dark.svg" aria-label="Mono dark on cream"></object>
+        </div>
+        <div class="tile white">
+          <span class="label">on white</span>
+          <object type="image/svg+xml" data="../brand/brand-mono-dark.svg" aria-label="Mono dark on white"></object>
+        </div>
+        <div class="tile wheat">
+          <span class="label">on wheat</span>
+          <object type="image/svg+xml" data="../brand/brand-mono-dark.svg" aria-label="Mono dark on wheat"></object>
+        </div>
+      </div>
+      <p class="caption">All charcoal <code>#3D3935</code>. <strong>Use for:</strong> stamps, single-color print, invoices, legal/formal contexts, embossing, fax-safe assets.</p>
+    </section>
+
+    <!-- 4. MONO CREAM -->
+    <section>
+      <div class="section-head">
+        <span class="num">04</span>
+        <h2>Mono cream — single color on transparent</h2>
+        <span class="filename">brand/brand-mono-cream.svg</span>
+      </div>
+      <div class="tiles">
+        <div class="tile umber">
+          <span class="label">on umber</span>
+          <object type="image/svg+xml" data="../brand/brand-mono-cream.svg" aria-label="Mono cream on umber"></object>
+        </div>
+        <div class="tile terracotta">
+          <span class="label">on terracotta</span>
+          <object type="image/svg+xml" data="../brand/brand-mono-cream.svg" aria-label="Mono cream on terracotta"></object>
+        </div>
+        <div class="tile sage">
+          <span class="label">on sage</span>
+          <object type="image/svg+xml" data="../brand/brand-mono-cream.svg" aria-label="Mono cream on sage"></object>
+        </div>
+      </div>
+      <p class="caption">All cream <code>#F5EFE6</code>. <strong>Use for:</strong> watermark on photography, footer washes on dark hero sections, ghosted marks on dark Pinterest pins, embroidery on cream fabric.</p>
+    </section>
+
+    <!-- 5. IN-CONTEXT MOCKS -->
+    <section>
+      <div class="section-head">
+        <span class="num">05</span>
+        <h2>In context</h2>
+        <span class="filename">representative usage</span>
+      </div>
+      <div class="real-world">
+        <div class="mock product-cover">
+          <span class="mock-meta">P09 · Postpartum Anxiety Journal</span>
+          <div class="mock-title">A small place to land<br/>when the days run loud.</div>
+          <div class="corner-logo">
+            <object type="image/svg+xml" data="../brand/brand-mono-dark.svg" aria-label="Mono dark on cream cover"></object>
+          </div>
+        </div>
+        <div class="mock dark-hero">
+          <span class="mock-meta">notes.soothemade.com</span>
+          <div class="mock-title">Slowly made,<br/>plainly said.</div>
+          <div class="corner-logo">
+            <object type="image/svg+xml" data="../brand/brand-on-dark.svg" aria-label="On dark variant in hero"></object>
+          </div>
+        </div>
+        <div class="mock terracotta-block">
+          <span class="mock-meta">Pinterest pin — text format</span>
+          <div class="mock-title">Seven scripts for<br/>saying no, gently.</div>
+          <div class="corner-logo">
+            <object type="image/svg+xml" data="../brand/brand-mono-cream.svg" aria-label="Mono cream on terracotta"></object>
+          </div>
+        </div>
+        <div class="mock kraft-pin">
+          <span class="mock-meta">Product detail page</span>
+          <div class="mock-title">For the unphotographed<br/>parts of new parenthood.</div>
+          <div class="corner-logo">
+            <object type="image/svg+xml" data="../brand/brand-mono-dark.svg" aria-label="Mono dark on kraft"></object>
+          </div>
+        </div>
+      </div>
+      <p class="caption">Same content, four contexts, four variants — each picked for the surface it's sitting on. <strong>Decision point:</strong> does this map match how you imagine the brand showing up across PDFs, website, and Pinterest?</p>
+    </section>
+
+    <footer>
+      <p>Four files in <code>brand/</code> · all share the same 800×400 viewBox and geometry · only fill colors differ. Next step: align on the variant set, then upload variants 2–4 to Canva and reference them in the brand kit.</p>
+    </footer>
+  </div>
+</body>
+</html>
