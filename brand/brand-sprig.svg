@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="370 125 60 95" width="60" height="95">
+  <title>Soothemade — sprig glyph</title>
+  <desc>Brand sprig icon, single-color via currentColor. The consuming context sets the color (e.g. CSS color: var(--sage)). Geometry matches the full brand mark in brand.svg.</desc>
+  <path d="M 400 215 Q 397 175 401 130" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="386" cy="190" rx="11" ry="4" fill="currentColor" transform="rotate(-45 386 190)"/>
+  <ellipse cx="414" cy="160" rx="11" ry="4" fill="currentColor" transform="rotate(45 414 160)"/>
+</svg>
