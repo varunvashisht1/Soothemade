@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import Nav from '~/components/Nav.astro';
 import Hero from '~/components/Hero.astro';
@@ -9,11 +10,46 @@ import JournalRow from '~/components/JournalRow.astro';
 import Newsletter from '~/components/Newsletter.astro';
 import Footer from '~/components/Footer.astro';
 
-import {
-  featured,
-  featuredJournalPosts,
-  homeCategories,
-} from '~/data/featured-products';
+const allProducts = await getCollection('products');
+const featured = allProducts
+  .filter((p) => p.data.featured)
+  .sort((a, b) => (a.data.featuredOrder ?? 999) - (b.data.featuredOrder ?? 999))
+  .slice(0, 8)
+  .map((p) => ({
+    slug: p.id,
+    code: p.data.code,
+    label: p.data.heroLabel,
+    meta: p.data.specs,
+    tagline: p.data.tagline,
+    price: `$${p.data.price}`,
+    glyph: p.data.glyph,
+  }));
+
+const allPosts = await getCollection('journal');
+const featuredJournalPosts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3)
+  .map((p) => ({
+    href: `/journal/${p.id}`,
+    category: p.data.categories?.[0] ?? 'letter',
+    readTime: p.data.readTime ?? '',
+    title: p.data.title,
+    blurb: p.data.description,
+  }));
+
+const counts = {
+  pregnancy: allProducts.filter((p) => p.data.category === 'pregnancy').length,
+  postpartum: allProducts.filter((p) => p.data.category === 'postpartum' || p.data.category === 'recovery' || p.data.category === 'mental-health').length,
+  yearsAfter: allProducts.filter((p) => p.data.category === 'early-years' || p.data.category === 'family').length,
+  partner: allProducts.filter((p) => p.data.category === 'partner').length,
+};
+
+const homeCategories = [
+  { href: '/shop?cat=pregnancy', name: 'For pregnancy', count: `${String(counts.pregnancy).padStart(2, '0')} items`, glyph: 'cross' as const },
+  { href: '/shop?cat=postpartum', name: 'For postpartum', count: `${String(counts.postpartum).padStart(2, '0')} items`, glyph: 'leaf' as const },
+  { href: '/shop?cat=early-years', name: 'For the years after', count: `${String(counts.yearsAfter).padStart(2, '0')} items`, glyph: 'book' as const },
+  { href: '/shop?cat=partner', name: 'For the partner', count: `${String(counts.partner).padStart(2, '0')} items`, glyph: 'partner' as const },
+];
 ---
 <BaseLayout title="Soothemade Notes — quiet tools for new parenthood">
   <Nav />
@@ -29,7 +65,11 @@ import {
 
   <CategoryRow categories={homeCategories} />
 
-  <ProductGrid products={featured} />
+  <ProductGrid
+    products={featured}
+    seeAllHref="/shop"
+    seeAllLabel={`see all ${allProducts.length} →`}
+  />
 
   <Manifesto
     quote="Made for the version of you"
@@ -37,7 +77,7 @@ import {
     tail="— the one at four in the morning, the one in the parking lot, the one who doesn't recognize her own week."
   />
 
-  <JournalRow posts={featuredJournalPosts} />
+  {featuredJournalPosts.length > 0 && <JournalRow posts={featuredJournalPosts} />}
 
   <Newsletter />
 

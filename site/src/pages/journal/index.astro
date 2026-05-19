@@ -1,0 +1,163 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+
+const posts = (await getCollection('journal')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const dtf = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+---
+<BaseLayout
+  title="The journal — Soothemade Notes"
+  description="Letters from the studio. Short, slow, in plain language. New essays every other Sunday."
+>
+  <Nav />
+
+  <header class="head rule-bottom">
+    <div class="eyebrow">— the journal —</div>
+    <h1>Letters from the studio.</h1>
+    <p>Short pieces about the slow, ordinary parts of new parenthood. New letter every other Sunday.</p>
+  </header>
+
+  {posts.length === 0 ? (
+    <p class="empty">The first letter is on its way. Subscribe below to get it.</p>
+  ) : (
+    <div class="list">
+      {posts.map((p) => (
+        <a class="post" href={`/journal/${p.id}`}>
+          <div class="thumb" aria-hidden="true">
+            <div class="thumb-art">
+              <span>{p.data.categories?.[0] ?? 'letter'}</span>
+            </div>
+          </div>
+          <div class="copy">
+            <div class="meta">
+              {p.data.categories?.[0] && <span>{p.data.categories[0]}</span>}
+              {p.data.readTime && <span>· {p.data.readTime}</span>}
+              <span>· {dtf.format(p.data.date)}</span>
+            </div>
+            <h2>{p.data.title}</h2>
+            <p>{p.data.description}</p>
+            <span class="read">read the letter →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  )}
+
+  <Newsletter />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .head {
+    padding: 72px var(--sp-7) 56px;
+    text-align: center;
+  }
+  .head h1 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-4xl);
+    margin: 14px 0 16px;
+    font-weight: 400;
+    letter-spacing: var(--ls-tight);
+    color: var(--ink);
+  }
+  .head p {
+    max-width: 540px;
+    margin: 0 auto;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.5;
+  }
+
+  .list {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 56px var(--sp-7) 64px;
+    width: 100%;
+  }
+  .post {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 28px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+  }
+  .post:last-child { border-bottom: none; }
+  .post:hover h2 { color: var(--accent); }
+
+  .thumb {
+    aspect-ratio: 1/1;
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thumb-art {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--card-text);
+    font-size: 13px;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 8px;
+  }
+
+  .meta {
+    font-size: 10.5px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    margin: 0 0 10px;
+    line-height: 1.2;
+    font-weight: 500;
+    transition: color var(--t-fast) var(--ease);
+  }
+  .copy > p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+    line-height: 1.55;
+  }
+  .read {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 1px;
+  }
+
+  .empty {
+    text-align: center;
+    padding: 80px var(--sp-5);
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 18px;
+  }
+
+  @media (max-width: 880px) {
+    .head { padding: 56px var(--sp-5) 40px; }
+    .head h1 { font-size: 40px; }
+    .list { padding: 40px var(--sp-5) 48px; }
+    .post { grid-template-columns: 100px 1fr; gap: 18px; }
+    h2 { font-size: 21px; }
+  }
+</style>

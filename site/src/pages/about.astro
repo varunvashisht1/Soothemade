@@ -1,0 +1,82 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+---
+<BaseLayout
+  title="About — Soothemade Notes"
+  description="A small studio making printables, planners, and cards for the unphotographed parts of new parenthood."
+>
+  <Nav />
+  <article class="about">
+    <div class="eyebrow">— about the studio —</div>
+    <h1>A small shop, made <em>slowly</em>, in plain language.</h1>
+    <div class="body">
+      <p>Soothemade Notes is a small studio making printables, planners, and cards for the long, slow, mostly-unphotographed parts of new parenthood. The 3 a.m. parts. The doorbell parts. The "I should be fine by now" parts.</p>
+      <p>What we make is not a system. It's not a productivity hack. It's not a routine designed by someone who hasn't lived in the postpartum body since 1996. It's a handful of small, considered things you can use through the season and then quietly put down when it's over.</p>
+
+      <h2>What you'll find here</h2>
+      <p>A growing catalog of printables — currently planners, card decks, recovery guides, and a postpartum mind journal. Plus a journal of short essays, sent every other Sunday to anyone who wants them. Plus the occasional free printable for anyone on the list.</p>
+      <p>We do not subscribe to <em>"crush it,"</em> <em>"rise and grind,"</em> or <em>"every minute counts."</em> We do not believe you should be journaling, gratitude-listing, and ab-strengthening in the same week your milk came in. We are quietly, openly opposed to most of the things you've been told to do.</p>
+
+      <h2>Made by a person, helped by tools</h2>
+      <p>Each product is researched, voiced, designed, and reviewed by a real human (Maya, the studio's founder, postpartum doula, mom of two). The tools we use to make them faster — research assistants, layout helpers, render pipelines — are tools, the way a sewing machine is a tool. They do not write your letter, and they do not decide what you need.</p>
+      <p>Everything you read in our products and on this site was read end-to-end by a human before it was shipped.</p>
+
+      <h2>What this is not</h2>
+      <ul>
+        <li>Medical advice. We will say "see your provider" so many times you'll mock us for it. We will also be right.</li>
+        <li>A subscription, a membership, or a community. You buy a printable, you keep it forever, you owe us nothing else.</li>
+        <li>A megaphone. Soothemade is a small thing on purpose. If we ever get larger, the voice you read here is what we are accountable to.</li>
+      </ul>
+
+      <h2>Where the name comes from</h2>
+      <p>It's "soothe" plus "-made." It rhymes with "homemade" because that's the register. The things in this shop are made — slowly, by hand, with the unphotographed days in mind.</p>
+
+      <h2>Get in touch</h2>
+      <p>Email <a href="mailto:notes@soothemade.com">notes@soothemade.com</a>. We read everything. We reply when we can.</p>
+    </div>
+  </article>
+  <Newsletter />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .about {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 72px var(--sp-7) 80px;
+  }
+  .eyebrow { text-align: center; margin-bottom: 16px; }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-4xl);
+    margin: 0 0 40px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: var(--ls-tight);
+    color: var(--ink);
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .body { font-size: 18px; line-height: 1.75; color: var(--ink); }
+  .body h2 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 28px;
+    margin: 44px 0 16px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .body p { margin: 0 0 20px; }
+  .body em { font-style: italic; color: var(--accent); }
+  .body ul { margin: 0 0 22px 24px; padding: 0; }
+  .body li { margin-bottom: 10px; }
+  .body a { color: var(--accent); border-bottom: 1px solid var(--rule-strong); }
+  @media (max-width: 880px) {
+    .about { padding: 48px var(--sp-5) 64px; }
+    h1 { font-size: 38px; }
+    .body { font-size: 16px; }
+  }
+</style>
