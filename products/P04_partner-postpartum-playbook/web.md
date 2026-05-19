@@ -27,9 +27,9 @@ It does not assume you know what to do. It does not assume she'll tell you what 
 
 Twenty-four pages, structured around the first six weeks:
 
-- **Daily action cards** for week one — five small things that matter more than you'd think.
-- **A weekly support guide** for weeks two through six — what changes, what to keep doing, what to stop apologizing for.
-- **A "watch list"** — the signs that suggest she should call a provider, not wait it out.
+- **Daily action cards** for week one, five small things that matter more than you'd think.
+- **A weekly support guide** for weeks two through six, what changes, what to keep doing, what to stop apologizing for.
+- **A "watch list"**, the signs that suggest she should call a provider, not wait it out.
 - **A page on you.** Non-birthing partners experience postpartum depression at a rate of about one in ten. Your wellbeing is part of the system.
 - **A handoff page** for the in-laws or your own parents who will eventually visit.
 - **A list of things to say** that are better than "let me know if you need anything."
@@ -46,4 +46,4 @@ Instant-download PDF. US Letter + A4. Personal use only.
 
 ---
 
-*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*
+*From [Soothemade Notes](/), a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*

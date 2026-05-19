@@ -35,7 +35,7 @@ Thirty-six pages, undated. Use it any month, skip pages without guilt, start ove
 - **Two daily questions.** What's one thing for me today? What's one thing for the kids?
 - **Four weekly spreads.** Not seven daily ones.
 - **A weekly reflection** that names what worked AND what you let go of.
-- **A monthly review** that asks where you found two minutes of yourself — not where you crushed the goals.
+- **A monthly review** that asks where you found two minutes of yourself, not where you crushed the goals.
 - **A closing note** that won't make you feel bad about the pages you skipped.
 
 ## Why undated matters
@@ -59,4 +59,4 @@ Use it badly. That's how it works.
 
 ---
 
-*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*
+*From [Soothemade Notes](/), a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*

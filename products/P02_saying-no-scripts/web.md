@@ -24,7 +24,7 @@ The doorbell rang for the fourth time on the third day home from the hospital. I
 
 I cried. I let her in. The visit was four hours long.
 
-I made this pack so that — the next time someone tries this — you don't have to.
+I made this pack so that, the next time someone tries this, you don't have to.
 
 ## What's inside
 
@@ -45,7 +45,7 @@ Plus templates you can copy-paste verbatim:
 
 ## A note on tone
 
-None of these scripts are harsh. They're not for an enemy — they're for the people who love you and are also overwhelming you. The voice is warm-direct, the way a slightly-older friend would coach you to handle this. You can adapt every script to your own way of talking.
+None of these scripts are harsh. They're not for an enemy, they're for the people who love you and are also overwhelming you. The voice is warm-direct, the way a slightly-older friend would coach you to handle this. You can adapt every script to your own way of talking.
 
 Use what you need. Skip what you don't.
 
@@ -55,4 +55,4 @@ Instant-download PDF. Personal use only.
 
 ---
 
-*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*
+*From [Soothemade Notes](/), a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*

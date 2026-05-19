@@ -15,14 +15,14 @@ featuredOrder: 6
 ymyl: true
 badge: "YMYL · please read"
 summary: >-
-  A five-week phased recovery planner built specifically for c-section postpartum —
+  A five-week phased recovery planner built specifically for c-section postpartum ,
   not adapted from a vaginal-birth template. Daily care logs, an incision check
   list, a medication tracker, a 6-week appointment prep page, and a partner handoff
-  page. Heavy disclaimers throughout; not medical advice.
+  page. Heavy disclaimers throughout. not medical advice.
 crossSell: [partner-postpartum-playbook, ppd-anxiety-journal]
 ---
 
-A C-section is major abdominal surgery. Most postpartum planners ignore this entirely — they assume you walked out of the hospital. You did not.
+A C-section is major abdominal surgery. Most postpartum planners ignore this entirely, they assume you walked out of the hospital. You did not.
 
 This planner is built around what your body is actually doing in weeks one through six, and what's realistic to do alongside it.
 
@@ -30,11 +30,11 @@ This planner is built around what your body is actually doing in weeks one throu
 
 Thirty-six pages, structured around five phases:
 
-- **Week 1 — The hardest week.** Daily care log with pain, medication, incision, and lochia tracking. Mental-health watch list. Realistic activity guidance.
-- **Week 2 — Slightly more functional.** The watch list for setbacks. The activities most c-section moms accidentally over-do.
-- **Week 3 — The "I should be fine by now" trap.** Delayed-onset PPD signs. A pulse check.
-- **Week 4 — Establishing the new normal.** The first-day-solo page. What to set out at arm's reach.
-- **Weeks 5–6 — Pre-clearance.** A 6-week appointment prep page with specific questions to ask your OB.
+- **Week 1, The hardest week.** Daily care log with pain, medication, incision, and lochia tracking. Mental-health watch list. Realistic activity guidance.
+- **Week 2, Slightly more functional.** The watch list for setbacks. The activities most c-section moms accidentally over-do.
+- **Week 3, The "I should be fine by now" trap.** Delayed-onset PPD signs. A pulse check.
+- **Week 4, Establishing the new normal.** The first-day-solo page. What to set out at arm's reach.
+- **Weeks 5–6, Pre-clearance.** A 6-week appointment prep page with specific questions to ask your OB.
 
 Plus supporting pages: a medication tracker, an incision-care log, and a partner handoff page (tear it out and tape it where they'll see it).
 
@@ -57,4 +57,4 @@ Instant-download PDF, US Letter + A4. Personal use only.
 
 ---
 
-*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*
+*From [Soothemade Notes](/), a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*
