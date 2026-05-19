@@ -57,8 +57,8 @@ body {
 }
 
 .cover-mark {
-  width: 105pt;
-  height: 78pt;
+  width: 64pt;
+  height: 100pt;
   margin-bottom: 28pt;
   flex-shrink: 0;
   opacity: 0.9;
@@ -113,11 +113,22 @@ body {
   font-weight: 500;
   color: var(--text);
   letter-spacing: -0.005em;
+  line-height: 1;
+}
+.cover-brand-mark .brand-name {
+  font-family: 'Caveat', cursive;
+  font-size: 28pt;
+  font-weight: 500;
+  letter-spacing: 0;
+  vertical-align: middle;
 }
 .cover-brand-mark em {
   font-style: italic;
   color: var(--accent);
   font-weight: 400;
+  font-size: 16pt;
+  margin-left: 6pt;
+  vertical-align: middle;
 }
 .cover-brand-line {
   font-family: 'Inter', sans-serif;
@@ -229,10 +240,10 @@ hr {
   margin: 1.8em auto;
   width: 100%;
   background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 28' fill='none' stroke='%238C9B7A' stroke-width='1.1' stroke-linecap='round'><path d='M0 14 L42 14' opacity='0.45'/><path d='M78 14 L120 14' opacity='0.45'/><path d='M60 4 L60 24'/><path d='M60 10 Q 48 11, 44 18 Q 56 16, 60 16'/><path d='M60 14 Q 72 15, 76 22 Q 64 20, 60 20'/><circle cx='60' cy='4' r='1.6' fill='%238C9B7A'/></svg>");
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 28' fill='none' stroke='%238C9B7A' stroke-width='1.1' stroke-linecap='round'><path d='M0 14 L75 14' opacity='0.45'/><path d='M125 14 L200 14' opacity='0.45'/><path d='M100 24 Q 99 17, 100 8' stroke-width='1.4'/><ellipse cx='94' cy='20' rx='4.5' ry='1.6' fill='%238C9B7A' stroke='none' transform='rotate(-45 94 20)'/><ellipse cx='106' cy='13' rx='4.5' ry='1.6' fill='%238C9B7A' stroke='none' transform='rotate(45 106 13)'/></svg>");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 120pt 28pt;
+  background-size: 200pt 28pt;
 }
 
 /* BLOCKQUOTES (pull quotes) ------------------------------------------ */
@@ -363,8 +374,8 @@ hr + p > em:only-child {
 }
 
 .colophon-mark {
-  width: 56pt;
-  height: 56pt;
+  width: 58pt;
+  height: 92pt;
   color: var(--accent-2);
   margin-bottom: 24pt;
   opacity: 0.9;
@@ -375,8 +386,23 @@ hr + p > em:only-child {
   font-size: 24pt;
   font-weight: 500;
   color: var(--text);
+  line-height: 1;
 }
-.colophon-brand em { font-style: italic; color: var(--accent); font-weight: 400; }
+.colophon-brand .brand-name {
+  font-family: 'Caveat', cursive;
+  font-size: 40pt;
+  font-weight: 500;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.colophon-brand em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 24pt;
+  margin-left: 8pt;
+  vertical-align: middle;
+}
 
 .colophon-promise {
   font-family: 'Fraunces', serif;
