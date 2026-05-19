@@ -52,3 +52,7 @@ Use what you need. Skip what you don't.
 ## Format
 
 Instant-download PDF. Personal use only.
+
+---
+
+*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*

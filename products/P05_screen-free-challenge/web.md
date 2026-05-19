@@ -39,3 +39,7 @@ This is the deck I made when I tried this for the first time and gave up on day 
 ## Format
 
 Instant-download PDF, US Letter + A4. Personal use only.
+
+---
+
+*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*

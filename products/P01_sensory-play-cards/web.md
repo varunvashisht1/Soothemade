@@ -46,3 +46,7 @@ Pick a card. Do it. Or don't. There's another one tomorrow.
 ## Format
 
 Instant-download PDF, print at home on letter or A4. Personal use only.
+
+---
+
+*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*

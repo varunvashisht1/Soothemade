@@ -54,3 +54,7 @@ The voice is careful: it says "what's generally happening" rather than "what to 
 ## Format
 
 Instant-download PDF, US Letter + A4. Personal use only.
+
+---
+
+*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*

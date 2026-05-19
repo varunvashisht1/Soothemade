@@ -56,3 +56,7 @@ This is undated. Start it in March, abandon it in April, pick it up again in Jul
 Instant-download PDF, US Letter + A4. Personal use only.
 
 Use it badly. That's how it works.
+
+---
+
+*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*
