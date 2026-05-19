@@ -1,0 +1,2539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Soothemade Notes — 10 Design Studies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Serif+Display&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=IM+Fell+English:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ivory: #f5efe6;
+    --paper: #faf6ef;
+    --cream: #f0e8d8;
+    --kraft: #c9a982;
+    --kraft-deep: #8c6a3f;
+    --terracotta: #c87963;
+    --terracotta-soft: #e2a78f;
+    --terracotta-deep: #9c5641;
+    --sage: #9caa83;
+    --sage-soft: #c4cfb1;
+    --sage-deep: #6b7a55;
+    --wheat: #d4a373;
+    --ink: #1d1a16;
+    --ink-soft: #4a4339;
+    --rose: #d99c8f;
+    --plum: #6f4a5b;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: #2a2521;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* ---------- Top chrome ---------- */
+  .chrome {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #1a1714;
+    color: var(--ivory);
+    padding: 14px 28px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid #3a342d;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.4);
+  }
+  .chrome .brand {
+    font-family: Fraunces, serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 18px;
+    letter-spacing: -0.01em;
+  }
+  .chrome .brand span { color: var(--wheat); font-style: italic; font-weight: 400; }
+  .chrome a {
+    color: #d8cdb8;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12.5px;
+    border: 1px solid #3a342d;
+    transition: all 0.15s;
+  }
+  .chrome a:hover { background: #2a2521; color: var(--ivory); border-color: var(--wheat); }
+  .chrome small { color: #8a8270; font-size: 11px; margin-left: auto; }
+
+  /* ---------- Design wrapper / divider label ---------- */
+  .design {
+    background: var(--ivory);
+    margin: 0;
+    overflow: hidden;
+  }
+  .design-label {
+    background: #1a1714;
+    color: var(--wheat);
+    padding: 32px 32px 28px;
+    font-family: Fraunces, serif;
+  }
+  .design-label .num {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #8a8270;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+  }
+  .design-label h2 {
+    margin: 8px 0 6px;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .design-label p {
+    margin: 0;
+    color: #d8cdb8;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    max-width: 720px;
+  }
+
+  /* ==================================================== */
+  /* DESIGN 1 — EDITORIAL MAGAZINE                        */
+  /* ==================================================== */
+  .d1 { background: var(--paper); color: var(--ink); font-family: Inter, sans-serif; }
+  .d1 .masthead {
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 14px 48px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .d1 .masthead .logo {
+    font-family: Fraunces, serif;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    font-weight: 500;
+  }
+  .d1 .masthead .logo em { font-style: italic; color: var(--terracotta); font-weight: 400; }
+  .d1 .masthead .left, .d1 .masthead .right { flex: 1; }
+  .d1 .masthead .left { text-align: left; }
+  .d1 .masthead .right { text-align: right; }
+  .d1 nav.subnav {
+    border-bottom: 1px solid var(--ink);
+    padding: 10px 48px;
+    display: flex;
+    gap: 28px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .d1 nav.subnav a { color: var(--ink); text-decoration: none; }
+  .d1 nav.subnav a:hover { color: var(--terracotta); }
+  .d1 .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 40px;
+    padding: 48px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .d1 .hero-left h1 {
+    font-family: Fraunces, serif;
+    font-size: 48px;
+    line-height: 1.05;
+    margin: 0 0 18px;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+  .d1 .hero-left h1 em { font-style: italic; color: var(--terracotta); }
+  .d1 .hero-left p { font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+  .d1 .hero-left .kicker {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin-bottom: 16px;
+  }
+  .d1 .hero-image {
+    background: linear-gradient(135deg, var(--terracotta-soft), var(--wheat));
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+    position: relative;
+  }
+  .d1 .hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.3), transparent 60%);
+  }
+  .d1 .hero-image .caption {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    color: var(--ivory);
+    font-size: 14px;
+    z-index: 2;
+    position: relative;
+  }
+  .d1 .pullquote {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--ink);
+    border-top: 1px solid var(--ink);
+    padding-top: 18px;
+  }
+  .d1 .pullquote .attribution {
+    font-style: normal;
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    display: block;
+  }
+  .d1 .section-rule {
+    text-align: center;
+    padding: 32px 0 14px;
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    letter-spacing: 0.06em;
+  }
+  .d1 .catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding: 16px 48px 48px;
+  }
+  .d1 .cat-card .thumb {
+    aspect-ratio: 4/5;
+    margin-bottom: 14px;
+  }
+  .d1 .cat-card .num {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin-bottom: 6px;
+  }
+  .d1 .cat-card h3 {
+    font-family: Fraunces, serif;
+    font-size: 22px;
+    margin: 0 0 8px;
+    line-height: 1.15;
+    font-weight: 500;
+  }
+  .d1 .cat-card p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+  .d1 .news {
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: var(--cream);
+  }
+  .d1 .news .text-side { padding: 56px 48px; }
+  .d1 .news .text-side h2 {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 36px;
+    margin: 0 0 12px;
+    line-height: 1.1;
+    font-weight: 400;
+  }
+  .d1 .news .form {
+    display: flex;
+    border-bottom: 1px solid var(--ink);
+    margin-top: 20px;
+  }
+  .d1 .news input {
+    border: none;
+    background: transparent;
+    padding: 12px 0;
+    font-family: inherit;
+    font-size: 15px;
+    flex: 1;
+    outline: none;
+  }
+  .d1 .news button {
+    border: none;
+    background: transparent;
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 15px;
+    cursor: pointer;
+    color: var(--terracotta-deep);
+  }
+  .d1 .news .image-side {
+    background: linear-gradient(135deg, var(--sage-soft), var(--sage));
+  }
+  .d1 footer { padding: 28px 48px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); display: flex; justify-content: space-between; }
+
+  /* Product thumbnail variants */
+  .thumb-1 { background: linear-gradient(135deg, var(--terracotta-soft), var(--terracotta)); }
+  .thumb-2 { background: linear-gradient(135deg, var(--sage-soft), var(--sage)); }
+  .thumb-3 { background: linear-gradient(135deg, var(--wheat), var(--kraft)); }
+  .thumb-4 { background: linear-gradient(135deg, var(--rose), var(--terracotta-soft)); }
+  .thumb-5 { background: linear-gradient(135deg, var(--cream), var(--wheat)); }
+  .thumb-6 { background: linear-gradient(135deg, var(--sage), var(--sage-deep)); }
+  .thumb-7 { background: linear-gradient(135deg, var(--plum), var(--rose)); }
+  .thumb-decorative { display: flex; align-items: flex-end; padding: 16px; position: relative; overflow: hidden; }
+  .thumb-decorative::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.25), transparent 50%);
+  }
+  .thumb-decorative .label {
+    font-family: Fraunces, serif;
+    color: rgba(255,255,255,0.95);
+    font-size: 14px;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+    line-height: 1.2;
+  }
+
+  /* ==================================================== */
+  /* DESIGN 2 — MINIMAL SWISS                             */
+  /* ==================================================== */
+  .d2 { background: var(--ivory); color: var(--ink); font-family: Inter, sans-serif; }
+  .d2 nav {
+    padding: 28px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+  .d2 nav .word { font-family: Fraunces, serif; font-size: 18px; letter-spacing: -0.01em; }
+  .d2 nav .links { display: flex; gap: 28px; }
+  .d2 nav a { color: var(--ink); text-decoration: none; }
+  .d2 nav a:hover { color: var(--terracotta); }
+  .d2 .hero {
+    padding: 80px 64px 100px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .d2 .hero .label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+  .d2 .hero h1 {
+    font-family: Fraunces, serif;
+    font-size: 168px;
+    line-height: 0.9;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+  }
+  .d2 .hero h1 em { font-style: italic; color: var(--terracotta); font-weight: 300; }
+  .d2 .hero .tagline {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 22px;
+    margin: 32px 0 0;
+    max-width: 480px;
+    color: var(--ink);
+    font-weight: 300;
+  }
+  .d2 .pill-row {
+    margin-top: 40px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .d2 .pill {
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .d2 .pill:hover { background: var(--ink); color: var(--ivory); }
+  .d2 .catalog {
+    padding: 64px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+  .d2 .cat-card .thumb { aspect-ratio: 3/4; margin-bottom: 18px; border: 1px solid rgba(0,0,0,0.08); }
+  .d2 .cat-card .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+  .d2 .cat-card h3 {
+    font-family: Fraunces, serif;
+    font-size: 17px;
+    margin: 0;
+    font-weight: 500;
+  }
+  .d2 .cat-card .price { font-size: 13px; color: var(--ink-soft); }
+  .d2 .cat-card p { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
+  .d2 .all-link {
+    text-align: center;
+    padding: 24px 64px 64px;
+  }
+  .d2 .all-link a {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    text-decoration: none;
+    padding-bottom: 2px;
+    font-size: 18px;
+  }
+  .d2 footer {
+    padding: 28px 64px;
+    border-top: 1px solid var(--ink);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    color: var(--ink-soft);
+  }
+
+  /* ==================================================== */
+  /* DESIGN 3 — COZY BOOKSTORE / LIBRARY CARD             */
+  /* ==================================================== */
+  .d3 {
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,255,255,0.4), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.3), transparent 50%),
+      var(--kraft);
+    color: var(--ink);
+    font-family: Inter, sans-serif;
+    background-color: #d4b896;
+  }
+  .d3 nav {
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px dashed rgba(28,26,22,0.3);
+  }
+  .d3 nav .logo {
+    font-family: Fraunces, serif;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .d3 nav .links { display: flex; gap: 22px; font-size: 13px; }
+  .d3 nav a { color: var(--ink); text-decoration: none; border-bottom: 1px dashed transparent; padding-bottom: 1px; }
+  .d3 nav a:hover { border-color: var(--ink); }
+  .d3 .hero {
+    padding: 60px 48px 40px;
+    text-align: center;
+  }
+  .d3 .stamp {
+    display: inline-block;
+    transform: rotate(-3deg);
+    border: 3px double var(--terracotta-deep);
+    color: var(--terracotta-deep);
+    padding: 4px 14px;
+    font-family: Special Elite, monospace;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+  }
+  .d3 .hero h1 {
+    font-family: Fraunces, serif;
+    font-size: 64px;
+    margin: 0;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .d3 .hero .sub {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 20px;
+    margin: 16px auto 0;
+    max-width: 520px;
+    color: var(--ink-soft);
+  }
+  .d3 .divider {
+    text-align: center;
+    margin: 32px 0;
+    font-family: Fraunces, serif;
+    color: rgba(28,26,22,0.3);
+    font-size: 24px;
+    letter-spacing: 0.4em;
+  }
+  .d3 .stacks {
+    padding: 24px 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .d3 .card {
+    background: var(--paper);
+    padding: 24px 22px;
+    border: 1px solid rgba(28,26,22,0.12);
+    position: relative;
+    box-shadow: 4px 4px 0 rgba(28,26,22,0.08);
+  }
+  .d3 .card::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid var(--terracotta-deep);
+    background: rgba(200,121,99,0.08);
+  }
+  .d3 .card .ref {
+    font-family: Special Elite, monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .d3 .card h3 {
+    font-family: Fraunces, serif;
+    font-size: 20px;
+    margin: 0 0 8px;
+    padding-right: 44px;
+    line-height: 1.15;
+    font-weight: 500;
+  }
+  .d3 .card .meta {
+    border-top: 1px dashed rgba(28,26,22,0.25);
+    margin-top: 14px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-family: Special Elite, monospace;
+  }
+  .d3 .newsletter {
+    margin: 48px;
+    padding: 36px;
+    background: var(--paper);
+    border: 1px solid rgba(28,26,22,0.18);
+    text-align: center;
+  }
+  .d3 .newsletter h2 {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 28px;
+    margin: 0 0 8px;
+    font-weight: 500;
+  }
+  .d3 .newsletter p { font-size: 14px; color: var(--ink-soft); margin: 0 0 20px; }
+  .d3 .newsletter .form {
+    max-width: 380px;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 1px solid var(--ink);
+  }
+  .d3 .newsletter input { border: none; background: transparent; padding: 10px 0; flex: 1; outline: none; font-size: 14px; font-family: inherit; }
+  .d3 .newsletter button { background: transparent; border: none; font-family: Fraunces, serif; font-style: italic; cursor: pointer; color: var(--terracotta-deep); font-size: 14px; }
+  .d3 footer { padding: 24px 48px; font-family: Special Elite, monospace; font-size: 11px; color: var(--ink-soft); border-top: 2px dashed rgba(28,26,22,0.3); display: flex; justify-content: space-between; }
+
+  /* ==================================================== */
+  /* DESIGN 4 — MODERN WELLNESS                           */
+  /* ==================================================== */
+  .d4 {
+    background: linear-gradient(180deg, #faf3e8 0%, #f0e6d4 100%);
+    color: var(--ink);
+    font-family: Inter, sans-serif;
+  }
+  .d4 nav {
+    padding: 24px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .d4 nav .logo {
+    font-family: Fraunces, serif;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .d4 nav .links { display: flex; gap: 28px; font-size: 13px; }
+  .d4 nav a { color: var(--ink); text-decoration: none; }
+  .d4 nav .cta {
+    background: var(--ink);
+    color: var(--ivory);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 12.5px;
+  }
+  .d4 .hero {
+    padding: 80px 56px 60px;
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .d4 .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .d4 .hero h1 {
+    font-family: Fraunces, serif;
+    font-size: 64px;
+    line-height: 1.05;
+    margin: 0 0 24px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  .d4 .hero h1 em { font-style: italic; }
+  .d4 .hero p {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 0 auto 32px;
+    line-height: 1.55;
+  }
+  .d4 .hero .cta-row {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+  }
+  .d4 .btn-primary {
+    background: var(--ink);
+    color: var(--ivory);
+    padding: 14px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .d4 .btn-secondary {
+    background: var(--ivory);
+    color: var(--ink);
+    padding: 14px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid rgba(28,26,22,0.15);
+  }
+  .d4 .needs {
+    padding: 24px 56px 56px;
+    text-align: center;
+  }
+  .d4 .needs .heading {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  .d4 .chips {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .d4 .chip {
+    background: var(--ivory);
+    border: 1px solid rgba(28,26,22,0.1);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .d4 .chip:hover { background: var(--terracotta-soft); color: var(--ink); border-color: var(--terracotta); }
+  .d4 .shop {
+    padding: 24px 56px 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .d4 .pcard {
+    background: var(--paper);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(28,26,22,0.06);
+  }
+  .d4 .pcard .thumb { aspect-ratio: 5/4; }
+  .d4 .pcard .body { padding: 22px; }
+  .d4 .pcard h3 {
+    font-family: Fraunces, serif;
+    font-size: 19px;
+    margin: 0 0 6px;
+    font-weight: 500;
+  }
+  .d4 .pcard p { font-size: 13px; color: var(--ink-soft); margin: 0 0 14px; }
+  .d4 .pcard .price-row { display: flex; justify-content: space-between; align-items: center; }
+  .d4 .pcard .price { font-family: Fraunces, serif; font-size: 17px; }
+  .d4 .pcard .buy {
+    background: var(--ink);
+    color: var(--ivory);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .d4 footer {
+    padding: 32px 56px;
+    border-top: 1px solid rgba(28,26,22,0.08);
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  /* ==================================================== */
+  /* DESIGN 5 — HANDWRITTEN LETTER                        */
+  /* ==================================================== */
+  .d5 {
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(28,26,22,0.04) 31px, rgba(28,26,22,0.04) 32px),
+      var(--paper);
+    color: var(--ink);
+    font-family: Cormorant Garamond, serif;
+    padding: 40px 0;
+  }
+  .d5 .letter {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 64px;
+    background: var(--paper);
+    box-shadow: 0 1px 0 rgba(28,26,22,0.04);
+  }
+  .d5 .letter .topline {
+    display: flex;
+    justify-content: space-between;
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 56px;
+  }
+  .d5 .letter .topline .logo {
+    font-family: Fraunces, serif;
+    font-size: 17px;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+  .d5 .letter h1 {
+    font-family: Caveat, cursive;
+    font-size: 56px;
+    margin: 0 0 24px;
+    color: var(--terracotta-deep);
+    font-weight: 500;
+    line-height: 1;
+  }
+  .d5 .letter .body p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0 0 18px;
+  }
+  .d5 .letter .body em { font-style: italic; color: var(--terracotta-deep); }
+  .d5 .signature {
+    font-family: Caveat, cursive;
+    font-size: 42px;
+    color: var(--terracotta-deep);
+    margin: 32px 0 48px;
+    line-height: 1;
+  }
+  .d5 .ps {
+    border-top: 1px dashed rgba(28,26,22,0.2);
+    padding-top: 24px;
+    margin-top: 24px;
+  }
+  .d5 .ps .label {
+    font-family: Caveat, cursive;
+    font-size: 26px;
+    color: var(--terracotta-deep);
+    margin-bottom: 12px;
+  }
+  .d5 .things-list { list-style: none; padding: 0; margin: 0; }
+  .d5 .things-list li {
+    border-bottom: 1px solid rgba(28,26,22,0.1);
+    padding: 18px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .d5 .things-list .num {
+    font-family: Caveat, cursive;
+    font-size: 26px;
+    color: var(--terracotta-deep);
+    min-width: 36px;
+  }
+  .d5 .things-list .name {
+    font-family: Fraunces, serif;
+    font-size: 21px;
+    font-weight: 500;
+    flex: 1;
+  }
+  .d5 .things-list .desc {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    font-family: Cormorant Garamond, serif;
+  }
+  .d5 .things-list .price {
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .d5 .subscribe {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px dashed rgba(28,26,22,0.2);
+    text-align: center;
+  }
+  .d5 .subscribe .scribble {
+    font-family: Caveat, cursive;
+    color: var(--terracotta-deep);
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  .d5 .subscribe p { font-size: 15px; margin: 0 0 18px; color: var(--ink-soft); }
+  .d5 .subscribe .form {
+    max-width: 360px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .d5 .subscribe input { border: none; background: transparent; padding: 10px 0; flex: 1; outline: none; font-family: Cormorant Garamond, serif; font-size: 17px; }
+  .d5 .subscribe button { background: transparent; border: none; cursor: pointer; font-family: Caveat, cursive; color: var(--terracotta-deep); font-size: 20px; }
+
+  /* ==================================================== */
+  /* DESIGN 6 — APOTHECARY / BOTANICAL                    */
+  /* ==================================================== */
+  .d6 { background: #ecefe0; color: var(--ink); font-family: Inter, sans-serif; }
+  .d6 nav {
+    padding: 24px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(108,122,85,0.3);
+  }
+  .d6 nav .logo {
+    font-family: Fraunces, serif;
+    font-size: 21px;
+    color: var(--sage-deep);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .d6 nav .logo svg { width: 24px; height: 24px; }
+  .d6 nav .links { display: flex; gap: 26px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .d6 nav a { color: var(--sage-deep); text-decoration: none; }
+  .d6 .hero {
+    padding: 70px 56px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .d6 .hero .leaf {
+    position: absolute;
+    opacity: 0.4;
+    color: var(--sage);
+  }
+  .d6 .hero .leaf.l1 { top: 30px; left: 40px; transform: rotate(-25deg); }
+  .d6 .hero .leaf.l2 { top: 50px; right: 70px; transform: rotate(45deg); }
+  .d6 .hero .leaf.l3 { bottom: 20px; left: 100px; transform: rotate(110deg); }
+  .d6 .hero h1 {
+    font-family: Fraunces, serif;
+    font-size: 56px;
+    margin: 0 auto 16px;
+    font-weight: 400;
+    line-height: 1.05;
+    max-width: 700px;
+    color: var(--sage-deep);
+    letter-spacing: -0.01em;
+  }
+  .d6 .hero h1 em { font-style: italic; color: var(--terracotta-deep); }
+  .d6 .hero p {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 19px;
+    max-width: 460px;
+    margin: 0 auto;
+    color: var(--ink-soft);
+  }
+  .d6 .categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(108,122,85,0.3);
+    border-bottom: 1px solid rgba(108,122,85,0.3);
+  }
+  .d6 .cat {
+    padding: 36px 24px;
+    text-align: center;
+    border-right: 1px solid rgba(108,122,85,0.3);
+    text-decoration: none;
+    color: var(--sage-deep);
+  }
+  .d6 .cat:last-child { border-right: none; }
+  .d6 .cat:hover { background: rgba(156,170,131,0.1); }
+  .d6 .cat .glyph {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 12px;
+  }
+  .d6 .cat .name {
+    font-family: Fraunces, serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .d6 .cat .count {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .d6 .remedies {
+    padding: 56px 56px 40px;
+  }
+  .d6 .remedies .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 32px;
+  }
+  .d6 .remedies h2 {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 32px;
+    margin: 0;
+    color: var(--sage-deep);
+    font-weight: 400;
+  }
+  .d6 .remedies .see-all {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    color: var(--sage-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage-deep);
+    padding-bottom: 1px;
+  }
+  .d6 .bottles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .d6 .bottle {
+    text-align: center;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .d6 .bottle .visual {
+    aspect-ratio: 3/4;
+    background: linear-gradient(180deg, transparent 0%, transparent 20%, rgba(255,255,255,0.5) 20%, rgba(255,255,255,0.7) 100%);
+    border: 1px solid rgba(108,122,85,0.3);
+    margin-bottom: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .d6 .bottle .visual::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 18%;
+    background: var(--sage-deep);
+    border-radius: 4px 4px 0 0;
+  }
+  .d6 .bottle .visual .lbl {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: var(--paper);
+    border: 1px solid rgba(108,122,85,0.3);
+    color: var(--sage-deep);
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 30%;
+    max-width: 70%;
+  }
+  .d6 .bottle h3 {
+    font-family: Fraunces, serif;
+    font-size: 15px;
+    margin: 0 0 4px;
+    font-weight: 500;
+  }
+  .d6 .bottle .meta {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .d6 footer {
+    background: var(--sage-deep);
+    color: #d8e0c8;
+    padding: 40px 56px;
+    text-align: center;
+    font-size: 13px;
+  }
+  .d6 footer .ft-logo {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--ivory);
+  }
+
+  /* ==================================================== */
+  /* DESIGN 7 — SUNDAY PAPER / BROADSHEET                 */
+  /* ==================================================== */
+  .d7 {
+    background: #f4ecd8;
+    color: var(--ink);
+    font-family: "IM Fell English", Georgia, serif;
+  }
+  .d7 .masthead {
+    text-align: center;
+    padding: 32px 48px 16px;
+    border-bottom: 3px double var(--ink);
+  }
+  .d7 .masthead .small-line {
+    display: flex;
+    justify-content: space-between;
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  .d7 .masthead h1 {
+    font-family: "IM Fell English", serif;
+    font-size: 84px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.01em;
+  }
+  .d7 .masthead h1 em { font-style: italic; }
+  .d7 .masthead .motto {
+    font-family: "IM Fell English", serif;
+    font-style: italic;
+    font-size: 17px;
+    margin: 12px 0 0;
+    color: var(--ink-soft);
+  }
+  .d7 nav.sections {
+    border-bottom: 1px solid var(--ink);
+    padding: 8px 48px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .d7 nav.sections a { color: var(--ink); text-decoration: none; }
+  .d7 .above-fold {
+    padding: 36px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .d7 .above-fold .col h3.kicker {
+    font-family: Inter, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin: 0 0 6px;
+    font-weight: 600;
+  }
+  .d7 .above-fold .col h2 {
+    font-family: "IM Fell English", serif;
+    font-size: 26px;
+    margin: 0 0 10px;
+    line-height: 1.1;
+    font-weight: 400;
+  }
+  .d7 .above-fold .col p { font-size: 14px; line-height: 1.55; margin: 0 0 10px; }
+  .d7 .above-fold .feature h2 {
+    font-size: 44px;
+    line-height: 1.05;
+    margin-bottom: 18px;
+  }
+  .d7 .above-fold .feature .dropcap::first-letter {
+    font-family: "IM Fell English", serif;
+    font-size: 64px;
+    line-height: 0.85;
+    float: left;
+    margin: 4px 8px 0 0;
+    color: var(--terracotta-deep);
+  }
+  .d7 .above-fold .col .byline {
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 12px 0;
+  }
+  .d7 .classifieds {
+    padding: 36px 48px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .d7 .classifieds .head {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .d7 .classifieds .head h2 {
+    font-family: "IM Fell English", serif;
+    font-style: italic;
+    font-size: 36px;
+    margin: 0;
+    font-weight: 400;
+  }
+  .d7 .classifieds .head .sub {
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .d7 .classifieds .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--ink);
+  }
+  .d7 .classifieds .item {
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 22px 20px;
+  }
+  .d7 .classifieds .item:nth-child(3n) { border-right: none; }
+  .d7 .classifieds .item:nth-last-child(-n+3) { border-bottom: none; }
+  .d7 .classifieds .item .lot {
+    font-family: Inter, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin-bottom: 8px;
+  }
+  .d7 .classifieds .item h3 {
+    font-family: "IM Fell English", serif;
+    font-size: 22px;
+    margin: 0 0 8px;
+    line-height: 1.1;
+    font-weight: 400;
+  }
+  .d7 .classifieds .item p {
+    font-size: 13px;
+    margin: 0 0 12px;
+    line-height: 1.45;
+  }
+  .d7 .classifieds .item .price {
+    font-family: "IM Fell English", serif;
+    font-style: italic;
+    font-size: 16px;
+    border-top: 1px dashed var(--ink);
+    padding-top: 8px;
+  }
+  .d7 footer {
+    padding: 24px 48px;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ==================================================== */
+  /* DESIGN 8 — PINTEREST MASONRY                         */
+  /* ==================================================== */
+  .d8 { background: var(--ivory); color: var(--ink); font-family: Inter, sans-serif; }
+  .d8 nav {
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--ivory);
+    border-bottom: 1px solid rgba(28,26,22,0.08);
+    position: sticky;
+    top: 50px;
+    z-index: 10;
+  }
+  .d8 nav .logo {
+    font-family: Fraunces, serif;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .d8 nav .search {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 32px;
+    background: var(--cream);
+    border-radius: 999px;
+    padding: 9px 18px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .d8 nav .links { display: flex; gap: 18px; font-size: 13px; }
+  .d8 nav a { color: var(--ink); text-decoration: none; }
+  .d8 .hero-strip {
+    background: linear-gradient(110deg, var(--terracotta-soft), var(--rose), var(--sage-soft));
+    padding: 36px 40px;
+    text-align: center;
+  }
+  .d8 .hero-strip h1 {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 36px;
+    margin: 0;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .d8 .hero-strip p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .d8 .filter-row {
+    padding: 16px 40px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    background: var(--ivory);
+  }
+  .d8 .filter-row .f {
+    border: 1px solid rgba(28,26,22,0.15);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: 12px;
+    background: var(--paper);
+    color: var(--ink);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .d8 .filter-row .f.active { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
+  .d8 .mason {
+    padding: 16px 40px 40px;
+    column-count: 4;
+    column-gap: 18px;
+  }
+  .d8 .pin {
+    break-inside: avoid;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--paper);
+    border: 1px solid rgba(28,26,22,0.06);
+    position: relative;
+  }
+  .d8 .pin .visual {
+    width: 100%;
+    display: block;
+  }
+  .d8 .pin .visual.tall { aspect-ratio: 3/5; }
+  .d8 .pin .visual.short { aspect-ratio: 4/3; }
+  .d8 .pin .visual.med { aspect-ratio: 4/5; }
+  .d8 .pin .body { padding: 10px 14px 14px; }
+  .d8 .pin h3 {
+    font-family: Fraunces, serif;
+    font-size: 14px;
+    margin: 0 0 3px;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  .d8 .pin .price {
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .d8 .pin .save {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--ink);
+    color: var(--ivory);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .d8 .pin:hover .save { opacity: 1; }
+  .d8 footer {
+    padding: 24px 40px;
+    border-top: 1px solid rgba(28,26,22,0.08);
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  /* ==================================================== */
+  /* DESIGN 9 — SUBSTACK / SLOW JOURNAL                   */
+  /* ==================================================== */
+  .d9 { background: var(--paper); color: var(--ink); font-family: Inter, sans-serif; }
+  .d9 nav {
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(28,26,22,0.1);
+    text-align: center;
+  }
+  .d9 nav .logo {
+    font-family: Fraunces, serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .d9 nav .links {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    margin-top: 14px;
+    font-size: 13px;
+  }
+  .d9 nav a { color: var(--ink-soft); text-decoration: none; }
+  .d9 nav a:hover { color: var(--ink); }
+  .d9 .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+  .d9 .issue-tag {
+    text-align: center;
+    font-family: Fraunces, serif;
+    font-style: italic;
+    color: var(--terracotta-deep);
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .d9 .wrap h1 {
+    font-family: Fraunces, serif;
+    font-size: 56px;
+    line-height: 1.05;
+    text-align: center;
+    margin: 0 0 16px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .d9 .wrap h1 em { font-style: italic; }
+  .d9 .sub {
+    text-align: center;
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 21px;
+    color: var(--ink-soft);
+    margin: 0 0 32px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .d9 .subscribe-box {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 22px;
+    text-align: center;
+    margin-bottom: 56px;
+    border: 1px solid rgba(28,26,22,0.08);
+  }
+  .d9 .subscribe-box p { margin: 0 0 14px; font-size: 14px; }
+  .d9 .subscribe-box .form {
+    display: flex;
+    gap: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .d9 .subscribe-box input {
+    flex: 1;
+    padding: 11px 16px;
+    border: 1px solid rgba(28,26,22,0.15);
+    border-radius: 6px;
+    font-family: inherit;
+    background: var(--paper);
+    font-size: 14px;
+  }
+  .d9 .subscribe-box button {
+    background: var(--ink);
+    color: var(--ivory);
+    border: none;
+    border-radius: 6px;
+    padding: 11px 22px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .d9 .latest-head {
+    text-align: center;
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--ink-soft);
+    margin: 0 0 32px;
+  }
+  .d9 .post {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(28,26,22,0.1);
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .d9 .post .thumb {
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+  }
+  .d9 .post .meta {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin-bottom: 6px;
+  }
+  .d9 .post h2 {
+    font-family: Fraunces, serif;
+    font-size: 22px;
+    margin: 0 0 6px;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  .d9 .post p {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+    line-height: 1.5;
+  }
+  .d9 .post .footer-meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: flex;
+    gap: 12px;
+  }
+  .d9 .shop-row {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(28,26,22,0.1);
+  }
+  .d9 .shop-row .head {
+    text-align: center;
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 22px;
+    margin: 0 0 24px;
+  }
+  .d9 .shop-row .three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .d9 .shop-row .item .thumb { aspect-ratio: 1/1; border-radius: 8px; margin-bottom: 8px; }
+  .d9 .shop-row .item h3 { font-family: Fraunces, serif; font-size: 15px; margin: 0; font-weight: 500; }
+  .d9 .shop-row .item .price { font-size: 12px; color: var(--ink-soft); }
+  .d9 footer {
+    text-align: center;
+    padding: 28px 24px;
+    background: #1d1a16;
+    color: #d8cdb8;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  /* ==================================================== */
+  /* DESIGN 10 — INDIE ZINE                               */
+  /* ==================================================== */
+  .d10 {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Inter, sans-serif;
+    position: relative;
+  }
+  .d10::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 12% 7%, rgba(200,121,99,0.06) 0, transparent 1.2%),
+      radial-gradient(circle at 91% 22%, rgba(108,122,85,0.06) 0, transparent 1.5%),
+      radial-gradient(circle at 28% 80%, rgba(28,26,22,0.04) 0, transparent 1.5%),
+      radial-gradient(circle at 78% 88%, rgba(200,121,99,0.05) 0, transparent 1.5%);
+    pointer-events: none;
+  }
+  .d10 nav {
+    padding: 22px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 3px solid var(--ink);
+    position: relative;
+  }
+  .d10 nav .logo {
+    font-family: Fraunces, serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+  }
+  .d10 nav .logo em {
+    font-style: italic;
+    color: var(--terracotta);
+    font-weight: 400;
+  }
+  .d10 nav .page-no {
+    font-family: Special Elite, monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+  }
+  .d10 nav .links { display: flex; gap: 18px; font-size: 13px; font-family: Special Elite, monospace; }
+  .d10 nav a { color: var(--ink); text-decoration: none; border-bottom: 2px solid transparent; padding-bottom: 1px; }
+  .d10 nav a:hover { border-color: var(--terracotta); }
+  .d10 .hero {
+    padding: 50px 40px 40px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 36px;
+    align-items: end;
+    position: relative;
+  }
+  .d10 .hero h1 {
+    font-family: Fraunces, serif;
+    font-size: 88px;
+    margin: 0;
+    line-height: 0.95;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .d10 .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+    font-weight: 500;
+    display: block;
+  }
+  .d10 .hero h1 .underscore {
+    background: linear-gradient(transparent 65%, var(--wheat) 65%, var(--wheat) 90%, transparent 90%);
+    padding: 0 6px;
+  }
+  .d10 .hero .side {
+    border-left: 2px solid var(--ink);
+    padding-left: 22px;
+  }
+  .d10 .hero .side .tag {
+    font-family: Special Elite, monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin-bottom: 10px;
+  }
+  .d10 .hero .side p {
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0 0 14px;
+  }
+  .d10 .hero .scribble {
+    font-family: Caveat, cursive;
+    color: var(--terracotta-deep);
+    font-size: 24px;
+    transform: rotate(-3deg);
+    display: inline-block;
+    margin-top: 4px;
+  }
+  .d10 .marquee {
+    background: var(--ink);
+    color: var(--wheat);
+    padding: 10px 40px;
+    font-family: Special Elite, monospace;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    display: flex;
+    gap: 32px;
+    overflow: hidden;
+  }
+  .d10 .marquee span::after { content: "  ✦"; color: var(--terracotta); margin-left: 12px; }
+  .d10 .catalog {
+    padding: 48px 40px;
+  }
+  .d10 .catalog .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 28px;
+  }
+  .d10 .catalog h2 {
+    font-family: Fraunces, serif;
+    font-size: 36px;
+    margin: 0;
+    font-weight: 500;
+    font-style: italic;
+  }
+  .d10 .catalog .row .anno {
+    font-family: Caveat, cursive;
+    color: var(--terracotta-deep);
+    font-size: 22px;
+    transform: rotate(-2deg);
+  }
+  .d10 .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .d10 .zcard {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 18px;
+    position: relative;
+  }
+  .d10 .zcard:nth-child(1) { transform: rotate(-0.6deg); }
+  .d10 .zcard:nth-child(2) { transform: rotate(0.5deg); }
+  .d10 .zcard:nth-child(3) { transform: rotate(-0.3deg); }
+  .d10 .zcard:nth-child(4) { transform: rotate(0.4deg); }
+  .d10 .zcard:nth-child(5) { transform: rotate(-0.5deg); }
+  .d10 .zcard:nth-child(6) { transform: rotate(0.3deg); }
+  .d10 .zcard .thumb { aspect-ratio: 1/1; margin-bottom: 12px; border: 1px solid var(--ink); }
+  .d10 .zcard .num {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: var(--terracotta);
+    color: var(--ivory);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .d10 .zcard h3 {
+    font-family: Fraunces, serif;
+    font-size: 19px;
+    margin: 0 0 6px;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+  .d10 .zcard p { font-size: 13px; color: var(--ink-soft); margin: 0 0 12px; line-height: 1.4; }
+  .d10 .zcard .row-b {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1.5px solid var(--ink);
+    padding-top: 8px;
+  }
+  .d10 .zcard .price { font-family: Special Elite, monospace; font-size: 14px; }
+  .d10 .zcard .buy {
+    background: var(--ink);
+    color: var(--wheat);
+    padding: 5px 12px;
+    font-family: Special Elite, monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+  .d10 .signup {
+    background: var(--terracotta);
+    color: var(--ivory);
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+  }
+  .d10 .signup h2 {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 38px;
+    margin: 0 0 8px;
+    font-weight: 500;
+  }
+  .d10 .signup p { font-size: 15px; opacity: 0.9; margin: 0 0 22px; }
+  .d10 .signup .form {
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+  }
+  .d10 .signup input {
+    flex: 1;
+    padding: 11px 16px;
+    border: 2px solid var(--ivory);
+    background: transparent;
+    color: var(--ivory);
+    font-family: inherit;
+    font-size: 14px;
+  }
+  .d10 .signup input::placeholder { color: rgba(245,239,230,0.7); }
+  .d10 .signup button {
+    background: var(--ivory);
+    color: var(--terracotta);
+    border: none;
+    padding: 11px 22px;
+    font-family: Special Elite, monospace;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+  }
+  .d10 footer {
+    padding: 24px 40px;
+    border-top: 3px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    font-family: Special Elite, monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+  }
+
+</style>
+</head>
+<body>
+
+<nav class="chrome">
+  <span class="brand">Soothemade Notes <span>— design studies</span></span>
+  <a href="#d1">1. Editorial</a>
+  <a href="#d2">2. Minimal Swiss</a>
+  <a href="#d3">3. Library Card</a>
+  <a href="#d4">4. Modern Wellness</a>
+  <a href="#d5">5. Handwritten Letter</a>
+  <a href="#d6">6. Apothecary</a>
+  <a href="#d7">7. Sunday Paper</a>
+  <a href="#d8">8. Pinterest Masonry</a>
+  <a href="#d9">9. Slow Journal</a>
+  <a href="#d10">10. Indie Zine</a>
+  <small>10 directions · evaluate then pick one</small>
+</nav>
+
+<!-- ====================================================
+     DESIGN 1 — EDITORIAL MAGAZINE
+     ==================================================== -->
+<div class="design-label" id="d1">
+  <div class="num">01 — Editorial Magazine</div>
+  <h2>The Kinfolk / Cup of Jo direction</h2>
+  <p>Reads like a printed magazine. Heavy serif masthead, three-column hero, generous pullquotes. Best for a brand that wants to be taken seriously as an editorial voice, not just a shop.</p>
+</div>
+<section class="design d1">
+  <header class="masthead">
+    <span class="left">Vol. I · No. 1</span>
+    <span class="logo">Soothemade <em>Notes</em></span>
+    <span class="right">Spring 2026</span>
+  </header>
+  <nav class="subnav">
+    <a href="#">The Catalog</a>
+    <a href="#">The Journal</a>
+    <a href="#">Free Things</a>
+    <a href="#">About</a>
+    <a href="#">Letters</a>
+  </nav>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="kicker">In this issue</div>
+      <h1>Tools for the <em>quiet, ordinary</em> work of new parenthood.</h1>
+      <p>Soothemade Notes is a small studio making printables, planners, and cards for the unphotographed parts of having a small kid. No bright color. No hustle. No "you've got this." Just the things we wished someone had handed us.</p>
+    </div>
+    <div class="hero-image thumb-1 thumb-decorative">
+      <span class="caption">"What we make is for the morning at 4:17 a.m., not the one on the highlight reel."</span>
+    </div>
+    <div class="hero-right">
+      <div class="pullquote">
+        Made for the version of you no one tells you about.
+        <span class="attribution">— The Soothemade promise</span>
+      </div>
+    </div>
+  </div>
+  <div class="section-rule">— Featured this issue —</div>
+  <div class="catalog">
+    <article class="cat-card">
+      <div class="thumb thumb-1 thumb-decorative"><span class="label">Sensory Play, by age</span></div>
+      <div class="num">No. 01</div>
+      <h3>Sensory Play Activity Card Deck</h3>
+      <p>Eighty cards across four age bands, made from the things in your kitchen drawer.</p>
+    </article>
+    <article class="cat-card">
+      <div class="thumb thumb-2 thumb-decorative"><span class="label">When the doorbell rings</span></div>
+      <div class="num">No. 02</div>
+      <h3>The "Saying No" Script Pack</h3>
+      <p>Thirty scripted responses for the visitors, the unsolicited advice, the four-hour stay.</p>
+    </article>
+    <article class="cat-card">
+      <div class="thumb thumb-3 thumb-decorative"><span class="label">Three lists. Not ten.</span></div>
+      <div class="num">No. 03</div>
+      <h3>The Slow Motherhood Weekly Planner</h3>
+      <p>Four undated weeks. Three list slots a day. Permission to use it badly.</p>
+    </article>
+  </div>
+  <section class="news">
+    <div class="text-side">
+      <h2>A letter, every other Sunday.</h2>
+      <p>One short note from the studio. A free printable in every issue. No tracking pixels, no upsells.</p>
+      <form class="form" onsubmit="return false;">
+        <input type="email" placeholder="your email" />
+        <button>subscribe →</button>
+      </form>
+    </div>
+    <div class="image-side"></div>
+  </section>
+  <footer>
+    <span>© 2026 Soothemade · notes</span>
+    <span>Cloudflare · Made slowly</span>
+  </footer>
+</section>
+
+<!-- ====================================================
+     DESIGN 2 — MINIMAL SWISS
+     ==================================================== -->
+<div class="design-label" id="d2">
+  <div class="num">02 — Minimal Swiss</div>
+  <h2>The "less, but louder" direction</h2>
+  <p>Massive serif wordmark, deep whitespace, almost no chrome. Confident, expensive-feeling, and the type does the heavy lifting. Best when you want the brand to look like a small museum gift shop, not an Etsy store.</p>
+</div>
+<section class="design d2">
+  <nav>
+    <div class="word">Soothemade Notes</div>
+    <div class="links">
+      <a href="#">Catalog</a>
+      <a href="#">Journal</a>
+      <a href="#">Free</a>
+      <a href="#">About</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="label">est. 2026 · printables &amp; planners</div>
+    <h1>Notes<em>.</em></h1>
+    <div class="tagline">Tools for the slow, unphotographed work of new parenthood.</div>
+    <div class="pill-row">
+      <a href="#" class="pill">Postpartum</a>
+      <a href="#" class="pill">Toddler years</a>
+      <a href="#" class="pill">Planners</a>
+      <a href="#" class="pill">Card decks</a>
+      <a href="#" class="pill">Free printables</a>
+    </div>
+  </div>
+  <div class="catalog">
+    <article class="cat-card">
+      <div class="thumb thumb-1 thumb-decorative"><span class="label">No. 01</span></div>
+      <div class="row"><h3>Sensory Play Card Deck</h3><span class="price">$24</span></div>
+      <p>Eighty cards. Four age bands. Stuff you already own.</p>
+    </article>
+    <article class="cat-card">
+      <div class="thumb thumb-2 thumb-decorative"><span class="label">No. 02</span></div>
+      <div class="row"><h3>Saying No Script Pack</h3><span class="price">$7</span></div>
+      <p>Thirty scripts for the visitor calendar.</p>
+    </article>
+    <article class="cat-card">
+      <div class="thumb thumb-3 thumb-decorative"><span class="label">No. 03</span></div>
+      <div class="row"><h3>Slow Motherhood Planner</h3><span class="price">$12</span></div>
+      <p>Four undated weeks. Three list slots a day.</p>
+    </article>
+    <article class="cat-card">
+      <div class="thumb thumb-4 thumb-decorative"><span class="label">No. 04</span></div>
+      <div class="row"><h3>Partner's Postpartum Playbook</h3><span class="price">$9</span></div>
+      <p>Twenty-four pages, written to the non-birthing partner.</p>
+    </article>
+    <article class="cat-card">
+      <div class="thumb thumb-5 thumb-decorative"><span class="label">No. 05</span></div>
+      <div class="row"><h3>30-Day Screen-Free Challenge</h3><span class="price">$9</span></div>
+      <p>Thirty daily cards. One quiet month.</p>
+    </article>
+    <article class="cat-card">
+      <div class="thumb thumb-6 thumb-decorative"><span class="label">No. 06</span></div>
+      <div class="row"><h3>C-Section Recovery Planner</h3><span class="price">$14</span></div>
+      <p>Five phases. Real activity guidance. A partner handoff page.</p>
+    </article>
+  </div>
+  <div class="all-link"><a href="#">— see all twenty-one →</a></div>
+  <footer>
+    <span>Soothemade · 2026</span>
+    <span>notes@soothemade.com</span>
+  </footer>
+</section>
+
+<!-- ====================================================
+     DESIGN 3 — COZY BOOKSTORE / LIBRARY CARD
+     ==================================================== -->
+<div class="design-label" id="d3">
+  <div class="num">03 — Library Card / Cozy Bookstore</div>
+  <h2>The "tactile and warm" direction</h2>
+  <p>Kraft paper colorway, dashed lines, stamped accents, library-card-style product cards. Tactile, nostalgic, and very Pinterest-shareable. Trade-off: less aspirational, more crafted.</p>
+</div>
+<section class="design d3">
+  <nav>
+    <div class="logo">Soothemade · Notes</div>
+    <div class="links">
+      <a href="#">The Stacks</a>
+      <a href="#">The Journal</a>
+      <a href="#">Reading Room</a>
+      <a href="#">Cardholder</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="stamp">Catalog of Small, Useful Things</div>
+    <h1>The shop of notes,<br />for new and tired parents.</h1>
+    <p class="sub">Printables, planners, and decks. Made the way a friend would make them — slowly, in plain language, with the corners worn in.</p>
+  </div>
+  <div class="divider">· · ·</div>
+  <div class="stacks">
+    <article class="card">
+      <div class="ref">CAT. No. 0001-S</div>
+      <h3>Sensory Play Activity Card Deck</h3>
+      <p style="font-size:13px;color:var(--ink-soft);margin:0;">Eighty cards. Stuff you already own.</p>
+      <div class="meta"><span>0–3 years</span><span>$24.00</span></div>
+    </article>
+    <article class="card">
+      <div class="ref">CAT. No. 0002-N</div>
+      <h3>The "Saying No" Script Pack</h3>
+      <p style="font-size:13px;color:var(--ink-soft);margin:0;">Thirty scripts for the doorbell.</p>
+      <div class="meta"><span>Postpartum</span><span>$7.00</span></div>
+    </article>
+    <article class="card">
+      <div class="ref">CAT. No. 0003-P</div>
+      <h3>Slow Motherhood Weekly Planner</h3>
+      <p style="font-size:13px;color:var(--ink-soft);margin:0;">Three list slots. Not ten.</p>
+      <div class="meta"><span>Undated · 36p</span><span>$12.00</span></div>
+    </article>
+    <article class="card">
+      <div class="ref">CAT. No. 0004-P</div>
+      <h3>Partner's Postpartum Playbook</h3>
+      <p style="font-size:13px;color:var(--ink-soft);margin:0;">Written to the non-birthing partner.</p>
+      <div class="meta"><span>24p PDF</span><span>$9.00</span></div>
+    </article>
+    <article class="card">
+      <div class="ref">CAT. No. 0005-C</div>
+      <h3>30-Day Screen-Free Challenge</h3>
+      <p style="font-size:13px;color:var(--ink-soft);margin:0;">Thirty quiet days, one card at a time.</p>
+      <div class="meta"><span>3–10 yrs</span><span>$9.00</span></div>
+    </article>
+    <article class="card">
+      <div class="ref">CAT. No. 0006-R</div>
+      <h3>C-Section Recovery Planner</h3>
+      <p style="font-size:13px;color:var(--ink-soft);margin:0;">A planner that knows you had surgery.</p>
+      <div class="meta"><span>5 phases · 36p</span><span>$14.00</span></div>
+    </article>
+  </div>
+  <div class="newsletter">
+    <h2>A note in your inbox, once every other Sunday.</h2>
+    <p>One short letter from the studio · a free printable each issue · unsubscribe anytime.</p>
+    <form class="form" onsubmit="return false;">
+      <input type="email" placeholder="your email" />
+      <button>send me notes →</button>
+    </form>
+  </div>
+  <footer>
+    <span>SOOTHEMADE STUDIO · MMXXVI</span>
+    <span>NOTES@SOOTHEMADE.COM</span>
+  </footer>
+</section>
+
+<!-- ====================================================
+     DESIGN 4 — MODERN WELLNESS
+     ==================================================== -->
+<div class="design-label" id="d4">
+  <div class="num">04 — Modern Wellness</div>
+  <h2>The "Ritual / Goop-lite" direction</h2>
+  <p>Soft cream gradient, rounded shop cards, pill buttons, gentle pastels. Familiar, friendly, high-conversion. Trade-off: less distinctive — risks looking like every DTC wellness brand.</p>
+</div>
+<section class="design d4">
+  <nav>
+    <div class="logo">Soothemade Notes</div>
+    <div class="links">
+      <a href="#">Shop</a>
+      <a href="#">Journal</a>
+      <a href="#">Free Things</a>
+      <a href="#">About</a>
+      <a href="#" class="cta">Sign in</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="eyebrow">Printables · Planners · Cards</div>
+    <h1>Quiet tools for the <em>slow work</em> of new parenthood.</h1>
+    <p>Printables made by a small studio, for the version of you no one tells you about. No urgency. No hustle. Just useful pages.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="#">Shop the catalog</a>
+      <a class="btn-secondary" href="#">Get a free printable</a>
+    </div>
+  </div>
+  <div class="needs">
+    <div class="heading">Find what you need —</div>
+    <div class="chips">
+      <a class="chip" href="#">Pregnancy</a>
+      <a class="chip" href="#">Postpartum</a>
+      <a class="chip" href="#">0–1 year</a>
+      <a class="chip" href="#">Toddler years</a>
+      <a class="chip" href="#">For the partner</a>
+      <a class="chip" href="#">C-section</a>
+      <a class="chip" href="#">Mental health</a>
+    </div>
+  </div>
+  <div class="shop">
+    <article class="pcard">
+      <div class="thumb thumb-1 thumb-decorative"><span class="label">80 cards · 0–3 yrs</span></div>
+      <div class="body">
+        <h3>Sensory Play Card Deck</h3>
+        <p>Eighty activity cards across four age bands.</p>
+        <div class="price-row"><span class="price">$24</span><a class="buy" href="#">Add</a></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="thumb thumb-2 thumb-decorative"><span class="label">30 scripts</span></div>
+      <div class="body">
+        <h3>The "Saying No" Script Pack</h3>
+        <p>Thirty responses for visitor pressure.</p>
+        <div class="price-row"><span class="price">$7</span><a class="buy" href="#">Add</a></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="thumb thumb-3 thumb-decorative"><span class="label">36 pages · undated</span></div>
+      <div class="body">
+        <h3>Slow Motherhood Planner</h3>
+        <p>Four weeks. Three list slots a day.</p>
+        <div class="price-row"><span class="price">$12</span><a class="buy" href="#">Add</a></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="thumb thumb-4 thumb-decorative"><span class="label">24 pages</span></div>
+      <div class="body">
+        <h3>Partner's Playbook</h3>
+        <p>Written to the non-birthing partner.</p>
+        <div class="price-row"><span class="price">$9</span><a class="buy" href="#">Add</a></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="thumb thumb-6 thumb-decorative"><span class="label">30 cards</span></div>
+      <div class="body">
+        <h3>Screen-Free Family Challenge</h3>
+        <p>Thirty days, one card at a time.</p>
+        <div class="price-row"><span class="price">$9</span><a class="buy" href="#">Add</a></div>
+      </div>
+    </article>
+    <article class="pcard">
+      <div class="thumb thumb-7 thumb-decorative"><span class="label">60 pages · journal</span></div>
+      <div class="body">
+        <h3>Postpartum Mind Journal</h3>
+        <p>A noticing tool for the first year.</p>
+        <div class="price-row"><span class="price">$14</span><a class="buy" href="#">Add</a></div>
+      </div>
+    </article>
+  </div>
+  <footer>© 2026 Soothemade · notes.soothemade.com</footer>
+</section>
+
+<!-- ====================================================
+     DESIGN 5 — HANDWRITTEN LETTER
+     ==================================================== -->
+<div class="design-label" id="d5">
+  <div class="num">05 — Handwritten Letter</div>
+  <h2>The "opening an envelope" direction</h2>
+  <p>Single column. Lined paper. The whole homepage reads like a letter from Maya. Highest brand intimacy, highest founder-story signal. Trade-off: not a shop layout — products need a sub-page.</p>
+</div>
+<section class="design d5">
+  <div class="letter">
+    <div class="topline">
+      <span class="logo">Soothemade Notes</span>
+      <span>Letter № 1 · Spring 2026</span>
+    </div>
+    <h1>Dear reader —</h1>
+    <div class="body">
+      <p>I made this shop on a Tuesday, because I'd bought my fourth productivity planner in a row and finally realized none of them were made for someone with a small kid.</p>
+      <p>What you'll find here is not a system. It's a small set of <em>printables, planners, and cards</em> for the slow, unphotographed parts of new parenthood — the 3 a.m. parts, the doorbell parts, the "I should be fine by now" parts.</p>
+      <p>Nothing here will fix you. (Nothing needs to.) But a few of these might make Tuesday easier.</p>
+    </div>
+    <div class="signature">— Maya</div>
+
+    <div class="ps">
+      <div class="label">P.S. — Things I've made for you so far:</div>
+      <ul class="things-list">
+        <li>
+          <span class="num">i.</span>
+          <span>
+            <span class="name">The Sensory Play Card Deck</span>
+            <div class="desc">Eighty activity cards, sorted by age. Most of them use a colander.</div>
+          </span>
+          <span class="price">$24</span>
+        </li>
+        <li>
+          <span class="num">ii.</span>
+          <span>
+            <span class="name">The "Saying No" Script Pack</span>
+            <div class="desc">Thirty scripts for the visitors who stay too long.</div>
+          </span>
+          <span class="price">$7</span>
+        </li>
+        <li>
+          <span class="num">iii.</span>
+          <span>
+            <span class="name">The Slow Motherhood Planner</span>
+            <div class="desc">Three list slots a day. The thing I wish I'd had.</div>
+          </span>
+          <span class="price">$12</span>
+        </li>
+        <li>
+          <span class="num">iv.</span>
+          <span>
+            <span class="name">The Partner's Playbook</span>
+            <div class="desc">Twenty-four pages, written to the non-birthing partner.</div>
+          </span>
+          <span class="price">$9</span>
+        </li>
+        <li>
+          <span class="num">v.</span>
+          <span>
+            <span class="name">The Postpartum Mind Journal</span>
+            <div class="desc">A noticing tool. Not a fix.</div>
+          </span>
+          <span class="price">$14</span>
+        </li>
+      </ul>
+    </div>
+    <div class="subscribe">
+      <div class="scribble">— one more thing —</div>
+      <p>If you'd like a letter like this one, every other Sunday, with a free printable in it:</p>
+      <form class="form" onsubmit="return false;">
+        <input type="email" placeholder="your email" />
+        <button>send →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     DESIGN 6 — APOTHECARY / BOTANICAL
+     ==================================================== -->
+<div class="design-label" id="d6">
+  <div class="num">06 — Apothecary / Botanical</div>
+  <h2>The "small herbal shop" direction</h2>
+  <p>Sage-forward palette, illustrated botanicals, product cards shaped like tincture bottles. Reads like a small herbalist's shop window. Very distinctive, slightly precious — works best if the catalog leans heavily into "remedies for hard moments."</p>
+</div>
+<section class="design d6">
+  <nav>
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 2 C 8 8, 8 14, 12 22 M 12 22 C 16 14, 16 8, 12 2 M 12 22 L 8 16 M 12 22 L 16 16 M 12 14 L 6 10 M 12 14 L 18 10" stroke-linecap="round" />
+      </svg>
+      Soothemade · Notes
+    </div>
+    <div class="links">
+      <a href="#">Catalog</a>
+      <a href="#">Journal</a>
+      <a href="#">Free</a>
+      <a href="#">About</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <svg class="leaf l1" width="60" height="60" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.5" fill="none" /></svg>
+    <svg class="leaf l2" width="50" height="50" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.5" fill="none" /></svg>
+    <svg class="leaf l3" width="55" height="55" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.5" fill="none" /></svg>
+    <h1>Small tonics for the <em>tender</em> parts of new parenthood.</h1>
+    <p>A shop of printables, planners, and cards — made slowly, by hand, for the unphotographed days.</p>
+  </div>
+  <div class="categories">
+    <a class="cat" href="#">
+      <svg class="glyph" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="22" cy="22" r="14" /><path d="M22 8 L 22 36 M 8 22 L 36 22" stroke-linecap="round" /></svg>
+      <div class="name">For pregnancy</div>
+      <div class="count">04 items</div>
+    </a>
+    <a class="cat" href="#">
+      <svg class="glyph" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 6 Q 8 22, 22 38 Q 36 22, 22 6 Z" /></svg>
+      <div class="name">For postpartum</div>
+      <div class="count">07 items</div>
+    </a>
+    <a class="cat" href="#">
+      <svg class="glyph" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="10" y="10" width="24" height="24" rx="2" /><path d="M10 18 L 34 18 M 10 26 L 34 26" /></svg>
+      <div class="name">For the years after</div>
+      <div class="count">06 items</div>
+    </a>
+    <a class="cat" href="#">
+      <svg class="glyph" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="22" cy="14" r="6" /><path d="M10 38 Q 22 22, 34 38" /></svg>
+      <div class="name">For the partner</div>
+      <div class="count">02 items</div>
+    </a>
+  </div>
+  <div class="remedies">
+    <div class="title-row">
+      <h2>From the shop —</h2>
+      <a class="see-all" href="#">see all twenty-one</a>
+    </div>
+    <div class="bottles">
+      <a class="bottle" href="#">
+        <div class="visual"><span class="lbl">Sensory Play<br/>Card Deck</span></div>
+        <h3>For the 0–3 years</h3>
+        <div class="meta">$24 · 80 cards</div>
+      </a>
+      <a class="bottle" href="#">
+        <div class="visual"><span class="lbl">Saying No<br/>Scripts</span></div>
+        <h3>For the doorbell</h3>
+        <div class="meta">$7 · 30 scripts</div>
+      </a>
+      <a class="bottle" href="#">
+        <div class="visual"><span class="lbl">Slow Motherhood<br/>Planner</span></div>
+        <h3>For tired weeks</h3>
+        <div class="meta">$12 · 36 pages</div>
+      </a>
+      <a class="bottle" href="#">
+        <div class="visual"><span class="lbl">Postpartum<br/>Mind Journal</span></div>
+        <h3>For noticing</h3>
+        <div class="meta">$14 · 60 pages</div>
+      </a>
+    </div>
+  </div>
+  <footer>
+    <div class="ft-logo">Soothemade · Notes</div>
+    <div>Made slowly · notes@soothemade.com</div>
+  </footer>
+</section>
+
+<!-- ====================================================
+     DESIGN 7 — SUNDAY PAPER / BROADSHEET
+     ==================================================== -->
+<div class="design-label" id="d7">
+  <div class="num">07 — Sunday Paper / Broadsheet</div>
+  <h2>The "old broadsheet" direction</h2>
+  <p>Newspaper masthead, multi-column body, double-rule borders, classified-section product grid. Distinctive and confident — reads as an essayist's shop more than a printables shop. Trade-off: dense, harder for mobile.</p>
+</div>
+<section class="design d7">
+  <header class="masthead">
+    <div class="small-line">
+      <span>Vol. I · No. 1</span>
+      <span>Soothemade, Pacific Northwest</span>
+      <span>Spring 2026 · Price: free</span>
+    </div>
+    <h1>The Soothemade <em>Notes</em></h1>
+    <div class="motto">— a small publication, of small useful things, for new parents —</div>
+  </header>
+  <nav class="sections">
+    <a href="#">Front Page</a>
+    <a href="#">The Catalog</a>
+    <a href="#">Letters</a>
+    <a href="#">The Journal</a>
+    <a href="#">Reading Room</a>
+    <a href="#">Free Printables</a>
+  </nav>
+  <div class="above-fold">
+    <div class="col">
+      <h3 class="kicker">Editor's note</h3>
+      <h2>Why a small shop, made slowly, in a loud year.</h2>
+      <p>We started this because the planners we kept buying weren't built for the version of us holding a baby at three in the morning. So we made our own.</p>
+      <p class="byline">— Maya, editor</p>
+    </div>
+    <div class="col feature">
+      <h3 class="kicker">This week's feature</h3>
+      <h2>A planner with three list slots. Not ten.</h2>
+      <p class="dropcap">The first time I bought a productivity planner with twelve list slots a day, I was eight months pregnant. The second time, my baby was four weeks old. The third time, I was crying in a grocery aisle because I'd left my actual to-do list at home. The Slow Motherhood Planner is what came out of all of that. Four undated weeks. Three list slots a day. Reflections that don't ask if you "crushed" the week.</p>
+      <p class="byline">— continue reading →</p>
+    </div>
+    <div class="col">
+      <h3 class="kicker">In the post</h3>
+      <h2>Letters from readers.</h2>
+      <p><em>"The 'Saying No' pack is the only postpartum thing I've ever sent to a pregnant friend without an apology."</em> — H.</p>
+      <p><em>"I bought the c-section planner the day my OB scheduled the surgery."</em> — R.</p>
+    </div>
+  </div>
+  <section class="classifieds">
+    <div class="head">
+      <h2>The Catalog</h2>
+      <div class="sub">— Printables, planners, and cards. Made slowly. —</div>
+    </div>
+    <div class="grid">
+      <article class="item">
+        <div class="lot">Lot 01</div>
+        <h3>Sensory Play Card Deck</h3>
+        <p>Eighty cards across four age bands. Activities made from stuff in your kitchen.</p>
+        <div class="price">$24.00 · PDF</div>
+      </article>
+      <article class="item">
+        <div class="lot">Lot 02</div>
+        <h3>The "Saying No" Scripts</h3>
+        <p>Thirty scripted responses for the visitor calendar, the unsolicited advice, the four-hour stay.</p>
+        <div class="price">$7.00 · PDF</div>
+      </article>
+      <article class="item">
+        <div class="lot">Lot 03</div>
+        <h3>Slow Motherhood Planner</h3>
+        <p>Four weeks, undated. Three list slots a day. The reflection page won't ask if you crushed the week.</p>
+        <div class="price">$12.00 · 36p</div>
+      </article>
+      <article class="item">
+        <div class="lot">Lot 04</div>
+        <h3>Partner's Playbook</h3>
+        <p>Twenty-four pages, written to the non-birthing partner. Daily action cards.</p>
+        <div class="price">$9.00 · 24p</div>
+      </article>
+      <article class="item">
+        <div class="lot">Lot 05</div>
+        <h3>Screen-Free Challenge</h3>
+        <p>Thirty daily cards for one quiet month. A tracker page. A parent-prep guide.</p>
+        <div class="price">$9.00 · 30 cards</div>
+      </article>
+      <article class="item">
+        <div class="lot">Lot 06</div>
+        <h3>C-Section Recovery Planner</h3>
+        <p>Five phases. Real activity guidance per week. A partner handoff page.</p>
+        <div class="price">$14.00 · 36p</div>
+      </article>
+    </div>
+  </section>
+  <footer>The Soothemade Notes · est. 2026 · printed on the internet · notes@soothemade.com</footer>
+</section>
+
+<!-- ====================================================
+     DESIGN 8 — PINTEREST MASONRY
+     ==================================================== -->
+<div class="design-label" id="d8">
+  <div class="num">08 — Pinterest-Native Masonry</div>
+  <h2>The "image-first, save-button" direction</h2>
+  <p>Native to Pinterest's grammar. Variable-height image cards, save buttons, search-bar nav. Highest probability of converting Pinterest traffic. Trade-off: lower-prestige feel; more "Etsy storefront" than "studio."</p>
+</div>
+<section class="design d8">
+  <nav>
+    <div class="logo">soothemade · notes</div>
+    <div class="search">Search printables, planners, and cards —</div>
+    <div class="links">
+      <a href="#">Shop</a>
+      <a href="#">Journal</a>
+      <a href="#">Free</a>
+      <a href="#">Sign in</a>
+    </div>
+  </nav>
+  <div class="hero-strip">
+    <h1>Small printables, made slowly.</h1>
+    <p>For the unphotographed parts of new parenthood.</p>
+  </div>
+  <div class="filter-row">
+    <div class="f active">All</div>
+    <div class="f">Postpartum</div>
+    <div class="f">Pregnancy</div>
+    <div class="f">0–3 years</div>
+    <div class="f">3–10 years</div>
+    <div class="f">For the partner</div>
+    <div class="f">Card decks</div>
+    <div class="f">Planners</div>
+    <div class="f">Mental health</div>
+    <div class="f">Free printables</div>
+  </div>
+  <div class="mason">
+    <article class="pin"><div class="visual tall thumb-1 thumb-decorative"><span class="label">Sensory Play<br/>0–3 yrs</span></div><span class="save">Save</span><div class="body"><h3>Sensory Play Card Deck</h3><div class="price">$24 · 80 cards</div></div></article>
+    <article class="pin"><div class="visual short thumb-2 thumb-decorative"><span class="label">30 scripts</span></div><span class="save">Save</span><div class="body"><h3>The "Saying No" Scripts</h3><div class="price">$7 · postpartum</div></div></article>
+    <article class="pin"><div class="visual med thumb-3 thumb-decorative"><span class="label">3 list slots.<br/>Not ten.</span></div><span class="save">Save</span><div class="body"><h3>Slow Motherhood Planner</h3><div class="price">$12 · undated</div></div></article>
+    <article class="pin"><div class="visual tall thumb-4 thumb-decorative"><span class="label">For the partner</span></div><span class="save">Save</span><div class="body"><h3>Partner's Postpartum Playbook</h3><div class="price">$9 · 24 pages</div></div></article>
+    <article class="pin"><div class="visual short thumb-6 thumb-decorative"><span class="label">30 days,<br/>screen-free</span></div><span class="save">Save</span><div class="body"><h3>Screen-Free Challenge</h3><div class="price">$9 · ages 3–10</div></div></article>
+    <article class="pin"><div class="visual med thumb-5 thumb-decorative"><span class="label">5-phase<br/>recovery</span></div><span class="save">Save</span><div class="body"><h3>C-Section Recovery Planner</h3><div class="price">$14 · 36 pages</div></div></article>
+    <article class="pin"><div class="visual tall thumb-7 thumb-decorative"><span class="label">A noticing tool.<br/>Not a fix.</span></div><span class="save">Save</span><div class="body"><h3>Postpartum Mind Journal</h3><div class="price">$14 · 60 pages</div></div></article>
+    <article class="pin"><div class="visual short thumb-1 thumb-decorative"><span class="label">Free printable</span></div><span class="save">Save</span><div class="body"><h3>10 Saying-No scripts (free)</h3><div class="price">— free with email</div></div></article>
+    <article class="pin"><div class="visual med thumb-2 thumb-decorative"><span class="label">Free printable</span></div><span class="save">Save</span><div class="body"><h3>Sensory Play Sampler (free)</h3><div class="price">— free with email</div></div></article>
+    <article class="pin"><div class="visual tall thumb-3 thumb-decorative"><span class="label">From the journal</span></div><span class="save">Save</span><div class="body"><h3>The Complete Sensory Play Guide</h3><div class="price">blog · 12 min read</div></div></article>
+    <article class="pin"><div class="visual short thumb-4 thumb-decorative"><span class="label">From the journal</span></div><span class="save">Save</span><div class="body"><h3>The Postpartum Visitor Script Library</h3><div class="price">blog · 8 min read</div></div></article>
+    <article class="pin"><div class="visual med thumb-6 thumb-decorative"><span class="label">From the journal</span></div><span class="save">Save</span><div class="body"><h3>Why "Saying No" is a postpartum skill</h3><div class="price">blog · 6 min read</div></div></article>
+  </div>
+  <footer>Soothemade · Notes · made slowly</footer>
+</section>
+
+<!-- ====================================================
+     DESIGN 9 — SUBSTACK / SLOW JOURNAL
+     ==================================================== -->
+<div class="design-label" id="d9">
+  <div class="num">09 — Slow Journal / Substack-coded</div>
+  <h2>The "writer-first, shop second" direction</h2>
+  <p>Single narrow column. The blog and email list are the centerpiece; the shop sits underneath. Best for someone who plans to write a lot. Trade-off: under-sells products to first-time visitors.</p>
+</div>
+<section class="design d9">
+  <nav>
+    <div class="logo">Soothemade · Notes</div>
+    <div class="links">
+      <a href="#">Journal</a>
+      <a href="#">Shop</a>
+      <a href="#">Free Things</a>
+      <a href="#">About</a>
+    </div>
+  </nav>
+  <div class="wrap">
+    <div class="issue-tag">— Issue 12 · this month —</div>
+    <h1>The morning, the doorbell, and the <em>thing</em> we keep not saying.</h1>
+    <div class="sub">A small publication about the slow, ordinary, unphotographed parts of new parenthood. Letters every other Sunday. Plus a small shop of printables.</div>
+    <div class="subscribe-box">
+      <p>One letter, every other Sunday. A free printable in each issue.</p>
+      <form class="form" onsubmit="return false;">
+        <input type="email" placeholder="your email" />
+        <button>Subscribe</button>
+      </form>
+    </div>
+    <div class="latest-head">— Latest letters —</div>
+
+    <a class="post" href="#">
+      <div class="thumb thumb-1"></div>
+      <div>
+        <div class="meta">Sensory play · 12 min</div>
+        <h2>The complete sensory play guide, by age.</h2>
+        <p>The first time I tried sensory play with my 4-month-old, I spent an hour on Pinterest and ended up with a colander, a bowl of rice, and a baby who cried for 30 minutes...</p>
+        <div class="footer-meta"><span>May 12, 2026</span><span>· 312 readers</span></div>
+      </div>
+    </a>
+    <a class="post" href="#">
+      <div class="thumb thumb-2"></div>
+      <div>
+        <div class="meta">Postpartum · 8 min</div>
+        <h2>The doorbell, the visitors, and the script library.</h2>
+        <p>The doorbell rang four times the first day home from the hospital. By the fifth time I had a script ready — and a small sense of myself back...</p>
+        <div class="footer-meta"><span>May 5, 2026</span><span>· 198 readers</span></div>
+      </div>
+    </a>
+    <a class="post" href="#">
+      <div class="thumb thumb-3"></div>
+      <div>
+        <div class="meta">Slow motherhood · 6 min</div>
+        <h2>Three list slots a day, and why ten was always too many.</h2>
+        <p>I have bought four productivity planners since my first kid was born. I have used zero of them past mid-March...</p>
+        <div class="footer-meta"><span>April 28, 2026</span><span>· 247 readers</span></div>
+      </div>
+    </a>
+
+    <div class="shop-row">
+      <div class="head">— Or, from the shop —</div>
+      <div class="three">
+        <div class="item"><div class="thumb thumb-1 thumb-decorative"><span class="label" style="font-size:11px;">80 cards</span></div><h3>Sensory Play Deck</h3><div class="price">$24</div></div>
+        <div class="item"><div class="thumb thumb-2 thumb-decorative"><span class="label" style="font-size:11px;">30 scripts</span></div><h3>Saying No Scripts</h3><div class="price">$7</div></div>
+        <div class="item"><div class="thumb thumb-3 thumb-decorative"><span class="label" style="font-size:11px;">36p planner</span></div><h3>Slow Motherhood Planner</h3><div class="price">$12</div></div>
+      </div>
+    </div>
+  </div>
+  <footer>Soothemade · made slowly · notes@soothemade.com</footer>
+</section>
+
+<!-- ====================================================
+     DESIGN 10 — INDIE ZINE
+     ==================================================== -->
+<div class="design-label" id="d10">
+  <div class="num">10 — Indie Zine</div>
+  <h2>The "small-press, handmade" direction</h2>
+  <p>Mixed type, slight rotation, page numbers in the margins, a marquee strip, stamped corners. Most distinctive personality in the set. Highest "made by a real person" signal. Trade-off: polarizing — some readers find this charming, others find it busy.</p>
+</div>
+<section class="design d10">
+  <nav>
+    <div>
+      <div class="logo">Soothemade <em>Notes</em></div>
+    </div>
+    <div class="links">
+      <a href="#">shop</a>
+      <a href="#">journal</a>
+      <a href="#">freebies</a>
+      <a href="#">about</a>
+    </div>
+    <div class="page-no">p. 01 / vol. I</div>
+  </nav>
+  <div class="hero">
+    <h1>Small <span class="underscore">useful</span> things<em>for the long quiet days</em></h1>
+    <div class="side">
+      <div class="tag">— what this is —</div>
+      <p>A small press for new parents. Printables, planners, and decks. All made the way a friend would make them — slowly, in plain language, with the corners worn in.</p>
+      <span class="scribble">made slowly, in 2026 ~</span>
+    </div>
+  </div>
+  <div class="marquee">
+    <span>made slowly</span>
+    <span>printables &amp; planners</span>
+    <span>est. 2026</span>
+    <span>for tired parents</span>
+    <span>no urgency</span>
+    <span>no hustle</span>
+    <span>quiet tools</span>
+  </div>
+  <div class="catalog">
+    <div class="row">
+      <h2>— from the catalog —</h2>
+      <span class="anno">↓ pick a quiet one ↓</span>
+    </div>
+    <div class="grid">
+      <article class="zcard">
+        <span class="num">1</span>
+        <div class="thumb thumb-1 thumb-decorative"><span class="label">80 cards · 0–3y</span></div>
+        <h3>The Sensory Play Card Deck</h3>
+        <p>Eighty activity cards, sorted by age. Most use stuff in your kitchen drawer.</p>
+        <div class="row-b"><span class="price">$24.00</span><a class="buy" href="#">add →</a></div>
+      </article>
+      <article class="zcard">
+        <span class="num">2</span>
+        <div class="thumb thumb-2 thumb-decorative"><span class="label">30 scripts</span></div>
+        <h3>The "Saying No" Script Pack</h3>
+        <p>Thirty scripted responses for the doorbell, the four-hour stay, and the unsolicited advice.</p>
+        <div class="row-b"><span class="price">$7.00</span><a class="buy" href="#">add →</a></div>
+      </article>
+      <article class="zcard">
+        <span class="num">3</span>
+        <div class="thumb thumb-3 thumb-decorative"><span class="label">three list slots</span></div>
+        <h3>The Slow Motherhood Planner</h3>
+        <p>Four undated weeks. Three list slots per day. The reflection won't ask if you crushed it.</p>
+        <div class="row-b"><span class="price">$12.00</span><a class="buy" href="#">add →</a></div>
+      </article>
+      <article class="zcard">
+        <span class="num">4</span>
+        <div class="thumb thumb-4 thumb-decorative"><span class="label">written to the partner</span></div>
+        <h3>The Partner's Postpartum Playbook</h3>
+        <p>Twenty-four pages, written directly to the non-birthing partner. The gift she'd actually want.</p>
+        <div class="row-b"><span class="price">$9.00</span><a class="buy" href="#">add →</a></div>
+      </article>
+      <article class="zcard">
+        <span class="num">5</span>
+        <div class="thumb thumb-6 thumb-decorative"><span class="label">30 days quiet</span></div>
+        <h3>The Screen-Free Family Challenge</h3>
+        <p>Thirty daily cards for a quieter month. One small activity a day. No tracker shaming.</p>
+        <div class="row-b"><span class="price">$9.00</span><a class="buy" href="#">add →</a></div>
+      </article>
+      <article class="zcard">
+        <span class="num">6</span>
+        <div class="thumb thumb-7 thumb-decorative"><span class="label">a noticing tool</span></div>
+        <h3>The Postpartum Mind Journal</h3>
+        <p>Sixty pages of daily noticing and weekly check-ins. For when something's off and you can't name it yet.</p>
+        <div class="row-b"><span class="price">$14.00</span><a class="buy" href="#">add →</a></div>
+      </article>
+    </div>
+  </div>
+  <section class="signup">
+    <h2>— one letter, every other Sunday —</h2>
+    <p>A small note from the studio. A free printable each time. Unsubscribe whenever.</p>
+    <form class="form" onsubmit="return false;">
+      <input type="email" placeholder="your email" />
+      <button>send me letters</button>
+    </form>
+  </section>
+  <footer>
+    <span>SOOTHEMADE · 2026</span>
+    <span>made slowly</span>
+    <span>p. 14 / vol. I</span>
+  </footer>
+</section>
+
+</body>
+</html>
