@@ -39,20 +39,39 @@ These are things only you can do (account creation, ID verification, payouts, DN
 
 ## DNS (for the blog)
 
-### 5. Point `shop.varunvashisht.com` to GitHub Pages (~5 min, 1 hr DNS propagation)
+### 5. Set up Cloudflare Pages + point `shop.varunvashisht.com` (~15 min, near-instant propagation)
 
-When the GitHub Pages site is up:
+Cloudflare Pages publishes from your private GitHub repo and serves on your custom domain for free.
 
-- In your domain registrar's DNS panel (wherever `varunvashisht.com` is managed):
-  - Add `CNAME` record: `shop` → `<github-username>.github.io`
-  - Or A records pointing `shop.varunvashisht.com` to GitHub Pages IPs:
-    - 185.199.108.153
-    - 185.199.109.153
-    - 185.199.110.153
-    - 185.199.111.153
-- Wait ~1 hour for DNS to propagate.
+**One-time setup:**
 
-(I'll prompt with exact records when the Pages site is published.)
+1. Sign in at https://dash.cloudflare.com/ (create free account if needed)
+2. Sidebar → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**
+3. Authorize the Cloudflare GitHub App on your `CloudHasEars` repo (you can scope it to just this one)
+4. Pick the repo and the production branch (`main` once you merge, or whichever branch you'll publish from)
+5. Build settings (for Jekyll):
+   - **Framework preset:** Jekyll
+   - **Build command:** `bundle exec jekyll build`
+   - **Build output directory:** `_site`
+   - **Root directory:** leave as `/` for now (we'll add a `blog/` subdir if needed)
+6. Click **Save and Deploy**. First build takes 2–5 minutes.
+
+**Custom domain:**
+
+1. In the Pages project → **Custom domains** → **Set up a custom domain**
+2. Enter `shop.varunvashisht.com`
+3. Cloudflare prompts you for a CNAME — typically: `shop` → `<your-pages-project>.pages.dev`
+4. Add that CNAME at wherever `varunvashisht.com` DNS is managed. (If `varunvashisht.com` is already on Cloudflare, this is one click and done.)
+5. Wait ~5 min. Cloudflare auto-issues an SSL cert.
+
+**Why Cloudflare Pages over alternatives:**
+- Works with private GitHub repos on the free tier (GitHub Pages free does not)
+- Free tier is generous: 500 builds/month, unlimited bandwidth, unlimited sites
+- Auto-deploys on every push to the production branch
+- Built-in preview deployments on pull requests
+- Edge-cached globally, fast everywhere
+
+(I'll generate the Jekyll site scaffold in a later session — it slots into the repo as `blog/` or root, and Cloudflare auto-builds it.)
 
 ## Decisions you can make any time
 
@@ -87,7 +106,7 @@ Defer until you've seen the persona + Wave-1 products published. Don't spend $12
 - [ ] Pinterest domain verified
 - [ ] Pinterest API trial token requested
 - [ ] ConvertKit account created
-- [ ] DNS records added (when prompted)
+- [ ] Cloudflare Pages project created + custom domain added
 - [ ] Persona picked from `brand/persona.md`
 
 ## Estimated total time

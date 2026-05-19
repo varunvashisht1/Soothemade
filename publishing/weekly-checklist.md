@@ -48,7 +48,7 @@
 
 - [ ] If pillar blog post for this week is in `content/` folder, copy to your Jekyll site
 - [ ] Replace any [shop link] placeholders with real Etsy + Gumroad URLs
-- [ ] Push the Jekyll repo — GitHub Pages auto-deploys
+- [ ] Push the repo — Cloudflare Pages auto-deploys on the production branch
 - [ ] Test the post links
 
 ### Pinterest (~3 min)

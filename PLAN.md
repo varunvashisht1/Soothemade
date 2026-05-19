@@ -12,7 +12,7 @@ Build a year of polished inventory (digital products + blog posts) for the **new
 - **Brand domain:** `shop.varunvashisht.com` for now; separate `.com` purchased only if Etsy shows signal (~$10–12 deferred cost)
 - **Etsy:** Yes. ~$0.20/listing only when owner publishes (1 listing/week cadence → ~$10/year)
 - **Gumroad:** Yes. Free, 10% per sale
-- **Domain DNS:** GitHub Pages backed
+- **Domain DNS:** Cloudflare Pages (private repo, free tier)
 - **Email list:** ConvertKit free tier
 - **Pinterest:** Business API + manual scheduling fallback
 - **Design tools:** Canva Pro (owner has 1 month) + HTML/CSS → WeasyPrint
@@ -87,7 +87,7 @@ Built so owner can operate on Claude Pro ($20/mo) at ~20–30 min/week:
 - Gumroad account + payouts (10 min)
 - ConvertKit free tier signup (5 min)
 - Pinterest business account + API app (15 min, 1–2 day approval)
-- DNS: `shop.varunvashisht.com` → GitHub Pages (5 min)
+- DNS: `shop.varunvashisht.com` → Cloudflare Pages (5 min)
 
 ## How sessions resume
 

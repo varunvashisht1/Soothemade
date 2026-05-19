@@ -96,7 +96,7 @@ If refund rate exceeds 3% on any single product → the product is mispromised. 
 
 ### Domain + DNS
 
-- `shop.varunvashisht.com` points to GitHub Pages (DNS records in your registrar).
+- `shop.varunvashisht.com` is served by Cloudflare Pages from this private repo. CNAME to the Pages project lives in Cloudflare DNS.
 - If you buy a separate brand domain later: redirect or replace.
 - Renew domain annually. Set auto-renew to avoid losing the URL.
 

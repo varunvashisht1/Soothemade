@@ -59,7 +59,7 @@ Track only what you'd actually change behavior over.
 - **Etsy:** Shop Manager → Stats (views, favorites, traffic sources, sales)
 - **Gumroad:** Insights tab
 - **Pinterest:** Pinterest Analytics → Performance
-- **Blog:** GitHub Pages doesn't give analytics — add Plausible (free for low-traffic) if you want
+- **Blog:** Cloudflare Pages Web Analytics is free + privacy-respecting — enable in the Pages project settings. Plausible is a paid alternative if you outgrow it.
 - **Email:** ConvertKit dashboard
 
 ## Tracking workflow (~5 min)
