@@ -1,0 +1,45 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import Hero from '~/components/Hero.astro';
+import CategoryRow from '~/components/CategoryRow.astro';
+import ProductGrid from '~/components/ProductGrid.astro';
+import Manifesto from '~/components/Manifesto.astro';
+import JournalRow from '~/components/JournalRow.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+
+import {
+  featured,
+  featuredJournalPosts,
+  homeCategories,
+} from '~/data/featured-products';
+---
+<BaseLayout title="Soothemade Notes — quiet tools for new parenthood">
+  <Nav />
+
+  <Hero
+    headlinePre="Quiet tools for the"
+    headlineAccent="tender"
+    headlinePost="parts of new parenthood."
+    body="Printables, planners, and cards — made slowly, in plain language, for the unphotographed days."
+    primaryCta={{ href: '/shop', label: 'Visit the shop' }}
+    secondaryCta={{ href: '/freebies', label: 'Free printable' }}
+  />
+
+  <CategoryRow categories={homeCategories} />
+
+  <ProductGrid products={featured} />
+
+  <Manifesto
+    quote="Made for the version of you"
+    quoteAccent="no one tells you about"
+    tail="— the one at four in the morning, the one in the parking lot, the one who doesn't recognize her own week."
+  />
+
+  <JournalRow posts={featuredJournalPosts} />
+
+  <Newsletter />
+
+  <Footer />
+</BaseLayout>

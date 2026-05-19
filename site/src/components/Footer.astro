@@ -1,0 +1,107 @@
+---
+const columns = [
+  {
+    heading: 'Shop',
+    links: [
+      { href: '/shop', label: 'All printables' },
+      { href: '/shop?cat=pregnancy', label: 'For pregnancy' },
+      { href: '/shop?cat=postpartum', label: 'For postpartum' },
+      { href: '/shop?cat=partner', label: 'For the partner' },
+    ],
+  },
+  {
+    heading: 'Read',
+    links: [
+      { href: '/journal', label: 'The journal' },
+      { href: '/freebies', label: 'Free printables' },
+      { href: '/about', label: 'About the studio' },
+    ],
+  },
+  {
+    heading: 'Studio',
+    links: [
+      { href: '/contact', label: 'Contact' },
+      { href: '/policy', label: 'Returns & policy' },
+      { href: '/wholesale', label: 'Wholesale' },
+      { href: '/press', label: 'Press kit' },
+    ],
+  },
+];
+const year = new Date().getFullYear();
+---
+<footer class="foot rule-top">
+  <div class="row">
+    <div class="brand-block">
+      <div class="logo">Soothemade <em>Notes</em></div>
+      <p>A small apothecary of printables, planners, and cards. Made slowly, by hand, for the unphotographed parts of new parenthood.</p>
+    </div>
+    {columns.map((col) => (
+      <div>
+        <h4>{col.heading}</h4>
+        <ul>
+          {col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <div class="bottom">
+    <span>Soothemade · est. 2026 · made slowly</span>
+    <span>notes@soothemade.com</span>
+  </div>
+</footer>
+
+<style>
+  .foot {
+    background: var(--surface-deepest);
+    color: var(--ink-soft);
+    padding: 48px var(--sp-7) 32px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+  h4 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 16px;
+    margin: 0 0 14px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { margin-bottom: 8px; font-size: 13px; }
+  a { color: var(--ink-soft); transition: color var(--t-fast) var(--ease); }
+  a:hover { color: var(--accent); }
+  .brand-block .logo {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .brand-block .logo em { font-style: italic; color: var(--accent); }
+  .brand-block p {
+    font-size: 13px;
+    max-width: 280px;
+    margin: 0;
+    line-height: 1.55;
+  }
+  .bottom {
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+  }
+  @media (max-width: 880px) {
+    .foot { padding: 40px var(--sp-5) 24px; }
+    .row { grid-template-columns: 1fr 1fr; gap: 28px; }
+  }
+</style>

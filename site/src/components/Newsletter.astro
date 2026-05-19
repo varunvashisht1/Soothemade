@@ -1,0 +1,106 @@
+---
+interface Props {
+  heading?: string;
+  headingAccent?: string;
+  body?: string;
+}
+const {
+  heading = 'A letter, every other',
+  headingAccent = 'Sunday.',
+  body = 'One short note from the studio. A free printable in every issue. No tracking pixels, no upsells, no doorbell ringing.',
+} = Astro.props;
+---
+<section class="newsletter rule-top">
+  <span class="ornament" aria-hidden="true">
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4">
+      <path d="M6 30 L 30 6 M 6 6 L 12 6 L 12 30 L 6 30 Z M 30 6 L 30 12 L 6 30" />
+    </svg>
+  </span>
+  <h2>{heading} <em>{headingAccent}</em></h2>
+  <p>{body}</p>
+  <form method="POST" action="/api/subscribe">
+    <label class="visually-hidden" for="newsletter-email">Your email</label>
+    <input
+      id="newsletter-email"
+      type="email"
+      name="email"
+      placeholder="your email"
+      autocomplete="email"
+      required
+    />
+    <button type="submit">subscribe →</button>
+  </form>
+  <div class="fine">Unsubscribe whenever · we never share addresses</div>
+</section>
+
+<style>
+  .newsletter {
+    background: var(--surface-deep);
+    padding: 72px var(--sp-7);
+    text-align: center;
+  }
+  .ornament {
+    color: var(--sage);
+    margin-bottom: 22px;
+    display: inline-block;
+  }
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    margin: 0 0 12px;
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  h2 em { font-style: italic; color: var(--accent); }
+  p {
+    color: var(--ink-soft);
+    margin: 0 auto 26px;
+    max-width: 480px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  form {
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 1px solid var(--ink);
+  }
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 4px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    outline: none;
+  }
+  input::placeholder { color: var(--ink-faint); }
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--accent);
+    font-size: 15px;
+    padding: 12px 8px;
+  }
+  .fine {
+    color: var(--ink-faint);
+    font-size: 11.5px;
+    margin-top: 16px;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0);
+    white-space: nowrap; border: 0;
+  }
+  @media (max-width: 880px) {
+    .newsletter { padding: 56px var(--sp-5); }
+    h2 { font-size: 28px; }
+  }
+</style>

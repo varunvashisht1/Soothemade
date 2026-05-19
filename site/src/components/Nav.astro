@@ -1,0 +1,68 @@
+---
+const links = [
+  { href: '/shop', label: 'Catalog' },
+  { href: '/journal', label: 'Journal' },
+  { href: '/freebies', label: 'Free Printables' },
+  { href: '/about', label: 'About' },
+];
+---
+<nav class="topnav rule-bottom">
+  <a href="/" class="logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26" aria-hidden="true">
+      <path
+        d="M12 2 C 8 8, 8 14, 12 22 M 12 22 C 16 14, 16 8, 12 2 M 12 22 L 8 16 M 12 22 L 16 16 M 12 14 L 6 10 M 12 14 L 18 10"
+        stroke-linecap="round"
+      />
+    </svg>
+    <span>Soothemade <em>Notes</em></span>
+  </a>
+  <div class="links">
+    {links.map((l) => <a href={l.href}>{l.label}</a>)}
+  </div>
+  <a href="/cart" class="basket">Basket · 0</a>
+</nav>
+
+<style>
+  .topnav {
+    padding: var(--sp-5) var(--sp-7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--sp-5);
+  }
+  .logo {
+    font-family: var(--font-serif);
+    font-size: 21px;
+    color: var(--ink);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo svg { color: var(--sage); }
+  .logo em { font-style: italic; color: var(--accent); font-weight: 400; margin-left: 2px; }
+  .links {
+    display: flex;
+    gap: 30px;
+    font-size: var(--fs-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-wide);
+  }
+  .links a { color: var(--ink-soft); transition: color var(--t-fast) var(--ease); }
+  .links a:hover { color: var(--accent); }
+  .basket {
+    border: 1px solid var(--rule-strong);
+    padding: 7px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 11.5px;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-wide);
+    transition: border-color var(--t-fast) var(--ease);
+  }
+  .basket:hover { border-color: var(--accent); }
+  @media (max-width: 880px) {
+    .topnav { flex-wrap: wrap; padding: var(--sp-4) var(--sp-5); }
+    .links { order: 3; flex-basis: 100%; justify-content: center; }
+  }
+</style>

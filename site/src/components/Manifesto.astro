@@ -1,0 +1,48 @@
+---
+interface Props { quote: string; quoteAccent?: string; tail?: string; cite?: string; }
+const {
+  quote,
+  quoteAccent,
+  tail,
+  cite = '— the soothemade promise',
+} = Astro.props;
+---
+<section class="manifesto rule-top">
+  <blockquote>
+    {quote}{quoteAccent && (<>{' '}<em>{quoteAccent}</em></>)}{tail && (<>{' '}{tail}</>)}
+  </blockquote>
+  <cite>{cite}</cite>
+</section>
+
+<style>
+  .manifesto {
+    padding: 80px var(--sp-7);
+    text-align: center;
+    background: var(--surface-deep);
+  }
+  blockquote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 32px;
+    line-height: 1.3;
+    margin: 0 auto;
+    max-width: 720px;
+    color: var(--ink);
+    font-weight: 300;
+  }
+  blockquote em { color: var(--accent); }
+  cite {
+    display: block;
+    font-style: normal;
+    font-family: var(--font-sans);
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-widest);
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 28px;
+  }
+  @media (max-width: 880px) {
+    .manifesto { padding: 56px var(--sp-5); }
+    blockquote { font-size: 22px; }
+  }
+</style>
