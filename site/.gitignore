@@ -21,3 +21,7 @@ yarn-error.log*
 .idea/
 *.swp
 .DS_Store
+
+# local screenshots / snapshots
+homepage-*.png
+*.snapshot.png
