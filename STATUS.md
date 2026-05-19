@@ -4,50 +4,61 @@ Future Claude sessions: read this first, then `PLAN.md`, then continue from "Nex
 
 ## Where we are
 
-**Phase:** 1 — Deep research
-**Day (of 10):** 1 (partial)
-**Last session ended:** First wave of Phase 1 research artifacts committed. Initial problem→product matrix drafted.
+**Phase:** 2 — Build (in progress)
+**Day-equivalent:** ~6 of 10
+**Last session ended:** Wave 1 products complete (P01–P05). Brand identity, research, and Day 3 review report all committed.
 
 ## Done
 
-- [x] Master plan agreed (see `PLAN.md`)
-- [x] Branch + folder scaffold + draft PR (#1)
-- [x] **Stream 01 — Reddit mining:** access blocked; synthesized from training + secondary sources. See `research/01-reddit-mining/note-on-access.md`.
-- [x] **Stream 02 — Etsy teardown:** competitor market mapped, 13 segments scored, 13 gaps identified. See `research/02-etsy-teardown/findings.md`.
-- [x] **Stream 04 — Pinterest trends:** 2026 trend report extracted. Rising terms with YoY % gains. Aesthetic shift identified. Seasonal calendar drafted. See `research/04-pinterest-trends/findings.md`.
-- [x] **Stream 05 — Customer journey:** 10-phase pain-point map (TTC → toddler). Buyer segments ranked by WTP. See `research/05-customer-journey/pain-points.md`.
-- [x] **Stream 06 — Problem→product matrix (initial cut):** 50 candidate products scored. Top 8 identified. See `research/06-problem-product-matrix/initial-matrix.md`.
+### Days 1–3 — Research + Brand
+- [x] Master plan, scaffold, PR #1 (draft)
+- [x] Research Stream 02 (Etsy teardown)
+- [x] Research Stream 03 (Blog SERP teardown — top 8 candidates validated)
+- [x] Research Stream 04 (Pinterest 2026 trends — full report)
+- [x] Research Stream 05 (Customer journey 10-phase map)
+- [x] Research Stream 06 (50-product initial matrix + final top 30 with wave plan)
+- [x] Research Stream 01 (Reddit) — access blocked; documented + synthesized from training
+- [x] `research/REPORT.md` (Day 3 review gate)
+- [x] `brand/persona.md` (3 options; default = Maya)
+- [x] `brand/voice-guide.md` (tone calibration, banned phrases, structural rules)
+- [x] `brand/visual-identity.md` (warm-vintage palette, Fraunces typography)
+- [x] `publishing/manual-setup-checklist.md` (owner's parallel tasks)
 
-## In flight
+### Days 4–6 — Phase 2 build (Wave 1)
+- [x] **P01** — Sensory Play Activity Card Deck (80 cards, 4 age bands) — ANCHOR
+- [x] **P02** — The "Saying No" Script Pack
+- [x] **P03** — Slow Motherhood Weekly Planner (BRAND-DEFINING)
+- [x] **P04** — Partner's Postpartum Playbook
+- [x] **P05** — 30-Day Screen-Free Family Challenge
 
-- [ ] **Stream 03 — Blog SERP teardown:** still pending. Need to identify top 30 long-tail queries with rank-able gaps.
-- [ ] **Stream 04 — Pinterest deeper dive:** trend report done; specific per-product visual angles still pending.
+Each Wave 1 product includes: full content, Etsy listing, Gumroad sales page, 5 Pinterest pin specs, ElevenLabs video-pin script, mockup spec.
 
-## Next up (priorities for next session)
+## Next up (priority order)
 
-1. **Blog SERP teardown** — pick 30 candidate pillar-post topics from the matrix's top products. WebSearch each, score top SERP for weakness, identify keyword clusters.
-2. **Brand persona options** — draft 2–3 persona options in `brand/persona.md` for owner to choose between at Day 3 checkpoint.
-3. **Brand voice + visual identity** — draft `brand/voice-guide.md` and `brand/visual-identity.md`. Pinterest 2026 aesthetic shift (warm vintage / 90s-coded) should drive visual direction.
-4. **Final Top 30 list** — synthesize Streams 1–6 into `research/06-problem-product-matrix/top-30.md` with Wave 1 / Wave 2 / Wave 3 plan.
-5. **Compile `research/REPORT.md`** — Day 3 owner-review deliverable.
+1. **PDF render infrastructure** — WeasyPrint script + HTML/CSS templates so `content.md` → `product.pdf` works
+2. **Publishing calendar** (`publishing/calendar.md`) — 52-week schedule mapping each week to a product launch + blog post + Pinterest pin
+3. **Pro-mode toolkit starter** — `toolkit/prompts/` with 10–15 core prompt templates the owner can paste into Claude Pro
+4. **Wave 2 products** — P06 (c-section recovery), P09 (postpartum anxiety journal), P10 (twin pregnancy), P15 (family traditions)
+5. **Pillar blog post #1** — write one complete 2500+ word pillar post as the template; the rest follow the same structure
+6. **Publishing runbook** (`publishing/runbook.md`) — operations manual for the slow-drip publishing flow
 
-## Key signals to remember
+## Wave 2 / Wave 3 plan
 
-- **Pinterest 2026 is the strongest leading indicator.** Top rising terms: sensory play +1070%, vintage baby 90s +600%, daily routine chart +575%, cognitive worksheets +540%, no phone summer +340%, slow motherhood +310%, positive discipline +295%.
-- **Aesthetic shift:** out goes minimalist-Goodnotes, in comes warm-vintage / 90s-coded. Defensible differentiation against saturated minimalist competitors.
-- **Underserved high-WTP segments:** working moms (back-to-work), NICU/preemie, twins, postpartum mental health, c-section recovery, partner-companion guides.
-- **Avoid:** straight pregnancy planners (saturated), generic baby shower games (race to bottom), sleep training methods (YMYL), feeding schedule prescriptions (YMYL).
+Already specced in `research/06-problem-product-matrix/top-30.md`. P06–P15 are Wave 2; P16–P30 are Wave 3. Each will follow the same per-product folder structure as Wave 1.
 
-## Decisions still open (owner, at Day 3 checkpoint)
+## What the owner can do now (parallel)
 
-- Final sub-niche pick (likely a 5–8 product Wave 1 from the top tier, then refining)
-- Persona choice (2–3 options to be proposed)
-- Inventory count: 30 products + 30 posts (default, owner can adjust)
-- Whether to keep `shop.varunvashisht.com` or buy brand domain
+See `publishing/manual-setup-checklist.md`. Highlights:
+- Create Etsy seller account (30 min + 1–3 day ID verify)
+- Create Gumroad account (10 min)
+- Pinterest Business + API request (15 min + 1–3 day approval)
+- ConvertKit signup (5 min)
+- DNS for `shop.varunvashisht.com` (will prompt when site is up)
+- Read `brand/persona.md` + pick persona (A / B / C — default Maya)
+- Read `research/REPORT.md` to gate the build direction
 
-## Access constraints discovered
+## Decisions still open (owner)
 
-- Reddit (`reddit.com`, `old.reddit.com`): blocked
-- Etsy listing pages: 403 Forbidden
-- Most aggregator blogs: 403
-- **What works:** Google WebSearch returns SERP titles + AI-summarized snippets reliably. This is enough for market signal — we get 80% of the value at 20% of the data fidelity.
+- Persona: A / B / C (default: B, "Maya")
+- Whether to buy a separate brand `.com` (defer until Wave 1 ships and signal arrives)
+- Wave 1 launch order (default per `top-30.md`)
