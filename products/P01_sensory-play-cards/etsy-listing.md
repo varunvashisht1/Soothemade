@@ -98,7 +98,7 @@ extra care are flagged.
 This is a planning tool, not pediatric advice. When in doubt,
 call your pediatrician.
 
-— the shop
+— Soothemade
 ```
 
 ## Photo plan (10 images)

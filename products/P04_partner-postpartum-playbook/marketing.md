@@ -93,7 +93,7 @@ situation, talk to a healthcare provider. If your partner sounds
 like she's drowning, the US Maternal Mental Health Hotline is
 1-833-852-6262.
 
-— the shop
+— Soothemade
 
 p.s. If you're getting this for someone you love — bonus points for
 also getting them the "Saying No" Script Pack (it's the partner /

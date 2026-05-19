@@ -108,7 +108,7 @@ or medical advice. If you're struggling, please reach out to a
 professional. The US Maternal Mental Health Hotline is
 1-833-852-6262.
 
-— the shop
+— Soothemade
 ```
 
 ## Photo plan (Etsy allows 10 images)

@@ -103,7 +103,7 @@ YOUR FILES
 
 Use it badly. That's how it works.
 
-— the shop
+— Soothemade
 ```
 
 **Bundle upsell:** Bundle with P02 (Saying No Scripts) for the "tough seasons of mom-life" pack — $16 instead of $19.

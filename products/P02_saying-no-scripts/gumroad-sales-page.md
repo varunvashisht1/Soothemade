@@ -151,7 +151,7 @@ products that don't water down the truth.
 I hope this saves you a hundred small conversations you didn't have
 the energy for.
 
-— the shop
+— Soothemade
 
 p.s. If you find one specific script that saves you, write back and
 tell me. The next pack is being shaped by what's actually working.
@@ -195,7 +195,7 @@ That's it. One script. The rest will get easier.
 If a specific script saves you a hard day this week, write me back
 and tell me. I want to know.
 
-— the shop
+— Soothemade
 
 p.s. If you'd like the matching Partner's Postpartum Playbook —
 it's the guide written FOR your partner so you stop having to be

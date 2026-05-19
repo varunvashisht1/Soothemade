@@ -103,7 +103,7 @@ instructions. If something feels wrong, call your OB.
 Mental health: US Maternal Mental Health Hotline 1-833-852-6262.
 Crisis: 988 (Suicide & Crisis Lifeline).
 
-— the shop
+— Soothemade
 ```
 
 ## Photo plan

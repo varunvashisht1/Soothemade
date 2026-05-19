@@ -8,8 +8,11 @@ Build a year of polished inventory (digital products + blog posts) for the **new
 
 ## Locked constraints
 
-- **Niche:** new parents / baby care (sub-niche TBD from Day 3 research report)
-- **Brand domain:** `shop.varunvashisht.com` for now; separate `.com` purchased only if Etsy shows signal (~$10–12 deferred cost)
+- **Master brand:** **Soothemade** — group brand expandable across niches (see [`brand/architecture.md`](./brand/architecture.md))
+- **Current sub-line:** **Soothemade Notes** — printables + planners + cards for new parents
+- **Master domain:** `soothemade.com` (umbrella site, owned)
+- **Current sub-line domain:** `notes.soothemade.com`
+- **Niche (current):** new parents / baby care
 - **Etsy:** Yes. ~$0.20/listing only when owner publishes (1 listing/week cadence → ~$10/year)
 - **Gumroad:** Yes. Free, 10% per sale
 - **Domain DNS:** Cloudflare Pages (private repo, free tier)
@@ -87,7 +90,7 @@ Built so owner can operate on Claude Pro ($20/mo) at ~20–30 min/week:
 - Gumroad account + payouts (10 min)
 - ConvertKit free tier signup (5 min)
 - Pinterest business account + API app (15 min, 1–2 day approval)
-- DNS: `shop.varunvashisht.com` → Cloudflare Pages (5 min)
+- DNS: `notes.soothemade.com` → Cloudflare Pages (5 min)
 
 ## How sessions resume
 

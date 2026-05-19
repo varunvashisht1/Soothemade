@@ -82,7 +82,7 @@ Search for "slow motherhood" is up 310% YoY. This isn't a trend —
 it's a correction. We've been doing motherhood-as-performance for
 too long.
 
-— the shop
+— Soothemade
 ```
 
 ## Photo plan

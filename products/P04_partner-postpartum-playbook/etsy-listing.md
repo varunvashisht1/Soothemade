@@ -88,7 +88,7 @@ psychological, or legal advice. For specific situations, contact a
 healthcare provider. If your partner is in crisis, US Maternal
 Mental Health Hotline: 1-833-852-6262.
 
-— the shop
+— Soothemade
 ```
 
 ## Photo plan

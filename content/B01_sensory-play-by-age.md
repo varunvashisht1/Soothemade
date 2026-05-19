@@ -194,7 +194,7 @@ That's the whole thing.
 
 ---
 
-### Related from the shop
+### Related from Soothemade Notes
 
 - **The Sensory Play Activity Card Deck (Ages 0–3)** — 80 cards across 4 age bands. Stuff you already own. → [See it on Etsy →](/products/sensory-play-cards) or [Gumroad →](https://gumroad.com/l/sensory-play-cards)
 - **The Slow Motherhood Weekly Planner** — to plan the week so sensory play actually happens (and so you don't burn out fitting it in). → [See it →](/products/slow-motherhood-planner)

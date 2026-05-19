@@ -92,7 +92,7 @@ A NOTE
 This isn't a "screens are bad" detox. Screens aren't bad. They're
 a tool. We just want our kids to have a deck of other tools too.
 
-— the shop
+— Soothemade
 ```
 
 ## Photo plan

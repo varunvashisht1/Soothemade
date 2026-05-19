@@ -15,7 +15,7 @@
 
 ## Why this is the anchor
 
-If the shop had one product, it would be this one:
+If Soothemade Notes had one product, it would be this one:
 - Largest TAM (every parent of a 0–3 year old)
 - Strongest Pinterest tailwind in the entire catalog
 - Multiple price points (test buyer commitment)

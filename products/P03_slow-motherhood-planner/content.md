@@ -25,7 +25,7 @@ Slow motherhood doesn't mean doing less. It means refusing to perform what you'r
 
 Use it badly. That's how this works.
 
-— *the brand*
+— *Soothemade*
 
 ---
 
@@ -545,7 +545,7 @@ The undated, no-deadline, no-shame nature of this thing is the entire point. Use
 
 Slow is a practice. It takes time. And probably more than one planner.
 
-— *the brand*
+— *Soothemade*
 
 ---
 

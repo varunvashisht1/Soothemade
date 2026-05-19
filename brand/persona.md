@@ -1,5 +1,7 @@
 # Brand Persona — 3 Options to Pick From
 
+For **Soothemade Notes** (the current sub-line). The master brand is **Soothemade**; persona applies primarily to how this niche is voiced. Future sub-lines (Soothemade Kitchen, etc.) can re-use Option B with a new sub-line-appropriate persona, or default to a brand-only voice.
+
 Pick 1. Voice and visual identity flow from this choice. Each option is built to match the Pinterest 2026 "warm, slow, intentional" aesthetic shift.
 
 ---
@@ -33,7 +35,7 @@ Pick 1. Voice and visual identity flow from this choice. Each option is built to
 - Trained postpartum doula (DONA International certification path), now retired
 - Mom of two: a 4-year-old and a 1-year-old
 - Lives somewhere intentionally vague (Pacific Northwest / Mountain West coded)
-- Started the shop because her own pregnancies highlighted that "no one is making the planner that meets you where you actually are"
+- Started Soothemade Notes because her own pregnancies highlighted that "no one is making the planner that meets you where you actually are"
 
 **Tagline candidate:** *"Made for the version of you no one tells you about."*
 

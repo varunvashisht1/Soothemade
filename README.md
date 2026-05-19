@@ -1,52 +1,46 @@
-# CloudHasEars
-The "No-Copy-Paste" Manifesto: Why Local LLMs are Mandatory for PMs & BAs 🔒
+# Soothemade
 
-The Scenario: It’s 4:00 PM on a Tuesday. The caffeine has worn off. You’re staring at a massive, unstructured mess of requirements. You highlight the text. Ctrl+C. You look at that AI chatbot in your browser. You hesitate.
+> Slow, considered things to use through the unphotographed parts of life.
 
-We know we shouldn't do it. We know that pasting our internal prioritization matrix into the ether is basically forwarding our IP to a server farm we don't control. But the deadline is there, and the fatigue is real.
+This repo is the working catalog for **Soothemade** — a group brand of digital and lifetime-of-use goods, expandable across niches. The current line is **Soothemade Notes**: printables, planners, journals, and card decks for new parents.
 
-🛑 The Reality Check
+## What's here
 
-You don't have to choose between speed and security anymore.
+| Path | What it is |
+|---|---|
+| [`PLAN.md`](./PLAN.md) | The durable plan. Read this first. |
+| [`STATUS.md`](./STATUS.md) | Where work currently is. Read this second. |
+| [`brand/`](./brand/) | Persona options, voice guide, visual identity, master/sub-brand architecture. |
+| [`research/`](./research/) | Six-stream market research. `REPORT.md` is the Day-3 review gate. |
+| [`products/`](./products/) | One folder per product. Currently: P01–P06 (Wave 1 + first Wave 2). |
+| [`content/`](./content/) | Pillar blog posts in Jekyll-ready Markdown. |
+| [`toolkit/`](./toolkit/) | Pro-mode prompts, decision trees, customer-service templates, knowledge base. |
+| [`publishing/`](./publishing/) | 52-week calendar, weekly checklist, runbook, metrics scaffold. |
+| [`scripts/`](./scripts/) | WeasyPrint PDF render pipeline. |
 
-I stopped fighting the "Cloud vs. Privacy" battle and went Local. It sounds complicated, but it's really not. Right now, models are running directly on laptops and local servers, capable of crunching data without a single byte leaving the building.
+## Brand architecture
 
-🚀 Why This Matters (For PMs, BAs, and Humans)
+**Soothemade** is the umbrella brand. Each niche becomes a sub-line:
 
-1. The "Oops" Factor 🙈
+| Sub-brand | Niche | URL |
+|---|---|---|
+| **Soothemade Notes** | Current: printables for new parents | `notes.soothemade.com` |
+| **Soothemade Kitchen** *(future)* | Recipe + meal-prep printables | `kitchen.soothemade.com` |
+| **Soothemade Studio** *(future)* | Solopreneur / creator templates | `studio.soothemade.com` |
+| **Soothemade Field** *(future)* | Travel + outdoor guides | `field.soothemade.com` |
 
-Working with physical security systems, HR data, or unreleased energy reports means "oops" isn't an option.
+`soothemade.com` itself hosts the umbrella overview and routes visitors to the right sub-line.
 
-Cloud: Potential leak.
+## How sessions resume
 
-Local: I can paste confidential text without the guilt.
+Working branch: `claude/content-automation-plan-FMkcj`.
 
-2. Making Legal Happy ⚖️
+Any new session should:
+1. Read `STATUS.md` for current state
+2. Read `PLAN.md` for durable plan
+3. Continue from STATUS's "Next up" section
+4. Commit small, push, update STATUS
 
-It’s a lot easier to get approval for tools that don't send data to third parties.
+## Operations
 
-Result: It stays on the machine. Gary from IT is happy. Legal is happy. I am happy.
-
-3. Ownership 📦
-
-You aren't renting intelligence; you're building a private library.
-
-🛠️ The Local Stack (Recommended Models)
-
-These models run on your infrastructure (or even a decent laptop) and punch way above their weight class:
-
-🦙 Llama 3: Great for reasoning and complex logic.
-
-🌪️ Mistral: Efficient and punchy.
-
-🔬 Phi-3: Surprisingly capable for its size.
-
-💡 The Irony
-
-We spend millions on firewalls, VMS encryption, and visitor management systems to physically secure our buildings... only to digitally escort our data out the front door via a browser prompt because we needed a quick summary. 🚪
-
-The Takeaway
-
-If you want to use AI to crush your backlog without the security anxiety, look into local LLMs. It’s smarter, safer, and honestly, it helps me sleep better at night knowing the "Secret Sauce" stayed in the kitchen. 🤫
-
-Tags: #LocalLLM #DataPrivacy #BusinessAnalysis #CyberSecurity #OpenSource
+After the build phase ends, ongoing work is ~20 min/week per [`publishing/weekly-checklist.md`](./publishing/weekly-checklist.md), supported by the Pro-mode toolkit ([`toolkit/`](./toolkit/)).

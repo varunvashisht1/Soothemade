@@ -2,9 +2,21 @@
 
 > Condensed summary of all Phase 1 research. Paste relevant sections into Claude Pro prompts to give it niche context without re-researching. This is the file the Pro-mode prompts reference.
 
+## The brand (paste at the top of any prompt)
+
+```
+Brand: Soothemade — a group brand of slow, considered, lifetime-of-use
+digital and printed goods. Current active sub-line is Soothemade Notes:
+printables, planners, journals, and card decks for new parents
+(pregnancy through age 3). Master domain soothemade.com hosts an
+umbrella overview; current sub-line lives at notes.soothemade.com.
+Etsy shop name: Soothemade. Reserved future sub-lines: Soothemade
+Kitchen, Soothemade Studio, Soothemade Field.
+```
+
 ## The niche (1 paragraph)
 
-New-parent / baby-care digital products. Etsy + Gumroad split. Slow-drip publishing (~1 product/week). Aesthetic differentiation via warm-vintage / 70s-90s-coded palette to ride Pinterest 2026 trend (vs saturated minimalist-Goodnotes). Brand voice: "a slightly older friend who's been through it" — first-person, warm-direct, never preachy, no toxic positivity.
+New-parent / baby-care digital products (Soothemade Notes line). Etsy + Gumroad split. Slow-drip publishing (~1 product/week). Aesthetic differentiation via warm-vintage / 70s-90s-coded palette to ride Pinterest 2026 trend (vs saturated minimalist-Goodnotes). Brand voice: "a slightly older friend who's been through it" — first-person, warm-direct, never preachy, no toxic positivity.
 
 ## The brand voice (paste this when asking Claude for any copy)
 

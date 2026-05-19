@@ -93,7 +93,7 @@ YOUR FILES
 
 You don't need 30 perfect days. You need a basket on the counter.
 
-— the shop
+— Soothemade
 ```
 
 **Bundle upsell:** Bundle with P01 (Sensory Play Cards) for younger families = $24 (save $6).

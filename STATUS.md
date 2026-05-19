@@ -2,11 +2,20 @@
 
 Future Claude sessions: read this first, then `PLAN.md`, then continue from "Next up."
 
+## Brand (locked)
+
+- **Master brand:** **Soothemade** (group brand, expandable to multiple niche sub-lines — see `brand/architecture.md`)
+- **Master domain:** `soothemade.com` (owned)
+- **Current sub-line:** **Soothemade Notes** — printables, planners, cards for new parents
+- **Sub-line domain:** `notes.soothemade.com`
+- **Etsy shop name:** Soothemade
+- **GitHub repo:** `varunvashisht1/Soothemade` (work currently lives in CloudHasEars; migrating via mirror push)
+
 ## Where we are
 
-**Phase:** Production complete for Wave 1 + supporting infrastructure
+**Phase:** Production complete for Wave 1 + supporting infrastructure + brand re-lock
 **Day-equivalent:** ~8 of 10
-**Last session ended:** Full Wave 1 (5 products) + first Wave 2 product (P06) + first pillar blog post (B01) + complete Pro-mode toolkit starter + publishing infrastructure all committed.
+**Last session ended:** Brand renamed to Soothemade with master/sub-line architecture documented. Domain refs swept across docs. Migration to `varunvashisht1/Soothemade` repo pending via owner's mirror push.
 
 ## Done
 

@@ -122,7 +122,7 @@ This deck doesn't have a clever twist. It just gives you the
 infrastructure to do something better than scrolling Instagram
 during the 4pm wall.
 
-— the shop
+— Soothemade
 ```
 
 ## Pinterest pins (5 + 1 video)

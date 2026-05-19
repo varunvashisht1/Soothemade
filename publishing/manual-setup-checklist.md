@@ -27,7 +27,7 @@ These are things only you can do (account creation, ID verification, payouts, DN
 
 - Go to https://business.pinterest.com/
 - Convert your existing personal account OR create a fresh one (recommended fresh — separate from personal brand).
-- Verify your domain (will be `shop.varunvashisht.com`).
+- Verify your domain (will be `notes.soothemade.com`).
 - Apply for Pinterest API access via https://developers.pinterest.com/ (request a Trial Access Token for our app — say it's for content scheduling).
 - This approval can take 1–3 days. Apply early.
 
@@ -39,7 +39,7 @@ These are things only you can do (account creation, ID verification, payouts, DN
 
 ## DNS (for the blog)
 
-### 5. Set up Cloudflare Pages + point `shop.varunvashisht.com` (~15 min, near-instant propagation)
+### 5. Set up Cloudflare Pages + point `notes.soothemade.com` (~15 min, near-instant propagation)
 
 Cloudflare Pages publishes from your private GitHub repo and serves on your custom domain for free.
 
@@ -59,7 +59,7 @@ Cloudflare Pages publishes from your private GitHub repo and serves on your cust
 **Custom domain:**
 
 1. In the Pages project → **Custom domains** → **Set up a custom domain**
-2. Enter `shop.varunvashisht.com`
+2. Enter `notes.soothemade.com`
 3. Cloudflare prompts you for a CNAME — typically: `shop` → `<your-pages-project>.pages.dev`
 4. Add that CNAME at wherever `varunvashisht.com` DNS is managed. (If `varunvashisht.com` is already on Cloudflare, this is one click and done.)
 5. Wait ~5 min. Cloudflare auto-issues an SSL cert.
