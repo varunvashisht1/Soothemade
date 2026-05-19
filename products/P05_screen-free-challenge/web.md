@@ -14,14 +14,14 @@ featured: true
 featuredOrder: 5
 ymyl: false
 summary: >-
-  Thirty daily challenge cards. One small activity per day — most under twenty minutes,
+  Thirty daily challenge cards. One small activity per day, most under twenty minutes,
   most using stuff you already own. Plus a parent-prep guide and a no-shame tracker.
 crossSell: [sensory-play-cards, slow-motherhood-planner]
 ---
 
 A quiet month is harder than people make it sound. The kids do not voluntarily turn off the screens. You do not voluntarily stop checking your phone. The activity ideas you had on day one will be gone by day three.
 
-This is the deck I made when I tried this for the first time and gave up on day five. The second time — with this deck — we made it twenty-eight days. The two we skipped, the deck was fine with.
+This is the deck I made when I tried this for the first time and gave up on day five. The second time, with this deck, we made it twenty-eight days. The two we skipped, the deck was fine with.
 
 ## What's inside
 
@@ -42,4 +42,4 @@ Instant-download PDF, US Letter + A4. Personal use only.
 
 ---
 
-*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*
+*From [Soothemade Notes](/), a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*

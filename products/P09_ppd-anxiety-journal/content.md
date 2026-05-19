@@ -1,12 +1,12 @@
 # A Postpartum Mind Journal
 
-*A 60-page noticing-and-tracking journal for the first year of new parenthood. Not a diagnosis tool. A way to see your own pattern — so that when you talk to someone who can help, you have something to show them.*
+*A 60-page noticing-and-tracking journal for the first year of new parenthood. Not a diagnosis tool. A way to see your own pattern, so that when you talk to someone who can help, you have something to show them.*
 
 ---
 
 ## Before you open this
 
-If you are thinking about hurting yourself or your baby — right now, while reading this — please put this journal down and call **988** (US Suicide & Crisis Lifeline) or the **US Maternal Mental Health Hotline at 1-833-852-6262**. Both are 24/7, free, and confidential.
+If you are thinking about hurting yourself or your baby, right now, while reading this, please put this journal down and call **988** (US Suicide & Crisis Lifeline) or the **US Maternal Mental Health Hotline at 1-833-852-6262**. Both are 24/7, free, and confidential.
 
 A journal is for noticing patterns. It is not for crisis. If you are in crisis, you need a human, not a page.
 
@@ -14,17 +14,17 @@ A journal is for noticing patterns. It is not for crisis. If you are in crisis, 
 
 ## A note from me
 
-I'm not a therapist. I'm not a doctor. I made this because — in the year after my second baby was born — I knew something was off and I could not have told you what.
+I'm not a therapist. I'm not a doctor. I made this because, in the year after my second baby was born, I knew something was off and I could not have told you what.
 
 I'd say "I'm fine" to the pediatrician and mean it. Then I'd cry in the parking lot and not know why. Then I'd be fine again by dinner. When I finally got to a therapist's office, she asked me how I'd been feeling and I genuinely could not remember. The past three months were a blur.
 
-This journal is the thing I wish I'd had. Not to *fix* anything. Just to keep a record — so that when I sat down with a provider, I could hand them a few weeks of notes and say "here. This is what's been happening."
+This journal is the thing I wish I'd had. Not to *fix* anything. Just to keep a record, so that when I sat down with a provider, I could hand them a few weeks of notes and say "here. This is what's been happening."
 
 If you're using this, you might already suspect something is going on. Or someone close to you might. Or you might just be a person who wants to take care of yourself proactively in a season that is famously hard.
 
 All of those are fine reasons.
 
-— *Soothemade*
+*Soothemade*
 
 ---
 
@@ -54,7 +54,7 @@ All of those are fine reasons.
 - 60 pages, undated. Start whenever.
 - Use it for one week at a time. Don't try to "catch up."
 - Skip pages that don't apply. There is no rule.
-- Bring it to your next appointment. You don't need to hand the whole thing over — flag a few pages. Even saying "I've been tracking this for three weeks" tells a provider a lot.
+- Bring it to your next appointment. You don't need to hand the whole thing over, flag a few pages. Even saying "I've been tracking this for three weeks" tells a provider a lot.
 
 ---
 
@@ -62,22 +62,22 @@ All of those are fine reasons.
 
 Different names get used for "postpartum mental health stuff." Here's what we mean when we say each:
 
-- **Baby blues** — mood shifts, tearfulness, overwhelm in the first ~2 weeks postpartum. Affect ~80% of birthing parents. Usually resolve on their own by day 14.
-- **Postpartum depression (PPD)** — persistent low mood, hopelessness, loss of interest, sleep/appetite changes, that don't resolve. Can start any time in the first year. Affect ~1 in 7 birthing parents and ~1 in 10 non-birthing partners.
-- **Postpartum anxiety (PPA)** — racing thoughts, intrusive scary thoughts, inability to relax even when baby is asleep, physical anxiety symptoms. Often overlaps with PPD but can occur alone. Estimated 1 in 5.
-- **Postpartum OCD (PPOCD)** — intrusive, unwanted, often disturbing thoughts (often about harm to the baby), accompanied by checking or avoidance behaviors. The intrusive thoughts in PPOCD are not desires — they're distressing precisely because the parent does NOT want them. Treatable. Important to flag to a provider.
-- **Postpartum psychosis** — rare (~1–2 per 1000), but a medical emergency. Symptoms include: feeling disconnected from reality, hearing voices, paranoid thoughts, manic energy, beliefs that don't fit reality. If this is you or someone you know — go to the ER. Now.
+- **Baby blues**, mood shifts, tearfulness, overwhelm in the first ~2 weeks postpartum. Affect ~80% of birthing parents. Usually resolve on their own by day 14.
+- **Postpartum depression (PPD)**, persistent low mood, hopelessness, loss of interest, sleep/appetite changes, that don't resolve. Can start any time in the first year. Affect ~1 in 7 birthing parents and ~1 in 10 non-birthing partners.
+- **Postpartum anxiety (PPA)**, racing thoughts, intrusive scary thoughts, inability to relax even when baby is asleep, physical anxiety symptoms. Often overlaps with PPD but can occur alone. Estimated 1 in 5.
+- **Postpartum OCD (PPOCD)**, intrusive, unwanted, often disturbing thoughts (often about harm to the baby), accompanied by checking or avoidance behaviors. The intrusive thoughts in PPOCD are not desires, they're distressing precisely because the parent does NOT want them. Treatable. Important to flag to a provider.
+- **Postpartum psychosis**, rare (~1–2 per 1000), but a medical emergency. Symptoms include: feeling disconnected from reality, hearing voices, paranoid thoughts, manic energy, beliefs that don't fit reality. If this is you or someone you know, go to the ER. Now.
 
 All of the above are treatable. None of them are character flaws. None of them mean you don't love your baby.
 
 ---
 
-## Crisis lines — keep these handy
+## Crisis lines, keep these handy
 
-- **988** — US Suicide & Crisis Lifeline (24/7, call or text)
-- **1-833-852-6262** — US Maternal Mental Health Hotline (24/7, free, confidential, parent-specific)
-- **741741** — Crisis Text Line (text "HOME" to start)
-- **911 / ER** — for postpartum psychosis symptoms or active self-harm thoughts
+- **988**, US Suicide & Crisis Lifeline (24/7, call or text)
+- **1-833-852-6262**, US Maternal Mental Health Hotline (24/7, free, confidential, parent-specific)
+- **741741**, Crisis Text Line (text "HOME" to start)
+- **911 / ER**, for postpartum psychosis symptoms or active self-harm thoughts
 
 *International readers: please look up your country's crisis line and write it here:* ____________________________
 
@@ -121,8 +121,8 @@ A THOUGHT THAT KEPT COMING BACK TODAY (write it, don't judge it):
 __________________________________________________________
 __________________________________________________________
 
-ANYTHING THAT SCARED ME ABOUT HOW I'M FEELING (write it; this
-page is for you and possibly a provider — no one else):
+ANYTHING THAT SCARED ME ABOUT HOW I'M FEELING (write it. this
+page is for you and possibly a provider, no one else):
 __________________________________________________________
 __________________________________________________________
 ```
@@ -145,10 +145,10 @@ I felt low, sad, or empty.                          _______
 I cried more than I expected to.                    _______
 I felt hopeless about the future.                   _______
 I lost interest in things I usually enjoy.          _______
-I felt numb — like nothing was registering.         _______
+I felt numb, like nothing was registering.         _______
 I felt guilty in a way that felt out of proportion. _______
 I had thoughts that I'd be better off not here.    _______
-  (If yes to this one — please call 988 or 1-833-852-6262.
+  (If yes to this one, please call 988 or 1-833-852-6262.
    You do not have to be in active danger to call. They can
    help you think through next steps.)
 
@@ -157,13 +157,13 @@ ANXIETY
 I felt anxious or "on edge" most of the day.        _______
 My heart raced or I felt physically panicky.        _______
 I worried about the baby in a way that felt
-  intrusive — I couldn't put it down.               _______
+  intrusive, I couldn't put it down.               _______
 I couldn't sleep even when the baby was asleep.    _______
 I had scary "what if" thoughts about something bad
   happening to the baby.                            _______
-I had thoughts I didn't want to have — that came in
-  from nowhere — and they scared me.                _______
-  (If yes — this is something to bring to a provider.
+I had thoughts I didn't want to have, that came in
+  from nowhere, and they scared me.                _______
+  (If yes, this is something to bring to a provider.
    Intrusive scary thoughts are common in postpartum
    anxiety and OCD, and they are very treatable. Having
    the thought does not mean you want to act on it.)
@@ -171,14 +171,14 @@ I had thoughts I didn't want to have — that came in
 CONNECTION TO BABY
 
 I felt connected to the baby this week.             _______
-I felt detached — like I was going through the
+I felt detached, like I was going through the
   motions but not feeling it.                       _______
 I felt resentment toward the baby that surprised me. _______
 I struggled to feel "love" the way I thought I would. _______
   (Important: NONE of these mean you are a bad parent.
    Bonding is sometimes immediate. Often it isn't. Many
-   parents — especially after hard births, NICU stays, or
-   PPD — feel a delayed bond. This is treatable. Bring it
+   parents, especially after hard births, NICU stays, or
+   PPD, feel a delayed bond. This is treatable. Bring it
    up with a provider.)
 
 CONNECTION TO YOURSELF
@@ -186,7 +186,7 @@ CONNECTION TO YOURSELF
 I felt like myself this week.                       _______
 I felt like a version of me I don't recognize.      _______
 I had moments of joy.                               _______
-I felt invisible — like no one was checking on me. _______
+I felt invisible, like no one was checking on me. _______
 
 PHYSICAL
 
@@ -206,7 +206,7 @@ __________________________________________________________
 
 ---
 
-## WHEN TO CALL YOUR PROVIDER — A SHORT LIST
+## WHEN TO CALL YOUR PROVIDER, A SHORT LIST
 
 > *Call sooner rather than later. You will not be "wasting their time." Postpartum providers are trained to expect these calls.*
 
@@ -214,7 +214,7 @@ __________________________________________________________
 
 - You've felt low or hopeless for 2+ weeks straight
 - Your anxiety is so high you can't sleep when the baby sleeps
-- You're having intrusive scary thoughts — even occasionally
+- You're having intrusive scary thoughts, even occasionally
 - You're avoiding being alone with the baby
 - You feel detached or "not yourself" most days
 - You haven't eaten or slept properly in 3+ days
@@ -224,7 +224,7 @@ __________________________________________________________
 
 - You have thoughts of hurting yourself or the baby
 - You feel disconnected from reality, hearing or seeing things others don't
-- You have racing energy, can't sleep at all, and feel "high" in a way that isn't normal for you (possible postpartum psychosis — this is an emergency)
+- You have racing energy, can't sleep at all, and feel "high" in a way that isn't normal for you (possible postpartum psychosis, this is an emergency)
 - You've stopped being able to care for the baby's basic needs
 
 **It's NOT "just baby blues" if:**
@@ -237,7 +237,7 @@ __________________________________________________________
 
 ---
 
-## NOTICING THOUGHTS — CBT-STYLE PROMPTS
+## NOTICING THOUGHTS, CBT-STYLE PROMPTS
 
 > *Twelve pages of these in the printed journal. One prompt per page. Use as many or as few as helps.*
 
@@ -249,7 +249,7 @@ What was happening when it came up?
 
 ________________________________________________________
 
-Is this thought a fact, or a feeling? (Just notice — no need to judge.)
+Is this thought a fact, or a feeling? (Just notice, no need to judge.)
 
 ________________________________________________________
 
@@ -343,7 +343,7 @@ What am I afraid would happen if I said it out loud?
 
 ________________________________________________________
 
-Who is the one person I could tell — even just half of it?
+Who is the one person I could tell, even just half of it?
 
 ________________________________________________________
 
@@ -368,7 +368,7 @@ How did I feel when the thought came? (afraid, ashamed, confused, all of the abo
 
 ________________________________________________________
 
-This is something to mention to a provider. They will not take the baby away for naming an intrusive thought. They will recognize it for what it is — a symptom — and help.
+This is something to mention to a provider. They will not take the baby away for naming an intrusive thought. They will recognize it for what it is, a symptom, and help.
 
 ---
 
@@ -466,13 +466,13 @@ ___________________________________________________________
 
 ## A PAGE FOR YOUR PARTNER
 
-> *If your partner is the one who first picked up this journal and is worried about you — this page is for them. If they're not, you can hand them this page when you're ready.*
+> *If your partner is the one who first picked up this journal and is worried about you, this page is for them. If they're not, you can hand them this page when you're ready.*
 
 **What you may have been noticing:**
 
 - More crying than usual, including over things that don't seem to warrant it
 - Less interest in things she used to enjoy
-- Withdrawal — from you, from friends, from the baby
+- Withdrawal, from you, from friends, from the baby
 - Anxiety that won't quiet, including at night
 - Sleeping a lot, or not sleeping at all
 - "I'm fine" said in a way that doesn't match the rest of the day
@@ -482,12 +482,12 @@ ___________________________________________________________
 
 **What helps:**
 
-- Notice without prescribing. *"I've been noticing it's been a rough few weeks. How are you, really?"* — not *"You should call someone."*
+- Notice without prescribing. *"I've been noticing it's been a rough few weeks. How are you, really?"*, not *"You should call someone."*
 - Offer a specific next step. *"I can make the call. I can drive you. I can stay with the baby. What do you want me to take off your plate?"*
 - Don't try to talk her out of how she feels. Listen first.
 - Don't take her words as a personality test of you. Postpartum mental health is medical, not relational.
 
-**Concerning signs — if you see any of these, gently push for a same-week appointment:**
+**Concerning signs, if you see any of these, gently push for a same-week appointment:**
 
 - Statements about being a "bad mom," repeated
 - "The baby would be better off without me"
@@ -495,7 +495,7 @@ ___________________________________________________________
 - Refusing food / not sleeping / not getting up
 - Disconnected from reality
 
-**Emergency signs — call 988, or take her to the ER:**
+**Emergency signs, call 988, or take her to the ER:**
 
 - Statements about harming herself or the baby
 - Hearing or seeing things that aren't there
@@ -506,7 +506,7 @@ ___________________________________________________________
 **You may also be struggling.** Non-birthing partners experience PPD at a rate of about 1 in 10. The same crisis lines apply to you.
 
 ```
-NOTES — WHAT I'VE BEEN NOTICING (PARTNER):
+NOTES, WHAT I'VE BEEN NOTICING (PARTNER):
 
 Date:           Observation:
 
@@ -562,31 +562,31 @@ ___________________________________________________________
 
 You opened this journal. That is not a small thing.
 
-Postpartum mental health is one of the most treatable areas of medicine, and one of the most under-treated — because so many parents do not ever name what they're feeling out loud. The cost of staying quiet is high.
+Postpartum mental health is one of the most treatable areas of medicine, and one of the most under-treated, because so many parents do not ever name what they're feeling out loud. The cost of staying quiet is high.
 
 You don't have to be in crisis to call.
 You don't have to be "sure" to ask.
 You don't have to wait for the 6-week appointment if it's getting worse before then.
 
-If something in here gave you a sentence you can hand to a provider — that's enough. That was the point.
+If something in here gave you a sentence you can hand to a provider, that's enough. That was the point.
 
-Whatever you're feeling — even if you can't name it yet — it is real. It is happening to your body and your brain at a chemically and structurally unique moment in your life. You did not cause it. You cannot will it away. And the people whose job it is to help are not going to be surprised by any of it.
+Whatever you're feeling, even if you can't name it yet, it is real. It is happening to your body and your brain at a chemically and structurally unique moment in your life. You did not cause it. You cannot will it away. And the people whose job it is to help are not going to be surprised by any of it.
 
-The bravest sentence in postpartum motherhood is *"I am not okay, and I think I need help."* It is also the sentence that — over and over again — turns out to be the start of feeling better.
+The bravest sentence in postpartum motherhood is *"I am not okay, and I think I need help."* It is also the sentence that, over and over again, turns out to be the start of feeling better.
 
-— *Soothemade*
+*Soothemade*
 
 ---
 
-## RESOURCES — KEEP THIS PAGE
+## RESOURCES, KEEP THIS PAGE
 
 - **US Maternal Mental Health Hotline:** 1-833-852-6262 (24/7, free, confidential, English/Spanish + interpreters)
 - **988 Suicide & Crisis Lifeline:** call or text 988
 - **Crisis Text Line:** text HOME to 741741
-- **Postpartum Support International:** postpartum.net — find a perinatal mental-health-certified provider (PMH-C); has support groups, including for partners and dads
-- **2020 Mom:** 2020mom.org — advocacy and resources
+- **Postpartum Support International:** postpartum.net, find a perinatal mental-health-certified provider (PMH-C). has support groups, including for partners and dads
+- **2020 Mom:** 2020mom.org, advocacy and resources
 - **The Bloom Foundation / Postpartum Health Alliance** (regional): search "perinatal mental health [your state]"
 
 ---
 
-*This journal is a noticing and tracking tool. It is not medical advice, diagnostic guidance, or a replacement for professional mental-health care. The inventories in this journal use plain language and are not validated clinical screening instruments — if you want a clinically-validated screening (such as the EPDS), ask your provider. If you are experiencing a mental-health emergency, contact a provider, go to the ER, call 988, or call the US Maternal Mental Health Hotline at 1-833-852-6262.*
+*This journal is a noticing and tracking tool. It is not medical advice, diagnostic guidance, or a replacement for professional mental-health care. The inventories in this journal use plain language and are not validated clinical screening instruments, if you want a clinically-validated screening (such as the EPDS), ask your provider. If you are experiencing a mental-health emergency, contact a provider, go to the ER, call 988, or call the US Maternal Mental Health Hotline at 1-833-852-6262.*

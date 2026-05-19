@@ -14,7 +14,7 @@ featured: true
 featuredOrder: 1
 ymyl: false
 summary: >-
-  Eighty sensory play activity cards across four age bands — newborn, six to twelve months,
+  Eighty sensory play activity cards across four age bands, newborn, six to twelve months,
   one to two years, two to three years. Most of them use a colander, a wooden spoon, or
   something else already in your kitchen drawer.
 crossSell: [slow-motherhood-planner, screen-free-challenge]
@@ -35,7 +35,7 @@ Eighty activity cards, sorted into four age bands:
 - **12–24 months.** Pouring, sorting, scribbling, water-table-with-a-tupperware.
 - **24–36 months.** Pretend play, simple counting, sensory bins that don't end in tears.
 
-Each card has one activity, the materials (almost always ten things or fewer, almost always things you own), and a one-line "what this is doing" — because knowing the why makes the ten minutes feel less random.
+Each card has one activity, the materials (almost always ten things or fewer, almost always things you own), and a one-line "what this is doing", because knowing the why makes the ten minutes feel less random.
 
 ## Why this and not the hundred-item lists online
 
@@ -49,4 +49,4 @@ Instant-download PDF, print at home on letter or A4. Personal use only.
 
 ---
 
-*From [Soothemade Notes](/) — a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*
+*From [Soothemade Notes](/), a small apothecary of printables, planners, and cards for the unphotographed parts of new parenthood. Made slowly, in plain language.*

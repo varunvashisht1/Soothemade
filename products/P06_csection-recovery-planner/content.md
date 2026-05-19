@@ -1,20 +1,20 @@
 # The C-Section Recovery Planner
 
-*A 5-week phased planner for healing from a c-section. Not a generic postpartum planner — this one knows you can't lift more than the baby for six weeks.*
+*A 5-week phased planner for healing from a c-section. Not a generic postpartum planner, this one knows you can't lift more than the baby for six weeks.*
 
 ---
 
 ## A note before you start
 
-A C-section is major abdominal surgery. Most postpartum planners ignore this entirely — they assume you walked out of the hospital. You did not.
+A C-section is major abdominal surgery. Most postpartum planners ignore this entirely, they assume you walked out of the hospital. You did not.
 
 This planner is built around what your body is actually doing in weeks 1 through 5, and what's realistic to do alongside it.
 
 I'm not a doctor. I'm a person who had one c-section, planned for it badly the first week, planned for it better the next four, and made this so you wouldn't have to figure it out at 3am like I did.
 
-This planner is for tracking, planning, and reflecting. **It is not medical advice.** Anything that feels physically wrong — call your OB. If something feels wrong, it usually is.
+This planner is for tracking, planning, and reflecting. **It is not medical advice.** Anything that feels physically wrong, call your OB. If something feels wrong, it usually is.
 
-— *Soothemade*
+*Soothemade*
 
 > *Always follow your surgeon's specific instructions. Each c-section recovery is different. This is a general framework based on common recovery timelines, not a prescription. When in doubt, call your provider.*
 
@@ -30,11 +30,11 @@ This planner is for tracking, planning, and reflecting. **It is not medical advi
 
 ---
 
-## WEEK 1 — The Hardest Week
+## WEEK 1, The Hardest Week
 
 ### What's generally happening
 
-This is the week your body has just finished major surgery. Internal stitches are fresh. The incision is closed but tender. Your uterus is contracting back down (the cramps you feel — that's it). You're bleeding (lochia). You're also probably leaking milk, or struggling with milk supply, depending on feeding.
+This is the week your body has just finished major surgery. Internal stitches are fresh. The incision is closed but tender. Your uterus is contracting back down (the cramps you feel, that's it). You're bleeding (lochia). You're also probably leaking milk, or struggling with milk supply, depending on feeding.
 
 Sleep is fragmented. Pain medication is on a schedule. Walking is slow. Even standing up takes thought.
 
@@ -44,7 +44,7 @@ Sleep is fragmented. Pain medication is on a schedule. Walking is slow. Even sta
 - Walk: short, slow distances. The hallway. To the bathroom. To the couch.
 - Driving: not yet (your surgeon will clear you, usually after 2 weeks, possibly later).
 - Stairs: minimize. Set up a downstairs station.
-- Showering: yes (once your surgeon clears) — don't let water hit the incision directly; pat dry, don't rub.
+- Showering: yes (once your surgeon clears), don't let water hit the incision directly. pat dry, don't rub.
 - Sex / penetrative anything: no. (Most surgeons say wait 6 weeks for any of this.)
 
 ### Daily care log
@@ -62,12 +62,12 @@ PAIN MEDICATION TIMES (track to avoid gaps):
 INCISION CHECK:
   ☐ Clean, dry
   ☐ Slight redness (normal first week)
-  ☐ Increasing redness or warmth — CALL OB
-  ☐ Pus or discharge — CALL OB IMMEDIATELY
-  ☐ Fever above 100.4 — CALL OB IMMEDIATELY
+  ☐ Increasing redness or warmth, CALL OB
+  ☐ Pus or discharge, CALL OB IMMEDIATELY
+  ☐ Fever above 100.4, CALL OB IMMEDIATELY
 
 LOCHIA / BLEEDING:
-  ☐ Light  ☐ Moderate  ☐ Heavy  ☐ Saturating a pad / hr — CALL
+  ☐ Light  ☐ Moderate  ☐ Heavy  ☐ Saturating a pad / hr, CALL
 
 NOTES (one line, what felt different today):
 _________________________________________________
@@ -122,20 +122,20 @@ ___________________________________________________
 
 ---
 
-## WEEK 2 — Slightly More Functional
+## WEEK 2, Slightly More Functional
 
 ### What's generally happening
 
-Week 2 is usually noticeably better than week 1. Pain is improving. You can usually transition from prescription pain meds to ibuprofen (check with your OB). The incision is healing externally; internal healing is still happening (and takes much longer).
+Week 2 is usually noticeably better than week 1. Pain is improving. You can usually transition from prescription pain meds to ibuprofen (check with your OB). The incision is healing externally. internal healing is still happening (and takes much longer).
 
 You might be tempted to do more. **Don't do more.** Most c-section setbacks happen in week 2–3 because people feel "better" and lift / drive / exercise too early.
 
 ### Activity guidance for week 2
 
 - Still: no lifting more than the baby
-- Walking distances can increase — but slowly
+- Walking distances can increase, but slowly
 - Driving: still no (most surgeons say wait 2 weeks minimum, sometimes longer)
-- Stairs: a couple of times a day is okay; minimize
+- Stairs: a couple of times a day is okay. minimize
 - Light household activity: putting dishes away (don't lift heavy ones), wiping the counter, folding laundry sitting down
 - Still no: vacuuming, mopping, anything bending-and-lifting
 - Sex / penetrative: still no
@@ -155,14 +155,14 @@ ONE THING MY PARTNER DID
 
 ### Watch list for week 2
 
-If you have any of these — call your OB:
+If you have any of these, call your OB:
 
 - Increasing pain at the incision (not decreasing)
 - Redness spreading, warmth, swelling at incision
 - Pus or unusual discharge
 - Fever 100.4+
 - Heavy bleeding (soaking pad in <1 hr) or large clots
-- Chest pain, shortness of breath, leg pain/swelling (blood clot signs — emergency room)
+- Chest pain, shortness of breath, leg pain/swelling (blood clot signs, emergency room)
 - Severe headache that doesn't respond to medication
 - Mental-health changes from last week's watch list
 
@@ -180,7 +180,7 @@ How I'm thinking about week 3: ____________________
 
 ---
 
-## WEEK 3 — The "I Should Be Fine By Now" Trap
+## WEEK 3, The "I Should Be Fine By Now" Trap
 
 ### What's generally happening
 
@@ -191,7 +191,7 @@ This week is a trap. Hormones drop again around day 14–21 (estrogen and proges
 ### Activity guidance for week 3
 
 - You can probably drive now if your OB has cleared you
-- You can do more walks — short outdoor walks
+- You can do more walks, short outdoor walks
 - Light cooking, light cleaning at sitting level
 - You can probably leave the house briefly with the baby
 - Still NO: heavy lifting (above the baby), running, ab exercises, anything bouncing, sex
@@ -200,7 +200,7 @@ This week is a trap. Hormones drop again around day 14–21 (estrogen and proges
 
 ### Mental-health pulse check
 
-This is when delayed-onset postpartum depression can show up. If you've made it through weeks 1–2 thinking "okay, I'm fine," and now you're slipping —
+This is when delayed-onset postpartum depression can show up. If you've made it through weeks 1–2 thinking "okay, I'm fine," and now you're slipping ,
 
 - Track your mood daily this week. Pattern it.
 - If 3+ days in a row of low mood, anxiety, or detachment, call.
@@ -220,18 +220,18 @@ What I need less of: _______________________________
 
 ---
 
-## WEEK 4 — Establishing the New Normal
+## WEEK 4, Establishing the New Normal
 
 ### What's generally happening
 
 By week 4, the external incision is mostly closed and healing into a scar. Internal healing is still ongoing (full internal recovery takes longer than the surface suggests). Your body is starting to settle into a postpartum baseline that isn't going to look like your pre-pregnancy baseline for a while.
 
-Many partners go back to work this week (if they had paternity leave). The first week alone-with-the-baby happens here. This can be hard. Even if you've been "ready" — first day solo is its own thing.
+Many partners go back to work this week (if they had paternity leave). The first week alone-with-the-baby happens here. This can be hard. Even if you've been "ready", first day solo is its own thing.
 
 ### Activity guidance for week 4
 
 - Walks can be longer (30–45 min)
-- You can pick up the baby + their carrier (about 15 lbs total — most surgeons clear this)
+- You can pick up the baby + their carrier (about 15 lbs total, most surgeons clear this)
 - Still no: lifting toddlers, heavy groceries, gym workouts, ab exercises, running, sex (most OBs still say wait until 6-week clearance)
 
 ### The "first day solo" page
@@ -272,13 +272,13 @@ What I'd tell next-week-me: ________________________
 
 ---
 
-## WEEK 5–6 — Pre-Clearance
+## WEEK 5–6, Pre-Clearance
 
 ### What's generally happening
 
 Most c-section moms have their 6-week postpartum appointment around this time. Your OB will check the incision, ask about pain, check your overall recovery, and typically clear you for full activity.
 
-But "cleared" doesn't mean "back to pre-pregnancy." Cleared means "the immediate surgical recovery is done." Your core is still healing. Pelvic floor work is real. Some people see a pelvic floor physical therapist starting around week 6 — this is normal and helpful, especially after c-section.
+But "cleared" doesn't mean "back to pre-pregnancy." Cleared means "the immediate surgical recovery is done." Your core is still healing. Pelvic floor work is real. Some people see a pelvic floor physical therapist starting around week 6, this is normal and helpful, especially after c-section.
 
 ### Activity guidance for weeks 5–6
 
@@ -299,14 +299,14 @@ About the scar:
 
 About my body:
   ☐ Cleared to exercise? At what intensity?
-  ☐ Pelvic floor physical therapy — should I see one?
-  ☐ Diastasis recti — should I get checked?
+  ☐ Pelvic floor physical therapy, should I see one?
+  ☐ Diastasis recti, should I get checked?
   ☐ Birth control options (if relevant)
   ☐ Any concerns about diastasis recti recovery?
 
 About mental health:
   ☐ Postpartum depression screening (EPDS or similar)
-  ☐ How I've been feeling (be honest; this is the moment to flag if struggling)
+  ☐ How I've been feeling (be honest. this is the moment to flag if struggling)
 
 About future pregnancies (if relevant):
   ☐ When can I safely conceive again?
@@ -381,13 +381,13 @@ Date | Appearance | Care done | Any concerns
 **What I need from you (do without asking):**
 - Bring me water + snacks every 2 hours
 - Take ALL the night diaper changes (you can do these)
-- Bring the baby to me for nursing; you handle put-down
+- Bring the baby to me for nursing. you handle put-down
 - Take the laundry up and down stairs
 - Hold the line on visitors
 - Daily check-in: "What was the hardest moment today?"
 - One night this week: let me sleep 5+ hrs straight
 
-**Watch list — call my OB if I:**
+**Watch list, call my OB if I:**
 - Have a fever 100.4+
 - Have increasing pain at the incision
 - Have redness, pus, or warmth at incision
@@ -414,11 +414,11 @@ Your scar is not a defect. It's the entrance through which your kid came into th
 
 The recovery is slower than anyone tells you. You will probably feel mostly normal by week 6 and not actually 100% for a year. That's also fine. Bodies take time.
 
-If something feels wrong — physically or mentally — call. Always call.
+If something feels wrong, physically or mentally, call. Always call.
 
 You're doing the thing.
 
-— *Soothemade*
+*Soothemade*
 
 ---
 

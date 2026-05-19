@@ -6,7 +6,7 @@
 
 ## A note before you start
 
-This isn't a "screens are evil" detox. Screens aren't evil. They're a tool that works really well some of the time and really poorly other times — and in our house at least, they'd quietly become the default for *all* the other times.
+This isn't a "screens are evil" detox. Screens aren't evil. They're a tool that works really well some of the time and really poorly other times, and in our house at least, they'd quietly become the default for *all* the other times.
 
 A 30-day challenge isn't about hating screens. It's about remembering what the other tools are.
 
@@ -22,7 +22,7 @@ The cards are designed to:
 - Be doable with one parent + a few kids
 - Not require Pinterest-perfect execution
 
-— *Soothemade*
+*Soothemade*
 
 > *This is a planning tool, not parenting advice. You know your kids better than any deck of cards. Adapt freely.*
 
@@ -33,7 +33,7 @@ The cards are designed to:
 1. **Print on cardstock** (recommended) or regular paper. Cut along the lines. Each card is 4.25"×5.5" (quarter of US Letter).
 2. **Store in a basket or jar** in the kitchen or living room.
 3. **Pull one in the morning** with the kids. Read it together. (Or pull 3 and let them pick.)
-4. **Use the tracker** at the back. Color in the box for each day you do a card. No perfection — half-finished cards count.
+4. **Use the tracker** at the back. Color in the box for each day you do a card. No perfection, half-finished cards count.
 5. **Skip cards that don't fit your kid.** Some are better for 3-year-olds, some for 8-year-olds. Use your judgment.
 6. **You can repeat cards.** "Build a fort" is a Tuesday card. It's also a fine Friday card.
 
@@ -88,7 +88,7 @@ That's it. Don't overplan.
 Decide your exceptions in advance (so they don't feel like failures):
 
 - Sick days
-- Travel days (long car rides, flights — survival mode)
+- Travel days (long car rides, flights, survival mode)
 - Specific shared family activities (movie night)
 - One parent's emergency work call
 
@@ -102,7 +102,7 @@ Write them on the inside of the card box / basket. When in doubt, use the except
 
 ---
 
-### Card 1 — Fort Build
+### Card 1, Fort Build
 
 **Best for:** ages 3–10
 **Time:** 30–45 min build + as long as they're in it
@@ -114,7 +114,7 @@ Build a fort together. Sheets over chairs, pillows for walls, a flashlight insid
 
 ---
 
-### Card 2 — Cardboard City
+### Card 2, Cardboard City
 
 **Best for:** ages 4–10
 **Time:** 60 min (across the day if needed)
@@ -126,19 +126,19 @@ Cut cardboard into buildings. Mark them as house / store / bank / firehouse. Dra
 
 ---
 
-### Card 3 — Kitchen Bakery
+### Card 3, Kitchen Bakery
 
 **Best for:** ages 3–10
 **Time:** 45 min
 **Materials:** flour, water, salt (for salt dough), or any cookie/biscuit recipe
 
-Make something that ends up edible (real recipe) or play-doh-ish (salt dough: 2 cups flour, 1 cup salt, 1 cup water; bake at 200°F for 2 hours OR just air-dry). Let the kid measure. Let them dump too much flour somewhere. Wipe later.
+Make something that ends up edible (real recipe) or play-doh-ish (salt dough: 2 cups flour, 1 cup salt, 1 cup water. bake at 200°F for 2 hours OR just air-dry). Let the kid measure. Let them dump too much flour somewhere. Wipe later.
 
 *Extension:* Run a "bakery" where you order from their menu.
 
 ---
 
-### Card 4 — Inside Treasure Hunt
+### Card 4, Inside Treasure Hunt
 
 **Best for:** ages 3–10
 **Time:** 30 min (10 to set up, 20 to play)
@@ -150,7 +150,7 @@ Hide a "treasure" (a small toy, a snack, a coin). Write 5–6 clue cards that le
 
 ---
 
-### Card 5 — Walking Nature Inventory
+### Card 5, Walking Nature Inventory
 
 **Best for:** ages 3–10
 **Time:** 20–40 min
@@ -162,19 +162,19 @@ Go on a walk. Pick up: 1 rock, 1 leaf, 1 stick, 1 thing-shaped-like-a-heart, 1 t
 
 ---
 
-### Card 6 — Family Mailbox
+### Card 6, Family Mailbox
 
 **Best for:** ages 5–10
 **Time:** 20 min/day for several days
 **Materials:** paper, envelopes, a basket or box
 
-Set up a "family mailbox." Each family member gets one. For the next 5–7 days, leave each other letters — drawings, questions, jokes, kind things. Check daily. Reply.
+Set up a "family mailbox." Each family member gets one. For the next 5–7 days, leave each other letters, drawings, questions, jokes, kind things. Check daily. Reply.
 
 *Extension:* Add stamps (stickers).
 
 ---
 
-### Card 7 — Bath Sensory Day
+### Card 7, Bath Sensory Day
 
 **Best for:** ages 2–6
 **Time:** 30 min
@@ -186,7 +186,7 @@ Run a midday bath. Add 1–2 drops of food coloring. Toss in measuring cups, sma
 
 ---
 
-### Card 8 — Pillow Floor Avalanche
+### Card 8, Pillow Floor Avalanche
 
 **Best for:** ages 3–10
 **Time:** 30 min
@@ -198,7 +198,7 @@ Move every pillow and cushion into one room. Pile them. Jump in them. Hide in th
 
 ---
 
-### Card 9 — Big Drawing on Big Paper
+### Card 9, Big Drawing on Big Paper
 
 **Best for:** ages 2–10
 **Time:** 30–60 min
@@ -210,7 +210,7 @@ Tape a giant sheet to the table or floor. Everyone gets a marker. Draw together.
 
 ---
 
-### Card 10 — Library Trip
+### Card 10, Library Trip
 
 **Best for:** ages 0–10
 **Time:** 60 min (with travel)
@@ -222,7 +222,7 @@ Go to the library. Each kid picks 3–5 books. Read one there. Take the rest hom
 
 ---
 
-### Card 11 — Lego Challenge
+### Card 11, Lego Challenge
 
 **Best for:** ages 4–10
 **Time:** 30–60 min
@@ -234,7 +234,7 @@ Set a single challenge. "Build something that can hold an egg." "Build a tower t
 
 ---
 
-### Card 12 — Family Karaoke
+### Card 12, Family Karaoke
 
 **Best for:** any age
 **Time:** 30 min
@@ -246,7 +246,7 @@ Pick one song. Everyone takes a turn singing. Use hairbrushes. Tip: rotate "perf
 
 ---
 
-### Card 13 — Dance Party
+### Card 13, Dance Party
 
 **Best for:** any age
 **Time:** 15–30 min
@@ -258,7 +258,7 @@ Turn on music. Dance like idiots. Stop on freeze. Have the kid call freeze. Have
 
 ---
 
-### Card 14 — Stuffed Animal Hospital
+### Card 14, Stuffed Animal Hospital
 
 **Best for:** ages 3–7
 **Time:** 30 min
@@ -270,7 +270,7 @@ Set up a "hospital" in the living room. Kid is the doctor. Stuffed animals come 
 
 ---
 
-### Card 15 — Cook Dinner Together
+### Card 15, Cook Dinner Together
 
 **Best for:** ages 4–10
 **Time:** 45–60 min
@@ -282,7 +282,7 @@ Let them help. Crack eggs. Stir. Tear lettuce. Wash veggies. Salt the pasta wate
 
 ---
 
-### Card 16 — Read-Aloud Marathon
+### Card 16, Read-Aloud Marathon
 
 **Best for:** any age (especially 2–8)
 **Time:** 30–90 min
@@ -294,7 +294,7 @@ Pick 5 picture books or one chapter book chapter. Build a reading nest with pill
 
 ---
 
-### Card 17 — Outdoor Obstacle Course
+### Card 17, Outdoor Obstacle Course
 
 **Best for:** ages 3–10
 **Time:** 30 min
@@ -306,7 +306,7 @@ Set up 5–8 stations: jump over the rope, hop on one foot to the tree, crawl un
 
 ---
 
-### Card 18 — Tape Road on the Floor
+### Card 18, Tape Road on the Floor
 
 **Best for:** ages 2–6
 **Time:** 30–60 min
@@ -318,7 +318,7 @@ Make roads on the floor with masking tape. Add intersections, parking lots, a ga
 
 ---
 
-### Card 19 — Pretend Restaurant
+### Card 19, Pretend Restaurant
 
 **Best for:** ages 3–7
 **Time:** 45 min
@@ -330,7 +330,7 @@ Open a restaurant in the kitchen. They write the menu. You order. They cook (rea
 
 ---
 
-### Card 20 — Window Watercolor (or Markers)
+### Card 20, Window Watercolor (or Markers)
 
 **Best for:** ages 3–8
 **Time:** 30 min
@@ -342,7 +342,7 @@ Draw on a window. Yes really. They love this. Wash with soapy water when done.
 
 ---
 
-### Card 21 — Recipe Inventor
+### Card 21, Recipe Inventor
 
 **Best for:** ages 5–10
 **Time:** 30 min
@@ -354,7 +354,7 @@ Let the kid invent a snack. Pretzels + cream cheese + raisins + a chocolate chip
 
 ---
 
-### Card 22 — Mystery Bag Touch Game
+### Card 22, Mystery Bag Touch Game
 
 **Best for:** ages 3–8
 **Time:** 20 min
@@ -366,19 +366,19 @@ Put 5 random objects in a pillowcase: a spoon, a sock, a piece of fruit, a hairb
 
 ---
 
-### Card 23 — Garden / Pot Planting
+### Card 23, Garden / Pot Planting
 
 **Best for:** ages 3–10
 **Time:** 30–45 min
 **Materials:** soil, seeds, a pot or planter
 
-Plant something simple — herbs (basil), salad greens (lettuce), or fast-growers (radishes). Water daily. Check daily. Eat eventually.
+Plant something simple, herbs (basil), salad greens (lettuce), or fast-growers (radishes). Water daily. Check daily. Eat eventually.
 
 *Extension:* Track growth on a kid-made chart.
 
 ---
 
-### Card 24 — Family Letter to the Future
+### Card 24, Family Letter to the Future
 
 **Best for:** ages 5–10
 **Time:** 30 min
@@ -390,7 +390,7 @@ Write a letter to the family one year from today. What's everyone like now? What
 
 ---
 
-### Card 25 — Quiet Reading Hour
+### Card 25, Quiet Reading Hour
 
 **Best for:** ages 4+
 **Time:** 60 min
@@ -402,7 +402,7 @@ Everyone in the family takes 60 minutes of quiet reading time. Same room, differ
 
 ---
 
-### Card 26 — Backyard Camping
+### Card 26, Backyard Camping
 
 **Best for:** ages 4–10
 **Time:** 1–2 hrs (or overnight if you're brave)
@@ -414,19 +414,19 @@ Set up "camp" in the backyard. Spread blankets. Eat dinner outside. Tell stories
 
 ---
 
-### Card 27 — DIY Mailbag Delivery
+### Card 27, DIY Mailbag Delivery
 
 **Best for:** ages 4–8
 **Time:** 30 min
 **Materials:** envelopes, drawings, a basket / bag
 
-Make 5 "deliveries" around the house — to family members, to pets, to stuffed animals. Each delivery is a drawing or note. Kid is the mail carrier. Wear an old satchel.
+Make 5 "deliveries" around the house, to family members, to pets, to stuffed animals. Each delivery is a drawing or note. Kid is the mail carrier. Wear an old satchel.
 
 *Extension:* "Deliver" a real card to a neighbor (with permission).
 
 ---
 
-### Card 28 — Storytelling Round
+### Card 28, Storytelling Round
 
 **Best for:** ages 4–10
 **Time:** 20 min
@@ -438,19 +438,19 @@ Sit together. One person starts a story with one sentence. The next person adds 
 
 ---
 
-### Card 29 — Big Cleaning Job (as a "mission")
+### Card 29, Big Cleaning Job (as a "mission")
 
 **Best for:** ages 4–10
 **Time:** 45 min
 **Materials:** rags, bucket, soap
 
-Pick ONE area that needs cleaning. Make it a mission. "We're cleaning the toy shelf — everything goes off, we sort it, we put back the keepers." Reward at the end (a treat, a high-five, a new book).
+Pick ONE area that needs cleaning. Make it a mission. "We're cleaning the toy shelf, everything goes off, we sort it, we put back the keepers." Reward at the end (a treat, a high-five, a new book).
 
 *Extension:* "Donate" pile gets bagged and actually donated this week.
 
 ---
 
-### Card 30 — The "Best Of" Day
+### Card 30, The "Best Of" Day
 
 **Best for:** any
 **Time:** flexible
@@ -493,12 +493,12 @@ When the 30 days end, two things usually happen:
 
 1. **Your kids will ask for the cards again.** Some of the activities will become regular things. The fort. The window markers. The dinner-cook-together.
 
-2. **You'll lose some of the discipline.** Screens will creep back. That's fine. The point wasn't permanent purity. The point was breaking the default — and giving everyone the muscle memory that there are other things.
+2. **You'll lose some of the discipline.** Screens will creep back. That's fine. The point wasn't permanent purity. The point was breaking the default, and giving everyone the muscle memory that there are other things.
 
 You can re-run the challenge any time. Different season, different rotation. Or just keep the basket of cards in the kitchen as the fallback when you're about to default-screen and you stop yourself.
 
-— *Soothemade*
+*Soothemade*
 
 ---
 
-*This is a parenting tool, not advice for every family. Adapt freely. If your family has specific accessibility needs that change which cards are doable, modify away — that's the point.*
+*This is a parenting tool, not advice for every family. Adapt freely. If your family has specific accessibility needs that change which cards are doable, modify away, that's the point.*

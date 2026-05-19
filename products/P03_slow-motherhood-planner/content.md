@@ -25,17 +25,17 @@ Slow motherhood doesn't mean doing less. It means refusing to perform what you'r
 
 Use it badly. That's how this works.
 
-— *Soothemade*
+*Soothemade*
 
 ---
 
-## Page 2 — A note on "slow"
+## Page 2, A note on "slow"
 
 A friend asked me what "slow motherhood" means. Here's what I said:
 
 It's not a Sunday in a sunbeam with a clean linen apron and a sourdough loaf.
 
-It's a Tuesday at 4pm when the laundry is still in the dryer and the baby is finally asleep and I have to choose between sitting with my coffee for 4 minutes or starting dinner — and I pick the coffee.
+It's a Tuesday at 4pm when the laundry is still in the dryer and the baby is finally asleep and I have to choose between sitting with my coffee for 4 minutes or starting dinner, and I pick the coffee.
 
 That's slow motherhood. The 4 minutes you choose yourself, when there's an equally valid case for the laundry.
 
@@ -45,13 +45,13 @@ This planner is the permission, written down.
 
 ---
 
-## Page 3 — Before you start: 5-minute intention setting
+## Page 3, Before you start: 5-minute intention setting
 
 > *Sit somewhere. Anywhere. Bring a pen. Don't think too hard about the answers.*
 
 ### One word
 
-If this season of motherhood had a single word — not the word you should pick, the word you'd pick if no one was reading — what's the word?
+If this season of motherhood had a single word, not the word you should pick, the word you'd pick if no one was reading, what's the word?
 
 ```
 ___________________________________________________
@@ -70,7 +70,7 @@ ___________________________________________________
 
 ### What you can let go of
 
-One thing you're doing because you "should" — not because it's working for you. Permission slip, signed by you, to drop it for the next 4 weeks:
+One thing you're doing because you "should", not because it's working for you. Permission slip, signed by you, to drop it for the next 4 weeks:
 
 ```
 ___________________________________________________
@@ -79,7 +79,7 @@ ___________________________________________________
 
 ### One small yes
 
-One small thing that brought you joy in the last 7 days — even if it lasted 30 seconds. Notice it. Plan one of these for this week if you can:
+One small thing that brought you joy in the last 7 days, even if it lasted 30 seconds. Notice it. Plan one of these for this week if you can:
 
 ```
 ___________________________________________________
@@ -87,7 +87,7 @@ ___________________________________________________
 
 ### A note for your future self
 
-If you read this in 4 weeks and feel like you "failed" the planner — what would you want to tell yourself now?
+If you read this in 4 weeks and feel like you "failed" the planner, what would you want to tell yourself now?
 
 ```
 ___________________________________________________
@@ -97,9 +97,9 @@ ___________________________________________________
 
 ---
 
-## Pages 4–11 — Week 1 spread
+## Pages 4–11, Week 1 spread
 
-### Page 4 — Week 1 cover
+### Page 4, Week 1 cover
 
 > *This week's invitation*
 
@@ -110,7 +110,7 @@ ___________________________________________________
 ___________________________________________________
 ```
 
-The week ahead in three words (not adjectives, not goals — just what's coming):
+The week ahead in three words (not adjectives, not goals, just what's coming):
 
 ```
 ___________________   ___________________   ___________________
@@ -139,7 +139,7 @@ Three things you don't have to do this week even though someone might think you 
 
 ---
 
-### Pages 5–11 — Daily pages (7 of them, one per day)
+### Pages 5–11, Daily pages (7 of them, one per day)
 
 Each day is one page. Each page has:
 
@@ -160,7 +160,7 @@ What's one thing for the kids today (it can be small)?
 
 ─────────────────────────────────────────────────────────────────
 
-THE LIST (do or don't — the planner doesn't care)
+THE LIST (do or don't, the planner doesn't care)
 
 ☐ ________________________________________________
 ☐ ________________________________________________
@@ -186,7 +186,7 @@ The intentional design choice: there's space for 3 list items, not 10. Three is 
 
 ---
 
-### Page 12 — Week 1 reflection
+### Page 12, Week 1 reflection
 
 > *Sit somewhere. 5 minutes. No phone.*
 
@@ -225,11 +225,11 @@ ___________________________________________________
 
 ---
 
-## Pages 13–20 — Week 2 spread
+## Pages 13–20, Week 2 spread
 
 *(Same structure as week 1. Pre-filled prompts subtly rotate so it doesn't feel identical.)*
 
-### Page 13 — Week 2 cover variations
+### Page 13, Week 2 cover variations
 
 > *This week's invitation*
 
@@ -254,7 +254,7 @@ What's the version of "rest" that's actually possible this week?
 ___________________________________________________
 ```
 
-### Pages 14–20 — Daily pages, week 2
+### Pages 14–20, Daily pages, week 2
 
 Same template as week 1, but the "TWO QUESTIONS" prompts rotate:
 
@@ -281,7 +281,7 @@ Same template as week 1, but the "TWO QUESTIONS" prompts rotate:
 
 ---
 
-### Page 21 — Week 2 reflection
+### Page 21, Week 2 reflection
 
 What I let go of this week (intentionally or accidentally):
 
@@ -313,9 +313,9 @@ ___________________________________________________
 
 ---
 
-## Pages 22–29 — Week 3 spread
+## Pages 22–29, Week 3 spread
 
-### Page 22 — Week 3 cover
+### Page 22, Week 3 cover
 
 > *This week's invitation*
 
@@ -336,7 +336,7 @@ ___________________________________________________
 ___________________________________________________
 ```
 
-### Pages 23–29 — Daily pages, week 3
+### Pages 23–29, Daily pages, week 3
 
 Rotated daily prompts:
 
@@ -350,20 +350,20 @@ Rotated daily prompts:
 > What's one thing you did today that nobody saw?
 
 **Day 18:**
-> When did you breathe deeply today (not because you were stressed — because you remembered)?
+> When did you breathe deeply today (not because you were stressed, because you remembered)?
 
 **Day 19:**
 > If today was the only day someone watched a film of your life, would you be okay with it? (No right answer.)
 
 **Day 20:**
-> What's one thing that took longer than you wanted — and it was fine?
+> What's one thing that took longer than you wanted, and it was fine?
 
 **Day 21:**
 > What did you let be "good enough" today?
 
 ---
 
-### Page 30 — Week 3 reflection
+### Page 30, Week 3 reflection
 
 What this week showed me about what I actually need:
 
@@ -394,13 +394,13 @@ ___________________________________________________
 
 ---
 
-## Pages 31–34 — Week 4 spread (lighter — only 4 daily pages plus reflection)
+## Pages 31–34, Week 4 spread (lighter, only 4 daily pages plus reflection)
 
-### Page 31 — Week 4 cover
+### Page 31, Week 4 cover
 
 > *Final week*
 
-The thing you came into this planner hoping would change — has it?
+The thing you came into this planner hoping would change, has it?
 
 ```
 ___________________________________________________
@@ -421,7 +421,7 @@ ___________________________________________________
 ___________________________________________________
 ```
 
-### Pages 32–34 — Daily pages, week 4 (3 days)
+### Pages 32–34, Daily pages, week 4 (3 days)
 
 **Day 22:**
 > What does "enough" look like today?
@@ -434,13 +434,13 @@ ___________________________________________________
 
 ---
 
-## Page 35 — Monthly reflection (the long one — 2 pages)
+## Page 35, Monthly reflection (the long one, 2 pages)
 
 > *Find 20 minutes if you can. If not, do this in 4 sittings of 5 minutes.*
 
 ### The big questions
 
-What were the 3 best moments of this month? (Not Instagram moments — actual best moments.)
+What were the 3 best moments of this month? (Not Instagram moments, actual best moments.)
 
 ```
 1. ________________________________________________
@@ -463,7 +463,7 @@ What were the hardest 3 moments? (Be honest. The planner won't tell.)
 3. ________________________________________________
 ```
 
-What surprised you about this season — your kid, yourself, the day-to-day?
+What surprised you about this season, your kid, yourself, the day-to-day?
 
 ```
 ___________________________________________________
@@ -481,7 +481,7 @@ ___________________________________________________
 ___________________________________________________
 ```
 
-What's something you almost didn't do — but it was the right call?
+What's something you almost didn't do, but it was the right call?
 
 ```
 ___________________________________________________
@@ -527,7 +527,7 @@ ___________________________________________________
 
 ---
 
-## Page 36 — A closing note
+## Page 36, A closing note
 
 You did this.
 
@@ -537,16 +537,16 @@ That's the planner doing its job.
 
 The point was never the pages. The point was the 60 seconds you took to ask yourself a question. The 30 seconds you spent noticing a small moment. The handful of times you wrote something honest in a quiet corner of a Tuesday.
 
-If those things happened — even once — you've done the thing.
+If those things happened, even once, you've done the thing.
 
-If they didn't happen this month — that's also okay. The planner will still be here next month. So will you.
+If they didn't happen this month, that's also okay. The planner will still be here next month. So will you.
 
 The undated, no-deadline, no-shame nature of this thing is the entire point. Use it again when you want to. Skip it when you don't. Buy it for a friend who's tired.
 
 Slow is a practice. It takes time. And probably more than one planner.
 
-— *Soothemade*
+*Soothemade*
 
 ---
 
-*This is a planning and reflection tool. It is not therapy, medical advice, or a substitute for professional support. If you're struggling with your mental health, please reach out — the US Maternal Mental Health Hotline is 1-833-852-6262.*
+*This is a planning and reflection tool. It is not therapy, medical advice, or a substitute for professional support. If you're struggling with your mental health, please reach out, the US Maternal Mental Health Hotline is 1-833-852-6262.*
