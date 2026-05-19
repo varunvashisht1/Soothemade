@@ -30,16 +30,24 @@ const links = [
     gap: var(--sp-5);
   }
   .logo {
-    font-family: var(--font-serif);
-    font-size: 21px;
+    font-family: var(--font-script);
+    font-size: 30px;
     color: var(--ink);
     font-weight: 500;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 10px;
+    line-height: 1;
   }
-  .logo svg { color: var(--sage); }
-  .logo em { font-style: italic; color: var(--accent); font-weight: 400; margin-left: 2px; }
+  .logo svg { color: var(--sage); align-self: center; }
+  .logo em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 21px;
+    color: var(--accent);
+    font-weight: 400;
+    margin-left: 4px;
+  }
   .links {
     display: flex;
     gap: 30px;
