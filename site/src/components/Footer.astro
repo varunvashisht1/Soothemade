@@ -32,6 +32,11 @@ const year = new Date().getFullYear();
 <footer class="foot rule-top">
   <div class="row">
     <div class="brand-block">
+      <svg class="brand-sprig" viewBox="370 125 60 95" fill="none" aria-hidden="true">
+        <path d="M 400 215 Q 397 175 401 130" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+        <ellipse cx="386" cy="190" rx="11" ry="4" fill="currentColor" transform="rotate(-45 386 190)"/>
+        <ellipse cx="414" cy="160" rx="11" ry="4" fill="currentColor" transform="rotate(45 414 160)"/>
+      </svg>
       <div class="logo">Soothemade <em>Notes</em></div>
       <p>A small apothecary of printables, planners, and cards. Made slowly, by hand, for the unphotographed parts of new parenthood.</p>
     </div>
@@ -74,6 +79,13 @@ const year = new Date().getFullYear();
   li { margin-bottom: 8px; font-size: 13px; }
   a { color: var(--ink-soft); transition: color var(--t-fast) var(--ease); }
   a:hover { color: var(--accent); }
+  .brand-block .brand-sprig {
+    width: 22px;
+    height: 36px;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 14px;
+  }
   .brand-block .logo {
     font-family: var(--font-serif);
     font-size: 22px;
