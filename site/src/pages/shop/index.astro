@@ -1,0 +1,139 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import ProductCard from '~/components/ProductCard.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+
+const products = (await getCollection('products')).sort(
+  (a, b) => (a.data.featuredOrder ?? 999) - (b.data.featuredOrder ?? 999),
+);
+
+const url = new URL(Astro.request.url);
+const activeCategory = url.searchParams.get('cat');
+
+const categories = [
+  { slug: null, label: 'All' },
+  { slug: 'pregnancy', label: 'Pregnancy' },
+  { slug: 'postpartum', label: 'Postpartum' },
+  { slug: 'recovery', label: 'Recovery' },
+  { slug: 'mental-health', label: 'Mental health' },
+  { slug: 'partner', label: 'For the partner' },
+  { slug: 'early-years', label: '0–3 years' },
+  { slug: 'family', label: 'Family' },
+];
+
+const filtered = activeCategory
+  ? products.filter((p) => p.data.category === activeCategory)
+  : products;
+---
+<BaseLayout
+  title="The catalog — Soothemade Notes"
+  description="The full Soothemade Notes catalog of printables, planners, and cards for the unphotographed parts of new parenthood."
+>
+  <Nav />
+
+  <header class="shop-header rule-bottom">
+    <div class="eyebrow">— the catalog —</div>
+    <h1>Everything in the shop.</h1>
+    <p>Made slowly, in plain language, for the unphotographed days. Currently {products.length} items, with more on the way each month.</p>
+  </header>
+
+  <nav class="filter-row rule-bottom" aria-label="Category filter">
+    {categories.map((c) => (
+      <a
+        href={c.slug ? `/shop?cat=${c.slug}` : '/shop'}
+        class:list={['chip', { active: activeCategory === c.slug || (activeCategory === null && c.slug === null) }]}
+      >
+        {c.label}
+      </a>
+    ))}
+  </nav>
+
+  {filtered.length === 0 ? (
+    <p class="empty">No items in this category yet — check back soon.</p>
+  ) : (
+    <section class="grid">
+      {filtered.map((p) => (
+        <ProductCard
+          href={`/shop/${p.id}`}
+          label={p.data.heroLabel}
+          meta={p.data.specs}
+          tagline={p.data.tagline}
+          price={`$${p.data.price}`}
+          code={p.data.code}
+          glyph={p.data.glyph}
+        />
+      ))}
+    </section>
+  )}
+
+  <Newsletter />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .shop-header {
+    padding: 72px var(--sp-7) 56px;
+    text-align: center;
+  }
+  .shop-header h1 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-4xl);
+    margin: 14px 0 16px;
+    font-weight: 400;
+    letter-spacing: var(--ls-tight);
+    color: var(--ink);
+  }
+  .shop-header p {
+    max-width: 540px;
+    margin: 0 auto;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.5;
+  }
+  .filter-row {
+    padding: 22px var(--sp-7);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .chip {
+    border: 1px solid var(--rule-strong);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    font-size: 12.5px;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-wide);
+    transition: all var(--t-fast) var(--ease);
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); }
+  .chip.active { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+  .grid {
+    padding: 48px var(--sp-7) 64px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .empty {
+    text-align: center;
+    padding: 80px var(--sp-5);
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 18px;
+  }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 800px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 880px) {
+    .shop-header { padding: 56px var(--sp-5) 40px; }
+    .shop-header h1 { font-size: 40px; }
+    .grid { padding: 32px var(--sp-5) 48px; }
+    .filter-row { padding: 18px var(--sp-5); }
+  }
+</style>

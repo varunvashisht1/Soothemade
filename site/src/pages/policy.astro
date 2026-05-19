@@ -1,0 +1,64 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import Footer from '~/components/Footer.astro';
+---
+<BaseLayout
+  title="Returns &amp; policy — Soothemade Notes"
+  description="The Soothemade Notes returns policy, privacy approach, and licensing terms."
+>
+  <Nav />
+  <article class="legal">
+    <div class="eyebrow">— the fine print, plainly —</div>
+    <h1>Returns, privacy, and what you can do with your files.</h1>
+
+    <h2>Returns</h2>
+    <p>Soothemade Notes products are digital downloads — instant PDFs. Because the file is delivered at purchase, we do not offer refunds as a default. If something genuinely doesn't work for you, write to <a href="mailto:notes@soothemade.com">notes@soothemade.com</a> and we'll figure it out. Quietly.</p>
+
+    <h2>Licensing</h2>
+    <p>Everything we sell is licensed for personal use. You can print as many copies as you want for yourself and your household, including printing extras to gift to a friend in person. You may not redistribute the PDF file itself, repackage it for sale, or resell printed copies on a marketplace. If you'd like to use a printable in a hospital, doula practice, or clinical setting, write to us — there's a separate license for that.</p>
+
+    <h2>Privacy</h2>
+    <p>We collect the absolute minimum. Your email address (only if you subscribe) and your purchase record (only if you buy). We do not run third-party analytics that profile you. We use Cloudflare Web Analytics, which is cookieless and does not track individuals across sites. We do not share, sell, or rent email addresses — ever. You can unsubscribe with one click from any email we send.</p>
+
+    <h2>The site is not a person</h2>
+    <p>Nothing on this site or in our products is medical, mental-health, legal, or financial advice. Some of our products touch sensitive ground (postpartum mental health, c-section recovery) and we are careful with the language — but we are not your provider. If something feels wrong, call yours.</p>
+
+    <h2>Changes</h2>
+    <p>If we materially change this policy, we'll note it on the page with a date. Last revised: May 2026.</p>
+  </article>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 72px var(--sp-7) 100px;
+  }
+  .eyebrow { text-align: center; font-size: var(--fs-xs); letter-spacing: var(--ls-widest); text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 42px;
+    margin: 0 0 40px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: var(--ls-tight);
+    color: var(--ink);
+  }
+  h2 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 24px;
+    margin: 36px 0 12px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  p { font-size: 16px; line-height: 1.7; color: var(--ink); margin: 0 0 16px; }
+  a { color: var(--accent); border-bottom: 1px solid var(--rule-strong); }
+  @media (max-width: 880px) {
+    .legal { padding: 48px var(--sp-5) 72px; }
+    h1 { font-size: 30px; }
+  }
+</style>

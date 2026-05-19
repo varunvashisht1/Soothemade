@@ -1,16 +1,20 @@
 /*
- * Brand stylesheet for product PDFs.
- * Matches brand/visual-identity.md.
- * Palette 1 (warm vintage / calm).
+ * Soothemade Notes — product PDF stylesheet.
+ *
+ * Brand: warm vintage, cream + terracotta + sage + wheat.
+ * The single source of styling for every product PDF rendered
+ * by scripts/render.py.
  */
 
 :root {
-  --bg: #F5EFE6;
-  --text: #2E2A24;
-  --accent-1: #B4654A;  /* terracotta */
-  --accent-2: #8C9B7A;  /* sage olive */
-  --accent-3: #D4A574;  /* wheat */
-  --muted: #A89A8C;     /* stone */
+  --bg:        #F5EFE6;   /* cream — page bg */
+  --bg-warm:   #FAF6EF;   /* slightly lighter — content cards */
+  --text:      #2E2A24;   /* ink */
+  --ink-soft:  #5C5347;   /* secondary text */
+  --accent:    #B4654A;   /* terracotta */
+  --accent-2:  #8C9B7A;   /* sage olive */
+  --accent-3:  #D4A574;   /* wheat / dashed dividers */
+  --muted:     #B8AC9A;   /* stone — meta lines, page chrome */
 }
 
 body {
@@ -22,7 +26,125 @@ body {
   margin: 0;
 }
 
-.page { padding: 0; }
+/* =====================================================
+   COVER PAGE
+   ===================================================== */
+
+.cover {
+  height: 100vh;
+  background: var(--bg);
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.2in 0.9in 0.9in 0.9in;
+  margin: 0;
+  text-align: center;
+}
+
+.cover-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-bottom {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.4in;
+}
+
+.cover-mark {
+  width: 105pt;
+  height: 78pt;
+  margin-bottom: 28pt;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.cover-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 22pt;
+}
+.cover-meta .dot { padding: 0 0.4em; color: var(--accent-3); }
+
+.cover-title {
+  font-family: 'Fraunces', serif;
+  font-size: 42pt;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--accent);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  max-width: 90%;
+  margin: 0 0 22pt 0;
+}
+
+.cover-subtitle {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14pt;
+  font-weight: 400;
+  color: var(--ink-soft);
+  max-width: 75%;
+  line-height: 1.5;
+  margin: 0 0 32pt 0;
+}
+
+.cover-divider {
+  width: 80pt;
+  height: 1pt;
+  background: var(--accent-3);
+  margin: 8pt 0 28pt 0;
+}
+
+.cover-brand {
+  margin-top: 6pt;
+}
+.cover-brand-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 16pt;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.005em;
+}
+.cover-brand-mark em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+.cover-brand-line {
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8pt;
+}
+
+.cover-ymyl {
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding: 7pt 16pt;
+  display: inline-block;
+}
+
+/* =====================================================
+   BODY
+   ===================================================== */
+
+.body { padding: 0; }
 
 /* HEADINGS ----------------------------------------------------------- */
 
@@ -35,29 +157,28 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 32pt;
+  font-size: 28pt;
   margin: 0 0 0.4em 0;
-  color: var(--accent-1);
-  text-align: center;
-  page-break-before: avoid;
+  color: var(--accent);
   font-style: italic;
 }
 
-h1 + p em {
-  display: block;
-  text-align: center;
-  font-size: 12pt;
-  color: var(--muted);
-  margin-bottom: 1.5em;
-}
-
 h2 {
-  font-size: 20pt;
-  margin: 1.8em 0 0.5em;
-  color: var(--accent-1);
-  border-bottom: 1px solid var(--accent-3);
+  font-size: 22pt;
+  margin: 1.8em 0 0.6em;
+  color: var(--accent);
   padding-bottom: 0.3em;
   page-break-before: always;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 36pt;
+  height: 1pt;
+  background: var(--accent-3);
+  margin-top: 12pt;
 }
 
 h2:first-of-type {
@@ -66,15 +187,19 @@ h2:first-of-type {
 
 h3 {
   font-size: 15pt;
-  margin: 1.4em 0 0.4em;
+  margin: 1.6em 0 0.5em;
   color: var(--accent-2);
+  font-style: italic;
 }
 
 h4 {
-  font-size: 12pt;
-  margin: 1em 0 0.3em;
-  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 9.5pt;
+  margin: 1.2em 0 0.4em;
+  color: var(--accent);
   font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 /* PARAGRAPHS --------------------------------------------------------- */
@@ -85,64 +210,89 @@ p {
   widows: 3;
 }
 
-/* HORIZONTAL RULES --------------------------------------------------- */
+/* Larger first letter on the first paragraph of each section
+   (WeasyPrint does not support float in ::first-letter, so we
+   keep it inline-larger rather than a true drop cap). */
+h2 + p::first-letter {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 20pt;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* HORIZONTAL RULES (botanical sprig in place of dashed line) ---------- */
 
 hr {
   border: none;
-  border-top: 1px dashed var(--accent-3);
-  margin: 2em auto;
-  width: 60%;
+  height: 28pt;
+  margin: 1.8em auto;
+  width: 100%;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 28' fill='none' stroke='%238C9B7A' stroke-width='1.1' stroke-linecap='round'><path d='M0 14 L42 14' opacity='0.45'/><path d='M78 14 L120 14' opacity='0.45'/><path d='M60 4 L60 24'/><path d='M60 10 Q 48 11, 44 18 Q 56 16, 60 16'/><path d='M60 14 Q 72 15, 76 22 Q 64 20, 60 20'/><circle cx='60' cy='4' r='1.6' fill='%238C9B7A'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120pt 28pt;
 }
 
-/* QUOTES ------------------------------------------------------------- */
+/* BLOCKQUOTES (pull quotes) ------------------------------------------ */
 
 blockquote {
-  border-left: 3px solid var(--accent-2);
-  padding: 0.4em 0 0.4em 1em;
-  margin: 1em 0;
-  color: var(--muted);
+  font-family: 'Fraunces', serif;
   font-style: italic;
+  font-size: 14.5pt;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--accent-2);
+  padding: 0.2em 0 0.2em 1.1em;
+  margin: 1.2em 0;
 }
+
+blockquote p { margin-bottom: 0.4em; }
+blockquote p:last-child { margin-bottom: 0; }
 
 /* LISTS -------------------------------------------------------------- */
 
 ul, ol {
-  margin: 0 0 0.85em 1.2em;
+  margin: 0 0 1em 1.4em;
   padding: 0;
 }
 
 li {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.4em;
 }
 
 ul li::marker {
-  color: var(--accent-1);
+  color: var(--accent);
 }
 
 /* INLINE FORMATTING -------------------------------------------------- */
 
-strong { font-weight: 600; }
-em { font-style: italic; color: var(--text); }
-em em { color: var(--accent-1); }
+strong { font-weight: 600; color: var(--text); }
+em     { font-style: italic; color: var(--text); }
+strong em, em strong { color: var(--accent); }
 
-/* CODE / FILL-IN BLANKS --------------------------------------------- */
+a { color: var(--accent); }
+
+/* CODE / FILL-IN BLANKS ---------------------------------------------- */
 
 pre, code {
   font-family: 'Inter', monospace;
   font-size: 10pt;
   background: transparent;
-  color: var(--muted);
+  color: var(--ink-soft);
 }
 
 pre {
-  background: #FAF6EF;
+  background: var(--bg-warm);
   border: 1px solid var(--accent-3);
   border-radius: 2px;
-  padding: 0.8em 1em;
+  padding: 1em 1.1em;
   white-space: pre-wrap;
   word-wrap: break-word;
-  margin: 0.6em 0 1.2em 0;
+  margin: 0.6em 0 1.4em 0;
   page-break-inside: avoid;
+  line-height: 1.55;
 }
 
 /* TABLES ------------------------------------------------------------- */
@@ -150,46 +300,35 @@ pre {
 table {
   border-collapse: collapse;
   width: 100%;
-  margin: 1em 0;
+  margin: 1.2em 0;
   font-size: 10pt;
 }
 
 th, td {
   text-align: left;
-  padding: 0.5em 0.7em;
+  padding: 0.6em 0.75em;
   border-bottom: 1px solid var(--accent-3);
   vertical-align: top;
 }
 
 th {
   font-family: 'Fraunces', serif;
-  color: var(--accent-1);
+  color: var(--accent);
   font-weight: 500;
-  border-bottom: 2px solid var(--accent-1);
+  border-bottom: 2px solid var(--accent);
+  letter-spacing: 0.02em;
 }
 
-/* SPECIFIC PATTERNS -------------------------------------------------- */
-
-/* Card-style sections (the cards in P01, P02, P05 etc.) */
-h3 + p strong {
-  color: var(--accent-1);
-}
-
-/* Hand-lettered closing */
+/* Hand-lettered closing signoff ("— Soothemade") */
 hr + p em:last-child {
   font-family: 'Caveat', cursive;
-  font-size: 14pt;
-  color: var(--muted);
+  font-size: 15pt;
+  color: var(--ink-soft);
   display: block;
   text-align: center;
 }
 
-/* Center the "— the brand" signoff */
-p em:contains("the brand") {
-  text-align: center;
-}
-
-/* Disclaimer at the bottom */
+/* Bottom-of-document disclaimer paragraph (small italic on its own row) */
 hr + p > em:only-child {
   font-size: 9pt;
   color: var(--muted);
@@ -197,4 +336,74 @@ hr + p > em:only-child {
   display: block;
   text-align: center;
   margin-top: 2em;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   COLOPHON / BACK COVER
+   ===================================================== */
+
+.colophon {
+  page: colophon;
+  page-break-before: always;
+  height: 100vh;
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+}
+
+.colophon-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1in;
+  text-align: center;
+}
+
+.colophon-mark {
+  width: 56pt;
+  height: 56pt;
+  color: var(--accent-2);
+  margin-bottom: 24pt;
+  opacity: 0.9;
+}
+
+.colophon-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 24pt;
+  font-weight: 500;
+  color: var(--text);
+}
+.colophon-brand em { font-style: italic; color: var(--accent); font-weight: 400; }
+
+.colophon-promise {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 13pt;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 4.5in;
+  margin: 36pt 0 36pt 0;
+}
+
+.colophon-url {
+  font-family: 'Inter', sans-serif;
+  font-size: 10pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28pt;
+}
+
+.colophon-fine {
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5pt;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  line-height: 1.7;
+  border-top: 1px solid var(--accent-3);
+  padding-top: 14pt;
+  max-width: 3.6in;
 }

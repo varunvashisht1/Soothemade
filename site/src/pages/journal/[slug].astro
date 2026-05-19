@@ -1,0 +1,236 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import ProductCard from '~/components/ProductCard.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getCollection('journal');
+  return posts.map((p) => ({ params: { slug: p.id }, props: { post: p } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const dtf = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+const allProducts = await getCollection('products');
+const related = (post.data.relatedProducts ?? [])
+  .map((slug) => allProducts.find((p) => p.id === slug))
+  .filter((p): p is (typeof allProducts)[number] => Boolean(p));
+---
+<BaseLayout
+  title={`${post.data.title} — Soothemade Notes`}
+  description={post.data.description}
+>
+  <Nav />
+
+  <article class="post">
+    <div class="crumbs">
+      <a href="/journal">← back to the journal</a>
+    </div>
+
+    <header class="head">
+      <div class="meta">
+        {post.data.categories?.[0] && <span>{post.data.categories[0]}</span>}
+        {post.data.readTime && <span>· {post.data.readTime}</span>}
+        <span>· {dtf.format(post.data.date)}</span>
+      </div>
+      <h1>{post.data.title}</h1>
+      <p class="dek">{post.data.description}</p>
+      <div class="byline">By {post.data.author}</div>
+    </header>
+
+    <div class="body">
+      <Content />
+    </div>
+
+    {related.length > 0 && (
+      <section class="related">
+        <h2>Things from the shop, while you're here —</h2>
+        <div class="related-grid">
+          {related.map((p) => (
+            <ProductCard
+              href={`/shop/${p.id}`}
+              label={p.data.heroLabel}
+              meta={p.data.specs}
+              tagline={p.data.tagline}
+              price={`$${p.data.price}`}
+              code={p.data.code}
+              glyph={p.data.glyph}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+  </article>
+
+  <Newsletter />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .post { padding: 0; }
+  .crumbs {
+    padding: 24px var(--sp-7) 0;
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+  .crumbs a { color: var(--ink-soft); }
+  .crumbs a:hover { color: var(--accent); }
+
+  .head {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 48px var(--sp-7) 32px;
+    text-align: center;
+  }
+  .meta {
+    font-size: 10.5px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 52px;
+    margin: 0 0 18px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: var(--ls-tight);
+    color: var(--ink);
+  }
+  .dek {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 21px;
+    color: var(--ink-soft);
+    margin: 0 0 26px;
+    line-height: 1.4;
+  }
+  .byline {
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* Long-form body */
+  .body {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 32px var(--sp-7) 64px;
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.75;
+  }
+  .body :global(h1) {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    margin: 52px 0 18px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: var(--ls-tight);
+  }
+  .body :global(h2) {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    margin: 44px 0 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .body :global(h3) {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    margin: 32px 0 10px;
+    font-weight: 500;
+  }
+  .body :global(h4) {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: var(--ls-wide);
+    color: var(--accent);
+    margin: 28px 0 8px;
+    font-weight: 500;
+  }
+  .body :global(p) { margin: 0 0 20px; }
+  .body :global(ul), .body :global(ol) { margin: 0 0 22px 24px; padding: 0; }
+  .body :global(li) { margin-bottom: 10px; }
+  .body :global(li > p) { margin-bottom: 8px; }
+  .body :global(strong) { color: var(--ink); font-weight: 500; }
+  .body :global(em) { font-style: italic; color: var(--accent); }
+  .body :global(blockquote) {
+    border-left: 2px solid var(--accent);
+    padding: 10px 0 10px 22px;
+    margin: 28px 0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 19px;
+  }
+  .body :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: 40px 0;
+  }
+  .body :global(a) {
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .body :global(a:hover) { border-bottom-color: var(--accent); }
+  .body :global(code) {
+    font-family: ui-monospace, monospace;
+    background: var(--surface-deep);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+  .body :global(pre) {
+    background: var(--surface-deep);
+    padding: 18px 20px;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin: 22px 0;
+  }
+
+  /* Related */
+  .related {
+    border-top: 1px solid var(--rule);
+    padding: 64px var(--sp-7) 48px;
+    background: var(--surface-deep);
+  }
+  .related h2 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 28px;
+    margin: 0 0 32px;
+    text-align: center;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 880px) {
+    .head { padding: 32px var(--sp-5) 24px; }
+    h1 { font-size: 36px; }
+    .body { padding: 24px var(--sp-5) 48px; font-size: 16px; }
+    .related { padding: 48px var(--sp-5) 32px; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

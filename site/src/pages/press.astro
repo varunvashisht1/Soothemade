@@ -1,0 +1,20 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import SoftStub from '~/components/SoftStub.astro';
+import Footer from '~/components/Footer.astro';
+---
+<BaseLayout
+  title="Press — Soothemade Notes"
+  description="Press, partnership, and feature inquiries for Soothemade Notes."
+>
+  <Nav />
+  <SoftStub
+    eyebrow="— press &amp; partnership —"
+    heading="Drop us a line."
+    body="A formal press kit will live here. In the meantime, write to notes@soothemade.com with what you're working on and we'll send images, founder bio, and quotable lines from the studio."
+    backHref="mailto:notes@soothemade.com"
+    backLabel="email the studio →"
+  />
+  <Footer />
+</BaseLayout>

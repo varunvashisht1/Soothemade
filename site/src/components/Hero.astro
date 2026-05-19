@@ -1,0 +1,84 @@
+---
+import BotanicalLeaf from './BotanicalLeaf.astro';
+
+interface Props {
+  eyebrow?: string;
+  headlinePre: string;
+  headlineAccent?: string;
+  headlinePost?: string;
+  body: string;
+  primaryCta?: { href: string; label: string };
+  secondaryCta?: { href: string; label: string };
+}
+
+const {
+  eyebrow = '— a small apothecary of printables —',
+  headlinePre,
+  headlineAccent,
+  headlinePost,
+  body,
+  primaryCta,
+  secondaryCta,
+} = Astro.props;
+---
+<section class="hero">
+  <BotanicalLeaf class="leaf l1" size={70} rotate={-25} />
+  <BotanicalLeaf class="leaf l2" size={56} rotate={45} />
+  <BotanicalLeaf class="leaf l3" size={60} rotate={110} />
+  <BotanicalLeaf class="leaf l4" size={48} rotate={-50} />
+
+  {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+  <h1>
+    {headlinePre}{headlineAccent && (<>{' '}<em>{headlineAccent}</em></>)}{headlinePost && (<>{' '}{headlinePost}</>)}
+  </h1>
+  <p>{body}</p>
+  {(primaryCta || secondaryCta) && (
+    <div class="cta-row">
+      {primaryCta && <a class="btn btn-primary" href={primaryCta.href}>{primaryCta.label}</a>}
+      {secondaryCta && <a class="btn btn-secondary" href={secondaryCta.href}>{secondaryCta.label}</a>}
+    </div>
+  )}
+</section>
+
+<style>
+  .hero {
+    padding: 84px var(--sp-7) 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .leaf { position: absolute; opacity: 0.5; color: var(--sage); }
+  .leaf.l1 { top: 48px; left: 64px; }
+  .leaf.l2 { top: 80px; right: 90px; }
+  .leaf.l3 { bottom: 32px; left: 140px; }
+  .leaf.l4 { bottom: 60px; right: 160px; }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-4xl);
+    margin: 18px auto 22px;
+    font-weight: 400;
+    line-height: 1.05;
+    max-width: 800px;
+    color: var(--ink);
+    letter-spacing: var(--ls-tight);
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  p {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 20px;
+    max-width: 500px;
+    margin: 0 auto 28px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  @media (max-width: 880px) {
+    .hero { padding: 56px var(--sp-5) 48px; }
+    h1 { font-size: 40px; }
+    p { font-size: 17px; }
+    .leaf { display: none; }
+  }
+</style>

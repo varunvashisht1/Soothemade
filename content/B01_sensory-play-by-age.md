@@ -1,14 +1,14 @@
 ---
-layout: post
 title: "The Complete Sensory Play Activity Guide by Age (0–3 Years)"
 date: 2026-01-15
 author: Maya
 categories: [sensory-play, activities, by-age]
 description: "Sensory play for babies and toddlers, sorted by age, using stuff you already own. 0-6m, 6-12m, 12-24m, 24-36m. Real activities, real-parent guidance, no Pinterest-perfect required."
-schema: Article
+readTime: "12 min"
+featured: true
+relatedProducts: [sensory-play-cards, slow-motherhood-planner, screen-free-challenge]
 ---
 
-# The Complete Sensory Play Activity Guide by Age (0–3 Years)
 
 The first time I tried "sensory play" with my 4-month-old, I spent an hour on Pinterest, ordered $40 of supplies from Amazon, and ended up with a baby who put one finger in the rainbow rice and then cried for the next 30 minutes.
 

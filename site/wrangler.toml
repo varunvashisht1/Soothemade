@@ -1,0 +1,43 @@
+# Cloudflare Workers configuration for notes.soothemade.com
+# Deploy with: npm run deploy
+# Full deploy guide: ./DEPLOY.md
+
+name = "soothemade-notes"
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+main = "./dist/_worker.js/index.js"
+workers_dev = true
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+
+# ---------------------------------------------------------------
+# Custom domain — uncomment AFTER the first deploy and after
+# soothemade.com is on Cloudflare nameservers.
+# Alternatively, add it via Workers > soothemade-notes > Settings
+# > Domains & Routes > Add (UI).
+# ---------------------------------------------------------------
+# routes = [
+#   { pattern = "notes.soothemade.com", custom_domain = true }
+# ]
+
+# ---------------------------------------------------------------
+# Bindings — added in later milestones.
+# ---------------------------------------------------------------
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "soothemade-notes"
+# database_id = "TBD"
+#
+# [[r2_buckets]]
+# binding = "FILES"
+# bucket_name = "soothemade-notes-files"
+#
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "TBD"
+
+[observability]
+enabled = true

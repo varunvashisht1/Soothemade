@@ -6,33 +6,67 @@ Usage:
     python scripts/render.py products/P02_saying-no-scripts/
     python scripts/render.py --all                # render every product
     python scripts/render.py --size A4            # default is US Letter
+    python scripts/render.py --size both          # both letter + a4
+
+When a sibling web.md exists, its frontmatter drives the cover page
+(title, code, specs, summary). The first H1 of content.md is dropped
+to avoid duplication; the body content starts on its own page after
+the cover. A back-cover colophon is appended automatically.
 
 Requires:
-    pip install weasyprint markdown jinja2
-
-This script reads `content.md`, applies the brand stylesheet, and writes
-`product.pdf` into the product's folder. It also writes `product_a4.pdf`
-when `--size both` is passed.
+    pip install weasyprint markdown jinja2 python-frontmatter
 """
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 
 try:
+    import frontmatter
     import markdown
     from jinja2 import Template
     from weasyprint import HTML, CSS
 except ImportError as e:
     sys.exit(
         f"Missing dependency: {e}\n"
-        "Install with: pip install weasyprint markdown jinja2"
+        "Install with: pip install weasyprint markdown jinja2 python-frontmatter"
     )
 
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE_PATH = ROOT / "scripts" / "templates" / "product.html.j2"
 STYLESHEET_PATH = ROOT / "scripts" / "templates" / "product.css"
+
+
+def load_meta(product_dir: Path) -> dict | None:
+    """Return product metadata from sibling web.md, or None."""
+    web_md = product_dir / "web.md"
+    if not web_md.exists():
+        return None
+    return dict(frontmatter.load(web_md).metadata)
+
+
+def strip_first_h1(body_html: str) -> tuple[str, str]:
+    """Strip the first <h1>...</h1> from body_html and return (h1_text, rest)."""
+    m = re.search(r"<h1[^>]*>(.*?)</h1>", body_html, flags=re.DOTALL | re.IGNORECASE)
+    if not m:
+        return "", body_html
+    title = m.group(1).strip()
+    rest = body_html[: m.start()] + body_html[m.end():]
+    return title, rest
+
+
+def strip_leading_italic_para(body_html: str) -> tuple[str, str]:
+    """Pull off the first <p><em>...</em></p> (the subtitle) if present."""
+    m = re.search(
+        r"^\s*<p[^>]*>\s*<em>(.*?)</em>\s*</p>\s*",
+        body_html,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+    if not m:
+        return "", body_html
+    return m.group(1).strip(), body_html[m.end():]
 
 
 def render_one(product_dir: Path, size: str = "letter") -> Path:
@@ -43,47 +77,51 @@ def render_one(product_dir: Path, size: str = "letter") -> Path:
 
     md_text = content_md.read_text(encoding="utf-8")
 
-    # Convert markdown to HTML.
     body_html = markdown.markdown(
         md_text,
         extensions=["extra", "smarty", "sane_lists", "toc"],
         output_format="html5",
     )
 
-    # Wrap in our brand template.
-    template_text = TEMPLATE_PATH.read_text(encoding="utf-8")
-    template = Template(template_text)
-    page_size = "A4" if size == "a4" else "Letter"
-    html_doc = template.render(body=body_html, page_size=page_size)
+    meta = load_meta(product_dir) or {}
 
-    # Output path.
+    # Cover content. Prefer web.md metadata; fall back to content.md's H1+subtitle.
+    h1_text, body_html = strip_first_h1(body_html)
+    subtitle_text, body_html = strip_leading_italic_para(body_html)
+
+    cover = {
+        "title": meta.get("title") or h1_text or product_dir.name,
+        "code": meta.get("code") or "",
+        "specs": meta.get("specs") or "",
+        "subtitle": meta.get("summary") or subtitle_text or "",
+        "tagline": meta.get("tagline") or "",
+        "ymyl": bool(meta.get("ymyl")),
+    }
+
+    template = Template(TEMPLATE_PATH.read_text(encoding="utf-8"))
+    page_size = "A4" if size == "a4" else "Letter"
+    html_doc = template.render(
+        body=body_html,
+        cover=cover,
+        page_size=page_size,
+    )
+
     suffix = "" if size == "letter" else f"_{size}"
     output = product_dir / f"product{suffix}.pdf"
 
-    # Render to PDF with our stylesheet applied.
     css = CSS(filename=str(STYLESHEET_PATH))
     HTML(string=html_doc, base_url=str(ROOT)).write_pdf(
         target=str(output), stylesheets=[css]
     )
-
     return output
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("product_dir", nargs="?")
+    parser.add_argument("--all", action="store_true", help="Render every product")
     parser.add_argument(
-        "product_dir",
-        nargs="?",
-        help="Path to a product folder (containing content.md)",
-    )
-    parser.add_argument(
-        "--all", action="store_true", help="Render every product in products/"
-    )
-    parser.add_argument(
-        "--size",
-        choices=["letter", "a4", "both"],
-        default="letter",
-        help="Page size (default: letter)",
+        "--size", choices=["letter", "a4", "both"], default="letter"
     )
     args = parser.parse_args()
 

@@ -1,0 +1,70 @@
+---
+interface Category {
+  href: string;
+  name: string;
+  count: string;
+  glyph: 'cross' | 'leaf' | 'book' | 'partner';
+}
+interface Props { categories: Category[]; }
+const { categories } = Astro.props;
+---
+<div class="categories rule-top rule-bottom">
+  {categories.map((c) => (
+    <a href={c.href}>
+      {c.glyph === 'cross' && (
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <circle cx="18" cy="18" r="11" />
+          <path d="M18 7 L 18 29 M 7 18 L 29 18" stroke-linecap="round" />
+        </svg>
+      )}
+      {c.glyph === 'leaf' && (
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <path d="M18 5 Q 7 18, 18 31 Q 29 18, 18 5 Z" />
+        </svg>
+      )}
+      {c.glyph === 'book' && (
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <rect x="8" y="8" width="20" height="20" rx="2" />
+          <path d="M8 15 L 28 15 M 8 22 L 28 22" />
+        </svg>
+      )}
+      {c.glyph === 'partner' && (
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <circle cx="18" cy="12" r="5" />
+          <path d="M8 30 Q 18 18, 28 30" />
+        </svg>
+      )}
+      <div class="name">{c.name}</div>
+      <div class="count">{c.count}</div>
+    </a>
+  ))}
+</div>
+
+<style>
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .categories a {
+    padding: 36px 24px;
+    text-align: center;
+    color: var(--ink);
+    border-right: 1px solid var(--rule);
+    transition: background var(--t-fast) var(--ease);
+  }
+  .categories a:last-child { border-right: none; }
+  .categories a:hover { background: var(--hover); }
+  .glyph { width: 36px; height: 36px; margin: 0 auto 14px; color: var(--sage); }
+  .name { font-family: var(--font-serif); font-size: 17px; font-weight: 500; margin-bottom: 4px; }
+  .count {
+    font-size: 10.5px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  @media (max-width: 880px) {
+    .categories { grid-template-columns: repeat(2, 1fr); }
+    .categories a:nth-child(2n) { border-right: none; }
+    .categories a:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+  }
+</style>

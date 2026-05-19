@@ -1,0 +1,91 @@
+---
+interface Post {
+  href: string;
+  category: string;
+  readTime: string;
+  title: string;
+  blurb: string;
+}
+interface Props { title?: string; allHref?: string; posts: Post[]; }
+const { title = '— From the journal —', allHref = '/journal', posts } = Astro.props;
+---
+<section class="journal rule-top">
+  <div class="head">
+    <h2>{title}</h2>
+    <a href={allHref}>read all letters</a>
+  </div>
+  {posts.map((p) => (
+    <article>
+      <a href={p.href}>
+        <div class="meta">{p.category} · {p.readTime}</div>
+        <h3>{p.title}</h3>
+        <p>{p.blurb}</p>
+        <span class="read">read the letter →</span>
+      </a>
+    </article>
+  ))}
+</section>
+
+<style>
+  .journal {
+    padding: 64px var(--sp-7);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .head {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    gap: var(--sp-4);
+    flex-wrap: wrap;
+  }
+  .head h2 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 30px;
+    margin: 0;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .head a {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  article a { color: var(--ink); display: block; }
+  .meta {
+    font-size: 10.5px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    margin: 0 0 10px;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+    line-height: 1.55;
+  }
+  .read {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 1px;
+  }
+  @media (max-width: 1000px) { .journal { grid-template-columns: 1fr; } }
+  @media (max-width: 880px)  { .journal { padding: 48px var(--sp-5); } }
+</style>

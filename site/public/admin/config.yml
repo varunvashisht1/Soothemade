@@ -1,0 +1,66 @@
+backend:
+  name: github
+  repo: varunvashisht1/Soothemade
+  branch: main
+  base_url: https://api.netlify.com
+  # Use git-gateway when you set up Netlify Identity, OR replace
+  # this entire block with a Cloudflare-Pages-friendly auth proxy.
+  # Decap also supports a `proxy` backend for local editing — see
+  # docs/cms.md.
+
+media_folder: "site/public/uploads"
+public_folder: "/uploads"
+site_url: https://notes.soothemade.com
+display_url: https://notes.soothemade.com
+logo_url: https://notes.soothemade.com/og-default.png
+
+# ---------------------------------------------------------------
+# Collections
+# ---------------------------------------------------------------
+collections:
+
+  # =============================================================
+  # SITE SETTINGS — single file, holds the theme picker + hybrid
+  # =============================================================
+  - name: "settings"
+    label: "Site settings"
+    delete: false
+    editor: { preview: false }
+    files:
+      - name: "theme"
+        label: "Theme"
+        file: "site/src/data/theme.json"
+        description: "Pick a preset theme, or pick a preset and override individual tokens for a hybrid look."
+        fields:
+          - name: "preset"
+            label: "Preset"
+            widget: "select"
+            default: "forest"
+            options:
+              - { label: "A — Deep Forest (default)", value: "forest" }
+              - { label: "B — Charcoal Luxe", value: "charcoal" }
+              - { label: "C — Mossy Oak", value: "mossy" }
+              - { label: "Custom (start from Deep Forest, then override below)", value: "custom" }
+            hint: "Pick A, B, or C for a stock palette. Pick Custom to start from Deep Forest and override individual tokens below."
+
+          - name: "overrides"
+            label: "Hybrid overrides"
+            widget: "object"
+            required: false
+            collapsed: true
+            summary: "{{fields.--accent}} accent · {{fields.--surface}} surface"
+            hint: "Leave any field blank to keep the preset's value. Hex / rgba both fine."
+            fields:
+              - { name: "--surface",         label: "Surface (page background)",        widget: "string", required: false }
+              - { name: "--surface-deep",    label: "Surface — deep (newsletter, etc.)", widget: "string", required: false }
+              - { name: "--surface-deepest", label: "Surface — deepest (footer)",       widget: "string", required: false }
+              - { name: "--ink",             label: "Ink (primary text)",               widget: "string", required: false }
+              - { name: "--ink-soft",        label: "Ink — soft (secondary text)",      widget: "string", required: false }
+              - { name: "--ink-faint",       label: "Ink — faint (meta text)",          widget: "string", required: false }
+              - { name: "--sage",            label: "Sage (botanical accents)",         widget: "string", required: false }
+              - { name: "--accent",          label: "Accent (terracotta, CTAs)",        widget: "string", required: false }
+              - { name: "--card",            label: "Card background (product jars)",   widget: "string", required: false }
+              - { name: "--card-text",       label: "Card text",                        widget: "string", required: false }
+              - { name: "--card-text-soft",  label: "Card text — soft",                 widget: "string", required: false }
+              - { name: "--rule",            label: "Rule (hairline borders)",          widget: "string", required: false }
+              - { name: "--rule-strong",     label: "Rule — strong (visible borders)",  widget: "string", required: false }

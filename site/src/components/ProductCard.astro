@@ -1,0 +1,98 @@
+---
+interface Props {
+  href: string;
+  /** Apothecary jar label text — multi-line allowed via "\n". */
+  label: string;
+  /** Small meta line at the bottom of the jar. */
+  meta: string;
+  /** Tagline shown below the jar, in the brand voice. */
+  tagline: string;
+  /** Display price (e.g. "$14"). */
+  price: string;
+  /** Product code (e.g. "P09"). */
+  code: string;
+  /** Single-keyword glyph selector for the jar art. */
+  glyph?: 'circle' | 'jar' | 'square' | 'partner' | 'house' | 'cup' | 'heart' | 'twins' | 'card';
+}
+const { href, label, meta, tagline, price, code, glyph = 'circle' } = Astro.props;
+---
+<a class="pcard" href={href}>
+  <div class="frame">
+    <div class="top">
+      <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+        {glyph === 'circle' && <><circle cx="18" cy="18" r="11" /><path d="M11 18 L 25 18 M 18 11 L 18 25" stroke-linecap="round" /></>}
+        {glyph === 'jar' && <><path d="M8 12 Q 18 4, 28 12 L 28 28 L 8 28 Z" /><path d="M12 18 L 24 18" stroke-linecap="round" /></>}
+        {glyph === 'square' && <><rect x="8" y="8" width="20" height="20" /><path d="M8 15 L 28 15 M 12 21 L 22 21" /></>}
+        {glyph === 'partner' && <><circle cx="13" cy="14" r="4" /><circle cx="23" cy="14" r="4" /><path d="M7 28 Q 18 20, 29 28" /></>}
+        {glyph === 'house' && <><path d="M8 28 L 8 8 L 28 8 L 28 28 Z" /><path d="M8 14 L 28 14 M 8 20 L 28 20" /></>}
+        {glyph === 'cup' && <><path d="M18 8 L 14 16 L 22 16 Z M 14 16 L 14 28 L 22 28 L 22 16" /></>}
+        {glyph === 'heart' && <><circle cx="18" cy="18" r="11" /><path d="M11 22 Q 18 14, 25 22" stroke-linecap="round" /></>}
+        {glyph === 'twins' && <><circle cx="12" cy="18" r="5" /><circle cx="24" cy="18" r="5" /><path d="M8 26 L 28 26" /></>}
+        {glyph === 'card' && <><rect x="6" y="10" width="24" height="16" rx="2" /><path d="M6 16 L 30 16" /></>}
+      </svg>
+      <div class="label" set:html={label.replace(/\n/g, '<br/>')} />
+    </div>
+    <div class="bottom">{meta}</div>
+  </div>
+  <h3>{tagline}</h3>
+  <div class="meta-row">
+    <span>{price}</span>
+    <span>{code}</span>
+  </div>
+</a>
+
+<style>
+  .pcard { color: var(--ink); display: block; }
+  .frame {
+    aspect-ratio: 3/4;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22px 18px;
+    transition: border-color var(--t-fast) var(--ease), transform var(--t-base) var(--ease);
+  }
+  .pcard:hover .frame { border-color: var(--accent); transform: translateY(-2px); }
+  .top { text-align: center; }
+  .glyph {
+    width: 36px;
+    height: 36px;
+    margin: 6px auto 14px;
+    color: var(--sage);
+  }
+  .label {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--card-text);
+    line-height: 1.25;
+  }
+  .bottom {
+    text-align: center;
+    font-size: 10.5px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--card-text-soft);
+    border-top: 1px solid var(--card-rule);
+    padding-top: 10px;
+  }
+  h3 {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    margin: 0 0 4px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+  .meta-row {
+    font-size: 11px;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
