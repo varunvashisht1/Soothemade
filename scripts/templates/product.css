@@ -24,6 +24,9 @@ body {
   font-size: 11pt;
   line-height: 1.65;
   margin: 0;
+  /* Calm Fraunces — no Wonk, no Soft. opsz 20 keeps text-design glyphs
+     even at display sizes. Cascades to all Fraunces text. */
+  font-variation-settings: 'opsz' 20, 'SOFT' 0, 'WONK' 0;
 }
 
 /* =====================================================
@@ -75,15 +78,15 @@ body {
 .cover-meta .dot { padding: 0 0.4em; color: var(--accent-3); }
 
 .cover-title {
-  font-family: 'Fraunces', serif;
-  font-size: 42pt;
-  font-weight: 500;
+  font-family: 'Caveat', cursive;
+  font-size: 40pt;
+  font-weight: 600;
   font-style: normal;
   color: var(--accent);
-  line-height: 1.05;
-  letter-spacing: -0.015em;
+  line-height: 1.0;
+  letter-spacing: 0;
   max-width: 90%;
-  margin: 0 0 22pt 0;
+  margin: 0 0 14pt 0;
 }
 
 .cover-subtitle {
@@ -106,6 +109,7 @@ body {
 
 .cover-brand {
   margin-top: 6pt;
+  margin-bottom: 16pt;
 }
 .cover-brand-mark {
   font-family: 'Fraunces', serif;
@@ -113,22 +117,23 @@ body {
   font-weight: 500;
   color: var(--text);
   letter-spacing: -0.005em;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6pt;
   line-height: 1;
 }
 .cover-brand-mark .brand-name {
   font-family: 'Caveat', cursive;
-  font-size: 28pt;
+  font-size: 30pt;
   font-weight: 500;
   letter-spacing: 0;
-  vertical-align: middle;
 }
 .cover-brand-mark em {
   font-style: italic;
   color: var(--accent);
   font-weight: 400;
-  font-size: 16pt;
-  margin-left: 6pt;
-  vertical-align: middle;
+  font-size: 20pt;
 }
 .cover-brand-line {
   font-family: 'Inter', sans-serif;
@@ -386,22 +391,23 @@ hr + p > em:only-child {
   font-size: 24pt;
   font-weight: 500;
   color: var(--text);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10pt;
   line-height: 1;
 }
 .colophon-brand .brand-name {
   font-family: 'Caveat', cursive;
-  font-size: 40pt;
+  font-size: 44pt;
   font-weight: 500;
   letter-spacing: 0;
-  vertical-align: middle;
 }
 .colophon-brand em {
   font-style: italic;
   color: var(--accent);
   font-weight: 400;
-  font-size: 24pt;
-  margin-left: 8pt;
-  vertical-align: middle;
+  font-size: 30pt;
 }
 
 .colophon-promise {
