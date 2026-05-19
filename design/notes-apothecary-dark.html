@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Soothemade Notes — Dark Apothecary, three tones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,0,600;9..144,1,400;9..144,1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: Inter, sans-serif; background: #0d0d0a; color: #e8e0c8; }
+
+  /* sticky chrome */
+  .chrome {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #0d0d0a;
+    border-bottom: 1px solid #2a2a22;
+    padding: 14px 28px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .chrome .brand {
+    font-family: Fraunces, serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #e8e0c8;
+    margin-right: 18px;
+  }
+  .chrome .brand span { font-style: italic; color: #c87963; font-weight: 400; }
+  .chrome a {
+    color: #c8c0a8;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12.5px;
+    border: 1px solid #2a2a22;
+    transition: all 0.15s;
+  }
+  .chrome a:hover { background: #1a1a16; border-color: #c87963; color: #e8e0c8; }
+  .chrome small { color: #6a6a5a; font-size: 11px; margin-left: auto; }
+
+  .label-row {
+    padding: 36px 32px 24px;
+    background: #15150f;
+    border-bottom: 1px solid #2a2a22;
+  }
+  .label-row .num {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #8a8270;
+    font-weight: 500;
+  }
+  .label-row h2 {
+    font-family: Fraunces, serif;
+    font-size: 28px;
+    margin: 8px 0 4px;
+    color: #e8e0c8;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .label-row h2 em { font-style: italic; color: #c87963; }
+  .label-row p { color: #a8a892; max-width: 720px; margin: 0; font-size: 13.5px; }
+  .label-row .swatch-row { display: flex; gap: 8px; margin-top: 14px; }
+  .label-row .sw { width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); }
+
+  /* ============================================
+     Variant scoped styles (apply inside .v#)
+     ============================================ */
+
+  /* ---------- shared shop chrome ---------- */
+  .site nav.topnav {
+    padding: 24px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--rule);
+  }
+  .site nav.topnav .logo {
+    font-family: Fraunces, serif;
+    font-size: 21px;
+    color: var(--ink);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .site nav.topnav .logo svg { width: 26px; height: 26px; color: var(--sage); }
+  .site nav.topnav .logo em { font-style: italic; color: var(--accent); font-weight: 400; margin-left: 2px; }
+  .site nav.topnav .links {
+    display: flex;
+    gap: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+  .site nav.topnav a { color: var(--ink-soft); text-decoration: none; }
+  .site nav.topnav a:hover { color: var(--accent); }
+  .site nav.topnav .basket {
+    border: 1px solid var(--rule);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  .site .hero {
+    padding: 84px 56px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site .hero .leaf {
+    position: absolute;
+    opacity: 0.5;
+    color: var(--sage);
+  }
+  .site .hero .leaf.l1 { top: 48px; left: 64px; transform: rotate(-25deg); width: 70px; height: 70px; }
+  .site .hero .leaf.l2 { top: 80px; right: 90px; transform: rotate(45deg); width: 56px; height: 56px; }
+  .site .hero .leaf.l3 { bottom: 32px; left: 140px; transform: rotate(110deg); width: 60px; height: 60px; }
+  .site .hero .leaf.l4 { bottom: 60px; right: 160px; transform: rotate(-50deg); width: 48px; height: 48px; }
+  .site .hero .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .site .hero h1 {
+    font-family: Fraunces, serif;
+    font-size: 60px;
+    margin: 0 auto 22px;
+    font-weight: 400;
+    line-height: 1.05;
+    max-width: 800px;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .site .hero h1 em { font-style: italic; color: var(--accent); }
+  .site .hero p {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 20px;
+    max-width: 500px;
+    margin: 0 auto 28px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  .site .hero .cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+  .site .hero .btn-pri {
+    background: var(--accent);
+    color: var(--surface);
+    padding: 13px 26px;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: opacity 0.15s;
+  }
+  .site .hero .btn-pri:hover { opacity: 0.88; }
+  .site .hero .btn-sec {
+    background: transparent;
+    color: var(--ink);
+    padding: 13px 26px;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+  }
+  .site .hero .btn-sec:hover { border-color: var(--ink); }
+
+  /* categories row */
+  .site .categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .site .categories a {
+    padding: 36px 24px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--ink);
+    border-right: 1px solid var(--rule);
+    transition: background 0.15s;
+  }
+  .site .categories a:last-child { border-right: none; }
+  .site .categories a:hover { background: var(--hover); }
+  .site .categories .glyph {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 14px;
+    color: var(--sage);
+  }
+  .site .categories .name {
+    font-family: Fraunces, serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .site .categories .count {
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* shop */
+  .site .shop {
+    padding: 64px 56px 48px;
+  }
+  .site .shop .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 40px;
+  }
+  .site .shop h2 {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 32px;
+    margin: 0;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .site .shop .see-all {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+    font-size: 15px;
+  }
+  .site .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .site .pcard {
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .site .pcard .frame {
+    aspect-ratio: 3/4;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22px 18px;
+    transition: border-color 0.15s;
+  }
+  .site .pcard:hover .frame { border-color: var(--accent); }
+  .site .pcard .frame .top {
+    text-align: center;
+  }
+  .site .pcard .frame .glyph {
+    width: 36px;
+    height: 36px;
+    margin: 6px auto 14px;
+    color: var(--sage);
+  }
+  .site .pcard .frame .label {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--card-text);
+    line-height: 1.25;
+    text-align: center;
+  }
+  .site .pcard .frame .bottom {
+    text-align: center;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--card-text-soft);
+    border-top: 1px solid var(--card-rule);
+    padding-top: 10px;
+  }
+  .site .pcard h3 {
+    font-family: Fraunces, serif;
+    font-size: 16px;
+    margin: 0 0 4px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+  .site .pcard .meta {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* manifesto strip */
+  .site .manifesto {
+    padding: 80px 56px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    background: var(--surface-deep);
+  }
+  .site .manifesto blockquote {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 32px;
+    line-height: 1.3;
+    margin: 0 auto;
+    max-width: 720px;
+    color: var(--ink);
+    font-weight: 300;
+  }
+  .site .manifesto blockquote em { color: var(--accent); }
+  .site .manifesto cite {
+    display: block;
+    font-style: normal;
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 28px;
+  }
+
+  /* journal */
+  .site .journal {
+    padding: 64px 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .site .journal .head {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+  .site .journal .head h2 {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 30px;
+    margin: 0;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .site .journal article a {
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+  }
+  .site .journal article .meta {
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .site .journal article h3 {
+    font-family: Fraunces, serif;
+    font-size: 22px;
+    margin: 0 0 10px;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  .site .journal article p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+    line-height: 1.55;
+  }
+  .site .journal article .read {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+  .site .journal .head a {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+
+  /* newsletter */
+  .site .newsletter {
+    background: var(--surface-deep);
+    padding: 72px 56px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+  }
+  .site .newsletter .scroll {
+    color: var(--sage);
+    margin-bottom: 22px;
+    display: inline-block;
+  }
+  .site .newsletter h2 {
+    font-family: Fraunces, serif;
+    font-size: 36px;
+    margin: 0 0 12px;
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  .site .newsletter h2 em { font-style: italic; color: var(--accent); }
+  .site .newsletter p {
+    color: var(--ink-soft);
+    margin: 0 auto 26px;
+    max-width: 480px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .site .newsletter form {
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  .site .newsletter input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 4px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    outline: none;
+  }
+  .site .newsletter input::placeholder { color: var(--ink-faint); }
+  .site .newsletter button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: Fraunces, serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 15px;
+    padding: 12px 8px;
+  }
+  .site .newsletter .fine {
+    color: var(--ink-faint);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    margin-top: 16px;
+  }
+
+  /* footer */
+  .site footer.foot {
+    background: var(--surface-deepest);
+    color: var(--ink-soft);
+    padding: 48px 56px 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .site footer.foot .row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+  .site footer.foot h4 {
+    font-family: Fraunces, serif;
+    font-style: italic;
+    font-size: 16px;
+    margin: 0 0 14px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .site footer.foot ul { list-style: none; padding: 0; margin: 0; }
+  .site footer.foot li { margin-bottom: 8px; font-size: 13px; }
+  .site footer.foot a { color: var(--ink-soft); text-decoration: none; }
+  .site footer.foot a:hover { color: var(--accent); }
+  .site footer.foot .brand-block .logo {
+    font-family: Fraunces, serif;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .site footer.foot .brand-block .logo em { font-style: italic; color: var(--accent); }
+  .site footer.foot .brand-block p { font-size: 13px; max-width: 280px; margin: 0; line-height: 1.55; }
+  .site footer.foot .bottom {
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ============================================
+     VARIANT A — DEEP FOREST
+     ============================================ */
+  .vA .site {
+    --surface: #1c2418;
+    --surface-deep: #16201a;
+    --surface-deepest: #101810;
+    --card: #f1ead4;
+    --card-text: #5a6845;
+    --card-text-soft: #7a8a65;
+    --card-rule: rgba(90,104,69,0.25);
+    --ink: #ebe2c8;
+    --ink-soft: #b8b09a;
+    --ink-faint: #7a7765;
+    --rule: rgba(235,226,200,0.12);
+    --hover: rgba(235,226,200,0.04);
+    --sage: #a8b88a;
+    --accent: #d68a72;
+  }
+  .vA .site { background: var(--surface); color: var(--ink); }
+
+  /* ============================================
+     VARIANT B — CHARCOAL LUXE
+     ============================================ */
+  .vB .site {
+    --surface: #15150e;
+    --surface-deep: #0e0e08;
+    --surface-deepest: #080805;
+    --card: #1f1f17;
+    --card-text: #c8c4b0;
+    --card-text-soft: #888270;
+    --card-rule: rgba(200,196,176,0.15);
+    --ink: #e8e0c8;
+    --ink-soft: #aaa489;
+    --ink-faint: #6a6655;
+    --rule: rgba(232,224,200,0.1);
+    --hover: rgba(232,224,200,0.03);
+    --sage: #b2c08a;
+    --accent: #e2a78f;
+  }
+  .vB .site { background: var(--surface); color: var(--ink); }
+
+  /* ============================================
+     VARIANT C — MOSSY OAK
+     ============================================ */
+  .vC .site {
+    --surface: #25241a;
+    --surface-deep: #1c1b13;
+    --surface-deepest: #14130c;
+    --card: #d6cdb0;
+    --card-text: #4a4633;
+    --card-text-soft: #706a52;
+    --card-rule: rgba(74,70,51,0.22);
+    --ink: #e8dfc0;
+    --ink-soft: #b2a988;
+    --ink-faint: #7a725a;
+    --rule: rgba(232,223,192,0.12);
+    --hover: rgba(232,223,192,0.04);
+    --sage: #a8a672;
+    --accent: #c87963;
+  }
+  .vC .site { background: var(--surface); color: var(--ink); }
+
+</style>
+</head>
+<body>
+
+<nav class="chrome">
+  <span class="brand">Soothemade Notes <span>— Apothecary dark, three tones</span></span>
+  <a href="#a">A. Deep Forest</a>
+  <a href="#b">B. Charcoal Luxe</a>
+  <a href="#c">C. Mossy Oak</a>
+  <small>variant A matches your screenshot most closely</small>
+</nav>
+
+<!-- ============== VARIANT A — DEEP FOREST ============== -->
+<div class="label-row" id="a">
+  <div class="num">Variant A · Deep Forest</div>
+  <h2>The <em>screenshot pick</em> — forest green base, cream product cards.</h2>
+  <p>Closest to what your browser rendered. Deep, slightly-warm forest green. Cream tincture-jar product cards stand out against it. Terracotta sits between them as the accent. Reads as a small herbal shop, after hours.</p>
+  <div class="swatch-row">
+    <span class="sw" style="background:#1c2418" title="surface"></span>
+    <span class="sw" style="background:#16201a" title="surface-deep"></span>
+    <span class="sw" style="background:#f1ead4" title="card"></span>
+    <span class="sw" style="background:#a8b88a" title="sage"></span>
+    <span class="sw" style="background:#d68a72" title="accent"></span>
+    <span class="sw" style="background:#ebe2c8" title="ink"></span>
+  </div>
+</div>
+<section class="vA">
+  <div class="site">
+    <nav class="topnav">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2 C 8 8, 8 14, 12 22 M 12 22 C 16 14, 16 8, 12 2 M 12 22 L 8 16 M 12 22 L 16 16 M 12 14 L 6 10 M 12 14 L 18 10" stroke-linecap="round" />
+        </svg>
+        Soothemade <em>Notes</em>
+      </div>
+      <div class="links">
+        <a href="#">Catalog</a>
+        <a href="#">Journal</a>
+        <a href="#">Free Printables</a>
+        <a href="#">About</a>
+      </div>
+      <a href="#" class="basket">Basket · 0</a>
+    </nav>
+    <div class="hero">
+      <svg class="leaf l1" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.4" fill="none" /></svg>
+      <svg class="leaf l2" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.4" fill="none" /></svg>
+      <svg class="leaf l3" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.4" fill="none" /></svg>
+      <svg class="leaf l4" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.4" fill="none" /></svg>
+      <div class="eyebrow">— a small apothecary of printables —</div>
+      <h1>Quiet tools for the <em>tender</em> parts of new parenthood.</h1>
+      <p>Printables, planners, and cards — made slowly, in plain language, for the unphotographed days.</p>
+      <div class="cta-row">
+        <a class="btn-pri" href="#">Visit the shop</a>
+        <a class="btn-sec" href="#">Free printable</a>
+      </div>
+    </div>
+    <div class="categories">
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="11" /><path d="M18 7 L 18 29 M 7 18 L 29 18" stroke-linecap="round" /></svg>
+        <div class="name">For pregnancy</div>
+        <div class="count">04 items</div>
+      </a>
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M18 5 Q 7 18, 18 31 Q 29 18, 18 5 Z" /></svg>
+        <div class="name">For postpartum</div>
+        <div class="count">07 items</div>
+      </a>
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="8" width="20" height="20" rx="2" /><path d="M8 15 L 28 15 M 8 22 L 28 22" /></svg>
+        <div class="name">For the years after</div>
+        <div class="count">06 items</div>
+      </a>
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="12" r="5" /><path d="M8 30 Q 18 18, 28 30" /></svg>
+        <div class="name">For the partner</div>
+        <div class="count">02 items</div>
+      </a>
+    </div>
+    <section class="shop">
+      <div class="title-row">
+        <h2>— From the catalog —</h2>
+        <a class="see-all" href="#">see all twenty-one →</a>
+      </div>
+      <div class="grid">
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="11" /><path d="M11 18 L 25 18 M 18 11 L 18 25" stroke-linecap="round" /></svg>
+              <div class="label">Sensory Play<br/>Card Deck</div>
+            </div>
+            <div class="bottom">80 cards · 0–3 yrs</div>
+          </div>
+          <h3>For the new senses</h3>
+          <div class="meta"><span>$24</span><span>P01</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 12 Q 18 4, 28 12 L 28 28 L 8 28 Z" /><path d="M12 18 L 24 18" stroke-linecap="round" /></svg>
+              <div class="label">"Saying No"<br/>Script Pack</div>
+            </div>
+            <div class="bottom">30 scripts · postpartum</div>
+          </div>
+          <h3>For the doorbell</h3>
+          <div class="meta"><span>$7</span><span>P02</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="8" width="20" height="20" /><path d="M8 15 L 28 15 M 12 21 L 22 21" /></svg>
+              <div class="label">Slow Motherhood<br/>Planner</div>
+            </div>
+            <div class="bottom">36 pages · undated</div>
+          </div>
+          <h3>For the tired weeks</h3>
+          <div class="meta"><span>$12</span><span>P03</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="13" cy="14" r="4" /><circle cx="23" cy="14" r="4" /><path d="M7 28 Q 18 20, 29 28" /></svg>
+              <div class="label">Partner's<br/>Playbook</div>
+            </div>
+            <div class="bottom">24 pages · for partner</div>
+          </div>
+          <h3>For the other parent</h3>
+          <div class="meta"><span>$9</span><span>P04</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 28 L 8 8 L 28 8 L 28 28 Z" /><path d="M8 14 L 28 14 M 8 20 L 28 20" /></svg>
+              <div class="label">Screen-Free<br/>Challenge</div>
+            </div>
+            <div class="bottom">30 cards · 3–10 yrs</div>
+          </div>
+          <h3>For the quiet month</h3>
+          <div class="meta"><span>$9</span><span>P05</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M18 8 L 14 16 L 22 16 Z M 14 16 L 14 28 L 22 28 L 22 16" /></svg>
+              <div class="label">C-Section<br/>Recovery</div>
+            </div>
+            <div class="bottom">36 pages · 5 phases</div>
+          </div>
+          <h3>For the surgical week</h3>
+          <div class="meta"><span>$14</span><span>P06</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="11" /><path d="M11 22 Q 18 14, 25 22" stroke-linecap="round" /></svg>
+              <div class="label">Postpartum<br/>Mind Journal</div>
+            </div>
+            <div class="bottom">60 pages · noticing</div>
+          </div>
+          <h3>For the off days</h3>
+          <div class="meta"><span>$14</span><span>P09</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="18" r="5" /><circle cx="24" cy="18" r="5" /><path d="M8 26 L 28 26" /></svg>
+              <div class="label">Twin Pregnancy<br/>Planner</div>
+            </div>
+            <div class="bottom">60 pages · 6–40 weeks</div>
+          </div>
+          <h3>For the two of them</h3>
+          <div class="meta"><span>$16</span><span>P10</span></div>
+        </a>
+      </div>
+    </section>
+    <section class="manifesto">
+      <blockquote>
+        Made for the version of you <em>no one tells you about</em> — the one at four in the morning, the one in the parking lot, the one who doesn't recognize her own week.
+      </blockquote>
+      <cite>— the soothemade promise</cite>
+    </section>
+    <section class="journal">
+      <div class="head">
+        <h2>— From the journal —</h2>
+        <a href="#">read all letters</a>
+      </div>
+      <article>
+        <a href="#">
+          <div class="meta">Sensory play · 12 min</div>
+          <h3>The complete sensory play guide, by age.</h3>
+          <p>Most lists are 100-item smorgasbords. This one is sorted by what the baby can actually do today, and uses stuff in your kitchen drawer.</p>
+          <span class="read">read the letter →</span>
+        </a>
+      </article>
+      <article>
+        <a href="#">
+          <div class="meta">Postpartum · 8 min</div>
+          <h3>The doorbell, the visitors, and the script library.</h3>
+          <p>The hardest part of postpartum isn't the baby. It's the people who keep arriving — and the version of yourself who keeps saying "of course, come in."</p>
+          <span class="read">read the letter →</span>
+        </a>
+      </article>
+      <article>
+        <a href="#">
+          <div class="meta">Slow motherhood · 6 min</div>
+          <h3>Three list slots a day, and why ten was always too many.</h3>
+          <p>I bought four productivity planners between my first kid and my second. I used zero of them past mid-March. Here's why, and what I made instead.</p>
+          <span class="read">read the letter →</span>
+        </a>
+      </article>
+    </section>
+    <section class="newsletter">
+      <span class="scroll">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M6 30 L 30 6 M 6 6 L 12 6 L 12 30 L 6 30 Z M 30 6 L 30 12 L 6 30" />
+        </svg>
+      </span>
+      <h2>A letter, every other <em>Sunday</em>.</h2>
+      <p>One short note from the studio. A free printable in every issue. No tracking pixels, no upsells, no doorbell ringing.</p>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="your email" />
+        <button>subscribe →</button>
+      </form>
+      <div class="fine">Unsubscribe whenever · we never share addresses</div>
+    </section>
+    <footer class="foot">
+      <div class="row">
+        <div class="brand-block">
+          <div class="logo">Soothemade <em>Notes</em></div>
+          <p>A small apothecary of printables, planners, and cards. Made slowly, by hand, for the unphotographed parts of new parenthood.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">All printables</a></li>
+            <li><a href="#">For pregnancy</a></li>
+            <li><a href="#">For postpartum</a></li>
+            <li><a href="#">For the partner</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Read</h4>
+          <ul>
+            <li><a href="#">The journal</a></li>
+            <li><a href="#">Free printables</a></li>
+            <li><a href="#">About the studio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Returns &amp; policy</a></li>
+            <li><a href="#">Wholesale</a></li>
+            <li><a href="#">Press kit</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <span>Soothemade · est. 2026 · made slowly</span>
+        <span>notes@soothemade.com</span>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<!-- ============== VARIANT B — CHARCOAL LUXE ============== -->
+<div class="label-row" id="b">
+  <div class="num">Variant B · Charcoal Luxe</div>
+  <h2>The <em>quieter</em> cousin — near-black, dark cards, brighter botanicals.</h2>
+  <p>Drop the green, drop the saturation, lean into charcoal with sage and warm terracotta accents. Product cards become dark inset frames with cream type. Reads more "modern indie luxury" than "small herbal shop" — Maude-coded, Aesop-coded.</p>
+  <div class="swatch-row">
+    <span class="sw" style="background:#15150e" title="surface"></span>
+    <span class="sw" style="background:#0e0e08" title="surface-deep"></span>
+    <span class="sw" style="background:#1f1f17" title="card"></span>
+    <span class="sw" style="background:#b2c08a" title="sage"></span>
+    <span class="sw" style="background:#e2a78f" title="accent"></span>
+    <span class="sw" style="background:#e8e0c8" title="ink"></span>
+  </div>
+</div>
+<section class="vB">
+  <div class="site">
+    <nav class="topnav">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2 C 8 8, 8 14, 12 22 M 12 22 C 16 14, 16 8, 12 2 M 12 22 L 8 16 M 12 22 L 16 16 M 12 14 L 6 10 M 12 14 L 18 10" stroke-linecap="round" />
+        </svg>
+        Soothemade <em>Notes</em>
+      </div>
+      <div class="links">
+        <a href="#">Catalog</a>
+        <a href="#">Journal</a>
+        <a href="#">Free Printables</a>
+        <a href="#">About</a>
+      </div>
+      <a href="#" class="basket">Basket · 0</a>
+    </nav>
+    <div class="hero">
+      <svg class="leaf l1" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.4" fill="none" /></svg>
+      <svg class="leaf l2" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.4" fill="none" /></svg>
+      <svg class="leaf l3" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.4" fill="none" /></svg>
+      <div class="eyebrow">— a small apothecary of printables —</div>
+      <h1>Quiet tools for the <em>tender</em> parts of new parenthood.</h1>
+      <p>Printables, planners, and cards — made slowly, in plain language, for the unphotographed days.</p>
+      <div class="cta-row">
+        <a class="btn-pri" href="#">Visit the shop</a>
+        <a class="btn-sec" href="#">Free printable</a>
+      </div>
+    </div>
+    <div class="categories">
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="11" /><path d="M18 7 L 18 29 M 7 18 L 29 18" stroke-linecap="round" /></svg>
+        <div class="name">For pregnancy</div>
+        <div class="count">04 items</div>
+      </a>
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M18 5 Q 7 18, 18 31 Q 29 18, 18 5 Z" /></svg>
+        <div class="name">For postpartum</div>
+        <div class="count">07 items</div>
+      </a>
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="8" width="20" height="20" rx="2" /><path d="M8 15 L 28 15 M 8 22 L 28 22" /></svg>
+        <div class="name">For the years after</div>
+        <div class="count">06 items</div>
+      </a>
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="12" r="5" /><path d="M8 30 Q 18 18, 28 30" /></svg>
+        <div class="name">For the partner</div>
+        <div class="count">02 items</div>
+      </a>
+    </div>
+    <section class="shop">
+      <div class="title-row">
+        <h2>— From the catalog —</h2>
+        <a class="see-all" href="#">see all twenty-one →</a>
+      </div>
+      <div class="grid">
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="11" /><path d="M11 18 L 25 18 M 18 11 L 18 25" stroke-linecap="round" /></svg>
+              <div class="label">Sensory Play<br/>Card Deck</div>
+            </div>
+            <div class="bottom">80 cards · 0–3 yrs</div>
+          </div>
+          <h3>For the new senses</h3>
+          <div class="meta"><span>$24</span><span>P01</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 12 Q 18 4, 28 12 L 28 28 L 8 28 Z" /><path d="M12 18 L 24 18" stroke-linecap="round" /></svg>
+              <div class="label">"Saying No"<br/>Script Pack</div>
+            </div>
+            <div class="bottom">30 scripts · postpartum</div>
+          </div>
+          <h3>For the doorbell</h3>
+          <div class="meta"><span>$7</span><span>P02</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="8" width="20" height="20" /><path d="M8 15 L 28 15 M 12 21 L 22 21" /></svg>
+              <div class="label">Slow Motherhood<br/>Planner</div>
+            </div>
+            <div class="bottom">36 pages · undated</div>
+          </div>
+          <h3>For the tired weeks</h3>
+          <div class="meta"><span>$12</span><span>P03</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="13" cy="14" r="4" /><circle cx="23" cy="14" r="4" /><path d="M7 28 Q 18 20, 29 28" /></svg>
+              <div class="label">Partner's<br/>Playbook</div>
+            </div>
+            <div class="bottom">24 pages · for partner</div>
+          </div>
+          <h3>For the other parent</h3>
+          <div class="meta"><span>$9</span><span>P04</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 28 L 8 8 L 28 8 L 28 28 Z" /><path d="M8 14 L 28 14 M 8 20 L 28 20" /></svg>
+              <div class="label">Screen-Free<br/>Challenge</div>
+            </div>
+            <div class="bottom">30 cards · 3–10 yrs</div>
+          </div>
+          <h3>For the quiet month</h3>
+          <div class="meta"><span>$9</span><span>P05</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M18 8 L 14 16 L 22 16 Z M 14 16 L 14 28 L 22 28 L 22 16" /></svg>
+              <div class="label">C-Section<br/>Recovery</div>
+            </div>
+            <div class="bottom">36 pages · 5 phases</div>
+          </div>
+          <h3>For the surgical week</h3>
+          <div class="meta"><span>$14</span><span>P06</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="11" /><path d="M11 22 Q 18 14, 25 22" stroke-linecap="round" /></svg>
+              <div class="label">Postpartum<br/>Mind Journal</div>
+            </div>
+            <div class="bottom">60 pages · noticing</div>
+          </div>
+          <h3>For the off days</h3>
+          <div class="meta"><span>$14</span><span>P09</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="18" r="5" /><circle cx="24" cy="18" r="5" /><path d="M8 26 L 28 26" /></svg>
+              <div class="label">Twin Pregnancy<br/>Planner</div>
+            </div>
+            <div class="bottom">60 pages · 6–40 weeks</div>
+          </div>
+          <h3>For the two of them</h3>
+          <div class="meta"><span>$16</span><span>P10</span></div>
+        </a>
+      </div>
+    </section>
+    <section class="manifesto">
+      <blockquote>
+        Made for the version of you <em>no one tells you about</em> — the one at four in the morning, the one in the parking lot, the one who doesn't recognize her own week.
+      </blockquote>
+      <cite>— the soothemade promise</cite>
+    </section>
+    <section class="journal">
+      <div class="head">
+        <h2>— From the journal —</h2>
+        <a href="#">read all letters</a>
+      </div>
+      <article>
+        <a href="#">
+          <div class="meta">Sensory play · 12 min</div>
+          <h3>The complete sensory play guide, by age.</h3>
+          <p>Most lists are 100-item smorgasbords. This one is sorted by what the baby can actually do today, and uses stuff in your kitchen drawer.</p>
+          <span class="read">read the letter →</span>
+        </a>
+      </article>
+      <article>
+        <a href="#">
+          <div class="meta">Postpartum · 8 min</div>
+          <h3>The doorbell, the visitors, and the script library.</h3>
+          <p>The hardest part of postpartum isn't the baby. It's the people who keep arriving — and the version of yourself who keeps saying "of course, come in."</p>
+          <span class="read">read the letter →</span>
+        </a>
+      </article>
+      <article>
+        <a href="#">
+          <div class="meta">Slow motherhood · 6 min</div>
+          <h3>Three list slots a day, and why ten was always too many.</h3>
+          <p>I bought four productivity planners between my first kid and my second. I used zero of them past mid-March. Here's why, and what I made instead.</p>
+          <span class="read">read the letter →</span>
+        </a>
+      </article>
+    </section>
+    <section class="newsletter">
+      <span class="scroll">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M6 30 L 30 6 M 6 6 L 12 6 L 12 30 L 6 30 Z M 30 6 L 30 12 L 6 30" />
+        </svg>
+      </span>
+      <h2>A letter, every other <em>Sunday</em>.</h2>
+      <p>One short note from the studio. A free printable in every issue. No tracking pixels, no upsells, no doorbell ringing.</p>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="your email" />
+        <button>subscribe →</button>
+      </form>
+      <div class="fine">Unsubscribe whenever · we never share addresses</div>
+    </section>
+    <footer class="foot">
+      <div class="row">
+        <div class="brand-block">
+          <div class="logo">Soothemade <em>Notes</em></div>
+          <p>A small apothecary of printables, planners, and cards. Made slowly, by hand, for the unphotographed parts of new parenthood.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">All printables</a></li>
+            <li><a href="#">For pregnancy</a></li>
+            <li><a href="#">For postpartum</a></li>
+            <li><a href="#">For the partner</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Read</h4>
+          <ul>
+            <li><a href="#">The journal</a></li>
+            <li><a href="#">Free printables</a></li>
+            <li><a href="#">About the studio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Returns &amp; policy</a></li>
+            <li><a href="#">Wholesale</a></li>
+            <li><a href="#">Press kit</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <span>Soothemade · est. 2026 · made slowly</span>
+        <span>notes@soothemade.com</span>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<!-- ============== VARIANT C — MOSSY OAK ============== -->
+<div class="label-row" id="c">
+  <div class="num">Variant C · Mossy Oak</div>
+  <h2>The <em>warm middle</em> — olive-brown undertone, cream cards, terracotta-forward.</h2>
+  <p>Less "forest in winter," more "library in autumn." Warmer dark base with brown undertones, cream tincture-jar cards, the original terracotta brand color carrying more weight. Sage steps back; terracotta steps up. Closest to the existing brand identity, just inverted.</p>
+  <div class="swatch-row">
+    <span class="sw" style="background:#25241a" title="surface"></span>
+    <span class="sw" style="background:#1c1b13" title="surface-deep"></span>
+    <span class="sw" style="background:#d6cdb0" title="card"></span>
+    <span class="sw" style="background:#a8a672" title="sage"></span>
+    <span class="sw" style="background:#c87963" title="accent"></span>
+    <span class="sw" style="background:#e8dfc0" title="ink"></span>
+  </div>
+</div>
+<section class="vC">
+  <div class="site">
+    <nav class="topnav">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2 C 8 8, 8 14, 12 22 M 12 22 C 16 14, 16 8, 12 2 M 12 22 L 8 16 M 12 22 L 16 16 M 12 14 L 6 10 M 12 14 L 18 10" stroke-linecap="round" />
+        </svg>
+        Soothemade <em>Notes</em>
+      </div>
+      <div class="links">
+        <a href="#">Catalog</a>
+        <a href="#">Journal</a>
+        <a href="#">Free Printables</a>
+        <a href="#">About</a>
+      </div>
+      <a href="#" class="basket">Basket · 0</a>
+    </nav>
+    <div class="hero">
+      <svg class="leaf l1" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.4" fill="none" /></svg>
+      <svg class="leaf l2" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.4" fill="none" /></svg>
+      <svg class="leaf l3" viewBox="0 0 60 60"><path d="M10 50 Q 30 10, 50 50 Q 30 30, 10 50 Z M30 14 L 30 48" stroke="currentColor" stroke-width="1.4" fill="none" /></svg>
+      <div class="eyebrow">— a small apothecary of printables —</div>
+      <h1>Quiet tools for the <em>tender</em> parts of new parenthood.</h1>
+      <p>Printables, planners, and cards — made slowly, in plain language, for the unphotographed days.</p>
+      <div class="cta-row">
+        <a class="btn-pri" href="#">Visit the shop</a>
+        <a class="btn-sec" href="#">Free printable</a>
+      </div>
+    </div>
+    <div class="categories">
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="11" /><path d="M18 7 L 18 29 M 7 18 L 29 18" stroke-linecap="round" /></svg>
+        <div class="name">For pregnancy</div>
+        <div class="count">04 items</div>
+      </a>
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M18 5 Q 7 18, 18 31 Q 29 18, 18 5 Z" /></svg>
+        <div class="name">For postpartum</div>
+        <div class="count">07 items</div>
+      </a>
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="8" width="20" height="20" rx="2" /><path d="M8 15 L 28 15 M 8 22 L 28 22" /></svg>
+        <div class="name">For the years after</div>
+        <div class="count">06 items</div>
+      </a>
+      <a href="#">
+        <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="12" r="5" /><path d="M8 30 Q 18 18, 28 30" /></svg>
+        <div class="name">For the partner</div>
+        <div class="count">02 items</div>
+      </a>
+    </div>
+    <section class="shop">
+      <div class="title-row">
+        <h2>— From the catalog —</h2>
+        <a class="see-all" href="#">see all twenty-one →</a>
+      </div>
+      <div class="grid">
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="11" /><path d="M11 18 L 25 18 M 18 11 L 18 25" stroke-linecap="round" /></svg>
+              <div class="label">Sensory Play<br/>Card Deck</div>
+            </div>
+            <div class="bottom">80 cards · 0–3 yrs</div>
+          </div>
+          <h3>For the new senses</h3>
+          <div class="meta"><span>$24</span><span>P01</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 12 Q 18 4, 28 12 L 28 28 L 8 28 Z" /><path d="M12 18 L 24 18" stroke-linecap="round" /></svg>
+              <div class="label">"Saying No"<br/>Script Pack</div>
+            </div>
+            <div class="bottom">30 scripts · postpartum</div>
+          </div>
+          <h3>For the doorbell</h3>
+          <div class="meta"><span>$7</span><span>P02</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="8" width="20" height="20" /><path d="M8 15 L 28 15 M 12 21 L 22 21" /></svg>
+              <div class="label">Slow Motherhood<br/>Planner</div>
+            </div>
+            <div class="bottom">36 pages · undated</div>
+          </div>
+          <h3>For the tired weeks</h3>
+          <div class="meta"><span>$12</span><span>P03</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="13" cy="14" r="4" /><circle cx="23" cy="14" r="4" /><path d="M7 28 Q 18 20, 29 28" /></svg>
+              <div class="label">Partner's<br/>Playbook</div>
+            </div>
+            <div class="bottom">24 pages · for partner</div>
+          </div>
+          <h3>For the other parent</h3>
+          <div class="meta"><span>$9</span><span>P04</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 28 L 8 8 L 28 8 L 28 28 Z" /><path d="M8 14 L 28 14 M 8 20 L 28 20" /></svg>
+              <div class="label">Screen-Free<br/>Challenge</div>
+            </div>
+            <div class="bottom">30 cards · 3–10 yrs</div>
+          </div>
+          <h3>For the quiet month</h3>
+          <div class="meta"><span>$9</span><span>P05</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M18 8 L 14 16 L 22 16 Z M 14 16 L 14 28 L 22 28 L 22 16" /></svg>
+              <div class="label">C-Section<br/>Recovery</div>
+            </div>
+            <div class="bottom">36 pages · 5 phases</div>
+          </div>
+          <h3>For the surgical week</h3>
+          <div class="meta"><span>$14</span><span>P06</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="11" /><path d="M11 22 Q 18 14, 25 22" stroke-linecap="round" /></svg>
+              <div class="label">Postpartum<br/>Mind Journal</div>
+            </div>
+            <div class="bottom">60 pages · noticing</div>
+          </div>
+          <h3>For the off days</h3>
+          <div class="meta"><span>$14</span><span>P09</span></div>
+        </a>
+        <a class="pcard" href="#">
+          <div class="frame">
+            <div class="top">
+              <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="18" r="5" /><circle cx="24" cy="18" r="5" /><path d="M8 26 L 28 26" /></svg>
+              <div class="label">Twin Pregnancy<br/>Planner</div>
+            </div>
+            <div class="bottom">60 pages · 6–40 weeks</div>
+          </div>
+          <h3>For the two of them</h3>
+          <div class="meta"><span>$16</span><span>P10</span></div>
+        </a>
+      </div>
+    </section>
+    <section class="manifesto">
+      <blockquote>
+        Made for the version of you <em>no one tells you about</em> — the one at four in the morning, the one in the parking lot, the one who doesn't recognize her own week.
+      </blockquote>
+      <cite>— the soothemade promise</cite>
+    </section>
+    <section class="journal">
+      <div class="head">
+        <h2>— From the journal —</h2>
+        <a href="#">read all letters</a>
+      </div>
+      <article>
+        <a href="#">
+          <div class="meta">Sensory play · 12 min</div>
+          <h3>The complete sensory play guide, by age.</h3>
+          <p>Most lists are 100-item smorgasbords. This one is sorted by what the baby can actually do today, and uses stuff in your kitchen drawer.</p>
+          <span class="read">read the letter →</span>
+        </a>
+      </article>
+      <article>
+        <a href="#">
+          <div class="meta">Postpartum · 8 min</div>
+          <h3>The doorbell, the visitors, and the script library.</h3>
+          <p>The hardest part of postpartum isn't the baby. It's the people who keep arriving — and the version of yourself who keeps saying "of course, come in."</p>
+          <span class="read">read the letter →</span>
+        </a>
+      </article>
+      <article>
+        <a href="#">
+          <div class="meta">Slow motherhood · 6 min</div>
+          <h3>Three list slots a day, and why ten was always too many.</h3>
+          <p>I bought four productivity planners between my first kid and my second. I used zero of them past mid-March. Here's why, and what I made instead.</p>
+          <span class="read">read the letter →</span>
+        </a>
+      </article>
+    </section>
+    <section class="newsletter">
+      <span class="scroll">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M6 30 L 30 6 M 6 6 L 12 6 L 12 30 L 6 30 Z M 30 6 L 30 12 L 6 30" />
+        </svg>
+      </span>
+      <h2>A letter, every other <em>Sunday</em>.</h2>
+      <p>One short note from the studio. A free printable in every issue. No tracking pixels, no upsells, no doorbell ringing.</p>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="your email" />
+        <button>subscribe →</button>
+      </form>
+      <div class="fine">Unsubscribe whenever · we never share addresses</div>
+    </section>
+    <footer class="foot">
+      <div class="row">
+        <div class="brand-block">
+          <div class="logo">Soothemade <em>Notes</em></div>
+          <p>A small apothecary of printables, planners, and cards. Made slowly, by hand, for the unphotographed parts of new parenthood.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">All printables</a></li>
+            <li><a href="#">For pregnancy</a></li>
+            <li><a href="#">For postpartum</a></li>
+            <li><a href="#">For the partner</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Read</h4>
+          <ul>
+            <li><a href="#">The journal</a></li>
+            <li><a href="#">Free printables</a></li>
+            <li><a href="#">About the studio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Returns &amp; policy</a></li>
+            <li><a href="#">Wholesale</a></li>
+            <li><a href="#">Press kit</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <span>Soothemade · est. 2026 · made slowly</span>
+        <span>notes@soothemade.com</span>
+      </div>
+    </footer>
+  </div>
+</section>
+
+</body>
+</html>
