@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Soothemade — Product</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: {{ page_size }};
+      margin: 0.85in 0.85in 1.0in 0.85in;
+      @bottom-center {
+        content: "— Soothemade —";
+        font-family: 'Caveat', cursive;
+        color: #A89A8C;
+        font-size: 10pt;
+      }
+      @bottom-right {
+        content: counter(page);
+        font-family: 'Inter', sans-serif;
+        color: #A89A8C;
+        font-size: 9pt;
+      }
+    }
+    @page :first {
+      @bottom-center { content: ""; }
+      @bottom-right { content: ""; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    {{ body | safe }}
+  </div>
+</body>
+</html>

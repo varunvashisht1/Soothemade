@@ -1,0 +1,200 @@
+/*
+ * Brand stylesheet for product PDFs.
+ * Matches brand/visual-identity.md.
+ * Palette 1 (warm vintage / calm).
+ */
+
+:root {
+  --bg: #F5EFE6;
+  --text: #2E2A24;
+  --accent-1: #B4654A;  /* terracotta */
+  --accent-2: #8C9B7A;  /* sage olive */
+  --accent-3: #D4A574;  /* wheat */
+  --muted: #A89A8C;     /* stone */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 11pt;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.page { padding: 0; }
+
+/* HEADINGS ----------------------------------------------------------- */
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  color: var(--text);
+  page-break-after: avoid;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 32pt;
+  margin: 0 0 0.4em 0;
+  color: var(--accent-1);
+  text-align: center;
+  page-break-before: avoid;
+  font-style: italic;
+}
+
+h1 + p em {
+  display: block;
+  text-align: center;
+  font-size: 12pt;
+  color: var(--muted);
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  font-size: 20pt;
+  margin: 1.8em 0 0.5em;
+  color: var(--accent-1);
+  border-bottom: 1px solid var(--accent-3);
+  padding-bottom: 0.3em;
+  page-break-before: always;
+}
+
+h2:first-of-type {
+  page-break-before: avoid;
+}
+
+h3 {
+  font-size: 15pt;
+  margin: 1.4em 0 0.4em;
+  color: var(--accent-2);
+}
+
+h4 {
+  font-size: 12pt;
+  margin: 1em 0 0.3em;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* PARAGRAPHS --------------------------------------------------------- */
+
+p {
+  margin: 0 0 0.85em 0;
+  orphans: 3;
+  widows: 3;
+}
+
+/* HORIZONTAL RULES --------------------------------------------------- */
+
+hr {
+  border: none;
+  border-top: 1px dashed var(--accent-3);
+  margin: 2em auto;
+  width: 60%;
+}
+
+/* QUOTES ------------------------------------------------------------- */
+
+blockquote {
+  border-left: 3px solid var(--accent-2);
+  padding: 0.4em 0 0.4em 1em;
+  margin: 1em 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* LISTS -------------------------------------------------------------- */
+
+ul, ol {
+  margin: 0 0 0.85em 1.2em;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+ul li::marker {
+  color: var(--accent-1);
+}
+
+/* INLINE FORMATTING -------------------------------------------------- */
+
+strong { font-weight: 600; }
+em { font-style: italic; color: var(--text); }
+em em { color: var(--accent-1); }
+
+/* CODE / FILL-IN BLANKS --------------------------------------------- */
+
+pre, code {
+  font-family: 'Inter', monospace;
+  font-size: 10pt;
+  background: transparent;
+  color: var(--muted);
+}
+
+pre {
+  background: #FAF6EF;
+  border: 1px solid var(--accent-3);
+  border-radius: 2px;
+  padding: 0.8em 1em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0.6em 0 1.2em 0;
+  page-break-inside: avoid;
+}
+
+/* TABLES ------------------------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 10pt;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5em 0.7em;
+  border-bottom: 1px solid var(--accent-3);
+  vertical-align: top;
+}
+
+th {
+  font-family: 'Fraunces', serif;
+  color: var(--accent-1);
+  font-weight: 500;
+  border-bottom: 2px solid var(--accent-1);
+}
+
+/* SPECIFIC PATTERNS -------------------------------------------------- */
+
+/* Card-style sections (the cards in P01, P02, P05 etc.) */
+h3 + p strong {
+  color: var(--accent-1);
+}
+
+/* Hand-lettered closing */
+hr + p em:last-child {
+  font-family: 'Caveat', cursive;
+  font-size: 14pt;
+  color: var(--muted);
+  display: block;
+  text-align: center;
+}
+
+/* Center the "— the brand" signoff */
+p em:contains("the brand") {
+  text-align: center;
+}
+
+/* Disclaimer at the bottom */
+hr + p > em:only-child {
+  font-size: 9pt;
+  color: var(--muted);
+  font-style: italic;
+  display: block;
+  text-align: center;
+  margin-top: 2em;
+}
