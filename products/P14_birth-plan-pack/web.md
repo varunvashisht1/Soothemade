@@ -35,7 +35,7 @@ Sixteen pages, fillable on screen or printable:
 - **The hospital bag list**, separated into "her", "partner", "baby", "going home". With a printable for the door of your closet.
 - **A "if things change" page.** Induction, C-section, NICU, longer-than-expected. What you'd want even then. Because plans flex.
 - **A providers and people page.** OB, midwife, doula, pediatrician, postpartum doula if you have one. Names, numbers, when to call which.
-- **A first-hour-after page.** What you want in the hour after birth — feeding, photos, who comes in, who waits.
+- **A first-hour-after page.** What you want in the hour after birth, feeding, photos, who comes in, who waits.
 
 ## Who this is for
 

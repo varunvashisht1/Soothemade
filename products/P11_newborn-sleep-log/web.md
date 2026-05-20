@@ -19,9 +19,9 @@ summary: >-
 crossSell: [newborn-survival-planner, partner-postpartum-playbook, slow-motherhood-planner]
 ---
 
-Around week three someone asked me how the baby was sleeping, and I genuinely could not answer the question. Not "he sleeps four hours then wakes" — I had no idea. I'd been awake too many times in a row to keep a coherent count.
+Around week three someone asked me how the baby was sleeping, and I genuinely could not answer the question. Not "he sleeps four hours then wakes", I had no idea. I'd been awake too many times in a row to keep a coherent count.
 
-This log is the thing I wish I'd had on the nightstand. Not a sleep training program, not a baby's first habit tracker — a place to put down, in the dark, with one hand, what the night actually was.
+This log is the thing I wish I'd had on the nightstand. Not a sleep training program, not a baby's first habit tracker, a place to put down, in the dark, with one hand, what the night actually was.
 
 ## What's inside
 
