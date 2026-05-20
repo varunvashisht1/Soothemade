@@ -1,0 +1,29 @@
+/* Theme D — Daylight (umbrella default).
+   "Morning light through a window." Cream + moss + terracotta.
+   Distinct from Notes' forest-after-hours feel; same family. */
+
+:root[data-theme="daylight"] {
+  --surface:         #f6f1e6;
+  --surface-deep:    #efe7d4;
+  --surface-deepest: #e6dcc4;
+
+  --card:            #ffffff;
+  --card-text:       #2e3a28;
+  --card-text-soft:  #5a6845;
+  --card-rule:       rgba(46, 58, 40, 0.14);
+
+  --ink:             #2a2f23;
+  --ink-soft:        #5a6045;
+  --ink-faint:       #8a8a72;
+
+  --rule:            rgba(42, 47, 35, 0.12);
+  --rule-strong:     rgba(42, 47, 35, 0.24);
+  --hover:           rgba(42, 47, 35, 0.04);
+
+  --sage:            #7a8a65;
+  --sage-soft:       #a8b88a;
+  --accent:          #c47357;
+  --accent-soft:     #d68a72;
+
+  color-scheme: light;
+}

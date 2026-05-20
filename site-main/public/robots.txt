@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soothemade.com/sitemap-index.xml

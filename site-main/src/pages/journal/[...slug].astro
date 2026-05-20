@@ -1,0 +1,140 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getCollection('journal');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+---
+<BaseLayout title={`${post.data.title} — Soothemade journal`} description={post.data.description}>
+  <Nav />
+  <article class="essay">
+    <header>
+      <div class="meta">
+        <span class="cat">{post.data.category}</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>{fmt(post.data.date)}</span>
+        {post.data.readTime && (<><span class="dot" aria-hidden="true">·</span><span>{post.data.readTime}</span></>)}
+      </div>
+      <h1>{post.data.title}</h1>
+      <p class="lede">{post.data.description}</p>
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+    <footer class="back">
+      <a href="/journal">← back to the journal</a>
+    </footer>
+  </article>
+  <Newsletter />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .essay {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px var(--sp-7) 64px;
+  }
+  .meta {
+    font-size: 10.5px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: center;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  .cat { color: var(--accent); }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 46px;
+    text-align: center;
+    margin: 0 0 18px;
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: var(--ls-tight);
+    color: var(--ink);
+  }
+  .lede {
+    font-family: var(--font-serif);
+    font-style: italic;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 19px;
+    margin: 0 auto 44px;
+    max-width: 540px;
+    line-height: 1.5;
+  }
+  .prose {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+  .prose :global(p) { margin: 0 0 22px; }
+  .prose :global(h2) {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 26px;
+    margin: 36px 0 16px;
+    font-weight: 500;
+  }
+  .prose :global(ul),
+  .prose :global(ol) { margin: 0 0 22px 28px; }
+  .prose :global(li) { margin-bottom: 8px; }
+  .prose :global(em) { font-style: italic; color: var(--accent); }
+  .prose :global(a) {
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .prose :global(blockquote) {
+    border-left: 2px solid var(--accent);
+    padding-left: 18px;
+    margin: 24px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .back {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .back a {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 1px;
+  }
+  .back a:hover { color: var(--accent); border-color: var(--accent); }
+
+  @media (max-width: 880px) {
+    .essay { padding: 48px var(--sp-5); }
+    h1 { font-size: 32px; }
+    .lede { font-size: 17px; }
+    .prose { font-size: 17px; }
+  }
+</style>

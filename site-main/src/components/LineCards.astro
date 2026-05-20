@@ -1,0 +1,115 @@
+---
+import { lines } from '~/data/lines';
+
+interface Props {
+  /** When true, full-page layout (used on /lines). When false, compact row (home). */
+  detailed?: boolean;
+}
+const { detailed = false } = Astro.props;
+---
+<section class={`lines ${detailed ? 'detailed' : ''}`}>
+  <div class="grid">
+    {lines.map((line) => (
+      <article id={line.id} class={`card ${line.status}`}>
+        <div class="meta">
+          <span class="status">{line.status === 'live' ? 'Open' : 'In the workshop'}</span>
+        </div>
+        <h3>Soothemade <em>{line.name}</em></h3>
+        <p class="for">For {line.audience}.</p>
+        <p class="desc">{detailed ? line.descLong : line.descShort}</p>
+        {line.status === 'live' ? (
+          <a class="cta" href={line.href} rel="noopener">
+            Visit {line.name.toLowerCase()} <span aria-hidden="true">↗</span>
+          </a>
+        ) : (
+          <a class="cta quiet" href="/newsletter">
+            Hear when it opens
+          </a>
+        )}
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .lines { padding: 56px var(--sp-7); }
+  .lines.detailed { padding: 32px var(--sp-7) 64px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-6);
+    max-width: var(--container-default);
+    margin: 0 auto;
+  }
+  .card {
+    background: var(--card);
+    color: var(--card-text);
+    padding: 36px 32px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--card-rule);
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
+  }
+  .card.coming { opacity: 0.88; }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .status {
+    font-size: 10.5px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--card-text-soft);
+  }
+  .card.live .status { color: var(--accent); }
+  h3 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--card-text);
+    margin-bottom: 10px;
+  }
+  h3 em { font-style: italic; color: var(--accent); }
+  .for {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--card-text-soft);
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--card-text);
+    margin-bottom: 22px;
+    flex: 1;
+  }
+  .cta {
+    align-self: flex-start;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--card-text);
+    border-bottom: 1px solid var(--card-text);
+    padding-bottom: 1px;
+    font-size: 15px;
+    transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+  }
+  .cta:hover { color: var(--accent); border-color: var(--accent); }
+  .cta.quiet {
+    color: var(--card-text-soft);
+    border-color: var(--card-rule);
+    font-style: italic;
+  }
+  .cta.quiet:hover { color: var(--accent); border-color: var(--accent); }
+
+  @media (max-width: 880px) {
+    .lines { padding: 40px var(--sp-5); }
+    .grid { grid-template-columns: 1fr; gap: var(--sp-5); }
+    .card { padding: 28px 24px; min-height: 0; }
+    h3 { font-size: 24px; }
+  }
+</style>

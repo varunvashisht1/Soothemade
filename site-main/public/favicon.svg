@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="365 120 70 105" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <title>Soothemade</title>
+  <style>
+    .stroked { stroke: #5a6845; fill: none; }
+    .filled  { fill: #5a6845; }
+    @media (prefers-color-scheme: dark) {
+      .stroked { stroke: #a8b88a; }
+      .filled  { fill: #a8b88a; }
+    }
+  </style>
+  <path class="stroked" d="M 400 215 Q 397 175 401 130" stroke-width="6" stroke-linecap="round"/>
+  <ellipse class="filled" cx="385" cy="188" rx="14" ry="5" transform="rotate(-45 385 188)"/>
+  <ellipse class="filled" cx="415" cy="158" rx="14" ry="5" transform="rotate(45 415 158)"/>
+</svg>

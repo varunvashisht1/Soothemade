@@ -22,6 +22,8 @@ Read [`AS_BUILT.md`](./AS_BUILT.md) **first**, then `STATUS.md`, then `PLAN.md`.
 | [`toolkit/`](./toolkit/) | Pro-mode prompts, decision trees, customer-service templates, knowledge base. |
 | [`publishing/`](./publishing/) | 52-week calendar, weekly checklist, runbook, metrics scaffold. |
 | [`scripts/`](./scripts/) | WeasyPrint PDF render pipeline. |
+| [`site/`](./site/) | Notes subsite — `notes.soothemade.com` (Astro on Cloudflare Workers). |
+| [`site-main/`](./site-main/) | Umbrella site — `soothemade.com` (Astro on Cloudflare Workers). |
 
 ## Brand architecture
 

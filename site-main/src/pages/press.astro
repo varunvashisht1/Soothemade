@@ -1,0 +1,147 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+---
+<BaseLayout
+  title="Press — Soothemade"
+  description="Press kit, founder bio, and brand assets for Soothemade and its lines."
+>
+  <Nav />
+  <article class="press">
+    <div class="eyebrow">— press kit —</div>
+    <h1>For people who <em>write things.</em></h1>
+    <div class="body">
+      <p class="lede">
+        A short kit for journalists, podcast hosts, and other people who
+        write things about things. If you need anything not listed here,
+        email <a href="mailto:hello@soothemade.com">hello@soothemade.com</a> and we will get it to you within a few days.
+      </p>
+
+      <h2>The one-line</h2>
+      <blockquote>
+        Soothemade is a small studio making slow, considered things for
+        the parts of life no one is photographing.
+      </blockquote>
+
+      <h2>The short paragraph</h2>
+      <p>
+        Soothemade is a small, independent studio making printables,
+        planners, journals, and card decks for the long, mostly-unphotographed
+        seasons of a life. The first line, <em>Soothemade Notes</em>, makes
+        objects for new parents — the 3 a.m. parts, the postpartum body,
+        the visitor doorbell. Future lines will serve the home cook, the
+        solo worker, and the long traveler. Each line lives at its own
+        subdomain. Everything is made by hand. Nothing is on a
+        subscription. The studio's stated pace is "the pace of weather."
+      </p>
+
+      <h2>The long paragraph (for features)</h2>
+      <p>
+        Soothemade was founded as a small studio for the seasons of a
+        life that most product design ignores: the unphotographed hours,
+        the slow recoveries, the quiet Tuesdays. The studio rejects the
+        wellness-industry register — no "best self," no transformations,
+        no urgency — and writes in a voice the founder calls
+        <em>slightly-older friend who has been through it.</em>
+        Every product is researched, voiced, designed, and read
+        end-to-end by a human before it ships. The studio is structured
+        as a master brand with separate sub-lines, each housed at its
+        own subdomain, so a single niche can grow without dilution and
+        new niches can join without rebrand. The current line, Soothemade
+        Notes, serves new parents. The architecture allows for the Kitchen,
+        Studio, and Field lines that follow, each at the same pace.
+      </p>
+
+      <h2>Founder bio</h2>
+      <p>
+        Maya is the studio's founder, a postpartum doula, and a mother
+        of two. She writes, designs, and runs the studio from a quiet
+        room with a window in it. She is reachable through the studio
+        email.
+      </p>
+
+      <h2>Brand assets</h2>
+      <p>
+        Logo files, wordmark variants, and the brand color reference
+        live in the repository's <code>brand/</code> directory and can be
+        sent on request. The full visual identity guide and voice guide
+        are also available — email and ask which version you want.
+      </p>
+
+      <h2>Quotes you are welcome to use</h2>
+      <ul>
+        <li>"We make things at the pace of weather."</li>
+        <li>"We don't think you have a self to optimize. We think you have a life to live, and some of it is plain, and we make things for the plain parts."</li>
+        <li>"The hours under the foam are the real ones."</li>
+        <li>"A small house. One room open. More being built."</li>
+      </ul>
+    </div>
+  </article>
+  <Newsletter />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .press {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 72px var(--sp-7) 80px;
+  }
+  .eyebrow { text-align: center; margin-bottom: 16px; }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-4xl);
+    margin: 0 0 32px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .body { font-size: 18px; line-height: 1.7; color: var(--ink); }
+  .lede {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+    line-height: 1.55;
+  }
+  .body h2 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 26px;
+    margin: 40px 0 14px;
+    font-weight: 400;
+  }
+  .body p { margin-bottom: 18px; }
+  .body em { font-style: italic; color: var(--accent); }
+  .body a { color: var(--accent); border-bottom: 1px solid var(--rule-strong); }
+  .body ul { margin: 0 0 22px 24px; padding: 0; }
+  .body li { margin-bottom: 10px; font-style: italic; color: var(--ink-soft); }
+  blockquote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 20px;
+    margin: 14px 0 22px;
+    line-height: 1.45;
+  }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 14px;
+    background: var(--surface-deep);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+  @media (max-width: 880px) {
+    .press { padding: 48px var(--sp-5) 64px; }
+    h1 { font-size: 38px; }
+    .body { font-size: 16px; }
+    blockquote { font-size: 18px; }
+  }
+</style>
