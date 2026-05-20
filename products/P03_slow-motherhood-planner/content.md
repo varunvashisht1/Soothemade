@@ -144,8 +144,6 @@ Three things you don't have to do this week even though someone might think you 
 Each day is one page. Each page has:
 
 ```
-─────────────────────────────────────────────────────────────────
-
 [ DAY OF WEEK ]                                  [ DATE ___/___ ]
 
 ─────────────────────────────────────────────────────────────────
@@ -177,9 +175,7 @@ ___________________________________________________
 
 HOW I'D RATE TODAY (circle one, no shame)
 
-🙂 mostly okay     😐 fine, that's enough     🌧️ today was hard
-
-─────────────────────────────────────────────────────────────────
+○ mostly okay     ○ fine, that's enough     ○ today was hard
 ```
 
 The intentional design choice: there's space for 3 list items, not 10. Three is the max you should plan in a day with small kids. If you wrote 10, you were lying to yourself. The planner won't help you lie to yourself.

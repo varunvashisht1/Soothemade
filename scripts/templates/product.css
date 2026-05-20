@@ -7,13 +7,13 @@
  */
 
 :root {
-  --bg:        #F5EFE6;   /* cream — page bg */
-  --bg-warm:   #FAF6EF;   /* slightly lighter — content cards */
+  --bg:        #EAEEE2;   /* light sage paper (was cream #F5EFE6) */
+  --bg-warm:   #F0F3E8;   /* slightly lighter sage — fill-in box interior */
   --text:      #2E2A24;   /* ink */
   --ink-soft:  #5C5347;   /* secondary text */
-  --accent:    #B4654A;   /* terracotta */
-  --accent-2:  #8C9B7A;   /* sage olive */
-  --accent-3:  #D4A574;   /* wheat / dashed dividers */
+  --accent:    #8C9B7A;   /* sage olive (primary accent — h2, cover title, drop cap context) */
+  --accent-2:  #8C9B7A;   /* sage olive (same as accent for now; blockquote borders) */
+  --accent-3:  #A8B894;   /* muted sage (outlines, dividers — was wheat #D4A574) */
   --muted:     #B8AC9A;   /* stone — meta lines, page chrome */
 }
 
@@ -207,7 +207,7 @@ h2:first-of-type {
 h3 {
   font-size: 15pt;
   margin: 1.6em 0 0.5em;
-  color: var(--accent-2);
+  color: var(--text);
   font-style: italic;
 }
 
@@ -231,16 +231,23 @@ p {
 
 /* Larger first letter on the first paragraph of each section
    (WeasyPrint does not support float in ::first-letter, so we
-   keep it inline-larger rather than a true drop cap). */
+   keep it inline-larger rather than a true drop cap).
+   Color is body text (charcoal) — keeps it readable + avoids
+   color collision with the h2 above (which is in the accent). */
 h2 + p::first-letter {
   font-family: 'Fraunces', serif;
   font-weight: 500;
   font-size: 20pt;
-  color: var(--accent);
+  color: var(--text);
   line-height: 1;
 }
 
 /* HORIZONTAL RULES (botanical sprig in place of dashed line) ---------- */
+
+/* Hide a divider that sits immediately before a section header — the
+   page-break-before: always on h2 already separates sections; the hr
+   becomes either redundant or orphaned (alone on its own page). */
+hr:has(+ h2) { display: none; }
 
 hr {
   border: none;
@@ -287,7 +294,7 @@ ul li::marker {
 
 /* INLINE FORMATTING -------------------------------------------------- */
 
-strong { font-weight: 600; color: var(--text); }
+strong { font-family: 'Fraunces', serif; font-weight: 600; color: var(--text); }
 em     { font-style: italic; color: var(--text); }
 strong em, em strong { color: var(--accent); }
 
@@ -311,8 +318,18 @@ pre {
   word-wrap: break-word;
   margin: 0.6em 0 1.4em 0;
   page-break-inside: avoid;
+  page-break-before: avoid;
   line-height: 1.55;
 }
+
+/* Keep a label paragraph with the visual element that follows it.
+   Prevents two common orphans:
+   - "prompt on page N, fill-in box on page N+1" (p + pre)
+   - "Day N: on page N, blockquote question on page N+1" (p + blockquote) */
+p:has(+ pre),
+p:has(+ blockquote),
+p:has(strong:only-child) { page-break-after: avoid; }
+blockquote { page-break-before: avoid; page-break-inside: avoid; }
 
 /* TABLES ------------------------------------------------------------- */
 
@@ -425,9 +442,8 @@ hr + p > em:only-child {
 
 .colophon-url {
   font-family: 'Inter', sans-serif;
-  font-size: 10pt;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-size: 11pt;
+  letter-spacing: 0.04em;
   color: var(--accent);
   margin-bottom: 28pt;
 }

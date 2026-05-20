@@ -153,6 +153,21 @@ If you're writing new content, write it without em dashes and semicolons from th
 
 **Open hex drift:** `brand/brand.svg` uses sage `#7A8B6F` and wordmark `#3D3935` instead of the doc's `#8C9B7A` and `#2E2A24`. Not resolved. Decide and reconcile before any new brand asset is produced.
 
+**Active PDF palette** (`scripts/templates/product.css` `:root`):
+
+| Token | Hex | Role |
+|---|---|---|
+| `--bg` | `#EAEEE2` | **light sage paper** (was cream `#F5EFE6`). Set on `body`, `.cover`, `.colophon`, AND on `@page background` so the entire page surface is one continuous sage. |
+| `--bg-warm` | `#F0F3E8` | Slightly lighter sage — used as the interior of fill-in `<pre>` blocks so they read as inset, not floating. |
+| `--text` | `#2E2A24` | Charcoal body text + drop caps + h3 italic. |
+| `--ink-soft` | `#5C5347` | Subtitle, blockquote body. |
+| `--accent` | `#8C9B7A` | Sage olive — primary accent (cover title in Caveat, h2 in Caveat, h2 first-letter drop in body context, .cover-ymyl border, blockquote em, em strong, colophon-url, h4 inline labels). |
+| `--accent-2` | `#8C9B7A` | Same as accent — blockquote left border, .cover-mark sprig, .colophon-mark sprig. Could diverge later if we want a deeper sage for borders. |
+| `--accent-3` | `#A8B894` | Muted sage — fill-in box outlines, cover-divider, h2::after underline rule, hr divider sprig, table borders, pre border. (Was wheat `#D4A574`.) |
+| `--muted` | `#B8AC9A` | Stone — meta lines, page chrome (footers, cover meta, colophon fine print). |
+
+PDFs are now a sage-on-sage piece. Cover/body/colophon all in the same light sage paper; box outlines and dividers in muted sage; emphasis (cover title, h2, blockquote border) in primary sage. Charcoal carries the body text and drop caps so hierarchy is visible.
+
 ### Typography
 
 | Role | Font | Source |
@@ -373,8 +388,8 @@ products/Pnn_*/content.md  +  products/Pnn_*/web.md
   - `h3`: Fraunces italic 15pt, sage olive.
   - `h4`: Inter 9.5pt uppercase, terracotta.
 - **Body text:** Inter 11pt, ink color, line-height 1.65.
-- **Drop cap:** First letter after each `h2` is enlarged Fraunces 20pt terracotta (inline-larger, not a true floating drop cap — WeasyPrint has issues with float in `::first-letter`).
-- **`hr` divider:** Inline SVG sprig with horizontal lines, sage. Uses canonical sprig geometry.
+- **Drop cap:** First letter after each `h2` is enlarged Fraunces 20pt in `var(--text)` (charcoal). Intentionally NOT the accent color — h2 already carries the accent above, so the drop cap stays charcoal for hierarchy. Inline-larger, not a true floating drop cap (WeasyPrint can't float `::first-letter`).
+- **`hr` divider:** Inline SVG sprig with horizontal lines, sage. Uses canonical sprig geometry. A `<hr>` immediately followed by a `<h2>` is hidden via `hr:has(+ h2) { display: none }` — `<h2>` already starts a new page, the divider would either be redundant or get orphaned on its own page.
 - **Pull-quotes (`blockquote`):** Fraunces italic 14.5pt, sage left-border.
 - **Page footer (`@bottom-*`):**
   - left: `notes.soothemade.com` in Inter 8.5pt stone
@@ -389,6 +404,63 @@ products/Pnn_*/content.md  +  products/Pnn_*/web.md
 - `scripts/templates/product.css` — all styling
 
 Edit either of these only when you're changing the *system*, not per-product styling.
+
+### PDF design rules (must be satisfied on every render)
+
+These rules exist to keep every product feeling like a hand-set, premium print artifact rather than an AI-mill PDF. Any new design change must preserve them.
+
+1. **No page may contain only one element.** A page must never render with only a divider, only a heading, or only one widow line. Specifically:
+   - `<hr>` immediately before `<h2>` is hidden (above).
+   - `<h2>`, `<h3>`, `<h4>` carry `page-break-after: avoid` so headings can't be stranded.
+   - `<p>` immediately followed by `<pre>`, `<blockquote>`, or with `<strong>` as its only child carries `page-break-after: avoid` so labels stay with the visual element they introduce.
+   - `<pre>` and `<blockquote>` carry both `page-break-before: avoid` (stick with previous content) and `page-break-inside: avoid` (don't split).
+
+2. **Visual hierarchy is achieved by colour AND family, not size alone.** Adjacent heading levels must use distinct colours. Current treatment:
+   - **h2** — Caveat in `var(--accent)`. Big visual moment. Triggers a new page.
+   - **h3** — Fraunces italic in `var(--text)` (charcoal). Sub-section within a page.
+   - **h4** — Inter uppercase in `var(--accent)`. Small inline label.
+   - Never make h3 the same colour as h2.
+
+3. **Section breaks**: `<h2>` always triggers a new page (`page-break-before: always`). Never use `<hr>` immediately before an `<h2>` — the system hides it, but writing one signals you might be misunderstanding the structure.
+
+4. **Colour discipline — maximum ~4 colours per page.** Cream paper, charcoal body text, one accent (sage/whatever), one tertiary (wheat for sprigs/borders). Drop caps and section labels use the accent, but body emphasis (`<strong>`, `<em>`) stays in `var(--text)` so paragraphs don't strobe.
+
+5. **Type discipline.** Three families, each with a role:
+   - **Caveat** — brand identity only. Wordmark "Soothemade", cover title, h2 section headers, page footer center mark, signature signoffs.
+   - **Fraunces** — structural typography. Subtitles, h3 sub-headers, blockquotes, drop caps, table headers, inline `<strong>` emphasis.
+   - **Inter** — body, captions, table data, footer chrome.
+
+6. **No AI-tell punctuation.** Em dashes and semicolons are banned from product content. Enforced by `scripts/scrub_ai_punctuation.py`; new content must not reintroduce them.
+
+7. **Symbol discipline — no emoji.** The Docker render image has Inter + Fraunces + Caveat + DejaVu + Liberation, no emoji font. Modern colour-emoji codepoints (`🙂` `😐` `🌧` `❤` etc.) render as tofu boxes — and they're an AI-mill smell anyway.
+
+   **Allowed symbols (verified to render in the font stack):**
+   - `○` (U+25CB OPEN CIRCLE) — for "circle one of these" rating / option rows
+   - `☐` (U+2610 BALLOT BOX) — for checkboxes / task lists (also OK to write as markdown task lists via `- [ ]`)
+   - `·` (U+00B7 MIDDLE DOT) — separator between meta-items
+   - `—` is banned (AI-tell). Use `,` instead.
+   - `–` (en dash) — OK for ranges like "5–10 minutes"
+   - Curly quotes `"` `'` — OK
+
+   **Banned**: any emoji from the `U+1F300`–`U+1F9FF` block or `U+1FA00`–`U+1FAFF`. Plus any pictograph in `U+2600`–`U+27BF` that hasn't been confirmed to render. Confirm new symbols by rendering a test page before committing them in product content.
+
+   **Known-bad codepoints + safe replacements** (encountered during the 2026-05-20 bulk render audit):
+   - `❤` / `❤️` (U+2764 + variation selector) → use `♥` (U+2665 BLACK HEART SUIT). Heart suit is in DejaVu/Liberation and renders as a small filled heart.
+   - `❌` (U+274C NEGATIVE SQUARED CROSS MARK) → use `✗` (U+2717 BALLOT X). Ballot X is in DejaVu/Liberation and renders as a small × symbol.
+   - `🙂` / `😐` / `🌧` (face emoji + weather emoji from U+1F000+ blocks) → use `○` (U+25CB OPEN CIRCLE). Matches "circle one" intent.
+   - `⚠` (U+26A0 WARNING SIGN) → renders correctly as a small filled triangle in DejaVu fallback. Acceptable.
+
+7. **Single source of truth for design tokens.** All colours / fonts live in the `:root` of `scripts/templates/product.css`. Hardcoded hex values in component CSS are forbidden except in `@page` (which can't use custom properties).
+
+8. **Page footers uniform**: URL left, brand mark Caveat center, page number right. Suppressed on cover (`@page :first`) and colophon (`@page colophon`).
+
+9. **Margins ≥ visual-identity.md minimum**: currently `1.0in 0.85in 1.1in 0.85in` (top right bottom left). Don't bump unless you also bump `--bg` to cover the new margin or the page will show white edges.
+
+10. **Render reproducibility**: render via the `soothemade-render` Docker image. If you can't reproduce a render on a fresh checkout with `python scripts/render.py --all`, the change is broken.
+
+11. **No divider line at the start or end of a code-block container.** Code blocks (``` … ```) get a box border via the `pre` style. A `─────────` divider character line at the very top or very bottom of the code block would render as a *second* parallel line right next to the border — doubled lines, clunky weight. The container border is doing that job. Internal divider lines that separate sections *within* the container are fine and encouraged.
+
+When designing or QAing a render, walk through every page and check each rule. A failed rule = block the merge.
 
 ---
 
@@ -704,6 +776,21 @@ After running, commit the seven `product.pdf` files.
 
 One line per commit that changes structural project state. Most-recent first.
 
+- **2026-05-20** — **Bulk-rendered all 7 products** with the locked sage-on-cream template. Per-product fixes during audit: P02 `❤️`→`♥` (2 instances), P04 `❌`→`✗` (4 instances). P01 `⚠` (81 instances) confirmed to render as a small filled triangle via DejaVu fallback — acceptable. P03/P05/P06/P09 `☐` checkboxes render as small open squares. All 10+1 design rules satisfied across all 7 PDFs.
+- **2026-05-20** — Added **known-bad emoji + safe replacements** table to Design rule #7. Documents the codepoint substitutions verified to render in the Docker font stack.
+- **2026-05-20** — Added **no-doubled-divider rule** (Design rule #11). Removed redundant `─────` lines at the very top and very bottom of P03's daily-page code block — the `pre` box border was already providing that horizontal line. Doubled lines no more.
+- **2026-05-20** — Added **symbol-discipline rule** (Design rule #7). Emoji codepoints (🙂😐🌧 etc.) render as tofu in our font stack; banned from product content. Allowed symbols: `○` (circle-one options), `☐` (checkboxes), `·`, `–`. P03 line 180 emoji rating row replaced with `○` circles.
+- **2026-05-20** — **PDF page background shifted from cream to light sage** `#EAEEE2`. `--bg`, `--bg-warm`, and `@page background` all updated; `--accent-3` shifted from wheat `#D4A574` to muted sage `#A8B894` so box outlines and dividers stay in the sage family. Whole PDF now reads as a single sage-on-sage piece (cover/body/colophon paper, box interiors, outlines, dividers, emphasis — all sage-spectrum on charcoal text).
+- **2026-05-20** — Codified **PDF design rules** (Section 10, subsection "PDF design rules"). Ten rules covering page integrity, hierarchy, section breaks, colour and type discipline, AI-tell punctuation, render reproducibility. Future renders must satisfy all of them.
+- **2026-05-20** — `hr:has(+ h2)` now hidden — eliminates the orphaned-divider-on-its-own-page failure mode at section breaks.
+- **2026-05-20** — Drop cap colour changed from accent to `var(--text)` (charcoal). Restores hierarchy: h2 carries the accent above, drop cap stays neutral so paragraphs don't strobe.
+- **2026-05-20** — h3 colour changed from `var(--accent-2)` (sage) to `var(--text)` (charcoal italic). With `--accent` and `--accent-2` both at sage, h2 and h3 had collapsed to the same colour; this restores hierarchy.
+- **2026-05-20** — `--accent` switched to **sage `#8C9B7A`** (was terracotta `#B4654A`, briefly forest `#3B6B5A`). Sage matches the site's forest-theme sage and removes the warm-orange AI-mill smell.
+- **2026-05-20** — `render.py` gained an `--output` flag (single-product mode) so preview renders can bypass a locked canonical `product.pdf`.
+- **2026-05-20** — New helper `scripts/color_preview.py` — temporarily swaps `--accent` to each of a few candidate colours, renders + converts to PNG, restores original CSS. Useful for visual side-by-side colour decisions.
+- **2026-05-20** — `strong` switched from Inter bold to Fraunces semibold. Labels like "Day N:" stop reading as utility/sans-serif and become hand-set-typography.
+- **2026-05-20** — Colophon URL no longer rendered in ALL CAPS (removed `text-transform: uppercase`).
+- **2026-05-20** — Orphan prevention extended: `p:has(+ blockquote)` and `p:has(strong:only-child)` now also carry `page-break-after: avoid`. Combined with existing `p:has(+ pre)`, label paragraphs stay with their visual partner.
 - **2026-05-20** — Create AS_BUILT.md (initial). Comprehensive as-built record of brand, voice, content rules, site, PDF pipeline, deployment, Canva integration, workflow. Owner directive: update with every structural commit.
 - **2026-05-20** — h2 section headers in product PDFs switched from Fraunces 22pt to Caveat 34pt. P09 re-rendered; P01–P06 pending.
 - **2026-05-20** — `@page` background painted cream `#F5EFE6` so the entire PDF page (incl. margins) reads as one continuous surface. Margins reverted to 0.85in.

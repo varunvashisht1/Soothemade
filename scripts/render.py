@@ -69,8 +69,14 @@ def strip_leading_italic_para(body_html: str) -> tuple[str, str]:
     return m.group(1).strip(), body_html[m.end():]
 
 
-def render_one(product_dir: Path, size: str = "letter") -> Path:
-    """Render content.md in `product_dir` to product.pdf. Returns output path."""
+def render_one(product_dir: Path, size: str = "letter", output: Path | None = None) -> Path:
+    """Render content.md in `product_dir` to PDF. Returns output path.
+
+    If `output` is None, writes to `product_dir/product.pdf` (or
+    `product_dir/product_<size>.pdf` for non-letter). If `output` is given,
+    writes there directly — useful when the canonical product.pdf is locked
+    by a viewer and you want to preview without overwriting it.
+    """
     content_md = product_dir / "content.md"
     if not content_md.exists():
         raise FileNotFoundError(f"No content.md in {product_dir}")
@@ -106,8 +112,9 @@ def render_one(product_dir: Path, size: str = "letter") -> Path:
         page_size=page_size,
     )
 
-    suffix = "" if size == "letter" else f"_{size}"
-    output = product_dir / f"product{suffix}.pdf"
+    if output is None:
+        suffix = "" if size == "letter" else f"_{size}"
+        output = product_dir / f"product{suffix}.pdf"
 
     css = CSS(filename=str(STYLESHEET_PATH))
     HTML(string=html_doc, base_url=str(ROOT)).write_pdf(
@@ -123,6 +130,11 @@ def main() -> None:
     parser.add_argument(
         "--size", choices=["letter", "a4", "both"], default="letter"
     )
+    parser.add_argument(
+        "--output",
+        help="Override output path (single-product mode only). Useful when the "
+        "canonical product.pdf is locked by a viewer.",
+    )
     args = parser.parse_args()
 
     sizes = ["letter", "a4"] if args.size == "both" else [args.size]
@@ -134,6 +146,10 @@ def main() -> None:
     else:
         parser.error("Pass a product directory or --all")
 
+    override_output = Path(args.output).resolve() if args.output else None
+    if override_output and (args.all or len(targets) > 1):
+        parser.error("--output only valid for a single product")
+
     for target in targets:
         if not target.is_dir():
             print(f"skip (not a directory): {target}")
@@ -141,8 +157,8 @@ def main() -> None:
         print(f"rendering {target.name}...", end=" ", flush=True)
         for size in sizes:
             try:
-                out = render_one(target, size=size)
-                print(f"→ {out.relative_to(ROOT)}", end=" ")
+                out = render_one(target, size=size, output=override_output)
+                print(f"→ {out}", end=" ")
             except FileNotFoundError as e:
                 print(f"\n  {e}")
                 break

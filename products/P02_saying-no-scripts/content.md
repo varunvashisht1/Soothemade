@@ -24,7 +24,7 @@ You don't owe anyone access to your body, your baby, your house, or your decisio
 
 ### Script 1.1, The pre-emptive announcement (send before birth)
 
-> Hi everyone, quick note as we head into the home stretch. We're not having any visitors at the hospital. We'll share photos as soon as we can, and we'll let you know when we're ready for people to come meet [baby] at home. Thanks for understanding, it means a lot. ❤️
+> Hi everyone, quick note as we head into the home stretch. We're not having any visitors at the hospital. We'll share photos as soon as we can, and we'll let you know when we're ready for people to come meet [baby] at home. Thanks for understanding, it means a lot. ♥
 
 ### Script 1.2, When someone "just stops by" anyway
 
@@ -52,7 +52,7 @@ You don't owe anyone access to your body, your baby, your house, or your decisio
 
 ### Script 2.1, The "can I come hold the baby?" text
 
-> Thanks for thinking of us! We're not ready for visitors yet, the first couple weeks we're keeping it small. I'll let you know when we're ready. ❤️
+> Thanks for thinking of us! We're not ready for visitors yet, the first couple weeks we're keeping it small. I'll let you know when we're ready. ♥
 
 ### Script 2.2, The "I'll bring food and just drop it off!" person
 
