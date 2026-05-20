@@ -35,7 +35,7 @@ Sixteen pages, fillable:
 - **The routine and signal page.** The body cues. The word your kid uses for "I'm tired." The word for "I need the bathroom." The word for "I'm scared."
 - **The "what we do" page.** Sunscreen yes. Screen time at this limit. Outdoor play after meals. Etc.
 - **The "what we don't" page.** No tasting food off adult plates. No phone photos of the kid. No kissing on the face. No promises of things parents haven't approved.
-- **The in-case-of page.** Pediatrician, ER, parent phone, partner phone, backup adult phone. Plus the meds-in-the-bag list (described by purpose, never by name — call the parent first).
+- **The in-case-of page.** Pediatrician, ER, parent phone, partner phone, backup adult phone. Plus the meds-in-the-bag list (described by purpose, never by name, call the parent first).
 - **The consent forms.** Standard medical-emergency consent for the caregiver to authorize treatment if you cannot be reached. A drop-off/pickup authorization for daycare or school.
 - **The daycare-orientation page.** Specifically for licensed care. The questions to ask on the tour. What red flags look like.
 - **The "fun things they like" page.** The book. The song. The game. Because the caregiver will want to know.
