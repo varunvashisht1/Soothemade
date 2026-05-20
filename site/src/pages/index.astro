@@ -12,12 +12,12 @@ import Footer from '~/components/Footer.astro';
 
 const allProducts = await getCollection('products');
 
-// Helper: cover image path. Returns /products/<CODE>.png if the file exists
-// (we render covers for every shipped product). For unshipped products
-// (no PDF yet), coverImage is undefined and ProductCard falls back to
-// the jar-glyph design.
+// Helper: cover image path. All 7 shipped products now use distinct
+// Canva-generated lifestyle JPG thumbnails (sage palette, real objects,
+// no text overlay — ProductCard h3/meta-row provides labels).
+// Unshipped products (no PDF yet) fall back to jar-glyph in ProductCard.
 const SHIPPED_CODES = new Set(['P01', 'P02', 'P03', 'P04', 'P05', 'P06', 'P09']);
-const coverFor = (code: string) => (SHIPPED_CODES.has(code) ? `/products/${code}.png` : undefined);
+const coverFor = (code: string) => (SHIPPED_CODES.has(code) ? `/products/${code}.jpg` : undefined);
 
 const featured = allProducts
   .filter((p) => p.data.featured)
