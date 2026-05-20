@@ -1,0 +1,74 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import LineCards from '~/components/LineCards.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+---
+<BaseLayout
+  title="The lines — Soothemade"
+  description="Soothemade is a small house with one room open and more being built. The current and forthcoming lines."
+>
+  <Nav />
+  <article class="lines-page">
+    <div class="eyebrow">— the rooms in the house —</div>
+    <h1>A small house, <em>made slowly</em>, one room at a time.</h1>
+    <div class="intro">
+      <p>
+        Soothemade is a master brand. Each line is a separate room — a
+        different season of a life, with its own audience and its own
+        vocabulary. The voice is the same across rooms. The catalog is not.
+      </p>
+      <p>
+        One room is open. The others are still being made. We will not
+        rush them. When a room opens, the easiest way to hear about it is
+        the <a href="/newsletter">letter</a>.
+      </p>
+    </div>
+  </article>
+
+  <LineCards detailed={true} />
+
+  <Newsletter
+    heading="Hear when the next room"
+    headingAccent="opens."
+    body="One short letter every other Sunday. Sometimes a free printable. You will hear about new lines before anyone else."
+  />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .lines-page {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 72px var(--sp-7) 24px;
+    text-align: center;
+  }
+  .eyebrow { margin-bottom: 16px; }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-4xl);
+    margin: 0 0 28px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: var(--ls-tight);
+    color: var(--ink);
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .intro {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .intro p { margin-bottom: 18px; }
+  .intro a {
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  @media (max-width: 880px) {
+    .lines-page { padding: 48px var(--sp-5) 16px; }
+    h1 { font-size: 38px; }
+    .intro { font-size: 16px; }
+  }
+</style>

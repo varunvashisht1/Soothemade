@@ -1,0 +1,28 @@
+/* Theme A — Deep Forest (default).
+   The "small herbal shop after hours" palette. */
+
+:root[data-theme="forest"] {
+  --surface:         #1c2418;
+  --surface-deep:    #16201a;
+  --surface-deepest: #101810;
+
+  --card:            #f1ead4;
+  --card-text:       #5a6845;
+  --card-text-soft:  #7a8a65;
+  --card-rule:       rgba(90, 104, 69, 0.25);
+
+  --ink:             #ebe2c8;
+  --ink-soft:        #b8b09a;
+  --ink-faint:       #7a7765;
+
+  --rule:            rgba(235, 226, 200, 0.12);
+  --rule-strong:     rgba(235, 226, 200, 0.22);
+  --hover:           rgba(235, 226, 200, 0.04);
+
+  --sage:            #a8b88a;
+  --sage-soft:       #c4d09e;
+  --accent:          #d68a72;
+  --accent-soft:     #e2a78f;
+
+  color-scheme: dark;
+}

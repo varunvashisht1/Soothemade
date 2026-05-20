@@ -1,0 +1,131 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+---
+<BaseLayout
+  title="About — Soothemade"
+  description="A small studio making slow, considered things for the parts of life no one is photographing."
+>
+  <Nav />
+  <article class="about">
+    <div class="eyebrow">— about the studio —</div>
+    <h1>A small studio, made <em>slowly</em>, in plain language.</h1>
+    <div class="body">
+      <p>
+        Soothemade is a small studio that makes things — mostly paper
+        things — for the long, mostly-unphotographed parts of a life. The
+        3 a.m. parts. The Tuesday-with-nothing-planned parts. The
+        recovery month. The hour before anyone else is up.
+      </p>
+      <p>
+        What we make is not a system. It is not a productivity hack. It
+        is not a routine designed by someone who has never had a quiet
+        week. It is a handful of small, considered objects you can use
+        through a season and then put down when it is over.
+      </p>
+
+      <h2>The rooms in the house</h2>
+      <p>
+        Soothemade is a master brand. Each line is a different room in
+        the same house — same voice, same hands, different season of a
+        life. Right now one room is open: <a class="ext" href="https://notes.soothemade.com" rel="noopener">Soothemade Notes</a>, for new parents.
+        The other rooms — for the home cook, for the solo worker, for
+        the long traveler — are still being made. Slowly. By the same
+        people.
+      </p>
+      <p>
+        You can see them on <a href="/lines">the lines page</a>. When a
+        new room opens, the easiest way to hear about it is the
+        <a href="/newsletter">letter</a>.
+      </p>
+
+      <h2>What we mean by "made slowly"</h2>
+      <p>
+        We mean the kind of slow that a tomato is. The kind of slow that
+        a recovery is. The kind of slow that learning anything actually
+        is, before somebody sold you a course that promised otherwise.
+        We make one thing at a time. We finish it. We make the next one.
+      </p>
+      <p>
+        Each product is researched, voiced, designed, and read
+        end-to-end by a human before it ships. The tools we use to make
+        them faster are tools, the way a sewing machine is a tool. They
+        do not write your letter and they do not decide what you need.
+      </p>
+
+      <h2>What this is not</h2>
+      <ul>
+        <li>
+          A wellness brand. We do not think you have a self to optimize.
+          We think you have a life to live, and some of it is plain, and
+          we make things for the plain parts.
+        </li>
+        <li>
+          A subscription. You buy a printable, you keep it forever, you
+          owe us nothing else.
+        </li>
+        <li>
+          A megaphone. Soothemade is a small thing on purpose. If it
+          ever gets larger, the voice you read here is what we are
+          accountable to.
+        </li>
+      </ul>
+
+      <h2>Where the name comes from</h2>
+      <p>
+        It is <em>soothe</em> plus <em>-made.</em> It rhymes with
+        "homemade" because that is the register. The things in this shop
+        are made — slowly, by hand, with the unphotographed days in
+        mind.
+      </p>
+
+      <h2>Get in touch</h2>
+      <p>
+        Email <a href="mailto:hello@soothemade.com">hello@soothemade.com</a>. We read everything. We reply when we can.
+      </p>
+    </div>
+  </article>
+  <Newsletter />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .about {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 72px var(--sp-7) 80px;
+  }
+  .eyebrow { text-align: center; margin-bottom: 16px; }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-4xl);
+    margin: 0 0 40px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: var(--ls-tight);
+    color: var(--ink);
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .body { font-size: 18px; line-height: 1.75; color: var(--ink); }
+  .body h2 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 28px;
+    margin: 44px 0 16px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .body p { margin: 0 0 20px; }
+  .body em { font-style: italic; color: var(--accent); }
+  .body ul { margin: 0 0 22px 24px; padding: 0; }
+  .body li { margin-bottom: 10px; }
+  .body a { color: var(--accent); border-bottom: 1px solid var(--rule-strong); }
+  @media (max-width: 880px) {
+    .about { padding: 48px var(--sp-5) 64px; }
+    h1 { font-size: 38px; }
+    .body { font-size: 16px; }
+  }
+</style>

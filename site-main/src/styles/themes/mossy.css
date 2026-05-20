@@ -1,0 +1,28 @@
+/* Theme C — Mossy Oak.
+   Warm dark with brown undertones; original brand palette, inverted. */
+
+:root[data-theme="mossy"] {
+  --surface:         #25241a;
+  --surface-deep:    #1c1b13;
+  --surface-deepest: #14130c;
+
+  --card:            #d6cdb0;
+  --card-text:       #4a4633;
+  --card-text-soft:  #706a52;
+  --card-rule:       rgba(74, 70, 51, 0.22);
+
+  --ink:             #e8dfc0;
+  --ink-soft:        #b2a988;
+  --ink-faint:       #7a725a;
+
+  --rule:            rgba(232, 223, 192, 0.12);
+  --rule-strong:     rgba(232, 223, 192, 0.22);
+  --hover:           rgba(232, 223, 192, 0.04);
+
+  --sage:            #a8a672;
+  --sage-soft:       #b8b88a;
+  --accent:          #c87963;
+  --accent-soft:     #d8967f;
+
+  color-scheme: dark;
+}

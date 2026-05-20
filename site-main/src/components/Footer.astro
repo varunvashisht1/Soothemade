@@ -1,0 +1,125 @@
+---
+const columns = [
+  {
+    heading: 'Lines',
+    links: [
+      { href: 'https://notes.soothemade.com', label: 'Soothemade Notes', external: true },
+      { href: '/lines#kitchen', label: 'Soothemade Kitchen' },
+      { href: '/lines#studio', label: 'Soothemade Studio' },
+      { href: '/lines#field', label: 'Soothemade Field' },
+    ],
+  },
+  {
+    heading: 'Read',
+    links: [
+      { href: '/journal', label: 'The journal' },
+      { href: '/freebies', label: 'Free printable' },
+      { href: '/about', label: 'About the studio' },
+    ],
+  },
+  {
+    heading: 'Studio',
+    links: [
+      { href: '/contact', label: 'Contact' },
+      { href: '/policy', label: 'Policy' },
+      { href: '/press', label: 'Press' },
+      { href: '/newsletter', label: 'Letter' },
+    ],
+  },
+];
+const year = new Date().getFullYear();
+---
+<footer class="foot rule-top">
+  <div class="row">
+    <div class="brand-block">
+      <svg class="brand-sprig" viewBox="370 125 60 95" fill="none" aria-hidden="true">
+        <path d="M 400 215 Q 397 175 401 130" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+        <ellipse cx="386" cy="190" rx="11" ry="4" fill="currentColor" transform="rotate(-45 386 190)"/>
+        <ellipse cx="414" cy="160" rx="11" ry="4" fill="currentColor" transform="rotate(45 414 160)"/>
+      </svg>
+      <div class="logo">Soothemade</div>
+      <p>A small studio of slow, considered things. Made for the parts of life no one is photographing.</p>
+    </div>
+    {columns.map((col) => (
+      <div>
+        <h4>{col.heading}</h4>
+        <ul>
+          {col.links.map((l) => (
+            <li>
+              {l.external
+                ? <a href={l.href} class="ext" rel="noopener">{l.label}</a>
+                : <a href={l.href}>{l.label}</a>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <div class="bottom">
+    <span>Soothemade · est. {year} · made slowly</span>
+    <span>hello@soothemade.com</span>
+  </div>
+</footer>
+
+<style>
+  .foot {
+    background: var(--surface-deepest);
+    color: var(--ink-soft);
+    padding: 48px var(--sp-7) 32px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+  h4 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 16px;
+    margin: 0 0 14px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { margin-bottom: 8px; font-size: 13px; }
+  a { color: var(--ink-soft); transition: color var(--t-fast) var(--ease); }
+  a:hover { color: var(--accent); }
+  .brand-block .brand-sprig {
+    width: 22px;
+    height: 36px;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 14px;
+  }
+  .brand-block .logo {
+    font-family: var(--font-script);
+    font-size: 32px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .brand-block p {
+    font-size: 13px;
+    max-width: 280px;
+    margin: 0;
+    line-height: 1.55;
+  }
+  .bottom {
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+  }
+  @media (max-width: 880px) {
+    .foot { padding: 40px var(--sp-5) 24px; }
+    .row { grid-template-columns: 1fr 1fr; gap: 28px; }
+  }
+</style>

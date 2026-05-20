@@ -1,0 +1,115 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import Footer from '~/components/Footer.astro';
+---
+<BaseLayout
+  title="Policy — Soothemade"
+  description="How the studio handles privacy, returns, and the small print."
+>
+  <Nav />
+  <article class="policy">
+    <div class="eyebrow">— the small print —</div>
+    <h1><em>Plain</em> policy.</h1>
+
+    <div class="body">
+      <p class="lede">
+        The umbrella site does not sell anything directly. Each line has
+        its own policy. Below is the plain version, written for a person.
+        Each line's site has the legal version, written for a court.
+      </p>
+
+      <h2>Privacy</h2>
+      <p>
+        We collect as little as possible. If you leave an email on the
+        letter form, we keep it in a list and send a letter every other
+        Sunday. We do not sell it. We do not trade it. We do not enrich
+        it. We do not run third-party tracking pixels on this site.
+      </p>
+      <p>
+        Server logs from Cloudflare exist (this site runs on Cloudflare
+        Workers). They retain IP addresses for a short window for
+        abuse-prevention purposes. We do not look at them unless
+        something is broken.
+      </p>
+      <p>
+        Unsubscribe whenever. Every letter has a one-click link at the
+        bottom. The next letter, you are off the list.
+      </p>
+
+      <h2>Returns and refunds</h2>
+      <p>
+        The umbrella shop does not sell anything. Products are sold by
+        each line (currently <a class="ext" href="https://notes.soothemade.com" rel="noopener">Soothemade Notes</a>), each with its
+        own return policy. See the line's site for specifics.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        This site does not set marketing cookies. The platform may set
+        small technical cookies for the site to function. We do not run
+        analytics that profile you.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        This site is not directed at children. We do not knowingly
+        collect information from anyone under 16.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        If this policy changes, we will note the date below and write
+        about the change in the letter. Last updated: 2026-05-20.
+      </p>
+
+      <h2>Questions</h2>
+      <p>
+        Email <a href="mailto:hello@soothemade.com">hello@soothemade.com</a>. We read everything.
+      </p>
+    </div>
+  </article>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .policy {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 72px var(--sp-7) 80px;
+  }
+  .eyebrow { text-align: center; margin-bottom: 16px; }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-4xl);
+    margin: 0 0 32px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .body { font-size: 17px; line-height: 1.7; color: var(--ink); }
+  .lede {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    line-height: 1.55;
+  }
+  .body h2 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 24px;
+    margin: 36px 0 14px;
+    font-weight: 400;
+  }
+  .body p { margin-bottom: 16px; }
+  .body a { color: var(--accent); border-bottom: 1px solid var(--rule-strong); }
+  @media (max-width: 880px) {
+    .policy { padding: 48px var(--sp-5) 64px; }
+    h1 { font-size: 38px; }
+    .body { font-size: 16px; }
+  }
+</style>

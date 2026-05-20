@@ -1,0 +1,26 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import SoftStub from '~/components/SoftStub.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+---
+<BaseLayout
+  title="Free printable — Soothemade"
+  description="A small welcome printable from the studio. Sent to anyone on the letter."
+>
+  <Nav />
+  <SoftStub
+    eyebrow="— free printable —"
+    heading="The welcome printable is on its way."
+    body="The studio is small and the first umbrella printable is still in the making. Leave an address below and it lands in your inbox the day it's ready."
+    backHref="/lines"
+    backLabel="see the lines instead →"
+  />
+  <Newsletter
+    heading="Leave an address. Get the"
+    headingAccent="first one."
+    body="One short letter every other Sunday. The welcome printable arrives the day it's ready. We never share addresses."
+  />
+  <Footer />
+</BaseLayout>

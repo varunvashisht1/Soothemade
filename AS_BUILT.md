@@ -300,6 +300,34 @@ Full visual identity: [`brand/visual-identity.md`](./brand/visual-identity.md).
 │               ├── charcoal.css
 │               ├── forest.css         (default)
 │               └── mossy.css
+├── site-main/                 Astro site (soothemade.com — umbrella)
+│   ├── package.json
+│   ├── astro.config.mjs
+│   ├── wrangler.toml          CF Workers config (no data bindings)
+│   ├── DEPLOY.md              Deploy playbook
+│   ├── README.md
+│   ├── public/
+│   │   ├── favicon.svg
+│   │   └── robots.txt
+│   └── src/
+│       ├── components/        Nav, Footer, Hero, LineCards, Manifesto, etc.
+│       ├── content.config.ts  Journal collection
+│       ├── content/journal/   Umbrella essays (markdown)
+│       ├── data/
+│       │   ├── lines.ts       Sub-line definitions (Notes live; others coming)
+│       │   └── theme.json
+│       ├── layouts/
+│       │   └── BaseLayout.astro
+│       ├── lib/theme.ts
+│       ├── pages/             Routes — /, /lines, /journal, /about, etc.
+│       └── styles/
+│           ├── global.css
+│           ├── tokens.css
+│           └── themes/
+│               ├── daylight.css       (default)
+│               ├── charcoal.css
+│               ├── forest.css
+│               └── mossy.css
 └── toolkit/                   Pro-mode prompts + customer-service + KB
 ```
 
@@ -591,6 +619,42 @@ npm install   # one-time
 npm run dev   # local dev server at http://localhost:4321
 ```
 
+### Umbrella site — `soothemade.com`
+
+A second Astro app, `site-main/`, hosts the master-brand umbrella site
+at the apex domain. Per `brand/architecture.md`, the umbrella has no
+products of its own; it tells the brand story and routes to sub-lines
+(currently Notes; future Kitchen / Studio / Field). It is a fully
+independent codebase — Notes is just a hyperlink from it.
+
+| Surface | Where |
+|---|---|
+| Live custom domain | `https://soothemade.com` + `www.soothemade.com` |
+| Cloudflare Worker name | `soothemade-main` |
+| Data layer | none (read-only brand site) |
+| Default theme | `daylight` — cream + moss + terracotta, light variant |
+
+Brand source of truth: `brand/umbrella-story.md` — the master narrative
+all umbrella copy ladders back to. The Notes voice guide still applies;
+the umbrella voice is the same voice widened from parenthood-specific
+to master-brand.
+
+Pages: `/`, `/lines`, `/journal`, `/journal/[slug]`, `/about`,
+`/freebies`, `/contact`, `/policy`, `/press`, `/newsletter`, `/404`.
+
+The newsletter form on the umbrella POSTs to the Notes worker's
+`/api/subscribe` endpoint with `source=umbrella` — single subscriber
+list, tagged by entry point.
+
+```bash
+cd site-main
+npm install
+npm run dev   # local at http://localhost:4321
+npm run deploy
+```
+
+Full deploy playbook: `site-main/DEPLOY.md`.
+
 ---
 
 ## 13. Deployment
@@ -776,6 +840,7 @@ After running, commit the seven `product.pdf` files.
 
 One line per commit that changes structural project state. Most-recent first.
 
+- **2026-05-20** — **Scaffolded the umbrella site `site-main/` for `soothemade.com`.** A second Astro app, fully independent from `site/`. Honors `brand/architecture.md`'s "no products at the umbrella" rule — the umbrella tells the master-brand story and routes out to sub-lines via hyperlinks (Notes is the only live one; Kitchen / Studio / Field appear as "in the workshop" placeholder cards). New brand source-of-truth doc `brand/umbrella-story.md` extends the Notes voice guide from parenthood-specific to master-brand level around the themes the founder set: slowness, nature-as-pace, peaceful-as-restraint, "loving yourself" without using the words. Pages: `/` (hero → brand lede → line cards → manifesto → journal preview → newsletter), `/lines` (full sub-line index), `/journal` + `/journal/[slug]` (umbrella essays, distinct from Notes' parenthood journal — seeded with three: "On weather-paced work," "The hour before anyone else is up," "What we mean by slow"), `/about`, `/freebies`, `/contact`, `/policy`, `/press`, `/newsletter`, `/404`. New `daylight` theme (cream + moss + terracotta, light variant) as default; Notes' three dark themes preserved as alternates for continuity. New `LineCards` component renders sub-lines from `src/data/lines.ts` — Notes as a live external link with `↗` arrow, others as quiet "Hear when it opens" CTAs to the letter. Reused-from-Notes components (Hero, Manifesto, Newsletter, JournalRow, BotanicalLeaf, SoftStub, BaseLayout) copied with light retargeting; nav and footer rewritten for the umbrella. Newsletter posts to Notes' `/api/subscribe` with `source=umbrella` — single subscriber list, tagged by entry point. Worker `soothemade-main` is intentionally bindings-free (no D1/R2/KV/Vectorize/AI). Build verified: 1050 KiB / 222 KiB gzipped. Tagline locked: "Made for the parts of life no one is photographing."
 - **2026-05-20** — **Data layer verified end-to-end. Vectorize fully populated (55/55), search returns semantically-correct hits.** Followup to the data-layer rollout below. Set fresh `REINDEX_SECRET` via piped `wrangler secret put` (the no-copy-paste pattern documented in memory `feedback_no_copy_paste_for_secrets.md`). Ran the indexer; first pass landed 50/55 vectors due to Vectorize async-propagation latency, second idempotent pass topped up to 55/55. Smoke tests: `GET /files/P09.pdf` streams from R2 (HTTP 200, 197 KB). `GET /api/search?q=...` returns correct top hits for natural-language queries: "scared about going back to work" → P31 Returning-to-Work (0.605), "twins" → P33 Twin Pregnancy (0.668), "elder care for my parent" → P46 Eldercare (0.638), "keepsake letters to my baby" → P56 Letters to Baby (0.779), "I am pregnant and anxious" → P52 Birth Anxiety (0.636). Also fixed a Windows path bug in `scripts/index_products_vectorize.mjs`: `new URL(...).pathname` returns `/C:/Users/...` on Windows which `join()` then mangled into `C:\C:\Users\...`; replaced with `fileURLToPath` from `node:url`. Operational note: Vectorize V2 `upsert` is async, `vectorCount` may briefly trail the worker's `upserted:N` response by a few seconds to a few minutes; re-run the indexer to top up — it's idempotent on ID.
 - **2026-05-20** — **Full Workers data layer wired up. Site is now a complete Worker, not just a static-assets site.** Provisioned + bound four new CF resources: **D1** database `soothemade-notes` (`ddbaf6ed-f1e1-49a3-b88d-609a448daae1`, APAC) with initial schema covering subscribers / orders / download_tokens / journal_views / contact_messages, **R2** bucket `soothemade-notes-files` populated with all 55 product PDFs under `products/Pnn.pdf` keys, **KV** namespace `CACHE` (`d370c098ad334796aa4e461bcaf12c1f`) for rate limiting + catalog cache, **Vectorize** index `soothemade-products` (384-dim bge-small-en-v1.5, cosine), plus the existing **Workers AI** binding for embedding generation. New endpoints: `POST /api/subscribe` (KV rate-limit + D1 upsert), `POST /api/contact` (KV rate-limit + D1 insert), `GET /api/search?q=` (Workers AI embed → Vectorize query, returns semantic matches across the catalog), `GET /files/[code].pdf` (R2 stream), `POST /api/journal/[slug]/view` (D1 counter), `POST /api/admin/reindex` (auth-gated bulk embed + upsert). Search wired into `/shop` page as a calm text-input above the category chips, voice-matched (no "AI" label, no spinners). Internal script `scripts/index_products_vectorize.mjs` POSTs all 55 products' web.md frontmatter to `/api/admin/reindex` to populate Vectorize. Workers AI strictly used for buyer discovery (embeddings), never for generating customer-facing copy — brand voice is anti-AI-mill. Build passes (1.4 MiB / 295 KiB gz). Full operating reference: §19.
 - **2026-05-20** — **Shipped 6 more pregnancy products at full quality (P51-P56). Catalog now 55. Pregnancy gap-filling: safety reference, birth anxiety, trimester emotional, work navigation, partner-during-pregnancy, letters-to-baby keepsake.** User-requested batch. P51 The Pregnancy Safety Reference (pregnancy/YMYL extra-careful, 30 pages, the MOST YMYL-sensitive product in the catalog given how it touches safety territory; explicitly organizes questions rather than giving verdicts; NO medication names, NO definitive safety/danger statements, NO dose thresholds; categories: food + drink + activity + environment + medication-class-by-purpose + workplace + travel; the "what they say but actually" page deconstructs common internet patterns; "if I already did this thing" calm framework; question-list template for the provider). P52 The Birth Anxiety Workbook (pregnancy/YMYL, 40 pages, treats birth fear as data not weakness, anti-platitude framing with "trust your body" + "women have done this for thousands of years" explicitly listed as the unhelpful patterns; fear inventory across 8 categories + ~50 named fears; six 2-page fear workbooks for pain / loss-of-control / mom-complications / baby-complications / interventions / the-unknown; scripts page for telling the team you are scared; night-before-labor handwritten-note-to-myself-in-labor; "I am not okay" perinatal mental-health routing with PSI 1-833-852-6262 + MMH 1-833-943-5746). P53 Trimester-by-Trimester Emotional Companion (pregnancy, non-YMYL, 30 pages, intentional companion-by-contrast to P08's data-heavy weekly; "this is the slow journal" framing with explicit "you can write the angry thing about your mother or your partner" ground rules; 5 prompted pages per trimester focused on identity shifts + pre-baby grief + social changes + the body-as-experience-not-data; "I am happy AND I am grieving" two-true-things-at-once permission). P54 The Pregnancy + Work Planner (pregnancy, non-YMYL, 30 pages, pre-announcement research with FMLA/PWFA/ADA/PUMP Act named for US users + "your country has equivalents" for non-US; when-to-tell decision with pros+cons by trimester; 4 manager scripts including the calm + anxiety + supportive + possibly-unsupportive versions; HR conversation script with questions HR may not volunteer; accommodations checklist across physical/schedule/environmental/job-duties with provider-letter language; mat-leave prep handoff document template; "what if I don't come back" page with 6 options including phased exit). P55 The Partner-During-Pregnancy Companion (partner category, non-YMYL, 30 pages, written FOR the non-birthing partner DURING pregnancy as the bookend to P04 which is postpartum; trimester-by-trimester guidance with what's happening + how to be useful + the partner's own experience; the partner's own grief + fear page that most partners do not give themselves time for; things-to-say + things-to-NEVER-say reference page; partner mental health page with PSI explicitly noted as serving partners). P56 Letters to Baby, a Pregnancy Keepsake Journal (pregnancy, non-YMYL, 40 pages, the lyrical heart-y one; 13 prompted letters with extensive blank writing space; Before-I-knew-you, Day-I-found-out, First-appointment, Telling-people, First-time-I-felt-you, Your-name-the-story, What-our-family-is-like, What-the-world-is-like-in-this-year, What-your-other-parent-is-like, What-I-want-you-to-know-about-your-grandparents, Last-week, Night-before-you-came, First-time-I-saw-you; 40-line "things I want to remember to tell you" running list across 2 pages; pocket pages for ultrasound photo + hospital bracelet with cut-line slots; skip-page for Letter 9 if single-parent / chosen-family). All 6 PDFs visual-verified via pdftoppm preview. 4,800+ lines of brand-voiced content. Zero medication names. Crisis lines included for US + UK + Canada + Australia where applicable.

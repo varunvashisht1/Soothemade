@@ -1,0 +1,28 @@
+/* Theme B — Charcoal Luxe.
+   Near-black with brighter sage; Maude / Aesop coded. */
+
+:root[data-theme="charcoal"] {
+  --surface:         #15150e;
+  --surface-deep:    #0e0e08;
+  --surface-deepest: #080805;
+
+  --card:            #1f1f17;
+  --card-text:       #c8c4b0;
+  --card-text-soft:  #888270;
+  --card-rule:       rgba(200, 196, 176, 0.15);
+
+  --ink:             #e8e0c8;
+  --ink-soft:        #aaa489;
+  --ink-faint:       #6a6655;
+
+  --rule:            rgba(232, 224, 200, 0.1);
+  --rule-strong:     rgba(232, 224, 200, 0.2);
+  --hover:           rgba(232, 224, 200, 0.03);
+
+  --sage:            #b2c08a;
+  --sage-soft:       #c8d49e;
+  --accent:          #e2a78f;
+  --accent-soft:     #ecbfaa;
+
+  color-scheme: dark;
+}

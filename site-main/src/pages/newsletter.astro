@@ -1,0 +1,97 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
+import Newsletter from '~/components/Newsletter.astro';
+import Footer from '~/components/Footer.astro';
+---
+<BaseLayout
+  title="The letter — Soothemade"
+  description="One short letter every other Sunday. Sometimes a free printable. No tracking pixels, no upsells, no doorbell ringing."
+>
+  <Nav />
+  <article class="newsletter-page">
+    <div class="eyebrow">— the letter —</div>
+    <h1>A letter, every other <em>Sunday.</em></h1>
+    <div class="body">
+      <p class="lede">
+        The letter is short. It usually contains: one observation from
+        the week, a note about something we are making, and — in many
+        issues — a small free printable. There are no tracking pixels.
+        There are no upsells. There is no doorbell ringing.
+      </p>
+
+      <h2>Who it's for</h2>
+      <ul>
+        <li>People who want to hear when a new line opens before anyone else.</li>
+        <li>People who would read a short essay about slowness, pace, or the unphotographed life.</li>
+        <li>People who like a free printable now and then.</li>
+        <li>People who are tired of marketing that yells.</li>
+      </ul>
+
+      <h2>Who it's not for</h2>
+      <ul>
+        <li>People who want a deal every week.</li>
+        <li>People who want a long-running content series.</li>
+        <li>People who would consider a 4-week silence a customer-service failure. (Sometimes we go quiet. The weather did it.)</li>
+      </ul>
+
+      <h2>What you get day one</h2>
+      <p>
+        A short welcome note. The first free printable (when it's ready —
+        see <a href="/freebies">freebies</a>). The address of the studio
+        email if you want to write back.
+      </p>
+    </div>
+  </article>
+
+  <Newsletter
+    heading="Leave an address. We'll see you"
+    headingAccent="on Sunday."
+    body="One short letter every other Sunday. The welcome printable arrives the day it's ready. Unsubscribe whenever. We never share addresses."
+  />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .newsletter-page {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 72px var(--sp-7) 48px;
+  }
+  .eyebrow { text-align: center; margin-bottom: 16px; }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-4xl);
+    margin: 0 0 32px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .body { font-size: 18px; line-height: 1.7; color: var(--ink); }
+  .lede {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    line-height: 1.55;
+  }
+  .body h2 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 24px;
+    margin: 36px 0 14px;
+    font-weight: 400;
+  }
+  .body p { margin-bottom: 18px; }
+  .body ul { margin: 0 0 22px 24px; padding: 0; }
+  .body li { margin-bottom: 8px; }
+  .body a { color: var(--accent); border-bottom: 1px solid var(--rule-strong); }
+  @media (max-width: 880px) {
+    .newsletter-page { padding: 48px var(--sp-5) 32px; }
+    h1 { font-size: 38px; }
+    .body { font-size: 16px; }
+  }
+</style>
