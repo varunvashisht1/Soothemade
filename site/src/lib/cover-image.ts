@@ -14,7 +14,8 @@
 const SHIPPED_CODES = new Set([
   'P01', 'P02', 'P03', 'P04', 'P05', 'P06', 'P07',
   'P08', 'P09', 'P11', 'P12', 'P13', 'P14', 'P15',
-  'P16', 'P17', 'P18', 'P19', 'P20',
+  'P16', 'P17', 'P18', 'P19', 'P20', 'P21', 'P22',
+  'P23', 'P24', 'P25', 'P26',
 ]);
 
 export function coverFor(code: string): string | undefined {
