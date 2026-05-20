@@ -37,6 +37,7 @@ except ImportError as e:
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE_PATH = ROOT / "scripts" / "templates" / "product.html.j2"
 STYLESHEET_PATH = ROOT / "scripts" / "templates" / "product.css"
+PDFS_DIR = ROOT / "pdfs"  # Flat folder mirror, one PDF per product, named by slug
 
 
 def load_meta(product_dir: Path) -> dict | None:
@@ -120,6 +121,18 @@ def render_one(product_dir: Path, size: str = "letter", output: Path | None = No
     HTML(string=html_doc, base_url=str(ROOT)).write_pdf(
         target=str(output), stylesheets=[css]
     )
+
+    # Mirror to flat pdfs/ folder, named by product directory (e.g.
+    # P07_newborn-survival-planner.pdf). Only for canonical letter-size
+    # renders to the default path, not for --output overrides or A4 variants.
+    is_canonical = (
+        output == product_dir / "product.pdf" and size == "letter"
+    )
+    if is_canonical:
+        PDFS_DIR.mkdir(exist_ok=True)
+        mirror = PDFS_DIR / f"{product_dir.name}.pdf"
+        mirror.write_bytes(output.read_bytes())
+
     return output
 
 
