@@ -776,6 +776,7 @@ After running, commit the seven `product.pdf` files.
 
 One line per commit that changes structural project state. Most-recent first.
 
+- **2026-05-20** — **Full Workers data layer wired up. Site is now a complete Worker, not just a static-assets site.** Provisioned + bound four new CF resources: **D1** database `soothemade-notes` (`ddbaf6ed-f1e1-49a3-b88d-609a448daae1`, APAC) with initial schema covering subscribers / orders / download_tokens / journal_views / contact_messages, **R2** bucket `soothemade-notes-files` populated with all 55 product PDFs under `products/Pnn.pdf` keys, **KV** namespace `CACHE` (`d370c098ad334796aa4e461bcaf12c1f`) for rate limiting + catalog cache, **Vectorize** index `soothemade-products` (384-dim bge-small-en-v1.5, cosine), plus the existing **Workers AI** binding for embedding generation. New endpoints: `POST /api/subscribe` (KV rate-limit + D1 upsert), `POST /api/contact` (KV rate-limit + D1 insert), `GET /api/search?q=` (Workers AI embed → Vectorize query, returns semantic matches across the catalog), `GET /files/[code].pdf` (R2 stream), `POST /api/journal/[slug]/view` (D1 counter), `POST /api/admin/reindex` (auth-gated bulk embed + upsert). Search wired into `/shop` page as a calm text-input above the category chips, voice-matched (no "AI" label, no spinners). Internal script `scripts/index_products_vectorize.mjs` POSTs all 55 products' web.md frontmatter to `/api/admin/reindex` to populate Vectorize. Workers AI strictly used for buyer discovery (embeddings), never for generating customer-facing copy — brand voice is anti-AI-mill. Build passes (1.4 MiB / 295 KiB gz). Full operating reference: §19.
 - **2026-05-20** — **Shipped 6 more pregnancy products at full quality (P51-P56). Catalog now 55. Pregnancy gap-filling: safety reference, birth anxiety, trimester emotional, work navigation, partner-during-pregnancy, letters-to-baby keepsake.** User-requested batch. P51 The Pregnancy Safety Reference (pregnancy/YMYL extra-careful, 30 pages, the MOST YMYL-sensitive product in the catalog given how it touches safety territory; explicitly organizes questions rather than giving verdicts; NO medication names, NO definitive safety/danger statements, NO dose thresholds; categories: food + drink + activity + environment + medication-class-by-purpose + workplace + travel; the "what they say but actually" page deconstructs common internet patterns; "if I already did this thing" calm framework; question-list template for the provider). P52 The Birth Anxiety Workbook (pregnancy/YMYL, 40 pages, treats birth fear as data not weakness, anti-platitude framing with "trust your body" + "women have done this for thousands of years" explicitly listed as the unhelpful patterns; fear inventory across 8 categories + ~50 named fears; six 2-page fear workbooks for pain / loss-of-control / mom-complications / baby-complications / interventions / the-unknown; scripts page for telling the team you are scared; night-before-labor handwritten-note-to-myself-in-labor; "I am not okay" perinatal mental-health routing with PSI 1-833-852-6262 + MMH 1-833-943-5746). P53 Trimester-by-Trimester Emotional Companion (pregnancy, non-YMYL, 30 pages, intentional companion-by-contrast to P08's data-heavy weekly; "this is the slow journal" framing with explicit "you can write the angry thing about your mother or your partner" ground rules; 5 prompted pages per trimester focused on identity shifts + pre-baby grief + social changes + the body-as-experience-not-data; "I am happy AND I am grieving" two-true-things-at-once permission). P54 The Pregnancy + Work Planner (pregnancy, non-YMYL, 30 pages, pre-announcement research with FMLA/PWFA/ADA/PUMP Act named for US users + "your country has equivalents" for non-US; when-to-tell decision with pros+cons by trimester; 4 manager scripts including the calm + anxiety + supportive + possibly-unsupportive versions; HR conversation script with questions HR may not volunteer; accommodations checklist across physical/schedule/environmental/job-duties with provider-letter language; mat-leave prep handoff document template; "what if I don't come back" page with 6 options including phased exit). P55 The Partner-During-Pregnancy Companion (partner category, non-YMYL, 30 pages, written FOR the non-birthing partner DURING pregnancy as the bookend to P04 which is postpartum; trimester-by-trimester guidance with what's happening + how to be useful + the partner's own experience; the partner's own grief + fear page that most partners do not give themselves time for; things-to-say + things-to-NEVER-say reference page; partner mental health page with PSI explicitly noted as serving partners). P56 Letters to Baby, a Pregnancy Keepsake Journal (pregnancy, non-YMYL, 40 pages, the lyrical heart-y one; 13 prompted letters with extensive blank writing space; Before-I-knew-you, Day-I-found-out, First-appointment, Telling-people, First-time-I-felt-you, Your-name-the-story, What-our-family-is-like, What-the-world-is-like-in-this-year, What-your-other-parent-is-like, What-I-want-you-to-know-about-your-grandparents, Last-week, Night-before-you-came, First-time-I-saw-you; 40-line "things I want to remember to tell you" running list across 2 pages; pocket pages for ultrasound photo + hospital bracelet with cut-line slots; skip-page for Letter 9 if single-parent / chosen-family). All 6 PDFs visual-verified via pdftoppm preview. 4,800+ lines of brand-voiced content. Zero medication names. Crisis lines included for US + UK + Canada + Australia where applicable.
 - **2026-05-20** — **Shipped 6 more products at full quality (P45-P50). Catalog now 49. THE ELDERCARE NICHE IS OFFICIALLY OPEN.** Second autonomous batch, this one with visual PDF verification enabled (built new `soothemade-render-preview` Docker image with poppler-utils baked in, used pdftoppm to PNG preview each cover and one body page for the YMYL products). P45 Twin Postpartum First Six Weeks (postpartum/YMYL, 40 pages, companion to P33, day-by-day for week 1 then weekly for weeks 2-6, two-baby side-by-side feed-and-diaper log template, "who has which baby" overnight rotation page, partner page with explicit signal-watching since twin parents have elevated postpartum mood disorder rates, "I am not okay" 8-question check with 3-question call-now trigger). P46 Eldercare First 90 Days Planner (family/YMYL, 40 pages, **THE FIRST ELDERCARE PRODUCT IN THE CATALOG**, opens the niche Soothemade's brand promise has reserved but never served, first-call-list + day-by-day week 1 + weekly through week 13 + medication-log-by-purpose + financial+legal paperwork checklist with elder-law-attorney note + 6-option "where they will live" decision page + sibling-conflict workbook with old-family-wounds surfacing + caregiver "I am not okay either" page + crisis lines including Eldercare Locator 1-800-677-1116 + optional legacy-work page). P47 Stay-at-Home Parent Transition Planner (family, non-YMYL, 30 pages, four-part partner money conversation including the spousal-IRA "page most planners skip" + the "what if we split" preplanning + three day-shape templates by kid age + friend-network rebuilding + "mine things" identity-preservation inventory + SAMHSA substance-use line included given documented at-home alcohol pattern). P48 Adoption Wait + Welcome Pack (pregnancy, non-YMYL, 30 pages, "this is its own pregnancy" framing, home-study prep + financial planning with tax-credit + grief page for paths that included infertility + when-a-match-falls-through with respectful-of-birth-family language + match-call page + welcome-day plan with separate sections for infant vs older-child placement + birth-family communication first-letter guidance + "how we will talk about our family" page with the four-language patterns to AVOID: "real mom/dad", "gave up/away", "lucky", "our own"). P49 The Asking for Help Script Pack (family, non-YMYL, 20 pages, **COMPANION TO P02 SAYING NO**, 30 scripts across 8 categories: meals/childcare/eldercare/errands/emotional support/money/home help/visit, the 4-part structure-of-a-good-ask: specific person + specific request + specific time + easy exit, "when they say no" + "when they say yes" + thank-you script library). P50 The Family Caregiver Workbook (family/YMYL, 40 pages, **THE 50TH PRODUCT**, sister to P46 for ongoing caregiving past 90 days, monthly care-team coordinator log + respite-care planning page named as the most important page + "I am angry" page with the often-unwritten "angry at my loved one" sub-page + "I cannot do this forever" reckoning page + four-page sibling-conflict workbook + couples-counseling reservation page + your-own-health appointment-scheduling page + financial caregiving + hospice considerations with the "hospice is not giving up" de-stigmatizing framing + caregiver crisis lines including Family Caregiver Alliance 1-800-445-8106 + Alzheimer's Association 1-800-272-3900). All 6 PDFs visual-verified via pdftoppm preview. Tooling: built `soothemade-render-preview` Docker image extending the base render image with poppler-utils, persisted for future visual-verification runs. Thumbnails for P33-P50 (18 products without lifestyle JPGs) remain pending per the existing thumbnail-batch brief.
 - **2026-05-20** — **Thumbnail audit + P06 dropped from SHIPPED_CODES.** Audited all 32 lifestyle thumbnails programmatically (file size, dominant-colour share, unique-colour count, warmth balance). User-flagged P06 (C-Section Recovery Planner) removed from `site/src/lib/cover-image.ts` SHIPPED_CODES — now falls back to jar glyph. Programmatic audit also surfaced **P07** (51% flat sage — composition reads empty), **P20** (only cool/blue thumbnail, warmth -22 vs avg +20 — may be intentional for Pregnancy Loss), **P32** (warmest at +47 — possible AI-orange smell), and a cluster of small-file washed-out renders (P04/P15/P18/P23/P24, all ≤58KB). These remain in SHIPPED_CODES pending user decision. **P33-P44 ship without thumbnails this round** — jar-glyph fallback until proper photos exist, per user decision to defer the thumbnail batch rather than ship duplicates. Canva `generate-design` flow from `publishing/thumbnail-batch-brief.md` did not reproduce on this attempt: with `brand_kit_id` it produced typography cards, without it produced multi-photo collages. Hand-Pillow vector composition (`scripts/draw_thumbnails.py`) prototyped but produced too-sparse layouts (65% flat background) on first pass; kept on disk for future iteration. Current contact sheet at `marketing/mockups/contact_sheet_current.jpg` for future visual triage.
@@ -820,3 +821,109 @@ One line per commit that changes structural project state. Most-recent first.
 - **2026-05-19** — Three brand mark variants added (`brand-on-dark.svg`, `brand-mono-dark.svg`, `brand-mono-cream.svg`) + variant preview at `design/brand-variants.html`. All uploaded to Canva.
 - **2026-05-19** — `brand/brand.svg` adopted as canonical brand mark. Previous `brand/soothemade_06_sprig.svg` removed. Uploaded to Canva as `MAHKIAtzV9Q`.
 - *(Earlier commits not back-filled; see `git log`.)*
+
+---
+
+## 19. CF bindings & data layer
+
+The Worker has five bindings beyond the `ASSETS` static fetcher. All are declared in `site/wrangler.toml` and typed via `site/worker-configuration.d.ts` (regenerate with `npx wrangler types`). Routes access them through `Astro.locals.runtime.env.*`.
+
+### Bindings
+
+| Binding | Type | Resource | Purpose |
+|---|---|---|---|
+| `DB` | D1 | `soothemade-notes` (`ddbaf6ed-f1e1-49a3-b88d-609a448daae1`, APAC) | Subscribers, orders, download tokens, journal view counts, contact messages |
+| `FILES` | R2 | `soothemade-notes-files` | Product PDFs at `products/Pnn.pdf`, future image assets |
+| `CACHE` | KV | `soothemade-notes-CACHE` (`d370c098ad334796aa4e461bcaf12c1f`) | Rate-limit counters, ephemeral state |
+| `VECTORIZE` | Vectorize | `soothemade-products` (384-dim, cosine) | Catalog embeddings for semantic search |
+| `AI` | Workers AI | n/a | Embedding generation via `@cf/baai/bge-small-en-v1.5`. Internal/discovery only — never customer-facing copy |
+
+### Endpoints
+
+| Route | Method | Behavior |
+|---|---|---|
+| `/api/subscribe` | POST | Rate-limit (5/hr/IP), upsert email into `subscribers` |
+| `/api/contact` | POST | Rate-limit (3/hr/IP), insert into `contact_messages` |
+| `/api/search?q=` | GET | Rate-limit (30/min/IP), embed query, top-6 Vectorize match, return code+title+slug+summary+score |
+| `/files/[code].pdf` | GET | Stream `products/[code].pdf` from R2. Accepts `P09` or `P09.pdf` |
+| `/api/journal/[slug]/view` | POST | UPSERT increment on `journal_views(slug, day)` |
+| `/api/admin/reindex` | POST | Bearer-secret-gated. Embeds payloads + upserts to Vectorize. Used only by the indexer script |
+
+### D1 schema
+
+Defined in `site/db/migrations/0001_init.sql`. Apply remote with:
+
+```bash
+cd site
+npx wrangler d1 migrations apply soothemade-notes --remote
+```
+
+For local development against `wrangler dev`, swap `--remote` for `--local`.
+
+Tables: `subscribers`, `orders`, `download_tokens`, `journal_views`, `contact_messages`. See the migration file for column-level detail. The `orders` table uses `UNIQUE(platform, external_id)` so webhook ingestion is idempotent.
+
+### Secrets
+
+The `/api/admin/reindex` route checks `Authorization: Bearer ${REINDEX_SECRET}`. Set the secret once via:
+
+```bash
+cd site
+npx wrangler secret put REINDEX_SECRET
+```
+
+The secret is per-worker, encrypted at rest in CF. It does NOT live in git.
+
+### Indexing the catalog into Vectorize
+
+The catalog must be embedded once and re-embedded whenever product summaries change. The flow:
+
+1. Local Node script reads each `products/Pnn_*/web.md` frontmatter (title, tagline, summary, buyer, category).
+2. Posts the array to `/api/admin/reindex` on the deployed worker.
+3. The worker embeds each text via Workers AI (`@cf/baai/bge-small-en-v1.5`) and upserts vectors with metadata into Vectorize.
+
+Run:
+
+```bash
+REINDEX_SECRET=<value> node scripts/index_products_vectorize.mjs
+```
+
+Override target with `REINDEX_URL=https://soothemade-notes.iamvashisht1.workers.dev` for staging vs. prod.
+
+### Migrating new PDFs into R2
+
+When `pdfs/` gains a new product, run:
+
+```bash
+bash scripts/upload_pdfs_to_r2.sh
+```
+
+R2 puts overwrite by key, so re-running is safe. Each PDF lands at `products/Pnn.pdf` in the bucket, served by `/files/Pnn.pdf`.
+
+### Brand-voice constraint on Workers AI
+
+Workers AI is wired up but its output **never reaches the customer as copy**. Allowed:
+
+- Embedding queries + catalog text for semantic search (output: 384 floats, never shown)
+- Future: internal classification of inbound contact messages (output: a category label, never shown)
+- Future: internal-only catalog analysis scripts
+
+Forbidden:
+
+- Generated product descriptions, summaries, journal posts, email body
+- Generated marketing copy of any kind
+- Any text rendered to a customer surface
+
+This boundary is the brand promise's defense against the AI-mill aesthetic. If we cross it later, it has to be an explicit owner decision, documented here.
+
+### Resource cost reality
+
+All four resources sit on generous free tiers:
+
+- D1: 5 GB storage + 25M reads/day free
+- R2: 10 GB storage + 1M Class A ops/mo free, zero egress to Workers
+- KV: 1 GB storage + 100k reads/day + 1k writes/day free
+- Vectorize: 30M queried vector-dimensions/mo free
+- Workers AI: 10k neurons/day free (one search ≈ 1-3 neurons)
+
+Catalog scale (55 products, ~10 reads/day per page) is well under all caps. Re-evaluate when traffic crosses 5k DAU.
+

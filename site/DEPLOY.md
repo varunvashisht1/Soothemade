@@ -133,7 +133,76 @@ After connecting, every push to `main` ships a new deploy automatically.
 - Free tier: 100k requests/day. The site is well under this until significant Pinterest traffic kicks in.
 - Web Analytics auto-enabled — see CF dashboard for traffic.
 - `/admin/` loads (Decap shell) but can't authenticate until the OAuth proxy is set up.
-- Newsletter form will 404 on submit until the `/api/subscribe` endpoint exists.
-- All product detail and shop list pages will 404 until the content-collections milestone.
 
 The first deploy is mostly the homepage. That's intentional — get the URL live, share it, then layer features in.
+
+## Data layer — D1, R2, KV, Vectorize, Workers AI
+
+The Worker has five data bindings beyond the static `ASSETS` fetcher. Full reference: [`../AS_BUILT.md` §19](../AS_BUILT.md). The resources are already provisioned on the current CF account; this section is the playbook for re-provisioning on a fresh account (e.g. ops handoff, new environment).
+
+### Re-provisioning on a fresh account
+
+```powershell
+cd site
+
+# D1
+npx wrangler d1 create soothemade-notes
+# copy the returned database_id into wrangler.toml [[d1_databases]]
+
+# R2
+npx wrangler r2 bucket create soothemade-notes-files
+
+# KV
+npx wrangler kv namespace create CACHE
+# copy the returned id into wrangler.toml [[kv_namespaces]]
+
+# Vectorize
+npx wrangler vectorize create soothemade-products --dimensions=384 --metric=cosine
+
+# Apply the D1 schema
+npx wrangler d1 migrations apply soothemade-notes --remote
+```
+
+After the IDs land in `wrangler.toml`, regenerate types:
+
+```powershell
+npx wrangler types
+```
+
+### Post-deploy: secret + indexing
+
+The `/api/admin/reindex` endpoint is gated by `REINDEX_SECRET`. Set it once per worker:
+
+```powershell
+cd site
+npx wrangler secret put REINDEX_SECRET
+# paste any high-entropy string. Save it in 1Password or wherever secrets live.
+```
+
+Then populate Vectorize from local product files:
+
+```powershell
+$env:REINDEX_SECRET = '<the value you just set>'
+node scripts/index_products_vectorize.mjs
+```
+
+Re-run any time product `web.md` files change. The script POSTs to the live worker, so it works from any dev machine without CF API tokens.
+
+### PDF migration
+
+The R2 bucket is the canonical home for product PDFs in production. To sync `pdfs/` → R2:
+
+```bash
+bash scripts/upload_pdfs_to_r2.sh
+```
+
+This is idempotent (R2 puts overwrite by key). Re-run after rendering new products.
+
+### Verifying bindings post-deploy
+
+```powershell
+cd site
+npx wrangler deploy --dry-run
+```
+
+The dry-run output lists every binding the worker has access to. If a binding ID is wrong or the resource was deleted, this surfaces immediately.

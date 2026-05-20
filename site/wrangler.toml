@@ -1,6 +1,7 @@
 # Cloudflare Workers configuration for notes.soothemade.com
 # Deploy with: npm run deploy
 # Full deploy guide: ./DEPLOY.md
+# Bindings reference: ../AS_BUILT.md §19
 
 name = "soothemade-notes"
 compatibility_date = "2025-04-01"
@@ -13,31 +14,49 @@ workers_dev = true
 directory = "./dist"
 binding = "ASSETS"
 
+[observability]
+enabled = true
+
 # ---------------------------------------------------------------
-# Custom domain — uncomment AFTER the first deploy and after
-# soothemade.com is on Cloudflare nameservers.
-# Alternatively, add it via Workers > soothemade-notes > Settings
-# > Domains & Routes > Add (UI).
+# Custom domain — attached via the CF dashboard
+# (Workers > soothemade-notes > Settings > Domains & Routes).
+# Do not uncomment this block without coordinating with the dashboard.
 # ---------------------------------------------------------------
 # routes = [
 #   { pattern = "notes.soothemade.com", custom_domain = true }
 # ]
 
-# ---------------------------------------------------------------
-# Bindings — added in later milestones.
-# ---------------------------------------------------------------
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "soothemade-notes"
-# database_id = "TBD"
-#
-# [[r2_buckets]]
-# binding = "FILES"
-# bucket_name = "soothemade-notes-files"
-#
-# [[kv_namespaces]]
-# binding = "CACHE"
-# id = "TBD"
+# =================================================================
+# Data layer bindings
+# =================================================================
 
-[observability]
-enabled = true
+# D1 — serverless SQL (subscribers, orders, download_tokens, journal_views).
+# Migrations live in ./db/migrations/. Apply with:
+#   npx wrangler d1 migrations apply soothemade-notes --remote
+[[d1_databases]]
+binding = "DB"
+database_name = "soothemade-notes"
+database_id = "ddbaf6ed-f1e1-49a3-b88d-609a448daae1"
+migrations_dir = "db/migrations"
+
+# R2 — object storage for product PDFs + image assets.
+# Serve through the worker (no public bucket exposure).
+[[r2_buckets]]
+binding = "FILES"
+bucket_name = "soothemade-notes-files"
+
+# KV — edge-cached state: rate-limit counters, catalog cache, ephemeral flags.
+[[kv_namespaces]]
+binding = "CACHE"
+id = "d370c098ad334796aa4e461bcaf12c1f"
+
+# Vectorize — embedding index for catalog semantic search.
+# 384-dim bge-small-en-v1.5, cosine similarity.
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "soothemade-products"
+
+# Workers AI — embedding generation for search.
+# Strictly internal/discovery use; never customer-facing copy generation.
+[ai]
+binding = "AI"

@@ -39,9 +39,23 @@ const filtered = activeCategory
     <div class="eyebrow">— the catalog —</div>
     <h1>Everything in the shop.</h1>
     <p>Made slowly, in plain language, for the unphotographed days. Currently {products.length} items, with more on the way each month.</p>
+
+    <form class="search-row" id="search-form" role="search" autocomplete="off">
+      <label for="q" class="search-label">Looking for something specific?</label>
+      <input
+        id="q"
+        name="q"
+        type="search"
+        inputmode="search"
+        placeholder="e.g. I'm scared about going back to work"
+        maxlength="200"
+        spellcheck="false"
+      />
+      <button type="submit" class="search-go" aria-label="Search the catalog">Search</button>
+    </form>
   </header>
 
-  <nav class="filter-row rule-bottom" aria-label="Category filter">
+  <nav class="filter-row rule-bottom" id="filter-row" aria-label="Category filter">
     {categories.map((c) => (
       <a
         href={c.slug ? `/shop?cat=${c.slug}` : '/shop'}
@@ -52,10 +66,12 @@ const filtered = activeCategory
     ))}
   </nav>
 
+  <section id="search-results" class="search-results" hidden></section>
+
   {filtered.length === 0 ? (
-    <p class="empty">No items in this category yet — check back soon.</p>
+    <p class="empty" id="catalog-empty">No items in this category yet — check back soon.</p>
   ) : (
-    <section class="grid">
+    <section class="grid" id="catalog-grid">
       {filtered.map((p) => (
         <ProductCard
           href={`/shop/${p.id}`}
@@ -74,6 +90,123 @@ const filtered = activeCategory
   <Newsletter />
   <Footer />
 </BaseLayout>
+
+<script>
+  const form = document.getElementById('search-form') as HTMLFormElement | null;
+  const input = document.getElementById('q') as HTMLInputElement | null;
+  const results = document.getElementById('search-results') as HTMLElement | null;
+  const grid = document.getElementById('catalog-grid');
+  const empty = document.getElementById('catalog-empty');
+  const filterRow = document.getElementById('filter-row');
+
+  if (form && input && results) {
+    let lastQ = '';
+
+    const escape = (s: string) =>
+      s.replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+      }[c] as string));
+
+    const showCatalog = () => {
+      results.hidden = true;
+      results.innerHTML = '';
+      if (grid) (grid as HTMLElement).hidden = false;
+      if (empty) (empty as HTMLElement).hidden = false;
+      if (filterRow) (filterRow as HTMLElement).hidden = false;
+    };
+
+    const hideCatalog = () => {
+      if (grid) (grid as HTMLElement).hidden = true;
+      if (empty) (empty as HTMLElement).hidden = true;
+      if (filterRow) (filterRow as HTMLElement).hidden = true;
+      results.hidden = false;
+    };
+
+    const renderHits = (
+      q: string,
+      hits: Array<{ code: string; title: string; slug: string; summary: string; score: number }>,
+    ) => {
+      if (hits.length === 0) {
+        results.innerHTML = `
+          <div class="search-empty">
+            <p class="search-empty-title">Nothing in the catalog matches "${escape(q)}".</p>
+            <p class="search-empty-sub">Try a phrase like "I can't sleep" or "back to work".</p>
+            <button type="button" class="search-clear" data-clear>Back to the catalog</button>
+          </div>`;
+      } else {
+        const list = hits
+          .map(
+            (h) => `
+            <a class="search-hit" href="/shop/${escape(h.slug)}">
+              <div class="hit-code">${escape(h.code)}</div>
+              <div class="hit-body">
+                <div class="hit-title">${escape(h.title)}</div>
+                <div class="hit-summary">${escape(h.summary)}</div>
+              </div>
+            </a>`,
+          )
+          .join('');
+        results.innerHTML = `
+          <div class="search-meta">
+            <span>${hits.length} of the closest matches for "${escape(q)}".</span>
+            <button type="button" class="search-clear" data-clear>Clear</button>
+          </div>
+          <div class="search-list">${list}</div>`;
+      }
+      results.querySelector('[data-clear]')?.addEventListener('click', () => {
+        input.value = '';
+        lastQ = '';
+        showCatalog();
+        input.focus();
+      });
+    };
+
+    const runSearch = async (q: string) => {
+      const trimmed = q.trim();
+      if (!trimmed) {
+        showCatalog();
+        return;
+      }
+      if (trimmed === lastQ) return;
+      lastQ = trimmed;
+      hideCatalog();
+      results.innerHTML = `<p class="search-loading">Looking…</p>`;
+      try {
+        const r = await fetch(`/api/search?q=${encodeURIComponent(trimmed)}`);
+        const data = (await r.json()) as { ok: boolean; hits?: unknown[] };
+        if (!data.ok) {
+          results.innerHTML = `<p class="search-loading">Something went wrong. Try again in a moment.</p>`;
+          return;
+        }
+        renderHits(trimmed, (data.hits ?? []) as Array<{
+          code: string;
+          title: string;
+          slug: string;
+          summary: string;
+          score: number;
+        }>);
+      } catch {
+        results.innerHTML = `<p class="search-loading">Couldn't reach the catalog. Check your connection.</p>`;
+      }
+    };
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      runSearch(input.value);
+    });
+
+    input.addEventListener('input', () => {
+      if (input.value.trim() === '' && lastQ !== '') {
+        lastQ = '';
+        showCatalog();
+      }
+    });
+  }
+</script>
 
 <style>
   .shop-header {
@@ -137,5 +270,132 @@ const filtered = activeCategory
     .shop-header h1 { font-size: 40px; }
     .grid { padding: 32px var(--sp-5) 48px; }
     .filter-row { padding: 18px var(--sp-5); }
+  }
+
+  .search-row {
+    display: flex;
+    gap: 8px;
+    max-width: 540px;
+    margin: 28px auto 0;
+    align-items: stretch;
+  }
+  .search-label {
+    position: absolute;
+    width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  .search-row input {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 16px;
+  }
+  .search-row input::placeholder { color: var(--ink-soft); opacity: 0.7; }
+  .search-row input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .search-go {
+    border: 1px solid var(--rule-strong);
+    background: transparent;
+    color: var(--ink);
+    padding: 0 18px;
+    border-radius: var(--radius-pill);
+    font-size: 13px;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--t-fast) var(--ease);
+  }
+  .search-go:hover { border-color: var(--accent); color: var(--accent); }
+
+  .search-results {
+    padding: 32px var(--sp-7) 48px;
+  }
+  .search-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  .search-clear {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    cursor: pointer;
+    font: inherit;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: var(--ls-wide);
+    font-size: 12px;
+  }
+  .search-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .search-hit {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule-soft);
+    color: var(--ink);
+    transition: background var(--t-fast) var(--ease);
+  }
+  .search-hit:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .search-hit:hover { background: var(--surface-2, transparent); }
+  .hit-code {
+    font-family: var(--font-mono, var(--font-sans));
+    font-size: 12px;
+    letter-spacing: var(--ls-wide);
+    color: var(--ink-soft);
+    padding-top: 6px;
+  }
+  .hit-title {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .hit-summary {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+  .search-empty {
+    text-align: center;
+    padding: 48px 0;
+  }
+  .search-empty-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink);
+  }
+  .search-empty-sub {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    margin: 8px 0 24px;
+  }
+  .search-loading {
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-style: italic;
+    text-align: center;
+    padding: 24px 0;
+  }
+  @media (max-width: 880px) {
+    .search-row { padding: 0 var(--sp-5); }
+    .search-results { padding: 24px var(--sp-5) 40px; }
   }
 </style>
