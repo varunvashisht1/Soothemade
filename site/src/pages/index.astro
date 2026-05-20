@@ -11,6 +11,14 @@ import Newsletter from '~/components/Newsletter.astro';
 import Footer from '~/components/Footer.astro';
 
 const allProducts = await getCollection('products');
+
+// Helper: cover image path. Returns /products/<CODE>.png if the file exists
+// (we render covers for every shipped product). For unshipped products
+// (no PDF yet), coverImage is undefined and ProductCard falls back to
+// the jar-glyph design.
+const SHIPPED_CODES = new Set(['P01', 'P02', 'P03', 'P04', 'P05', 'P06', 'P09']);
+const coverFor = (code: string) => (SHIPPED_CODES.has(code) ? `/products/${code}.png` : undefined);
+
 const featured = allProducts
   .filter((p) => p.data.featured)
   .sort((a, b) => (a.data.featuredOrder ?? 999) - (b.data.featuredOrder ?? 999))
@@ -22,6 +30,7 @@ const featured = allProducts
     meta: p.data.specs,
     tagline: p.data.tagline,
     price: `$${p.data.price}`,
+    coverImage: coverFor(p.data.code),
     glyph: p.data.glyph,
   }));
 
