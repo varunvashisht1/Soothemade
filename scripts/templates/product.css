@@ -53,11 +53,9 @@ body {
   justify-content: center;
 }
 
-.cover-bottom {
-  display: flex;
-  justify-content: center;
-  padding-top: 0.4in;
-}
+/* .cover-bottom removed — YMYL banner now lives inside .cover-top
+   with explicit margin, so the layout doesn't depend on flex
+   space-between math (which is unreliable in WeasyPrint print mode). */
 
 .cover-mark {
   width: 64pt;
@@ -154,6 +152,7 @@ body {
   border-bottom: 1px solid var(--accent);
   padding: 7pt 16pt;
   display: inline-block;
+  margin-top: 36pt;  /* clear visual space below the brand-line */
 }
 
 /* =====================================================
