@@ -44,10 +44,10 @@ You're not "helping." You're co-parenting and running the household. There's a d
 
 ### What you'll be tempted to do (don't)
 
-- ❌ Ask "what do you need?" 17 times, she doesn't have answers. Just do.
-- ❌ "Let her sleep" while announcing the news on social media. Ask her permission first.
-- ❌ Hand her the baby every time the baby cries. Take some of those cries yourself.
-- ❌ Eat all the freezer meals in week 1. Pace yourself, those are for week 3 when she's at her most depleted.
+- ✗ Ask "what do you need?" 17 times, she doesn't have answers. Just do.
+- ✗ "Let her sleep" while announcing the news on social media. Ask her permission first.
+- ✗ Hand her the baby every time the baby cries. Take some of those cries yourself.
+- ✗ Eat all the freezer meals in week 1. Pace yourself, those are for week 3 when she's at her most depleted.
 
 ---
 
