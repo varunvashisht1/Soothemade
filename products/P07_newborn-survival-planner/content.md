@@ -375,7 +375,7 @@ By day 5: at least 6 wet, 3-4 dirty. Stools transition from black-tarry to green
 
 ### Fever
 
-A rectal temperature over 100.4°F (38°C) in a baby under 3 months is an ER visit. Not "wait and see." Not "give Tylenol." A call, then often a trip.
+A rectal temperature over 100.4°F (38°C) in a baby under 3 months is an ER visit. Not "wait and see." Not "give a fever reducer at home." A call, then often a trip.
 
 ### Cold
 

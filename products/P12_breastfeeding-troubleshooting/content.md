@@ -241,7 +241,7 @@ What actually affects milk supply, in plain language. What looks like a supply p
 - **Sleep.** Severe sleep deprivation lowers supply over time.
 - **Hydration.** Drinking water near baseline matters. Mega-hydrating does not increase supply beyond baseline.
 - **Stress, severe.** Acute, prolonged stress (not normal new-parent stress) can affect supply.
-- **Certain medications.** Some birth control, some cold meds (especially with pseudoephedrine), some others. Check with your provider when starting any new med.
+- **Certain medications.** Some birth control, some cold or allergy medications, some others. Check with your provider when starting anything new.
 
 ### What does NOT meaningfully affect supply
 
@@ -319,7 +319,7 @@ A two-page reference for whenever you decide. The decision is yours. It can be a
 - Drop one feed at a time. Wait 3-5 days before dropping another.
 - Drop the least-favorite feed first (often midday).
 - Save the most-important feed (often bedtime) for last.
-- Engorgement is common during weaning. Cold compresses, comfort nursing only as needed, ibuprofen if your provider okays it.
+- Engorgement is common during weaning. Cold compresses, comfort nursing only as needed, whatever pain reliever your provider has okayed for you.
 
 ### A weaning order, rough
 

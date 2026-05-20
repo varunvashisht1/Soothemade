@@ -126,7 +126,7 @@ ___________________________________________________
 
 ### What's generally happening
 
-Week 2 is usually noticeably better than week 1. Pain is improving. You can usually transition from prescription pain meds to ibuprofen (check with your OB). The incision is healing externally. internal healing is still happening (and takes much longer).
+Week 2 is usually noticeably better than week 1. Pain is improving. You can usually transition from prescription pain meds to whatever over-the-counter option your OB recommends. The incision is healing externally. internal healing is still happening (and takes much longer).
 
 You might be tempted to do more. **Don't do more.** Most c-section setbacks happen in week 2–3 because people feel "better" and lift / drive / exercise too early.
 

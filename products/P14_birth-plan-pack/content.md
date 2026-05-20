@@ -459,7 +459,7 @@ A page for the hour after the baby arrives. Most birth plans stop at delivery. T
 ### Routine newborn procedures, my preferences
 
 ```
-   ☐ Eye ointment (erythromycin): in the room, ☐ after the hour
+   ☐ Eye ointment:                in the room, ☐ after the hour
    ☐ Vitamin K (injection):        in the room, ☐ after the hour
    ☐ Hepatitis B vaccine:          in the room, ☐ at pediatrician
    ☐ Bath:                         24+ hours, or never (we'll do at home)
