@@ -2,14 +2,19 @@
 
 > Slow, considered things to use through the unphotographed parts of life.
 
-This repo is the working catalog for **Soothemade** — a group brand of digital and lifetime-of-use goods, expandable across niches. The current line is **Soothemade Notes**: printables, planners, journals, and card decks for new parents.
+This repo is the working catalog for **Soothemade**, a group brand of digital and lifetime-of-use goods, expandable across niches. The current line is **Soothemade Notes**: printables, planners, journals, and card decks for new parents.
+
+## ⚠️ AI tools (Claude, Cursor, Copilot, etc.): start here
+
+Read [`AS_BUILT.md`](./AS_BUILT.md) **first**, then `STATUS.md`, then `PLAN.md`. AS_BUILT is the single self-contained source of truth: brand, voice rules, content rules, PDF pipeline, site structure, deployment, Canva integration, render commands. It MUST be updated alongside any structural change in the same commit.
 
 ## What's here
 
 | Path | What it is |
 |---|---|
-| [`PLAN.md`](./PLAN.md) | The durable plan. Read this first. |
-| [`STATUS.md`](./STATUS.md) | Where work currently is. Read this second. |
+| [`AS_BUILT.md`](./AS_BUILT.md) | **Start here.** Comprehensive as-built record of the project. |
+| [`PLAN.md`](./PLAN.md) | The durable strategic plan. |
+| [`STATUS.md`](./STATUS.md) | Where work currently is. |
 | [`brand/`](./brand/) | Persona options, voice guide, visual identity, master/sub-brand architecture. |
 | [`research/`](./research/) | Six-stream market research. `REPORT.md` is the Day-3 review gate. |
 | [`products/`](./products/) | One folder per product. Currently: P01–P06 (Wave 1 + first Wave 2). |
