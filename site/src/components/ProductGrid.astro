@@ -8,6 +8,7 @@ interface Product {
   tagline: string;
   price: string;
   code: string;
+  coverImage?: string;
   glyph?: Parameters<typeof ProductCard>[0]['glyph'];
 }
 
@@ -39,6 +40,7 @@ const {
         tagline={p.tagline}
         price={p.price}
         code={p.code}
+        coverImage={p.coverImage}
         glyph={p.glyph}
       />
     ))}

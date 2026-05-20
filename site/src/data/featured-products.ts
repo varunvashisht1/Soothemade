@@ -13,6 +13,9 @@ export interface FeaturedProduct {
   meta: string;
   tagline: string;
   price: string;
+  /** Optional cover image URL. When provided, ProductCard displays this
+   *  instead of the jar glyph + label. Path is relative to site/public/. */
+  coverImage?: string;
   glyph:
     | 'circle' | 'jar' | 'square' | 'partner'
     | 'house' | 'cup' | 'heart' | 'twins' | 'card';
@@ -26,6 +29,7 @@ export const featured: FeaturedProduct[] = [
     meta: '80 cards · 0–3 yrs',
     tagline: 'For the new senses',
     price: '$24',
+    coverImage: '/products/P01.png',
     glyph: 'circle',
   },
   {
@@ -35,6 +39,7 @@ export const featured: FeaturedProduct[] = [
     meta: '30 scripts · postpartum',
     tagline: 'For the doorbell',
     price: '$7',
+    coverImage: '/products/P02.png',
     glyph: 'jar',
   },
   {
@@ -44,6 +49,7 @@ export const featured: FeaturedProduct[] = [
     meta: '36 pages · undated',
     tagline: 'For the tired weeks',
     price: '$12',
+    coverImage: '/products/P03.png',
     glyph: 'square',
   },
   {
@@ -53,6 +59,7 @@ export const featured: FeaturedProduct[] = [
     meta: '24 pages · for partner',
     tagline: 'For the other parent',
     price: '$9',
+    coverImage: '/products/P04.png',
     glyph: 'partner',
   },
   {
@@ -62,6 +69,7 @@ export const featured: FeaturedProduct[] = [
     meta: '30 cards · 3–10 yrs',
     tagline: 'For the quiet month',
     price: '$9',
+    coverImage: '/products/P05.png',
     glyph: 'house',
   },
   {
@@ -71,6 +79,7 @@ export const featured: FeaturedProduct[] = [
     meta: '36 pages · 5 phases',
     tagline: 'For the surgical week',
     price: '$14',
+    coverImage: '/products/P06.png',
     glyph: 'cup',
   },
   {
@@ -80,6 +89,7 @@ export const featured: FeaturedProduct[] = [
     meta: '60 pages · noticing',
     tagline: 'For the off days',
     price: '$14',
+    coverImage: '/products/P09.png',
     glyph: 'heart',
   },
   {
