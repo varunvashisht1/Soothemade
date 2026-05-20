@@ -8,8 +8,10 @@
 
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const REPO = new URL("..", import.meta.url).pathname;
+// fileURLToPath handles Windows' "/C:/..." quirk that .pathname leaves behind.
+const REPO = fileURLToPath(new URL("../", import.meta.url));
 const PRODUCTS_DIR = join(REPO, "products");
 const URL_BASE = process.env.REINDEX_URL ?? "https://notes.soothemade.com";
 const SECRET = process.env.REINDEX_SECRET;
