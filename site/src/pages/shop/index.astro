@@ -5,6 +5,7 @@ import Nav from '~/components/Nav.astro';
 import ProductCard from '~/components/ProductCard.astro';
 import Newsletter from '~/components/Newsletter.astro';
 import Footer from '~/components/Footer.astro';
+import { coverFor } from '~/lib/cover-image';
 
 const products = (await getCollection('products')).sort(
   (a, b) => (a.data.featuredOrder ?? 999) - (b.data.featuredOrder ?? 999),
@@ -63,6 +64,7 @@ const filtered = activeCategory
           tagline={p.data.tagline}
           price={`$${p.data.price}`}
           code={p.data.code}
+          coverImage={coverFor(p.data.code)}
           glyph={p.data.glyph}
         />
       ))}
