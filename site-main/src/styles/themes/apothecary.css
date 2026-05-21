@@ -31,15 +31,47 @@
   /* Apothecary-specific tokens used by the new components.
      Prefixed --apo to avoid collision with theme primitives. */
   --apo-paper:       #fbf6ea;
-  --apo-paper-dim:   rgba(251, 246, 234, 0.78);
-  --apo-paper-faint: rgba(251, 246, 234, 0.55);
+  --apo-paper-dim:   rgba(251, 246, 234, 0.82);
+  --apo-paper-soft:  rgba(251, 246, 234, 0.62);
+  --apo-paper-faint: rgba(251, 246, 234, 0.42);
+  --apo-rule-light:  rgba(251, 246, 234, 0.18);
+  --apo-rule-strong: rgba(251, 246, 234, 0.32);
+
+  /* Hero (existing) */
   --apo-hero-1:      #1a1612;
   --apo-hero-2:      #0e0b09;
   --apo-hero-3:      #050403;
+
+  /* Polaroid room "photographs" (existing) */
   --apo-tile-notes:   #2a1a14;
   --apo-tile-kitchen: #2a2218;
   --apo-tile-studio:  #1a2218;
   --apo-tile-field:   #0c0a08;
 
-  color-scheme: light;
+  /* Big gradient tile backgrounds, one per section.
+     Each tile carries its own undertone so the page reads as a
+     sequence of dark scenes, not one flat color. */
+  --apo-tile-letter-1:    #2a1f15;  /* candle-warm umber for the Dear Stranger panel */
+  --apo-tile-letter-2:    #1a1612;
+  --apo-tile-letter-3:    #0e0b09;
+
+  --apo-tile-rooms-1:     #1a221c;  /* deep moss for the rooms panel */
+  --apo-tile-rooms-2:     #0e1610;
+  --apo-tile-rooms-3:     #050803;
+
+  --apo-tile-quote-1:     #2a1f08;  /* brass-bronze for the manifesto */
+  --apo-tile-quote-2:     #1a1305;
+  --apo-tile-quote-3:     #0e0a03;
+
+  --apo-tile-letters-1:   #1f1a14;  /* slightly less saturated for the letters list */
+  --apo-tile-letters-2:   #15110a;
+  --apo-tile-letters-3:   #0a0805;
+
+  --apo-tile-news-1:      #281a0e;  /* warmer amber for newsletter close-out */
+  --apo-tile-news-2:      #1a1208;
+  --apo-tile-news-3:      #0a0703;
+
+  --apo-tile-footer:      #0a0805;
+
+  color-scheme: dark;
 }

@@ -53,7 +53,13 @@ const roomClass: Record<string, string> = {
 </section>
 
 <style>
-  .rooms-section { padding: 56px var(--sp-7) 96px; }
+  .rooms-section {
+    padding: 96px var(--sp-7) 112px;
+    background:
+      radial-gradient(ellipse 900px 500px at 70% 30%, rgba(122, 138, 101, 0.16), transparent 60%),
+      linear-gradient(170deg, var(--apo-tile-rooms-1) 0%, var(--apo-tile-rooms-2) 60%, var(--apo-tile-rooms-3) 100%);
+    color: var(--apo-paper);
+  }
   .rooms-section.detailed { padding: 24px var(--sp-7) 80px; }
 
   .rooms-head {
@@ -61,7 +67,7 @@ const roomClass: Record<string, string> = {
     justify-content: space-between;
     align-items: end;
     padding: 0 0 32px;
-    border-bottom: 1px solid var(--ink);
+    border-bottom: 1px solid var(--apo-rule-light);
     margin: 0 0 48px;
   }
   .eyebrow-mark {
@@ -69,7 +75,7 @@ const roomClass: Record<string, string> = {
     font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--ink-faint);
+    color: var(--accent-soft);
     margin-bottom: 8px;
   }
   .rooms-head h2 {
@@ -79,9 +85,9 @@ const roomClass: Record<string, string> = {
     margin: 0;
     letter-spacing: var(--ls-tight);
     line-height: 1.1;
-    color: var(--ink);
+    color: var(--apo-paper);
   }
-  .rooms-head h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
+  .rooms-head h2 em { font-style: italic; color: var(--accent-soft); font-weight: 300; }
 
   .polaroid-grid {
     display: grid;
