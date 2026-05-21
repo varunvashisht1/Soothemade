@@ -12,7 +12,7 @@
 
 import themeData from '~/data/theme.json';
 
-export type ThemePreset = 'daylight' | 'daylight' | 'charcoal' | 'mossy' | 'custom';
+export type ThemePreset = 'apothecary' | 'daylight' | 'forest' | 'charcoal' | 'mossy' | 'custom';
 
 export interface ThemeOverrides {
   '--surface'?: string;
@@ -37,7 +37,7 @@ export interface ThemeConfig {
   overrides: ThemeOverrides;
 }
 
-const PRESET_DEFAULT: Exclude<ThemePreset, 'custom'> = 'daylight';
+const PRESET_DEFAULT: Exclude<ThemePreset, 'custom'> = 'apothecary';
 
 export function loadTheme(): ThemeConfig {
   return themeData as ThemeConfig;

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Soothemade — magazine, palette 03 · Harvest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  /* Harvest: wheat paper, mustard ochre accent, deep brown ink. Folk-magazine, agricultural quarterly. */
+  :root {
+    --bg: #f3e9cf;
+    --paper: #ebdfb8;
+    --ink: #3d3520;
+    --ink-soft: #6b5e3a;
+    --ink-faint: #968a5e;
+    --rule: rgba(61, 53, 32, 0.24);
+    --rule-soft: rgba(61, 53, 32, 0.12);
+    --sage: #7a8a4d;
+    --accent: #b8862a;
+    --accent-warm: #c47357;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --script: 'Caveat', cursive;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: var(--serif); font-weight: 300; line-height: 1.55; }
+  a { color: inherit; }
+
+  .masthead { padding: 22px 56px 14px; border-bottom: 2px solid var(--ink); display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 24px; }
+  .mast-meta { font-family: var(--sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+  .mast-meta.right { text-align: right; }
+  .mast-title { font-family: var(--script); font-size: 64px; color: var(--ink); line-height: 0.85; letter-spacing: -0.01em; }
+  .mast-sub { font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--ink-soft); text-align: center; margin-top: 6px; }
+  .mast-sub::before, .mast-sub::after { content: '·'; color: var(--accent); margin: 0 10px; }
+
+  .feature { display: grid; grid-template-columns: 1.4fr 1px 1fr; gap: 32px; padding: 72px 56px 64px; position: relative; }
+  .feature .col-rule { background: var(--rule); width: 1px; }
+  .feature .deck { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+  .feature h1 { font-family: var(--serif); font-size: 76px; line-height: 0.96; letter-spacing: -0.02em; font-weight: 400; margin: 0 0 24px; max-width: 14ch; }
+  .feature h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .feature .cta-line { margin-top: 28px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+  .feature .cta-line a { border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+  .feature .cta-line a + a { margin-left: 22px; }
+  .feature .byline { font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); margin-top: 12px; }
+  .feature .lede { font-family: var(--serif); font-size: 19px; line-height: 1.6; color: var(--ink); font-style: italic; font-weight: 300; }
+  .feature .lede::first-letter { font-family: var(--serif); font-size: 72px; font-weight: 500; font-style: normal; float: left; line-height: 0.8; padding: 8px 12px 0 0; color: var(--accent); }
+
+  /* Wheat callout in story */
+  .story { padding: 40px 56px 56px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); background: var(--paper); }
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr 280px; column-gap: 36px; }
+  .story-grid p { font-size: 16px; line-height: 1.65; margin: 0 0 14px; }
+  .pull { border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); padding: 18px 0; }
+  .pull blockquote { margin: 0; font-family: var(--serif); font-style: italic; font-size: 23px; line-height: 1.25; color: var(--ink); }
+  .pull blockquote em { color: var(--accent); }
+  .pull cite { display: block; margin-top: 14px; font-style: normal; font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); }
+
+  .rooms { padding: 64px 56px 48px; }
+  .section-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); text-align: center; margin-bottom: 6px; }
+  .section-title { text-align: center; font-family: var(--serif); font-style: italic; font-size: 32px; font-weight: 300; margin: 0 0 36px; }
+  .section-title em { color: var(--accent); }
+  .rooms table { width: 100%; border-collapse: collapse; font-size: 16px; }
+  .rooms thead th { text-align: left; font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; padding: 0 0 10px; border-bottom: 1px solid var(--ink); }
+  .rooms tbody td { padding: 22px 0; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+  .rooms .num { font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--accent); width: 50px; font-weight: 500; }
+  .rooms .name { font-family: var(--serif); font-size: 22px; width: 220px; line-height: 1.2; }
+  .rooms .name em { font-style: italic; color: var(--accent); }
+  .rooms .for { font-style: italic; color: var(--ink-soft); width: 180px; font-size: 15px; }
+  .rooms .desc { font-size: 15px; line-height: 1.55; color: var(--ink); }
+  .rooms .status { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; text-align: right; width: 130px; color: var(--ink-faint); }
+  .rooms tr.live .status { color: var(--accent); }
+  .rooms tr.live a { border-bottom: 1px solid var(--accent); color: var(--accent); padding-bottom: 2px; }
+
+  .letters { padding: 64px 56px; background: var(--bg); border-top: 1px solid var(--ink); }
+  .letters-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-top: 24px; }
+  .letters-grid article { padding: 0 28px; border-left: 1px solid var(--rule); }
+  .letters-grid article:first-child { padding-left: 0; border-left: none; }
+  .letters-grid article:last-child { padding-right: 0; }
+  .letters-grid .cat { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .letters-grid h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; line-height: 1.2; margin: 0 0 12px; }
+  .letters-grid p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 14px; }
+  .letters-grid .read { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); }
+  .letters-grid .read a { border-bottom: 1px solid var(--ink); padding-bottom: 2px; color: var(--ink); }
+
+  .newsletter-strip { padding: 36px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); background: var(--paper); }
+  .newsletter-strip h4 { font-family: var(--serif); font-style: italic; font-size: 22px; margin: 0 0 4px; font-weight: 400; }
+  .newsletter-strip p { font-size: 14px; color: var(--ink-soft); margin: 0; }
+  .newsletter-strip form { display: flex; }
+  .newsletter-strip input { flex: 1; border: 1px solid var(--ink); border-right: none; background: transparent; padding: 12px 14px; font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink); }
+  .newsletter-strip input::placeholder { color: var(--ink-faint); }
+  .newsletter-strip button { border: 1px solid var(--ink); background: var(--ink); color: var(--bg); padding: 0 22px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; }
+
+  .imprint { padding: 18px 56px; display: flex; justify-content: space-between; font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); }
+
+  @media (max-width: 980px) {
+    .masthead, .feature, .story, .rooms, .letters, .newsletter-strip, .imprint { padding-left: 24px; padding-right: 24px; }
+    .feature { grid-template-columns: 1fr; }
+    .feature .col-rule { display: none; }
+    .feature h1 { font-size: 44px; max-width: none; }
+    .story-grid { grid-template-columns: 1fr; }
+    .letters-grid { grid-template-columns: 1fr; }
+    .letters-grid article { padding: 18px 0; border-left: none; border-top: 1px solid var(--rule); }
+    .letters-grid article:first-child { border-top: none; padding-top: 0; }
+    .newsletter-strip { grid-template-columns: 1fr; }
+    .rooms table, .rooms thead, .rooms tbody, .rooms tr, .rooms td { display: block; }
+    .rooms thead { display: none; }
+    .rooms tbody tr { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+    .rooms tbody td { padding: 2px 0; border: none; width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="mast-meta">Issue Nº 1 · Volume I</div>
+  <div>
+    <div class="mast-title">Soothemade</div>
+    <div class="mast-sub">A small studio of slow, considered things — published when the weather allows</div>
+  </div>
+  <div class="mast-meta right">Two thousand twenty-six</div>
+</header>
+
+<section class="feature">
+  <div>
+    <div class="deck">The studio · A welcome</div>
+    <h1>Made for the parts of life <em>no one is photographing.</em></h1>
+    <div class="cta-line">
+      <a href="https://notes.soothemade.com">Visit Notes ↗</a>
+      <a href="/journal">Read the journal</a>
+    </div>
+    <div class="byline">By the studio · Filed under welcome</div>
+  </div>
+  <div class="col-rule"></div>
+  <div>
+    <p class="lede">Soothemade is a small studio of slow, considered things. We make planners, journals, printables, and cards for the seasons that move at the pace of weather, not the pace of work. The first room is open. More are being built, slowly, by the same hands.</p>
+  </div>
+</section>
+
+<section class="story">
+  <div class="story-grid">
+    <div>
+      <p>There is a kind of time that doesn't show up in any photograph. The hour before anyone else is up. The walk you took because you couldn't sit still. The Tuesday with nothing planned. The recovery month no one warned you about.</p>
+      <p>Most of a life is made of these hours. The ones with the photographs in them are the foam on top. We make things — mostly paper things — for the hours under the foam.</p>
+    </div>
+    <div>
+      <p>We make one thing at a time. We finish it. We make the next one. The tools we use are tools, the way a sewing machine is a tool. They do not write your letter and they do not decide what you need.</p>
+      <p>Soothemade is small on purpose. If it gets larger, the voice you read here is what we are accountable to.</p>
+    </div>
+    <aside class="pull">
+      <blockquote>We make things at the <em>pace of weather.</em> Some weeks something gets finished. Some weeks it doesn't. It evens out the way a season does.</blockquote>
+      <cite>— the soothemade promise</cite>
+    </aside>
+  </div>
+</section>
+
+<section class="rooms">
+  <div class="section-eyebrow">A small house, with rooms</div>
+  <h2 class="section-title">One room <em>open</em>. More being built.</h2>
+  <table>
+    <thead><tr><th>№</th><th>Room</th><th>For</th><th>What's inside</th><th></th></tr></thead>
+    <tbody>
+      <tr class="live"><td class="num">I.</td><td class="name">Soothemade <em>Notes</em></td><td class="for">new parents</td><td class="desc">Printables, planners, and cards for the 3 a.m. parts, the postpartum body, and the visitor doorbell.</td><td class="status"><a href="https://notes.soothemade.com">Visit ↗</a></td></tr>
+      <tr><td class="num">II.</td><td class="name">Soothemade <em>Kitchen</em></td><td class="for">the home cook</td><td class="desc">Recipe pages, freezer-meal plans, and the Tuesday-night fridge.</td><td class="status">In the workshop</td></tr>
+      <tr><td class="num">III.</td><td class="name">Soothemade <em>Studio</em></td><td class="for">solo work</td><td class="desc">Templates and rhythms for one-person work — launch weeks, slow weeks, the calm catalog.</td><td class="status">In the workshop</td></tr>
+      <tr><td class="num">IV.</td><td class="name">Soothemade <em>Field</em></td><td class="for">the long traveler</td><td class="desc">Slow itineraries, road-trip pages, and guides for the parts of a trip that are not on a map.</td><td class="status">In the workshop</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="letters">
+  <div class="section-eyebrow">— letters from the studio —</div>
+  <h2 class="section-title">Recent <em>correspondence</em>.</h2>
+  <div class="letters-grid">
+    <article><div class="cat">Letter · 4 min</div><h3>The hour before anyone else is up.</h3><p>On the kind of time that has no photographs in it. The hour we keep coming back to. The one that survives the rest of the day.</p><div class="read"><a href="/journal/the-hour-before">Read on →</a></div></article>
+    <article><div class="cat">Letter · 6 min</div><h3>Weather-paced work.</h3><p>Some weeks the studio ships a thing. Some weeks it doesn't. A note on why we don't think the second kind is a problem.</p><div class="read"><a href="/journal/weather-paced-work">Read on →</a></div></article>
+    <article><div class="cat">Letter · 3 min</div><h3>What we mean by slow.</h3><p>Not the sentimental kind. The kind a tomato is. The kind a recovery is. The kind that won't be optimized.</p><div class="read"><a href="/journal/what-we-mean-by-slow">Read on →</a></div></article>
+  </div>
+</section>
+
+<section class="newsletter-strip">
+  <div><h4>If you've left an address, we'll write.</h4><p>One letter, sometimes two, a month. When something opens, you'll be first to know.</p></div>
+  <form onsubmit="event.preventDefault();"><input type="email" placeholder="your email" /><button type="submit">Subscribe</button></form>
+</section>
+
+<footer class="imprint">
+  <span>Soothemade · soothemade.com</span>
+  <span>Printed when the weather allows · MMXXVI</span>
+</footer>
+
+</body>
+</html>

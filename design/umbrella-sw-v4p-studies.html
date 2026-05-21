@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Soothemade — v4 premium palettes</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #ede4d0;
+    --paper: #f5ecd9;
+    --ink: #1f2419;
+    --ink-soft: #4a5240;
+    --ink-faint: #7d8270;
+    --rule: rgba(31, 36, 25, 0.22);
+    --rule-soft: rgba(31, 36, 25, 0.1);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --script: 'Caveat', cursive;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--serif); font-weight: 300; line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+
+  .page-head { padding: 56px 56px 32px; border-bottom: 1px solid var(--ink); }
+  .page-head .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+  .page-head h1 { font-family: var(--serif); font-size: 42px; font-weight: 400; margin: 0 0 14px; letter-spacing: -0.015em; }
+  .page-head h1 em { font-style: italic; color: #8a3a1f; }
+  .page-head p { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink-soft); max-width: 720px; margin: 0; }
+
+  .note { padding: 32px 56px; background: var(--paper); border-bottom: 1px solid var(--rule); }
+  .note p { max-width: 760px; font-size: 16px; line-height: 1.65; color: var(--ink); margin: 0; }
+  .note em { font-style: italic; }
+
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .study { padding: 32px 32px 28px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .study:nth-child(2n) { border-right: none; }
+
+  .swatches { display: flex; gap: 0; margin-bottom: 22px; height: 56px; border: 1px solid var(--ink); }
+  .swatches span { flex: 1; }
+
+  .study .num { font-family: var(--serif); font-style: italic; font-size: 48px; line-height: 0.9; margin-bottom: 8px; }
+  .study .name { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
+  .study h2 { font-family: var(--serif); font-size: 24px; font-weight: 400; margin: 0 0 14px; line-height: 1.2; }
+  .study h2 em { font-style: italic; }
+  .study p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 12px; line-height: 1.6; }
+  .study .vibe { font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); margin: 14px 0 18px; }
+  .study .open { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+
+  /* Per-study palette swatches */
+  .s1 .swatches span:nth-child(1) { background: #ede4d0; }
+  .s1 .swatches span:nth-child(2) { background: #5a2018; }
+  .s1 .swatches span:nth-child(3) { background: #7d5b25; }
+  .s1 .swatches span:nth-child(4) { background: #2d4030; }
+  .s1 .swatches span:nth-child(5) { background: #15110a; }
+  .s1 .swatches span:nth-child(6) { background: #8a3a1f; }
+  .s1 .num, .s1 h2 em, .s1 .open:hover { color: #8a3a1f; }
+
+  .s2 .swatches span:nth-child(1) { background: #f4ecdb; }
+  .s2 .swatches span:nth-child(2) { background: #1a1612; }
+  .s2 .swatches span:nth-child(3) { background: #2a2218; }
+  .s2 .swatches span:nth-child(4) { background: #0c0a08; }
+  .s2 .swatches span:nth-child(5) { background: #b8862a; }
+  .s2 .swatches span:nth-child(6) { background: #d4a548; }
+  .s2 .num, .s2 h2 em, .s2 .open:hover { color: #b8862a; }
+
+  .s3 .swatches span:nth-child(1) { background: #ede4d0; }
+  .s3 .swatches span:nth-child(2) { background: #6a2128; }
+  .s3 .swatches span:nth-child(3) { background: #c4b591; }
+  .s3 .swatches span:nth-child(4) { background: #a9a08a; }
+  .s3 .swatches span:nth-child(5) { background: #807766; }
+  .s3 .swatches span:nth-child(6) { background: #9e3c44; }
+  .s3 .num, .s3 h2 em, .s3 .open:hover { color: #6a2128; }
+
+  .s4 .swatches span:nth-child(1) { background: #ede4d0; }
+  .s4 .swatches span:nth-child(2) { background: #2d4030; }
+  .s4 .swatches span:nth-child(3) { background: #9c7a3c; }
+  .s4 .swatches span:nth-child(4) { background: #4d5a3e; }
+  .s4 .swatches span:nth-child(5) { background: #2a2e22; }
+  .s4 .swatches span:nth-child(6) { background: #c4a065; }
+  .s4 .num, .s4 h2 em, .s4 .open:hover { color: #9c7a3c; }
+
+  .foot { padding: 24px 56px 48px; font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); border-top: 1px solid var(--rule); }
+  .foot a { border-bottom: 1px solid var(--ink); padding-bottom: 1px; color: var(--ink); }
+
+  @media (max-width: 880px) {
+    .page-head, .note, .foot { padding-left: 22px; padding-right: 22px; }
+    .grid { grid-template-columns: 1fr; }
+    .study { border-right: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="eyebrow">Soothemade · v4 photographic · premium palette pass</div>
+  <h1>Four premium palettes on the <em>photographic</em> shape.</h1>
+  <p>You loved v4 (the warm interior photograph + polaroid rooms). These four push the colors toward more refined territory — deep jewels, restrained monochrome, pale-and-statement, editorial sage. Same shape; richer mood.</p>
+</header>
+
+<section class="note">
+  <p>
+    Each palette pulls from a different premium reference: gallery-private (Atelier), apothecary-restraint (Aesop), pale-luxe (bone + claret), editorial-sage (architectural-digest). All still inside Soothemade's warm-vintage type-and-voice. The four polaroid colors per palette are picked as a tight family, not a rainbow.
+  </p>
+</section>
+
+<section class="grid">
+
+  <article class="study s1">
+    <div class="swatches"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="num">01.</div>
+    <div class="name">Atelier · deep jewels on putty</div>
+    <h2>A private gallery. <em>Deep, lit, considered.</em></h2>
+    <p>Warm putty paper instead of bright cream. The hero is a darker layered glow — burnt sienna meets pine meets warm midnight. Polaroid rooms in a tight set of deep jewel tones: oxblood (Notes), bronze (Kitchen), pine (Studio), warm-black (Field). Accent is burnt sienna — a deeper, more pigment-y terracotta.</p>
+    <div class="vibe">· paper: warm putty · hero: oxblood + pine + midnight · accent: burnt sienna ·</div>
+    <a class="open" href="./umbrella-sw-v4p-01-atelier.html">Open 01 — Atelier →</a>
+  </article>
+
+  <article class="study s2">
+    <div class="swatches"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="num">02.</div>
+    <div class="name">Apothecary · warm-black + amber</div>
+    <h2>Most restrained of the four. <em>Single accent.</em></h2>
+    <p>Aesop-coded. The hero is a near-black warm gradient with subtle amber light spill. Polaroid rooms are all deep warm-blacks — they look identical at a glance, then reveal subtle undertone shifts (red-brown, bronze, green-ink, true black). Brass / amber is the only color anywhere on the page. The most monochromatic of the four.</p>
+    <div class="vibe">· paper: aesop cream · hero: warm-black · single accent: brass amber ·</div>
+    <a class="open" href="./umbrella-sw-v4p-02-apothecary.html">Open 02 — Apothecary →</a>
+  </article>
+
+  <article class="study s3">
+    <div class="swatches"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="num">03.</div>
+    <div class="name">Bone & burgundy</div>
+    <h2>Pale + one deep <em>statement.</em></h2>
+    <p>Pale parchment paper. The hero is a saturated deep burgundy / claret. Only the live (Notes) polaroid carries the claret — the other three are tonal cream/bone variants (warm bone, cool bone, putty). The hierarchy is encoded in saturation: <em>open</em> reads in color, <em>building</em> reads in neutral. Most directly says "one room open" through visual weight alone.</p>
+    <div class="vibe">· paper: bone · hero: deep claret · others: pale tonal bones ·</div>
+    <a class="open" href="./umbrella-sw-v4p-03-bone-burgundy.html">Open 03 — Bone & burgundy →</a>
+  </article>
+
+  <article class="study s4">
+    <div class="swatches"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="num">04.</div>
+    <div class="name">Editorial sage + brass</div>
+    <h2>Cereal magazine / <em>architectural digest.</em></h2>
+    <p>Deep pine hero with brass light. Polaroid rooms in the sage-and-brass family: pine (Notes), brass (Kitchen), moss (Studio), ink-green (Field). The most "green" of the four — extends Notes' existing dark forest theme into the umbrella with a more luxurious brass accent. Architectural editorial mood.</p>
+    <div class="vibe">· paper: putty · hero: deep pine + brass light · accent: brass ·</div>
+    <a class="open" href="./umbrella-sw-v4p-04-editorial-sage.html">Open 04 — Editorial sage →</a>
+  </article>
+
+</section>
+
+<footer class="foot">
+  Original v4 for comparison: <a href="./umbrella-sw-v4-photographic.html">umbrella-sw-v4-photographic.html</a>
+</footer>
+
+</body>
+</html>

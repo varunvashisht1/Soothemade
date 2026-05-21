@@ -6,86 +6,132 @@ interface Post {
   title: string;
   blurb: string;
 }
-interface Props { title?: string; allHref?: string; posts: Post[]; }
-const { title = '— From the journal —', allHref = '/journal', posts } = Astro.props;
+interface Props {
+  title?: string;
+  titleAccent?: string;
+  allHref?: string;
+  posts: Post[];
+}
+const {
+  title = 'Letters from the studio.',
+  titleAccent,
+  allHref = '/journal',
+  posts,
+} = Astro.props;
 ---
-<section class="journal rule-top">
-  <div class="head">
-    <h2>{title}</h2>
-    <a href={allHref}>read all letters</a>
+<section class="letters">
+  <div class="letters-head">
+    <div>
+      <div class="eyebrow-mark">— Letters from the studio —</div>
+      <h2>
+        {title}{titleAccent && (<>{' '}<em>{titleAccent}</em></>)}
+      </h2>
+    </div>
+    <a class="more" href={allHref}>All letters →</a>
   </div>
-  {posts.map((p) => (
-    <article>
-      <a href={p.href}>
-        <div class="meta">{p.category} · {p.readTime}</div>
-        <h3>{p.title}</h3>
-        <p>{p.blurb}</p>
-        <span class="read">read the letter →</span>
-      </a>
-    </article>
-  ))}
+  <div class="letters-list">
+    {posts.map((p) => (
+      <article>
+        <a href={p.href}>
+          <div class="meta">{p.category} · {p.readTime}</div>
+          <div class="body">
+            <h3>{p.title}</h3>
+            <p>{p.blurb}</p>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </article>
+    ))}
+  </div>
 </section>
 
 <style>
-  .journal {
-    padding: 64px var(--sp-7);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+  .letters {
+    padding: 80px var(--sp-7);
+    background: var(--surface);
   }
-  .head {
-    grid-column: 1 / -1;
+  .letters-head {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 8px;
-    gap: var(--sp-4);
+    align-items: end;
+    margin-bottom: 32px;
+    gap: var(--sp-5);
     flex-wrap: wrap;
   }
-  .head h2 {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 30px;
-    margin: 0;
-    color: var(--ink);
-    font-weight: 400;
+  .eyebrow-mark {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
   }
-  .head a {
+  .letters-head h2 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .letters-head h2 em { font-style: italic; color: var(--accent); }
+  .letters-head .more {
     font-family: var(--font-serif);
     font-style: italic;
+    font-size: 15px;
     color: var(--ink);
     border-bottom: 1px solid var(--ink);
     padding-bottom: 1px;
   }
-  article a { color: var(--ink); display: block; }
+  .letters-head .more:hover { color: var(--accent); border-color: var(--accent); }
+
+  .letters-list { display: flex; flex-direction: column; }
+  .letters-list article {
+    border-top: 1px solid var(--rule);
+  }
+  .letters-list article:last-child { border-bottom: 1px solid var(--rule); }
+  .letters-list article a {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 32px;
+    padding: 22px 0;
+    align-items: baseline;
+    color: var(--ink);
+    transition: background var(--t-fast) var(--ease);
+  }
+  .letters-list article a:hover { background: var(--hover); }
   .meta {
+    font-family: var(--font-sans);
     font-size: 10.5px;
     letter-spacing: var(--ls-wider);
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 10px;
+    color: var(--ink-faint);
   }
+  .body { min-width: 0; }
   h3 {
     font-family: var(--font-serif);
     font-size: 22px;
-    margin: 0 0 10px;
-    line-height: 1.2;
-    font-weight: 500;
+    font-weight: 400;
+    margin: 0 0 6px;
+    line-height: 1.25;
   }
   p {
-    font-size: 14px;
+    margin: 0;
+    font-size: 14.5px;
     color: var(--ink-soft);
-    margin: 0 0 14px;
     line-height: 1.55;
+    max-width: 540px;
   }
-  .read {
+  .arrow {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 14px;
-    color: var(--ink);
-    border-bottom: 1px solid var(--rule-strong);
-    padding-bottom: 1px;
+    font-size: 22px;
+    color: var(--accent);
   }
-  @media (max-width: 1000px) { .journal { grid-template-columns: 1fr; } }
-  @media (max-width: 880px)  { .journal { padding: 48px var(--sp-5); } }
+
+  @media (max-width: 880px) {
+    .letters { padding: 56px var(--sp-5); }
+    .letters-list article a { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
+    .arrow { display: none; }
+  }
 </style>

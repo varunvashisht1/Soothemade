@@ -1,4 +1,5 @@
 @import './tokens.css';
+@import './themes/apothecary.css';
 @import './themes/daylight.css';
 @import './themes/forest.css';
 @import './themes/charcoal.css';
