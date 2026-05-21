@@ -10,9 +10,13 @@ import Footer from '~/components/Footer.astro';
   description="Soothemade is a small house with one room open and more being built. The current and forthcoming lines."
 >
   <Nav />
+  <section class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">— the rooms in the house —</div>
+      <h1>A small house, <em>made slowly</em>, one room at a time.</h1>
+    </div>
+  </section>
   <article class="lines-page">
-    <div class="eyebrow">— the rooms in the house —</div>
-    <h1>A small house, <em>made slowly</em>, one room at a time.</h1>
     <div class="intro">
       <p>
         Soothemade is a master brand. Each line is a separate room — a
@@ -41,34 +45,22 @@ import Footer from '~/components/Footer.astro';
   .lines-page {
     max-width: var(--container-narrow);
     margin: 0 auto;
-    padding: 72px var(--sp-7) 24px;
+    padding: 64px var(--sp-7) 24px;
     text-align: center;
   }
-  .eyebrow { margin-bottom: 16px; }
-  h1 {
-    font-family: var(--font-serif);
-    font-size: var(--fs-4xl);
-    margin: 0 0 28px;
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: var(--ls-tight);
-    color: var(--ink);
-  }
-  h1 em { font-style: italic; color: var(--accent); }
   .intro {
     font-family: var(--font-serif);
     font-size: 18px;
     line-height: 1.6;
-    color: var(--ink);
+    color: var(--apo-paper);
   }
   .intro p { margin-bottom: 18px; }
   .intro a {
-    color: var(--accent);
-    border-bottom: 1px solid var(--rule-strong);
+    color: var(--accent-soft);
+    border-bottom: 1px solid var(--apo-rule-strong);
   }
   @media (max-width: 880px) {
     .lines-page { padding: 48px var(--sp-5) 16px; }
-    h1 { font-size: 38px; }
     .intro { font-size: 16px; }
   }
 </style>
