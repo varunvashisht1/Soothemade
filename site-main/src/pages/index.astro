@@ -40,14 +40,33 @@ const featuredJournalPosts = allPosts
     }}
   />
 
-  <section class="about-strip">
-    <div class="eyebrow-mark">— about the studio —</div>
-    <p>
-      Soothemade is a small house with one room finished and a few more
-      being built. We make planners, journals, printables, and cards for
-      the <em>hours under the foam</em>. The Tuesday with nothing planned.
-      The recovery month nobody warned you about.
-    </p>
+  <section class="dear-stranger">
+    <div class="eyebrow-mark">— a note from the studio —</div>
+    <p class="salutation">Dear stranger,</p>
+    <div class="letter-body">
+      <p>
+        Thank you for finding us. This is a small studio. There is
+        not very much here on purpose. We make slow, considered things,
+        planners, journals, printables, and cards, for the seasons
+        that move at the pace of weather, not the pace of work.
+      </p>
+      <p>
+        The first room is open. Three more are being built, slowly,
+        by the same hands. We make one thing at a time. We finish it.
+        We make the next one. Some weeks something ships. Some weeks
+        it doesn’t. It evens out the way a season does.
+      </p>
+      <p>
+        We make these things for the <em>hours under the foam</em>.
+        The Tuesday with nothing planned. The recovery month nobody
+        warned you about. The hour before anyone else is up. Most of
+        a life is made of those hours.
+      </p>
+    </div>
+    <div class="signoff">
+      <p class="with-care">— with care,</p>
+      <p class="signature">the studio</p>
+    </div>
   </section>
 
   <LineCards />
@@ -72,35 +91,69 @@ const featuredJournalPosts = allPosts
 </BaseLayout>
 
 <style>
-  .about-strip {
-    padding: 88px var(--sp-7);
-    max-width: 1100px;
+  /* "Dear stranger" — a short letter from the studio.
+     Sits between the hero and the rooms, narrow column, intimate. */
+  .dear-stranger {
+    padding: 96px var(--sp-7) 88px;
+    max-width: 620px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
+    position: relative;
   }
-  .about-strip .eyebrow-mark {
+  .dear-stranger .eyebrow-mark {
     font-family: var(--font-sans);
     font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--ink-faint);
-    margin-bottom: 18px;
+    margin-bottom: 28px;
+    text-align: center;
   }
-  .about-strip p {
+  .dear-stranger .salutation {
     font-family: var(--font-serif);
-    font-size: 22px;
-    line-height: 1.55;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 1.2;
     color: var(--ink);
-    margin: 0 auto;
-    max-width: 58ch;
+    margin: 0 0 28px;
     font-weight: 300;
   }
-  .about-strip p em {
+  .dear-stranger .letter-body p {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--ink);
+    margin: 0 0 22px;
+    font-weight: 300;
+  }
+  .dear-stranger .letter-body p:last-child { margin-bottom: 0; }
+  .dear-stranger .letter-body em {
     font-style: italic;
     color: var(--accent);
   }
+  .dear-stranger .signoff {
+    margin-top: 36px;
+  }
+  .dear-stranger .with-care {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin: 0 0 4px;
+    font-weight: 300;
+  }
+  .dear-stranger .signature {
+    font-family: var(--font-script);
+    font-size: 40px;
+    line-height: 1;
+    color: var(--ink);
+    margin: 0;
+    font-weight: 500;
+  }
   @media (max-width: 880px) {
-    .about-strip { padding: 56px var(--sp-5); }
-    .about-strip p { font-size: 18px; }
+    .dear-stranger { padding: 64px var(--sp-5); }
+    .dear-stranger .salutation { font-size: 24px; }
+    .dear-stranger .letter-body p { font-size: 16.5px; }
+    .dear-stranger .signature { font-size: 34px; }
   }
 </style>
