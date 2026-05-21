@@ -24,5 +24,46 @@
   --accent:          #d68a72;
   --accent-soft:     #e2a78f;
 
+  /* Premium gradient tile tokens. Each section gets its own undertone
+     so the page reads as a sequence of dark scenes, not one flat color. */
+  --n-paper-dim:     rgba(235, 226, 200, 0.82);
+  --n-paper-soft:    rgba(235, 226, 200, 0.62);
+  --n-paper-faint:   rgba(235, 226, 200, 0.42);
+  --n-rule-light:    rgba(235, 226, 200, 0.14);
+  --n-rule-strong:   rgba(235, 226, 200, 0.28);
+
+  /* Hero — deep forest, sage bloom + coral light */
+  --n-hero-1:        #1f2a1a;
+  --n-hero-2:        #131c10;
+  --n-hero-3:        #080d06;
+
+  /* Categories — slightly lighter, more sage */
+  --n-cats-1:        #1c2418;
+  --n-cats-2:        #16201a;
+  --n-cats-3:        #101810;
+
+  /* Products grid backdrop — deepest moss so cream cards pop */
+  --n-prods-1:       #16201a;
+  --n-prods-2:       #101810;
+  --n-prods-3:       #080d06;
+
+  /* Manifesto — warm coral/terracotta moment */
+  --n-quote-1:       #3a1f15;
+  --n-quote-2:       #281612;
+  --n-quote-3:       #150a06;
+
+  /* Journal letters — muted forest, list shape */
+  --n-letters-1:     #1a221a;
+  --n-letters-2:     #131a13;
+  --n-letters-3:     #080d08;
+
+  /* Newsletter — warm amber/coral close-out */
+  --n-news-1:        #2e1d12;
+  --n-news-2:        #1f140c;
+  --n-news-3:        #0e0805;
+
+  /* Footer — deepest */
+  --n-footer:        #080d06;
+
   color-scheme: dark;
 }

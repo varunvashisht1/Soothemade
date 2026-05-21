@@ -10,12 +10,8 @@ const {
   body = 'One short note from the studio. A free printable in every issue. No tracking pixels, no upsells, no doorbell ringing.',
 } = Astro.props;
 ---
-<section class="newsletter rule-top">
-  <span class="ornament" aria-hidden="true">
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4">
-      <path d="M6 30 L 30 6 M 6 6 L 12 6 L 12 30 L 6 30 Z M 30 6 L 30 12 L 6 30" />
-    </svg>
-  </span>
+<section class="newsletter">
+  <div class="eyebrow-mark">— if you’d like to stay in touch —</div>
   <h2>{heading} <em>{headingAccent}</em></h2>
   <p>{body}</p>
   <form method="POST" action="/api/subscribe">
@@ -28,69 +24,83 @@ const {
       autocomplete="email"
       required
     />
-    <button type="submit">subscribe →</button>
+    <button type="submit">Subscribe</button>
   </form>
   <div class="fine">Unsubscribe whenever · we never share addresses</div>
 </section>
 
 <style>
   .newsletter {
-    background: var(--surface-deep);
-    padding: 72px var(--sp-7);
+    background:
+      radial-gradient(ellipse 700px 400px at 50% 30%, rgba(226, 167, 143, 0.18), transparent 65%),
+      linear-gradient(170deg, var(--n-news-1) 0%, var(--n-news-2) 60%, var(--n-news-3) 100%);
+    padding: 104px var(--sp-7);
     text-align: center;
+    color: var(--ink);
   }
-  .ornament {
-    color: var(--sage);
-    margin-bottom: 22px;
-    display: inline-block;
+  .eyebrow-mark {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 14px;
   }
   h2 {
     font-family: var(--font-serif);
-    font-size: 36px;
-    margin: 0 0 12px;
+    font-style: italic;
+    font-size: 34px;
+    margin: 0 0 14px;
     color: var(--ink);
-    font-weight: 400;
-    line-height: 1.15;
+    font-weight: 300;
+    line-height: 1.2;
   }
-  h2 em { font-style: italic; color: var(--accent); }
+  h2 em { color: var(--accent-soft); }
   p {
-    color: var(--ink-soft);
-    margin: 0 auto 26px;
+    color: var(--n-paper-dim);
+    margin: 0 auto 32px;
     max-width: 480px;
     font-size: 15px;
-    line-height: 1.55;
+    line-height: 1.65;
   }
   form {
-    max-width: 440px;
-    margin: 0 auto;
     display: flex;
-    border-bottom: 1px solid var(--ink);
+    max-width: 460px;
+    margin: 0 auto;
   }
-  input {
+  input[type="email"] {
     flex: 1;
+    border: 1px solid var(--ink);
+    border-right: none;
     background: transparent;
-    border: none;
-    padding: 12px 4px;
-    font-family: inherit;
+    padding: 14px 16px;
+    font-family: var(--font-serif);
+    font-style: italic;
     font-size: 15px;
     color: var(--ink);
     outline: none;
   }
-  input::placeholder { color: var(--ink-faint); }
+  input::placeholder { color: var(--n-paper-faint); }
   button {
-    background: transparent;
-    border: none;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--n-news-1);
+    padding: 0 24px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
     cursor: pointer;
-    font-family: var(--font-serif);
-    font-style: italic;
-    color: var(--accent);
-    font-size: 15px;
-    padding: 12px 8px;
+    transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+    font-weight: 500;
   }
+  button:hover { background: var(--accent); color: var(--ink); border-color: var(--accent); }
   .fine {
-    color: var(--ink-faint);
-    font-size: 11.5px;
-    margin-top: 16px;
+    color: var(--n-paper-faint);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: var(--ls-wide);
+    margin-top: 20px;
   }
   .visually-hidden {
     position: absolute;
@@ -100,7 +110,7 @@ const {
     white-space: nowrap; border: 0;
   }
   @media (max-width: 880px) {
-    .newsletter { padding: 56px var(--sp-5); }
-    h2 { font-size: 28px; }
+    .newsletter { padding: 72px var(--sp-5); }
+    h2 { font-size: 26px; }
   }
 </style>
