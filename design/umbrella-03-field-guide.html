@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Soothemade — design study 03, field guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f6f1e6;
+    --bg-deep: #efe7d4;
+    --paper: #fbf6ea;
+    --ink: #2a2f23;
+    --ink-soft: #5a6045;
+    --ink-faint: #8a8a72;
+    --rule: rgba(42, 47, 35, 0.22);
+    --rule-soft: rgba(42, 47, 35, 0.1);
+    --sage: #7a8a65;
+    --sage-soft: #a8b88a;
+    --accent: #c47357;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --script: 'Caveat', cursive;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: var(--serif); font-weight: 300; line-height: 1.7; font-size: 17px; }
+  a { color: inherit; }
+
+  /* ─── Title plate ─── */
+  .title-plate {
+    padding: 80px 56px 56px;
+    border-bottom: 1px solid var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+  }
+  .title-plate .lockup .mark {
+    font-family: var(--script);
+    font-size: 84px;
+    color: var(--ink);
+    line-height: 0.85;
+    letter-spacing: -0.01em;
+    display: block;
+  }
+  .title-plate .lockup .sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    display: block;
+  }
+  .title-plate .plate-meta {
+    text-align: right;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    line-height: 2;
+  }
+  .title-plate .plate-meta strong { color: var(--ink); font-weight: 500; }
+  .title-plate .plate-meta .promise {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--ink);
+    display: block;
+    margin-top: 14px;
+    line-height: 1.4;
+  }
+  .title-plate .plate-meta .promise em { color: var(--accent); }
+
+  /* ─── Contents page ─── */
+  .contents {
+    padding: 48px 56px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .contents-eyebrow {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  .contents ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+    column-gap: 56px;
+  }
+  .contents li {
+    padding: 12px 0;
+    border-top: 1px solid var(--rule-soft);
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    break-inside: avoid;
+  }
+  .contents li:first-child, .contents li:nth-child(3) { border-top: 1px solid var(--ink); }
+  .contents .roman {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--accent);
+    min-width: 36px;
+  }
+  .contents .label {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--ink);
+    flex: 1;
+  }
+  .contents .pg {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ─── A section ─── */
+  section.entry {
+    padding: 64px 56px;
+    border-bottom: 1px solid var(--rule);
+  }
+  section.entry.alt { background: var(--paper); }
+  .entry-head {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+    align-items: baseline;
+  }
+  .entry-roman {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 48px;
+    color: var(--accent);
+    line-height: 0.9;
+    text-align: right;
+    padding-top: 4px;
+  }
+  .entry-title-block .eyebrow {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .entry-title-block h2 {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .entry-title-block h2 em { font-style: italic; color: var(--accent); }
+  .entry-body {
+    margin-left: 104px;
+    max-width: 640px;
+  }
+  .entry-body p { margin: 0 0 18px; font-weight: 300; }
+  .entry-body em { font-style: italic; }
+
+  /* ─── The rooms as archival cards ─── */
+  .rooms-stack {
+    margin-left: 104px;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .room {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 28px;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .room:first-child { border-top: 1px solid var(--ink); }
+  .room:last-child { border-bottom: 1px solid var(--ink); }
+  .room-index {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .room h3 {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 4px;
+    line-height: 1.15;
+  }
+  .room h3 em { font-style: italic; color: var(--accent); }
+  .room .for {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .room .desc {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 480px;
+  }
+  .room-status {
+    text-align: right;
+    white-space: nowrap;
+  }
+  .room-status .label {
+    display: block;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  .room.live .room-status .label { color: var(--accent); }
+  .room-status a {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14.5px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+    color: var(--ink);
+  }
+  .room-status a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ─── Letters as catalog entries ─── */
+  .catalog {
+    margin-left: 104px;
+    max-width: 760px;
+  }
+  .catalog article {
+    padding: 22px 0;
+    border-top: 1px solid var(--rule-soft);
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 28px;
+    align-items: baseline;
+  }
+  .catalog article:first-child { border-top: 1px solid var(--ink); }
+  .catalog article:last-child { border-bottom: 1px solid var(--ink); }
+  .catalog .ref {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .catalog h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 6px;
+    line-height: 1.25;
+  }
+  .catalog p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 460px;
+  }
+  .catalog .read {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .catalog .read:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ─── Sprig divider ─── */
+  .sprig {
+    text-align: center;
+    margin: 0;
+    color: var(--sage);
+    font-size: 22px;
+    letter-spacing: 1em;
+  }
+
+  /* ─── Newsletter as a stay-in-touch slip ─── */
+  .stay {
+    margin-left: 104px;
+    max-width: 560px;
+    padding: 22px 24px;
+    border: 1px solid var(--ink);
+    background: var(--bg);
+  }
+  .stay h4 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 8px;
+  }
+  .stay p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 14px; line-height: 1.55; }
+  .stay form { display: flex; gap: 0; }
+  .stay input {
+    flex: 1;
+    border: 1px solid var(--ink);
+    border-right: none;
+    background: transparent;
+    padding: 11px 14px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .stay input::placeholder { color: var(--ink-faint); }
+  .stay button {
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--bg);
+    padding: 0 22px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  /* ─── Colophon ─── */
+  .colophon-foot {
+    padding: 32px 56px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: baseline;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .colophon-foot .right { text-align: right; }
+  .colophon-foot .mark {
+    font-family: var(--script);
+    font-size: 22px;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 880px) {
+    .title-plate, .contents, section.entry, .colophon-foot { padding-left: 22px; padding-right: 22px; }
+    .title-plate { grid-template-columns: 1fr; gap: 32px; }
+    .title-plate .lockup .mark { font-size: 64px; }
+    .title-plate .plate-meta { text-align: left; }
+    .contents ol { columns: 1; }
+    .entry-head { grid-template-columns: 1fr; gap: 8px; margin-bottom: 22px; }
+    .entry-roman { text-align: left; font-size: 32px; }
+    .entry-body, .rooms-stack, .catalog, .stay { margin-left: 0; }
+    .room { grid-template-columns: 36px 1fr; }
+    .room-status { grid-column: 2; text-align: left; }
+    .catalog article { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="title-plate">
+  <div class="lockup">
+    <span class="mark">Soothemade</span>
+    <span class="sub">a field guide to a small studio</span>
+  </div>
+  <div class="plate-meta">
+    <div><strong>Edition I</strong></div>
+    <div>Spring · MMXXVI</div>
+    <div class="promise">Made for the parts of life <em>no one is photographing.</em></div>
+  </div>
+</header>
+
+<nav class="contents">
+  <div class="contents-eyebrow">Contents</div>
+  <ol>
+    <li><span class="roman">I.</span><span class="label">The studio</span><span class="pg">p. 01</span></li>
+    <li><span class="roman">II.</span><span class="label">The rooms in the house</span><span class="pg">p. 02</span></li>
+    <li><span class="roman">III.</span><span class="label">Recent letters</span><span class="pg">p. 03</span></li>
+    <li><span class="roman">IV.</span><span class="label">If you'd like to stay in touch</span><span class="pg">p. 04</span></li>
+  </ol>
+</nav>
+
+<section class="entry">
+  <div class="entry-head">
+    <div class="entry-roman">I.</div>
+    <div class="entry-title-block">
+      <div class="eyebrow">The studio</div>
+      <h2>A small house. <em>One room open.</em> More being built.</h2>
+    </div>
+  </div>
+  <div class="entry-body">
+    <p>
+      Soothemade is a small studio of slow, considered things. We
+      make planners, journals, printables, and cards for the seasons
+      that move at the pace of weather, not the pace of work.
+    </p>
+    <p>
+      There is a kind of time that doesn't show up in any photograph.
+      The hour before anyone else is up. The Tuesday with nothing
+      planned. The recovery month no one warned you about. Most of a
+      life is made of these hours.
+    </p>
+    <p>
+      We make one thing at a time. We finish it. We make the next
+      one. Some weeks something ships. Some weeks it doesn't. It
+      evens out the way a season does.
+    </p>
+  </div>
+</section>
+
+<p class="sprig">· · ·</p>
+
+<section class="entry alt">
+  <div class="entry-head">
+    <div class="entry-roman">II.</div>
+    <div class="entry-title-block">
+      <div class="eyebrow">The rooms in the house</div>
+      <h2>A catalog of <em>what's open</em>, and what is still being made.</h2>
+    </div>
+  </div>
+  <div class="rooms-stack">
+    <article class="room live">
+      <div class="room-index">i.</div>
+      <div>
+        <h3>Soothemade <em>Notes</em></h3>
+        <div class="for">For new parents.</div>
+        <div class="desc">Printables, planners, and cards for the 3 a.m. parts, the postpartum body, and the visitor doorbell.</div>
+      </div>
+      <div class="room-status">
+        <span class="label">Open</span>
+        <a href="https://notes.soothemade.com">Visit ↗</a>
+      </div>
+    </article>
+    <article class="room">
+      <div class="room-index">ii.</div>
+      <div>
+        <h3>Soothemade <em>Kitchen</em></h3>
+        <div class="for">For the home cook.</div>
+        <div class="desc">Recipe pages, freezer-meal plans, and the Tuesday-night fridge.</div>
+      </div>
+      <div class="room-status">
+        <span class="label">In the workshop</span>
+      </div>
+    </article>
+    <article class="room">
+      <div class="room-index">iii.</div>
+      <div>
+        <h3>Soothemade <em>Studio</em></h3>
+        <div class="for">For solo work.</div>
+        <div class="desc">Templates and rhythms for one-person work — launch weeks, slow weeks, the calm catalog.</div>
+      </div>
+      <div class="room-status">
+        <span class="label">In the workshop</span>
+      </div>
+    </article>
+    <article class="room">
+      <div class="room-index">iv.</div>
+      <div>
+        <h3>Soothemade <em>Field</em></h3>
+        <div class="for">For the long traveler.</div>
+        <div class="desc">Slow itineraries, road-trip pages, and guides for the parts of a trip that are not on a map.</div>
+      </div>
+      <div class="room-status">
+        <span class="label">In the workshop</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<p class="sprig">· · ·</p>
+
+<section class="entry">
+  <div class="entry-head">
+    <div class="entry-roman">III.</div>
+    <div class="entry-title-block">
+      <div class="eyebrow">Recent letters</div>
+      <h2>Three letters from the studio, <em>most recent first.</em></h2>
+    </div>
+  </div>
+  <div class="catalog">
+    <article>
+      <div class="ref">N° 03 · April</div>
+      <div>
+        <h3>The hour before anyone else is up.</h3>
+        <p>On the kind of time that has no photographs in it. The hour we keep coming back to. The one that survives the rest of the day.</p>
+      </div>
+      <a class="read" href="/journal/the-hour-before">Read →</a>
+    </article>
+    <article>
+      <div class="ref">N° 02 · March</div>
+      <div>
+        <h3>Weather-paced work.</h3>
+        <p>Some weeks the studio ships a thing. Some weeks it doesn't. A note on why we don't think the second kind is a problem.</p>
+      </div>
+      <a class="read" href="/journal/weather-paced-work">Read →</a>
+    </article>
+    <article>
+      <div class="ref">N° 01 · February</div>
+      <div>
+        <h3>What we mean by slow.</h3>
+        <p>Not the sentimental kind. The kind a tomato is. The kind a recovery is. The kind that won't be optimized.</p>
+      </div>
+      <a class="read" href="/journal/what-we-mean-by-slow">Read →</a>
+    </article>
+  </div>
+</section>
+
+<p class="sprig">· · ·</p>
+
+<section class="entry alt">
+  <div class="entry-head">
+    <div class="entry-roman">IV.</div>
+    <div class="entry-title-block">
+      <div class="eyebrow">If you'd like to stay in touch</div>
+      <h2>One letter, sometimes two, <em>a month.</em></h2>
+    </div>
+  </div>
+  <div class="stay">
+    <h4>For when a room opens.</h4>
+    <p>The newsletter goes out when the weather allows, never as a campaign.</p>
+    <form onsubmit="event.preventDefault();">
+      <input type="email" placeholder="your address" />
+      <button type="submit">Leave it</button>
+    </form>
+  </div>
+</section>
+
+<footer class="colophon-foot">
+  <div>
+    <span class="mark">Soothemade</span><br />
+    soothemade.com
+  </div>
+  <div class="right">
+    Edition I · Spring MMXXVI<br />
+    Set in Fraunces, Inter & Caveat
+  </div>
+</footer>
+
+</body>
+</html>

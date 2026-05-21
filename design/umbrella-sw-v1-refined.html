@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Soothemade — shop window v1 · refined</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f6f1e6;
+    --paper: #fbf6ea;
+    --paper-2: #efe7d4;
+    --ink: #2a2f23;
+    --ink-soft: #5a6045;
+    --ink-faint: #8a8a72;
+    --rule: rgba(42, 47, 35, 0.18);
+    /* refined warm palette — all in the same warm-vintage family */
+    --t-notes: #c47357;     /* terracotta */
+    --t-kitchen: #b8862a;   /* mustard ochre */
+    --t-studio: #5a6f4a;    /* deep moss */
+    --t-field: #3d3520;     /* deep umber */
+    --sage: #7a8a65;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --script: 'Caveat', cursive;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--serif); font-weight: 300; line-height: 1.55; }
+  a { color: inherit; text-decoration: none; }
+
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 40px; }
+  .nav .mark { font-family: var(--script); font-size: 34px; line-height: 1; }
+  .nav .links { display: flex; gap: 28px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); }
+  .nav .links a:hover { color: var(--t-notes); }
+
+  .hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 0; min-height: 76vh; }
+  .hero-text { padding: 80px 56px 64px; display: flex; flex-direction: column; justify-content: center; }
+  .hero-text .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--t-notes); margin-bottom: 28px; }
+  .hero-text h1 { font-family: var(--serif); font-size: 84px; line-height: 0.96; letter-spacing: -0.025em; font-weight: 300; margin: 0 0 28px; max-width: 13ch; }
+  .hero-text h1 em { font-style: italic; color: var(--t-notes); }
+  .hero-text p.intro { font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.55; color: var(--ink-soft); max-width: 36ch; margin: 0 0 36px; }
+  .hero-text .cta-row { display: flex; gap: 16px; align-items: center; }
+  .hero-text .cta-primary { font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bg); background: var(--ink); padding: 14px 22px; }
+  .hero-text .cta-primary:hover { background: var(--t-notes); }
+  .hero-text .cta-quiet { font-family: var(--serif); font-style: italic; font-size: 16px; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+
+  /* Hero window — layered composition, richer than v0 */
+  .window {
+    position: relative;
+    background: var(--paper-2);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+  .window-art {
+    position: relative;
+    overflow: hidden;
+  }
+  .window-art .field-color {
+    position: absolute; inset: 24px;
+    background: var(--t-studio);
+  }
+  .window-art .field-color::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 360px 280px at 30% 25%, rgba(255,255,255,0.18), transparent 65%),
+      radial-gradient(ellipse 260px 380px at 75% 75%, rgba(0,0,0,0.20), transparent 65%);
+  }
+  .window-art svg.botanical {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%; height: 80%;
+    color: var(--paper);
+    opacity: 0.65;
+  }
+  .window-art .label-overlay {
+    position: absolute;
+    left: 48px; top: 48px;
+    z-index: 2;
+    color: var(--paper);
+  }
+  .window-art .label-overlay .tag {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.78;
+    margin-bottom: 6px;
+  }
+  .window-art .label-overlay .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    opacity: 0.78;
+  }
+  .window-caption {
+    background: var(--paper-2);
+    border-top: 1px solid var(--rule);
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .window-caption .ttl { font-family: var(--script); font-size: 36px; color: var(--ink); line-height: 1; }
+  .window-caption .sub { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink-soft); max-width: 30ch; text-align: right; }
+
+  .rooms-section { padding: 100px 40px 80px; }
+  .rooms-head { display: flex; justify-content: space-between; align-items: end; padding: 0 16px 32px; border-bottom: 1px solid var(--ink); margin: 0 0 48px; }
+  .rooms-head .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); }
+  .rooms-head h2 { font-family: var(--serif); font-size: 40px; font-weight: 300; margin: 8px 0 0; letter-spacing: -0.015em; line-height: 1.1; }
+  .rooms-head h2 em { font-style: italic; color: var(--t-notes); }
+  .rooms-head .count { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink-soft); }
+
+  .room-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; padding: 0 16px; }
+  .room-tile { display: flex; flex-direction: column; }
+  .room-tile .cover { aspect-ratio: 3 / 4; position: relative; overflow: hidden; display: flex; align-items: end; padding: 26px; }
+  .room-tile.live .cover { background: var(--t-notes); }
+  .room-tile.r-kitchen .cover { background: var(--t-kitchen); }
+  .room-tile.r-studio .cover { background: var(--t-studio); }
+  .room-tile.r-field .cover { background: var(--t-field); }
+  .room-tile:not(.live) .cover { opacity: 0.78; }
+  .room-tile .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.16), transparent 55%), radial-gradient(circle at 80% 75%, rgba(0,0,0,0.16), transparent 55%); }
+  .room-tile .cover .sprig-small { position: absolute; right: -20px; top: 50%; transform: translateY(-50%); color: rgba(251, 246, 234, 0.55); }
+  .room-tile .cover .sprig-small svg { width: 200px; }
+  .room-tile .cover-text { position: relative; z-index: 2; color: var(--paper); }
+  .room-tile .room-name { font-family: var(--script); font-size: 48px; line-height: 0.88; color: var(--paper); margin-bottom: 6px; }
+  .room-tile .room-tag { font-family: var(--serif); font-style: italic; font-size: 14px; opacity: 0.9; }
+  .room-tile .body { padding: 20px 4px 4px; }
+  .room-tile .body .status { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+  .room-tile.live .body .status { color: var(--t-notes); }
+  .room-tile .body .for { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink-soft); margin: 0 0 8px; }
+  .room-tile .body .desc { font-size: 14px; line-height: 1.55; color: var(--ink); margin: 0 0 14px; }
+  .room-tile .body .visit { display: inline-block; font-family: var(--serif); font-style: italic; font-size: 15px; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+  .room-tile.live .body .visit { color: var(--t-notes); border-color: var(--t-notes); }
+  .room-tile:not(.live) .body .visit { color: var(--ink-faint); border-color: var(--ink-faint); font-size: 14px; }
+
+  .studio-note { padding: 96px 56px; text-align: center; background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .studio-note blockquote { font-family: var(--serif); font-style: italic; font-size: 34px; line-height: 1.3; margin: 0 auto; max-width: 760px; font-weight: 300; }
+  .studio-note blockquote em { color: var(--t-notes); }
+  .studio-note cite { display: block; margin-top: 24px; font-style: normal; font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); }
+
+  .letters { padding: 80px 40px; }
+  .letters-head { padding: 0 16px; display: flex; justify-content: space-between; align-items: end; margin-bottom: 32px; }
+  .letters-head .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); }
+  .letters-head h2 { font-family: var(--serif); font-size: 28px; font-weight: 300; margin: 6px 0 0; line-height: 1.2; }
+  .letters-head h2 em { font-style: italic; color: var(--t-notes); }
+  .letters-head .more { font-family: var(--serif); font-style: italic; font-size: 15px; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+  .letters-list { padding: 0 16px; }
+  .letters-list article { display: grid; grid-template-columns: 140px 1fr auto; gap: 32px; padding: 22px 0; border-top: 1px solid var(--rule); align-items: baseline; }
+  .letters-list article:last-child { border-bottom: 1px solid var(--rule); }
+  .letters-list .meta { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); }
+  .letters-list h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; margin: 0 0 6px; line-height: 1.25; }
+  .letters-list p { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; max-width: 540px; }
+  .letters-list .arrow { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--t-notes); }
+
+  .newsletter { padding: 80px 56px; text-align: center; border-top: 1px solid var(--rule); }
+  .newsletter .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 10px; }
+  .newsletter h4 { font-family: var(--serif); font-style: italic; font-size: 30px; margin: 0 0 12px; font-weight: 300; }
+  .newsletter h4 em { color: var(--t-notes); }
+  .newsletter p { font-size: 15px; color: var(--ink-soft); margin: 0 auto 28px; max-width: 480px; line-height: 1.65; }
+  .newsletter form { display: flex; max-width: 460px; margin: 0 auto; }
+  .newsletter input { flex: 1; border: 1px solid var(--ink); border-right: none; background: transparent; padding: 13px 16px; font-family: var(--serif); font-style: italic; font-size: 15px; }
+  .newsletter button { border: 1px solid var(--ink); background: var(--ink); color: var(--bg); padding: 0 24px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; }
+
+  .colophon { padding: 32px 40px 48px; display: flex; justify-content: space-between; align-items: baseline; font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); border-top: 1px solid var(--rule); }
+  .colophon .mark { font-family: var(--script); font-size: 24px; color: var(--ink); text-transform: none; letter-spacing: 0; }
+
+  @media (max-width: 980px) {
+    .nav { padding: 18px 22px; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 56px 22px 40px; }
+    .hero-text h1 { font-size: 48px; max-width: none; }
+    .rooms-section, .letters, .newsletter, .studio-note { padding-left: 22px; padding-right: 22px; }
+    .room-grid { grid-template-columns: 1fr 1fr; }
+    .letters-list article { grid-template-columns: 1fr; gap: 6px; }
+    .letters-list .arrow { display: none; }
+  }
+  @media (max-width: 600px) { .room-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="mark">Soothemade</span>
+  <div class="links">
+    <a href="/lines">Rooms</a><a href="/journal">Journal</a><a href="/about">About</a><a href="/newsletter">Newsletter</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">A small studio · est. MMXXVI</div>
+    <h1>Made for the parts of life <em>no one is photographing.</em></h1>
+    <p class="intro">A small studio of slow, considered things. Planners, journals, printables, and cards for the seasons that move at the pace of weather, not the pace of work.</p>
+    <div class="cta-row">
+      <a class="cta-primary" href="https://notes.soothemade.com">Visit the first room ↗</a>
+      <a class="cta-quiet" href="/about">More about us</a>
+    </div>
+  </div>
+  <div class="window">
+    <div class="window-art">
+      <div class="field-color"></div>
+      <svg class="botanical" viewBox="0 0 200 320" fill="none">
+        <path d="M100 8 Q100 60 100 312" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M100 50 Q70 42 50 60 Q70 70 100 62" fill="currentColor"/>
+        <path d="M100 90 Q130 80 150 100 Q130 110 100 100" fill="currentColor"/>
+        <path d="M100 132 Q65 122 45 145 Q70 156 100 145" fill="currentColor"/>
+        <path d="M100 175 Q135 165 155 188 Q132 198 100 188" fill="currentColor"/>
+        <path d="M100 218 Q68 208 48 230 Q72 240 100 230" fill="currentColor"/>
+        <path d="M100 260 Q132 250 150 272 Q130 282 100 272" fill="currentColor"/>
+      </svg>
+      <div class="label-overlay">
+        <div class="tag">— in the window —</div>
+        <div class="num">Issue Nº 1 · spring</div>
+      </div>
+    </div>
+    <div class="window-caption">
+      <div class="ttl">Soothemade Notes</div>
+      <div class="sub">for the long, mostly-unphotographed first year of new parenthood</div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms-section">
+  <div class="rooms-head">
+    <div><div class="eyebrow">A small house, with rooms</div><h2>One room <em>open</em>. Three being built.</h2></div>
+    <div class="count">1 of 4 open today</div>
+  </div>
+  <div class="room-grid">
+    <article class="room-tile live"><a class="cover" href="https://notes.soothemade.com"><div class="sprig-small"><svg viewBox="0 0 120 200" fill="none"><path d="M60 10 Q60 50 60 195" stroke="currentColor" stroke-width="1.5"/><path d="M60 50 Q40 45 28 60 Q40 64 60 60" fill="currentColor"/><path d="M60 95 Q82 88 94 105 Q84 110 60 102" fill="currentColor"/><path d="M60 140 Q42 132 30 150 Q42 156 60 148" fill="currentColor"/></svg></div><div class="cover-text"><div class="room-name">Notes</div><div class="room-tag">— for new parents —</div></div></a><div class="body"><div class="status">Open today</div><p class="for">For the 3 a.m. parts.</p><p class="desc">Printables, planners, and cards for the postpartum body, the visitor doorbell, and the recovery month nobody warned you about.</p><a class="visit" href="https://notes.soothemade.com">Visit notes.soothemade.com ↗</a></div></article>
+    <article class="room-tile r-kitchen"><div class="cover"><div class="sprig-small"><svg viewBox="0 0 120 200" fill="none"><path d="M60 10 Q60 50 60 195" stroke="currentColor" stroke-width="1.5"/><path d="M60 60 Q82 55 94 70 Q84 76 60 70" fill="currentColor"/><path d="M60 110 Q40 102 28 120 Q40 126 60 118" fill="currentColor"/><path d="M60 155 Q82 148 94 165 Q84 170 60 162" fill="currentColor"/></svg></div><div class="cover-text"><div class="room-name">Kitchen</div><div class="room-tag">— for the home cook —</div></div></div><div class="body"><div class="status">In the workshop</div><p class="for">For the Tuesday-night fridge.</p><p class="desc">Slow recipes, freezer-meal printables, pantry maps, grocery rhythms that survive a long week.</p><a class="visit" href="/newsletter">Hear when it opens</a></div></article>
+    <article class="room-tile r-studio"><div class="cover"><div class="sprig-small"><svg viewBox="0 0 120 200" fill="none"><path d="M60 10 Q60 50 60 195" stroke="currentColor" stroke-width="1.5"/><path d="M60 45 Q40 40 26 55 Q40 60 60 54" fill="currentColor"/><path d="M60 90 Q82 82 94 100 Q84 106 60 98" fill="currentColor"/><path d="M60 135 Q40 128 28 145 Q40 152 60 144" fill="currentColor"/><path d="M60 175 Q82 168 94 184 Q84 190 60 182" fill="currentColor"/></svg></div><div class="cover-text"><div class="room-name">Studio</div><div class="room-tag">— for solo work —</div></div></div><div class="body"><div class="status">In the workshop</div><p class="for">For the one-person team.</p><p class="desc">Templates and rhythms for solo work, launch weeks, slow weeks, the calm catalog.</p><a class="visit" href="/newsletter">Hear when it opens</a></div></article>
+    <article class="room-tile r-field"><div class="cover"><div class="sprig-small"><svg viewBox="0 0 120 200" fill="none"><path d="M60 10 Q60 50 60 195" stroke="currentColor" stroke-width="1.5"/><path d="M60 55 Q82 48 96 65 Q86 72 60 64" fill="currentColor"/><path d="M60 105 Q40 96 28 115 Q40 122 60 113" fill="currentColor"/><path d="M60 150 Q82 142 96 160 Q86 168 60 159" fill="currentColor"/></svg></div><div class="cover-text"><div class="room-name">Field</div><div class="room-tag">— for the long traveler —</div></div></div><div class="body"><div class="status">In the workshop</div><p class="for">For travel like weather.</p><p class="desc">Slow itineraries, road-trip pages, walking notes, the parts of a trip that are not on a map.</p><a class="visit" href="/newsletter">Hear when it opens</a></div></article>
+  </div>
+</section>
+
+<section class="studio-note">
+  <blockquote>We make things at the <em>pace of weather.</em> Some weeks something gets finished. Some weeks it doesn't. It evens out the way a season does.</blockquote>
+  <cite>— the soothemade promise</cite>
+</section>
+
+<section class="letters">
+  <div class="letters-head"><div><div class="eyebrow">Letters from the studio</div><h2>Three <em>recent notes</em>.</h2></div><a class="more" href="/journal">All letters →</a></div>
+  <div class="letters-list">
+    <article><div class="meta">Apr · 4 min</div><div><h3>The hour before anyone else is up.</h3><p>On the kind of time that has no photographs in it. The hour we keep coming back to.</p></div><span class="arrow">→</span></article>
+    <article><div class="meta">Mar · 6 min</div><div><h3>Weather-paced work.</h3><p>Some weeks the studio ships a thing. Some weeks it doesn't. A note on why we don't think the second kind is a problem.</p></div><span class="arrow">→</span></article>
+    <article><div class="meta">Feb · 3 min</div><div><h3>What we mean by slow.</h3><p>Not the sentimental kind. The kind a tomato is. The kind a recovery is.</p></div><span class="arrow">→</span></article>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="eyebrow">— if you'd like to stay in touch —</div>
+  <h4>One letter, sometimes two, <em>a month</em>.</h4>
+  <p>The newsletter goes out when the weather allows, never as a campaign. When a room opens, you'll be the first to know.</p>
+  <form onsubmit="event.preventDefault();"><input type="email" placeholder="your address" /><button type="submit">Leave it</button></form>
+</section>
+
+<footer class="colophon">
+  <div><div class="mark">Soothemade</div>soothemade.com · est. MMXXVI</div>
+  <div>Set in Fraunces · Inter · Caveat</div>
+</footer>
+
+</body>
+</html>

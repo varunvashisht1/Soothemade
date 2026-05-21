@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Soothemade — umbrella site, design studies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f6f1e6;
+    --paper: #fbf6ea;
+    --ink: #2a2f23;
+    --ink-soft: #5a6045;
+    --ink-faint: #8a8a72;
+    --rule: rgba(42, 47, 35, 0.22);
+    --accent: #c47357;
+    --sage: #7a8a65;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --script: 'Caveat', cursive;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: var(--serif); font-weight: 300; line-height: 1.6; }
+  a { color: inherit; }
+
+  .page-head {
+    padding: 48px 56px 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .page-head .eyebrow {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  .page-head h1 {
+    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 400;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+  }
+  .page-head h1 em { font-style: italic; color: var(--accent); }
+  .page-head p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .study {
+    padding: 40px 36px 36px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .study:last-child { border-right: none; }
+  .study .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 56px;
+    color: var(--accent);
+    line-height: 0.9;
+    margin-bottom: 14px;
+  }
+  .study .name {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .study h2 {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 14px;
+    line-height: 1.2;
+  }
+  .study h2 em { font-style: italic; color: var(--accent); }
+  .study p {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin: 0 0 12px;
+    line-height: 1.55;
+  }
+  .study .tags {
+    margin: 14px 0 18px;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .study .tags span { margin-right: 14px; }
+  .study .open {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .study .open:hover { color: var(--accent); border-color: var(--accent); }
+
+  .note {
+    padding: 32px 56px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .note p {
+    max-width: 760px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+  }
+  .note em { font-style: italic; color: var(--accent); }
+  .note a { border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+
+  .foot {
+    padding: 24px 56px 48px;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 880px) {
+    .page-head, .note, .foot { padding-left: 22px; padding-right: 22px; }
+    .grid { grid-template-columns: 1fr; }
+    .study { border-right: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="eyebrow">Soothemade · design studies</div>
+  <h1>Three directions for the <em>umbrella site.</em></h1>
+  <p>Same content, same colors, same typefaces. Three different ways of arranging the page. Open each, scroll, react. Then point at what's working and what isn't.</p>
+</header>
+
+<section class="note">
+  <p>
+    What's shared across all three: the daylight palette (cream, moss, terracotta), the type stack (Fraunces, Inter, Caveat), the locked tagline <em>"made for the parts of life no one is photographing,"</em> and the four rooms (Notes open, Kitchen / Studio / Field in the workshop). What changes: layout, density, voice register, what the page <em>feels like</em> when you land on it.
+  </p>
+</section>
+
+<section class="grid">
+  <article class="study">
+    <div class="num">01.</div>
+    <div class="name">Editorial broadsheet</div>
+    <h2>A literary magazine. <em>Front page.</em></h2>
+    <p>Masthead with the studio name as a wordmark. Asymmetric two-column hero. Drop caps. A pull-quote inset. The rooms as a contents table, not as cards. Letters laid out as three newspaper teasers separated by vertical rules.</p>
+    <p>Feels like: opening an indie print journal. Text-dense, structured, anchored by the masthead.</p>
+    <div class="tags"><span>· asymmetric ·</span><span>· dense ·</span><span>· print-feel ·</span></div>
+    <a class="open" href="./umbrella-01-editorial.html">Open study 01 →</a>
+  </article>
+
+  <article class="study">
+    <div class="num">02.</div>
+    <div class="name">A letter</div>
+    <h2>One narrow column. <em>Read like correspondence.</em></h2>
+    <p>The whole homepage reads like an opening letter from the studio. Return address top-right. Dear stranger. The rooms appear inline as a list inside the body of the letter. Signed off in Caveat. Two postscripts — one is the newsletter form. A second sheet at the bottom holds the recent letters.</p>
+    <p>Feels like: receiving a handwritten note. Intimate, single-column, conversational.</p>
+    <div class="tags"><span>· narrow ·</span><span>· intimate ·</span><span>· prose ·</span></div>
+    <a class="open" href="./umbrella-02-letter.html">Open study 02 →</a>
+  </article>
+
+  <article class="study">
+    <div class="num">03.</div>
+    <div class="name">Field guide</div>
+    <h2>A small monograph. <em>Numbered sections.</em></h2>
+    <p>Title plate with a Caveat wordmark and a "field guide to a small studio" subtitle. A contents page (I–IV). Each section starts with a roman numeral in italic terracotta. The rooms as an archival catalog. The letters as catalog entries (Nº 01, Nº 02, Nº 03). Sprig dingbats between sections.</p>
+    <p>Feels like: a thin printed booklet from a museum shop. Left-aligned, structured, quiet.</p>
+    <div class="tags"><span>· structured ·</span><span>· archival ·</span><span>· left-aligned ·</span></div>
+    <a class="open" href="./umbrella-03-field-guide.html">Open study 03 →</a>
+  </article>
+</section>
+
+<footer class="foot">
+  For comparison, the current live design is at <a href="https://soothemade-main.iamvashisht1.workers.dev" style="border-bottom:1px solid var(--ink);padding-bottom:1px;letter-spacing:0.22em;">soothemade-main.iamvashisht1.workers.dev</a>
+</footer>
+
+</body>
+</html>

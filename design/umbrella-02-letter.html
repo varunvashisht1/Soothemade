@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Soothemade — design study 02, a letter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f6f1e6;
+    --paper: #fbf6ea;
+    --ink: #2a2f23;
+    --ink-soft: #5a6045;
+    --ink-faint: #8a8a72;
+    --rule: rgba(42, 47, 35, 0.18);
+    --accent: #c47357;
+    --sage: #7a8a65;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --script: 'Caveat', cursive;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body {
+    font-family: var(--serif);
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 18px;
+  }
+  a { color: inherit; }
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* ─── The letter sheet ─── */
+  .sheet {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 72px 32px 96px;
+    position: relative;
+  }
+  .return-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 80px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .return-block .from {
+    font-family: var(--script);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--ink);
+    text-transform: none;
+  }
+  .return-block .from-sub {
+    display: block;
+    margin-top: 4px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink-soft);
+  }
+
+  /* ─── The salutation ─── */
+  .salutation {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 26px;
+    margin: 0 0 28px;
+    color: var(--ink);
+    font-weight: 300;
+  }
+
+  /* ─── The body ─── */
+  .body p {
+    margin: 0 0 22px;
+    font-weight: 300;
+  }
+  .body em { font-style: italic; color: var(--ink); }
+  .body .accent { color: var(--accent); font-style: italic; }
+  .body a.inline {
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .body a.inline:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ─── The list of rooms inside the letter ─── */
+  .rooms-inline {
+    margin: 18px 0 22px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .rooms-inline li {
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+    align-items: baseline;
+  }
+  .rooms-inline li:last-child { border-bottom: 1px solid var(--rule); }
+  .rooms-inline .mark {
+    font-family: var(--script);
+    font-size: 22px;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 28px;
+  }
+  .rooms-inline .name {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .rooms-inline .name strong { font-style: normal; font-weight: 400; }
+  .rooms-inline .blurb {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--ink-soft);
+    font-style: normal;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+  .rooms-inline .status {
+    font-family: var(--sans);
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .rooms-inline li.live .status { color: var(--accent); }
+  .rooms-inline li.live .name strong { color: var(--ink); }
+
+  /* ─── The closing ─── */
+  .closing { margin-top: 44px; }
+  .closing .signoff {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    margin: 0 0 6px;
+    color: var(--ink-soft);
+  }
+  .closing .signature {
+    font-family: var(--script);
+    font-size: 38px;
+    color: var(--ink);
+    line-height: 1;
+    margin: 0;
+  }
+  .closing .imprint {
+    margin-top: 6px;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ─── Postscript blocks ─── */
+  .postscript {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .postscript h4 {
+    margin: 0 0 14px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .postscript h4::before {
+    content: 'P.S.';
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-right: 12px;
+  }
+  .postscript.pps h4::before { content: 'P.P.S.'; }
+  .postscript p {
+    margin: 0 0 14px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .postscript form { display: flex; gap: 0; margin-top: 14px; }
+  .postscript input {
+    flex: 1;
+    border: 1px solid var(--ink);
+    border-right: none;
+    background: transparent;
+    padding: 11px 14px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .postscript input::placeholder { color: var(--ink-faint); }
+  .postscript button {
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--bg);
+    padding: 0 20px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  /* ─── The second sheet ─── */
+  .other-letters {
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    padding: 72px 32px 96px;
+    margin-top: 64px;
+  }
+  .other-letters .sheet-inner { max-width: 560px; margin: 0 auto; }
+  .other-letters .header {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .other-letters article {
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .other-letters article:last-child { border-bottom: 1px solid var(--rule); }
+  .other-letters .meta {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .other-letters h3 {
+    margin: 0 0 8px;
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  .other-letters p {
+    margin: 0 0 8px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .other-letters .read {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .other-letters .read:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ─── Footer ─── */
+  .colophon {
+    text-align: center;
+    padding: 32px 24px 48px;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .colophon .mark {
+    font-family: var(--script);
+    font-size: 22px;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .sheet, .other-letters .sheet-inner { padding-left: 22px; padding-right: 22px; }
+    .salutation { font-size: 22px; }
+    .body { font-size: 16.5px; }
+    .closing .signature { font-size: 32px; }
+    .return-block { flex-direction: column; gap: 14px; align-items: flex-start; margin-bottom: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<article class="sheet">
+  <header class="return-block">
+    <div>
+      <span class="from">Soothemade</span>
+      <span class="from-sub">a small studio</span>
+    </div>
+    <div>Spring · two thousand twenty-six</div>
+  </header>
+
+  <p class="salutation">Dear stranger,</p>
+
+  <div class="body">
+    <p>
+      Thank you for finding us. This is a small studio. There is
+      <em>not very much here</em> on purpose. We make slow, considered
+      things — planners, journals, printables, card decks — for the
+      seasons that move at the pace of weather, not the pace of work.
+    </p>
+
+    <p>
+      The tagline at the top of every page we write is
+      <span class="accent">made for the parts of life no one is photographing.</span>
+      Most of a life is made of those parts. The hour before anyone
+      else is up. The Tuesday with nothing planned. The recovery
+      month nobody warned you about. The walk you took because you
+      couldn't sit still. The ones with photographs in them are the
+      foam on top. We make things, mostly paper things, for the hours
+      under the foam.
+    </p>
+
+    <p>
+      Soothemade is a small house with one room finished and a few
+      more being built. The first room is open. The others are still
+      being made, slowly, by the same hands.
+    </p>
+
+    <ul class="rooms-inline">
+      <li class="live">
+        <span class="mark">I.</span>
+        <span>
+          <span class="name"><strong>Notes</strong></span>
+          <div class="blurb">For the 3 a.m. parts, the postpartum body, the visitor doorbell. Open today at <a class="inline" href="https://notes.soothemade.com">notes.soothemade.com ↗</a>.</div>
+        </span>
+        <span class="status">Open</span>
+      </li>
+      <li>
+        <span class="mark">II.</span>
+        <span>
+          <span class="name"><strong>Kitchen</strong></span>
+          <div class="blurb">For the Tuesday-night fridge. Slow recipes, freezer-meal plans, pantry maps.</div>
+        </span>
+        <span class="status">In the workshop</span>
+      </li>
+      <li>
+        <span class="mark">III.</span>
+        <span>
+          <span class="name"><strong>Studio</strong></span>
+          <div class="blurb">For one-person work. Templates and rhythms that don't yell.</div>
+        </span>
+        <span class="status">In the workshop</span>
+      </li>
+      <li>
+        <span class="mark">IV.</span>
+        <span>
+          <span class="name"><strong>Field</strong></span>
+          <div class="blurb">For the long traveler — slow itineraries and the parts of a trip not on a map.</div>
+        </span>
+        <span class="status">In the workshop</span>
+      </li>
+    </ul>
+
+    <p>
+      We make one thing at a time. We finish it. We make the next
+      one. Some weeks something ships. Some weeks it doesn't. It
+      evens out the way a season does.
+    </p>
+
+    <p>
+      If you'd like to hear when a room opens — or when a letter
+      arrives — there's a small form at the bottom of this page.
+      Other than that, you owe us nothing.
+    </p>
+  </div>
+
+  <div class="closing">
+    <p class="signoff">— with care,</p>
+    <p class="signature">the studio</p>
+    <p class="imprint">soothemade · est. mmxxvi</p>
+  </div>
+
+  <div class="postscript">
+    <h4>For when a letter arrives.</h4>
+    <p>One letter, sometimes two, a month. The newsletter goes out when the weather allows, never as a campaign.</p>
+    <form onsubmit="event.preventDefault();">
+      <input type="email" placeholder="your address" />
+      <button type="submit">Leave it</button>
+    </form>
+  </div>
+
+  <div class="postscript pps">
+    <h4>The first room is already open.</h4>
+    <p>If you want to look around now: <a class="inline" href="https://notes.soothemade.com">notes.soothemade.com ↗</a>. It's for new parents — the long, mostly-unphotographed first year.</p>
+  </div>
+</article>
+
+<section class="other-letters">
+  <div class="sheet-inner">
+    <div class="header">Other letters we've sent, recently.</div>
+    <article>
+      <div class="meta">Letter · 4 min · April</div>
+      <h3>The hour before anyone else is up.</h3>
+      <p>On the kind of time that has no photographs in it. The hour we keep coming back to. The one that survives the rest of the day.</p>
+      <a class="read" href="/journal/the-hour-before">Read the letter →</a>
+    </article>
+    <article>
+      <div class="meta">Letter · 6 min · March</div>
+      <h3>Weather-paced work.</h3>
+      <p>Some weeks the studio ships a thing. Some weeks it doesn't. A note on why we don't think the second kind is a problem.</p>
+      <a class="read" href="/journal/weather-paced-work">Read the letter →</a>
+    </article>
+    <article>
+      <div class="meta">Letter · 3 min · February</div>
+      <h3>What we mean by slow.</h3>
+      <p>Not the sentimental kind. The kind a tomato is. The kind a recovery is. The kind that won't be optimized.</p>
+      <a class="read" href="/journal/what-we-mean-by-slow">Read the letter →</a>
+    </article>
+  </div>
+</section>
+
+<footer class="colophon">
+  <span class="mark">Soothemade</span>
+  Written by hand · soothemade.com · MMXXVI
+</footer>
+
+</body>
+</html>

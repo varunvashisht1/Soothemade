@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Soothemade — shop-window variations</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f6f1e6;
+    --paper: #fbf6ea;
+    --ink: #2a2f23;
+    --ink-soft: #5a6045;
+    --ink-faint: #8a8a72;
+    --rule: rgba(42, 47, 35, 0.18);
+    --t-notes: #c47357;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --script: 'Caveat', cursive;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--serif); font-weight: 300; line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+
+  .page-head { padding: 56px 56px 32px; border-bottom: 1px solid var(--ink); }
+  .page-head .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+  .page-head h1 { font-family: var(--serif); font-size: 42px; font-weight: 400; margin: 0 0 14px; letter-spacing: -0.015em; }
+  .page-head h1 em { font-style: italic; color: var(--t-notes); }
+  .page-head p { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink-soft); max-width: 720px; margin: 0; }
+
+  .note { padding: 32px 56px; background: var(--paper); border-bottom: 1px solid var(--rule); }
+  .note p { max-width: 760px; font-size: 16px; line-height: 1.65; color: var(--ink); margin: 0; }
+  .note em { font-style: italic; color: var(--t-notes); }
+
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .study { padding: 36px 36px 32px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .study:nth-child(2n) { border-right: none; }
+
+  .study .num { font-family: var(--serif); font-style: italic; font-size: 52px; line-height: 0.9; margin-bottom: 8px; color: var(--t-notes); }
+  .study .name { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
+  .study h2 { font-family: var(--serif); font-size: 24px; font-weight: 400; margin: 0 0 14px; line-height: 1.2; }
+  .study h2 em { font-style: italic; color: var(--t-notes); }
+  .study p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 12px; line-height: 1.6; }
+  .study .what-changes {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: var(--ink);
+    background: var(--paper);
+    padding: 10px 14px;
+    margin: 14px 0 18px;
+    border-left: 2px solid var(--t-notes);
+    line-height: 1.55;
+  }
+  .study .what-changes strong { letter-spacing: 0.18em; text-transform: uppercase; font-size: 10.5px; color: var(--ink-faint); font-weight: 500; display: block; margin-bottom: 4px; }
+  .study .open { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+  .study .open:hover { color: var(--t-notes); border-color: var(--t-notes); }
+
+  .foot { padding: 24px 56px 48px; font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); border-top: 1px solid var(--rule); }
+  .foot a { border-bottom: 1px solid var(--ink); padding-bottom: 1px; color: var(--ink); }
+
+  @media (max-width: 880px) {
+    .page-head, .note, .foot { padding-left: 22px; padding-right: 22px; }
+    .grid { grid-template-columns: 1fr; }
+    .study { border-right: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="eyebrow">Soothemade · shop-window direction · variations</div>
+  <h1>Five variations on the <em>shop-window</em> shape.</h1>
+  <p>Each varies the tiles, the hero, or both — not just colors. Same brand theme, same content. Open each, react.</p>
+</header>
+
+<section class="note">
+  <p>
+    Locked across all five: type stack (Fraunces, Inter, Caveat), the daylight palette family, the four rooms (Notes open, Kitchen/Studio/Field building), the locked tagline. What shifts: <em>how the rooms are visually arranged</em>, what the hero is, where the visual weight sits.
+  </p>
+</section>
+
+<section class="grid">
+  <article class="study">
+    <div class="num">01.</div>
+    <div class="name">Refined original</div>
+    <h2>Same shape, <em>tighter palette and a richer window.</em></h2>
+    <p>Cleanup pass on the first shop-window. Replaced the scattered tile palette (terracotta + wheat + sage + black) with a more cohesive warm-vintage set — terracotta, mustard ochre, deep moss, deep umber. All in the same family.</p>
+    <div class="what-changes">
+      <strong>What changes</strong>
+      Hero window is now a layered composition (color block + bigger botanical SVG + caption strip below), not one flat sage rectangle. Room tile palette is more cohesive.
+    </div>
+    <a class="open" href="./umbrella-sw-v1-refined.html">Open variant 01 →</a>
+  </article>
+
+  <article class="study">
+    <div class="num">02.</div>
+    <div class="name">The shelf</div>
+    <h2>Rooms as <em>book spines</em> on a shelf.</h2>
+    <p>The four rooms become tall narrow vertical "spines" side by side, like books on a shelf. Each one shows its name running vertically in Caveat. Hover lifts the spine off the shelf. Small captions live below the shelf.</p>
+    <div class="what-changes">
+      <strong>What changes</strong>
+      Hero becomes a centered text intro (no right-side window). The rooms section is the visual moment — a charcoal "shelf board" with 4 colored spines you can pull from.
+    </div>
+    <a class="open" href="./umbrella-sw-v2-shelf.html">Open variant 02 →</a>
+  </article>
+
+  <article class="study">
+    <div class="num">03.</div>
+    <div class="name">Featured Notes hero</div>
+    <h2>The open room <em>IS the hero.</em></h2>
+    <p>Notes takes over the whole top of the page as a full-bleed terracotta scene. The studio intro is a small strip below. The other three rooms sit lower as smaller, calmer "coming soon" tiles. Strongest commercial framing — "here's what's open, visit it."</p>
+    <div class="what-changes">
+      <strong>What changes</strong>
+      No separate "hero + rooms" sections. Hero collapses into the featured room. The remaining rooms appear in a 3-up "still being built" row at smaller scale.
+    </div>
+    <a class="open" href="./umbrella-sw-v3-featured.html">Open variant 03 →</a>
+  </article>
+
+  <article class="study">
+    <div class="num">04.</div>
+    <div class="name">Photographic</div>
+    <h2>A warm interior <em>"photograph"</em>, polaroid rooms.</h2>
+    <p>Hero is a full-bleed warm scene — layered gradients standing in for a real lifestyle photograph (terracotta + moss + warm umber). Nav goes light over the dark image. Rooms become slightly-rotated polaroid cards with handwritten room stamps in the corner. Once real photography exists, this becomes the most "magazine-cover" of the set.</p>
+    <div class="what-changes">
+      <strong>What changes</strong>
+      Hero is image-led, not type-led. Rooms aren't colored blocks — they're polaroid-style cards with a photo+caption shape. Implies real product/lifestyle photography eventually.
+    </div>
+    <a class="open" href="./umbrella-sw-v4-photographic.html">Open variant 04 →</a>
+  </article>
+
+  <article class="study">
+    <div class="num">05.</div>
+    <div class="name">Asymmetric mixed</div>
+    <h2>Visual hierarchy <em>= open vs building.</em></h2>
+    <p>The "open" room is huge, the "building" rooms are small horizontal cards stacked on the right. The asymmetry IS the message — Notes is what's open today, period. Kitchen/Studio/Field listed at lower visual weight with colored left borders.</p>
+    <div class="what-changes">
+      <strong>What changes</strong>
+      Mixed tile sizes in a single asymmetric grid. Notes gets a big square tile (left); Kitchen/Studio/Field get three thin horizontal cards stacked (right). The page composition itself signals which room is open.
+    </div>
+    <a class="open" href="./umbrella-sw-v5-asymmetric.html">Open variant 05 →</a>
+  </article>
+</section>
+
+<footer class="foot">
+  Current live design: <a href="https://soothemade-main.iamvashisht1.workers.dev">soothemade-main.iamvashisht1.workers.dev</a> · earlier shop-window: <a href="./umbrella-shop-window.html">umbrella-shop-window.html</a>
+</footer>
+
+</body>
+</html>

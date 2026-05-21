@@ -2,114 +2,202 @@
 import { lines } from '~/data/lines';
 
 interface Props {
-  /** When true, full-page layout (used on /lines). When false, compact row (home). */
+  /** When true, full-page layout (used on /lines). When false, compact polaroid grid (home). */
   detailed?: boolean;
 }
 const { detailed = false } = Astro.props;
+
+/* Map line ids to room-tile gradient classes for the polaroid backs.
+   Notes always live, others use the Apothecary "warm-black undertone" set. */
+const roomClass: Record<string, string> = {
+  notes: 'live',
+  kitchen: 'r-kitchen',
+  studio: 'r-studio',
+  field: 'r-field',
+};
 ---
-<section class={`lines ${detailed ? 'detailed' : ''}`}>
-  <div class="grid">
-    {lines.map((line) => (
-      <article id={line.id} class={`card ${line.status}`}>
-        <div class="meta">
-          <span class="status">{line.status === 'live' ? 'Open' : 'In the workshop'}</span>
-        </div>
-        <h3>Soothemade <em>{line.name}</em></h3>
-        <p class="for">For {line.audience}.</p>
-        <p class="desc">{detailed ? line.descLong : line.descShort}</p>
+<section class={`rooms-section ${detailed ? 'detailed' : ''}`}>
+  <div class="rooms-head">
+    <div>
+      <div class="eyebrow-mark">— A small house, with rooms —</div>
+      <h2>One room <em>open</em>. Three being built.</h2>
+    </div>
+  </div>
+  <div class="polaroid-grid">
+    {lines.map((line, i) => (
+      <article class={`polaroid ${roomClass[line.id] ?? ''}`}>
         {line.status === 'live' ? (
-          <a class="cta" href={line.href} rel="noopener">
-            Visit {line.name.toLowerCase()} <span aria-hidden="true">↗</span>
+          <a class="photo" href={line.href} rel="noopener">
+            <span class="room-stamp">{line.name}</span>
           </a>
         ) : (
-          <a class="cta quiet" href="/newsletter">
-            Hear when it opens
-          </a>
+          <div class="photo"><span class="room-stamp">{line.name}</span></div>
         )}
+        <div class="caption">
+          <div class="meta">
+            <span class="num">№ {['i','ii','iii','iv','v','vi'][i] ?? i+1}</span>
+            <span class="status">{line.status === 'live' ? 'Open today' : 'In the workshop'}</span>
+          </div>
+          <div class="name">Soothemade <em>{line.name}</em></div>
+          <div class="for">for {line.audience}</div>
+          <p class="desc">{detailed ? line.descLong : line.descShort}</p>
+          {line.status === 'live' ? (
+            <a class="visit" href={line.href} rel="noopener">Visit {line.name.toLowerCase()} ↗</a>
+          ) : (
+            <a class="visit quiet" href="/newsletter">Hear when it opens</a>
+          )}
+        </div>
       </article>
     ))}
   </div>
 </section>
 
 <style>
-  .lines { padding: 56px var(--sp-7); }
-  .lines.detailed { padding: 32px var(--sp-7) 64px; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--sp-6);
-    max-width: var(--container-default);
-    margin: 0 auto;
-  }
-  .card {
-    background: var(--card);
-    color: var(--card-text);
-    padding: 36px 32px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--card-rule);
-    display: flex;
-    flex-direction: column;
-    min-height: 240px;
-  }
-  .card.coming { opacity: 0.88; }
-  .meta {
+  .rooms-section { padding: 56px var(--sp-7) 96px; }
+  .rooms-section.detailed { padding: 24px var(--sp-7) 80px; }
+
+  .rooms-head {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 14px;
+    align-items: end;
+    padding: 0 0 32px;
+    border-bottom: 1px solid var(--ink);
+    margin: 0 0 48px;
   }
-  .status {
+  .eyebrow-mark {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  .rooms-head h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0;
+    letter-spacing: var(--ls-tight);
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .rooms-head h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
+
+  .polaroid-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .polaroid {
+    background: var(--apo-paper);
+    padding: 14px 14px 24px;
+    transition: transform var(--t-base) var(--ease);
+  }
+  .polaroid:nth-child(odd) { transform: rotate(-0.6deg); }
+  .polaroid:nth-child(even) { transform: rotate(0.4deg); }
+  .polaroid:nth-child(3n) { transform: rotate(-0.3deg); }
+  .polaroid:hover { transform: rotate(0) translateY(-4px); }
+
+  .polaroid .photo {
+    display: block;
+    aspect-ratio: 4 / 5;
+    position: relative;
+    overflow: hidden;
+  }
+  .polaroid.live .photo {
+    background: linear-gradient(160deg, #3d251a 0%, var(--apo-tile-notes) 60%, #1a0f0b 100%);
+  }
+  .polaroid.r-kitchen .photo {
+    background: linear-gradient(160deg, #3d322c 0%, var(--apo-tile-kitchen) 60%, #1a1410 100%);
+  }
+  .polaroid.r-studio .photo {
+    background: linear-gradient(160deg, #2a3528 0%, var(--apo-tile-studio) 60%, #0e160c 100%);
+  }
+  .polaroid.r-field .photo {
+    background: linear-gradient(160deg, #18140e 0%, var(--apo-tile-field) 55%, #030302 100%);
+  }
+  .polaroid .photo::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 30%, rgba(184, 134, 42, 0.12), transparent 55%),
+      radial-gradient(ellipse at 75% 80%, rgba(0,0,0,0.28), transparent 55%);
+  }
+  .polaroid .room-stamp {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    z-index: 2;
+    color: var(--accent-soft);
+    font-family: var(--font-script);
+    font-size: 38px;
+    line-height: 0.9;
+    font-weight: 500;
+  }
+  .polaroid.live .room-stamp { color: var(--apo-paper); }
+
+  .polaroid .caption { padding: 14px 4px 0; }
+  .polaroid .caption .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .polaroid .caption .num {
+    font-family: var(--font-sans);
     font-size: 10.5px;
     letter-spacing: var(--ls-wider);
     text-transform: uppercase;
-    color: var(--card-text-soft);
+    color: var(--ink-faint);
   }
-  .card.live .status { color: var(--accent); }
-  h3 {
+  .polaroid .caption .status {
+    font-family: var(--font-sans);
+    font-size: 10.5px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .polaroid.live .caption .status { color: var(--accent); }
+  .polaroid .caption .name {
     font-family: var(--font-serif);
-    font-size: 28px;
+    font-size: 17px;
     font-weight: 400;
-    line-height: 1.1;
-    color: var(--card-text);
-    margin-bottom: 10px;
+    margin: 0 0 4px;
+    color: var(--ink);
   }
-  h3 em { font-style: italic; color: var(--accent); }
-  .for {
+  .polaroid .caption .name em { font-style: italic; color: var(--accent); }
+  .polaroid .caption .for {
     font-family: var(--font-serif);
     font-style: italic;
-    color: var(--card-text-soft);
-    font-size: 15px;
-    margin-bottom: 12px;
-  }
-  .desc {
     font-size: 14px;
-    line-height: 1.6;
-    color: var(--card-text);
-    margin-bottom: 22px;
-    flex: 1;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
   }
-  .cta {
-    align-self: flex-start;
+  .polaroid .caption .desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+  .polaroid .caption .visit {
     font-family: var(--font-serif);
     font-style: italic;
-    color: var(--card-text);
-    border-bottom: 1px solid var(--card-text);
+    font-size: 14px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
     padding-bottom: 1px;
-    font-size: 15px;
     transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
   }
-  .cta:hover { color: var(--accent); border-color: var(--accent); }
-  .cta.quiet {
-    color: var(--card-text-soft);
-    border-color: var(--card-rule);
-    font-style: italic;
-  }
-  .cta.quiet:hover { color: var(--accent); border-color: var(--accent); }
+  .polaroid.live .caption .visit { color: var(--accent); border-color: var(--accent); }
+  .polaroid .caption .visit.quiet { color: var(--ink-faint); border-color: var(--ink-faint); }
+  .polaroid .caption .visit:hover { color: var(--accent); border-color: var(--accent); }
 
-  @media (max-width: 880px) {
-    .lines { padding: 40px var(--sp-5); }
-    .grid { grid-template-columns: 1fr; gap: var(--sp-5); }
-    .card { padding: 28px 24px; min-height: 0; }
-    h3 { font-size: 24px; }
+  @media (max-width: 980px) {
+    .rooms-section { padding: 40px var(--sp-5) 64px; }
+    .polaroid-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  }
+  @media (max-width: 600px) {
+    .polaroid-grid { grid-template-columns: 1fr; }
+    .polaroid { transform: rotate(0) !important; }
   }
 </style>

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Soothemade — shop window v3 · featured Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f6f1e6;
+    --paper: #fbf6ea;
+    --paper-2: #efe7d4;
+    --ink: #2a2f23;
+    --ink-soft: #5a6045;
+    --ink-faint: #8a8a72;
+    --rule: rgba(42, 47, 35, 0.18);
+    --t-notes: #c47357;
+    --t-kitchen: #b8862a;
+    --t-studio: #5a6f4a;
+    --t-field: #3d3520;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --script: 'Caveat', cursive;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--serif); font-weight: 300; line-height: 1.55; }
+  a { color: inherit; text-decoration: none; }
+
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 40px; background: var(--bg); }
+  .nav .mark { font-family: var(--script); font-size: 34px; line-height: 1; }
+  .nav .links { display: flex; gap: 28px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); }
+
+  /* HERO = the featured (live) room. Full-bleed terracotta tile. */
+  .featured-hero {
+    background: var(--t-notes);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+    padding: 96px 64px 96px;
+    min-height: 78vh;
+    display: flex;
+    align-items: end;
+  }
+  .featured-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 700px 500px at 20% 30%, rgba(255,255,255,0.18), transparent 60%),
+      radial-gradient(ellipse 500px 700px at 80% 80%, rgba(0,0,0,0.22), transparent 60%);
+    pointer-events: none;
+  }
+  .featured-hero svg.botanical-big {
+    position: absolute;
+    right: -80px; top: -40px;
+    width: 60%; height: 110%;
+    color: rgba(251, 246, 234, 0.32);
+    pointer-events: none;
+  }
+  .featured-hero .content {
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+  }
+  .featured-hero .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.78; margin-bottom: 22px; }
+  .featured-hero .tag-script { font-family: var(--script); font-size: 68px; color: var(--paper); line-height: 0.9; margin-bottom: 6px; }
+  .featured-hero h1 { font-family: var(--serif); font-size: 88px; line-height: 0.96; letter-spacing: -0.025em; font-weight: 300; margin: 0 0 28px; max-width: 16ch; color: var(--paper); }
+  .featured-hero h1 em { font-style: italic; }
+  .featured-hero p.lede { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.5; max-width: 42ch; margin: 0 0 36px; opacity: 0.92; }
+  .featured-hero .cta-row { display: flex; gap: 16px; align-items: center; }
+  .featured-hero .cta-primary { font-family: var(--sans); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--t-notes); background: var(--paper); padding: 14px 22px; }
+  .featured-hero .cta-primary:hover { background: var(--ink); color: var(--paper); }
+  .featured-hero .cta-quiet { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--paper); border-bottom: 1px solid var(--paper); padding-bottom: 1px; opacity: 0.85; }
+
+  /* About-the-studio strip — small intro under the hero */
+  .studio-strip { padding: 64px 64px 56px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 200px 1fr; gap: 56px; align-items: start; }
+  .studio-strip .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); }
+  .studio-strip p { font-family: var(--serif); font-size: 19px; line-height: 1.65; color: var(--ink); margin: 0; max-width: 60ch; font-weight: 300; }
+  .studio-strip p em { font-style: italic; color: var(--t-notes); }
+
+  /* Coming rooms — smaller, calmer */
+  .coming-section { padding: 56px 40px 80px; border-top: 1px solid var(--rule); }
+  .coming-head { padding: 0 24px 28px; display: flex; justify-content: space-between; align-items: end; }
+  .coming-head .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); }
+  .coming-head h2 { font-family: var(--serif); font-size: 28px; font-weight: 300; margin: 8px 0 0; line-height: 1.1; }
+  .coming-head h2 em { font-style: italic; color: var(--t-notes); }
+  .coming-head .more { font-family: var(--serif); font-style: italic; font-size: 15px; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+
+  .coming-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 24px; }
+  .coming-tile { display: flex; flex-direction: column; }
+  .coming-tile .cover { aspect-ratio: 16 / 9; position: relative; overflow: hidden; display: flex; align-items: end; padding: 22px; opacity: 0.85; }
+  .coming-tile.r-kitchen .cover { background: var(--t-kitchen); }
+  .coming-tile.r-studio .cover { background: var(--t-studio); }
+  .coming-tile.r-field .cover { background: var(--t-field); }
+  .coming-tile .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.16), transparent 55%), radial-gradient(circle at 80% 75%, rgba(0,0,0,0.16), transparent 55%); }
+  .coming-tile .cover-text { position: relative; z-index: 2; color: var(--paper); }
+  .coming-tile .room-name { font-family: var(--script); font-size: 38px; line-height: 0.9; margin-bottom: 4px; }
+  .coming-tile .room-tag { font-family: var(--serif); font-style: italic; font-size: 13px; opacity: 0.9; }
+  .coming-tile .body { padding: 16px 4px 0; }
+  .coming-tile .body .status { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
+  .coming-tile .body .desc { font-size: 14px; line-height: 1.55; color: var(--ink); margin: 0 0 12px; }
+  .coming-tile .body .visit { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--ink-faint); border-bottom: 1px solid var(--ink-faint); padding-bottom: 1px; }
+
+  .studio-note { padding: 96px 56px; text-align: center; background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .studio-note blockquote { font-family: var(--serif); font-style: italic; font-size: 34px; line-height: 1.3; margin: 0 auto; max-width: 760px; font-weight: 300; }
+  .studio-note blockquote em { color: var(--t-notes); }
+  .studio-note cite { display: block; margin-top: 24px; font-style: normal; font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); }
+
+  .letters { padding: 80px 40px; }
+  .letters-head { padding: 0 16px; display: flex; justify-content: space-between; align-items: end; margin-bottom: 32px; }
+  .letters-head .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); }
+  .letters-head h2 { font-family: var(--serif); font-size: 28px; font-weight: 300; margin: 6px 0 0; line-height: 1.2; }
+  .letters-head h2 em { font-style: italic; color: var(--t-notes); }
+  .letters-head .more { font-family: var(--serif); font-style: italic; font-size: 15px; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+  .letters-list { padding: 0 16px; }
+  .letters-list article { display: grid; grid-template-columns: 140px 1fr auto; gap: 32px; padding: 22px 0; border-top: 1px solid var(--rule); align-items: baseline; }
+  .letters-list article:last-child { border-bottom: 1px solid var(--rule); }
+  .letters-list .meta { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); }
+  .letters-list h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; margin: 0 0 6px; line-height: 1.25; }
+  .letters-list p { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; max-width: 540px; }
+  .letters-list .arrow { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--t-notes); }
+
+  .newsletter { padding: 80px 56px; text-align: center; border-top: 1px solid var(--rule); }
+  .newsletter .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 10px; }
+  .newsletter h4 { font-family: var(--serif); font-style: italic; font-size: 30px; margin: 0 0 12px; font-weight: 300; }
+  .newsletter h4 em { color: var(--t-notes); }
+  .newsletter p { font-size: 15px; color: var(--ink-soft); margin: 0 auto 28px; max-width: 480px; line-height: 1.65; }
+  .newsletter form { display: flex; max-width: 460px; margin: 0 auto; }
+  .newsletter input { flex: 1; border: 1px solid var(--ink); border-right: none; background: transparent; padding: 13px 16px; font-family: var(--serif); font-style: italic; font-size: 15px; }
+  .newsletter button { border: 1px solid var(--ink); background: var(--ink); color: var(--bg); padding: 0 24px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; }
+
+  .colophon { padding: 32px 40px 48px; display: flex; justify-content: space-between; font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); border-top: 1px solid var(--rule); }
+  .colophon .mark { font-family: var(--script); font-size: 24px; color: var(--ink); text-transform: none; letter-spacing: 0; }
+
+  @media (max-width: 980px) {
+    .nav { padding: 18px 22px; }
+    .featured-hero { padding: 72px 22px 64px; min-height: auto; }
+    .featured-hero h1 { font-size: 48px; }
+    .featured-hero .tag-script { font-size: 52px; }
+    .studio-strip { padding: 48px 22px; grid-template-columns: 1fr; gap: 18px; }
+    .coming-section, .letters, .newsletter, .studio-note { padding-left: 22px; padding-right: 22px; }
+    .coming-grid { grid-template-columns: 1fr; gap: 20px; }
+    .letters-list article { grid-template-columns: 1fr; gap: 6px; }
+    .letters-list .arrow { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="mark">Soothemade</span>
+  <div class="links">
+    <a href="/lines">Rooms</a><a href="/journal">Journal</a><a href="/about">About</a><a href="/newsletter">Newsletter</a>
+  </div>
+</nav>
+
+<section class="featured-hero">
+  <svg class="botanical-big" viewBox="0 0 240 380" fill="none">
+    <path d="M120 10 Q120 60 120 370" stroke="currentColor" stroke-width="2"/>
+    <path d="M120 55 Q88 48 65 70 Q88 80 120 70" fill="currentColor"/>
+    <path d="M120 105 Q152 96 175 118 Q152 128 120 118" fill="currentColor"/>
+    <path d="M120 155 Q86 145 62 170 Q88 180 120 170" fill="currentColor"/>
+    <path d="M120 205 Q155 195 178 218 Q154 228 120 218" fill="currentColor"/>
+    <path d="M120 255 Q88 245 64 268 Q90 278 120 268" fill="currentColor"/>
+    <path d="M120 305 Q154 295 176 318 Q152 328 120 318" fill="currentColor"/>
+  </svg>
+  <div class="content">
+    <div class="eyebrow">— currently in the window —</div>
+    <div class="tag-script">Soothemade</div>
+    <h1>Notes, for the long, mostly-unphotographed <em>first year.</em></h1>
+    <p class="lede">Printables, planners, and cards for the 3 a.m. parts, the postpartum body, the visitor doorbell, and the recovery month nobody warned you about.</p>
+    <div class="cta-row">
+      <a class="cta-primary" href="https://notes.soothemade.com">Visit Notes ↗</a>
+      <a class="cta-quiet" href="/about">More about the studio</a>
+    </div>
+  </div>
+</section>
+
+<section class="studio-strip">
+  <div class="eyebrow">— about the studio —</div>
+  <p>Soothemade is a small studio of slow, considered things. We make planners, journals, printables, and cards for the seasons that move at the <em>pace of weather</em>, not the pace of work. The first room is open. Three more are being built.</p>
+</section>
+
+<section class="coming-section">
+  <div class="coming-head">
+    <div><div class="eyebrow">Rooms still being built</div><h2>Three more, <em>in the workshop</em>.</h2></div>
+    <a class="more" href="/lines">All rooms →</a>
+  </div>
+  <div class="coming-grid">
+    <article class="coming-tile r-kitchen">
+      <div class="cover"><div class="cover-text"><div class="room-name">Kitchen</div><div class="room-tag">— for the home cook —</div></div></div>
+      <div class="body"><div class="status">In the workshop</div><p class="desc">Slow recipes, freezer-meal plans, the Tuesday-night fridge.</p><a class="visit" href="/newsletter">Hear when it opens</a></div>
+    </article>
+    <article class="coming-tile r-studio">
+      <div class="cover"><div class="cover-text"><div class="room-name">Studio</div><div class="room-tag">— for solo work —</div></div></div>
+      <div class="body"><div class="status">In the workshop</div><p class="desc">Templates and rhythms for one-person work — launch weeks, slow weeks.</p><a class="visit" href="/newsletter">Hear when it opens</a></div>
+    </article>
+    <article class="coming-tile r-field">
+      <div class="cover"><div class="cover-text"><div class="room-name">Field</div><div class="room-tag">— for the long traveler —</div></div></div>
+      <div class="body"><div class="status">In the workshop</div><p class="desc">Slow itineraries, road-trip pages, the parts of a trip not on a map.</p><a class="visit" href="/newsletter">Hear when it opens</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="studio-note">
+  <blockquote>We make things at the <em>pace of weather.</em> Some weeks something gets finished. Some weeks it doesn't. It evens out the way a season does.</blockquote>
+  <cite>— the soothemade promise</cite>
+</section>
+
+<section class="letters">
+  <div class="letters-head"><div><div class="eyebrow">Letters from the studio</div><h2>Three <em>recent notes</em>.</h2></div><a class="more" href="/journal">All letters →</a></div>
+  <div class="letters-list">
+    <article><div class="meta">Apr · 4 min</div><div><h3>The hour before anyone else is up.</h3><p>On the kind of time that has no photographs in it. The hour we keep coming back to.</p></div><span class="arrow">→</span></article>
+    <article><div class="meta">Mar · 6 min</div><div><h3>Weather-paced work.</h3><p>Some weeks the studio ships a thing. Some weeks it doesn't.</p></div><span class="arrow">→</span></article>
+    <article><div class="meta">Feb · 3 min</div><div><h3>What we mean by slow.</h3><p>Not the sentimental kind. The kind a tomato is. The kind a recovery is.</p></div><span class="arrow">→</span></article>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="eyebrow">— if you'd like to stay in touch —</div>
+  <h4>One letter, sometimes two, <em>a month</em>.</h4>
+  <p>The newsletter goes out when the weather allows, never as a campaign.</p>
+  <form onsubmit="event.preventDefault();"><input type="email" placeholder="your address" /><button type="submit">Leave it</button></form>
+</section>
+
+<footer class="colophon">
+  <div><div class="mark">Soothemade</div>soothemade.com · est. MMXXVI</div>
+  <div>Set in Fraunces · Inter · Caveat</div>
+</footer>
+
+</body>
+</html>

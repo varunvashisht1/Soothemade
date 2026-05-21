@@ -1,5 +1,10 @@
 ---
-import BotanicalLeaf from './BotanicalLeaf.astro';
+/* The photographic hero — warm-black scene with a left text column
+   and a right "photo tag" overlay describing what's currently in the window.
+
+   Keeps the same prop shape as the original Hero so other surfaces
+   (interior pages) can still use the simpler form if they import it later.
+   The homepage uses every prop including `featured`. */
 
 interface Props {
   eyebrow?: string;
@@ -9,76 +14,179 @@ interface Props {
   body: string;
   primaryCta?: { href: string; label: string };
   secondaryCta?: { href: string; label: string };
+  featured?: {
+    label: string;       /* e.g. "— in the window —" */
+    name: string;        /* e.g. "Soothemade Notes" */
+    blurb: string;       /* one-liner */
+  };
 }
 
 const {
-  eyebrow = '— a small studio of slow, considered things —',
+  eyebrow = '— a small studio · est. MMXXVI —',
   headlinePre,
   headlineAccent,
   headlinePost,
   body,
   primaryCta,
   secondaryCta,
+  featured,
 } = Astro.props;
 ---
-<section class="hero">
-  <BotanicalLeaf class="leaf l1" size={70} rotate={-25} />
-  <BotanicalLeaf class="leaf l2" size={56} rotate={45} />
-  <BotanicalLeaf class="leaf l3" size={60} rotate={110} />
-  <BotanicalLeaf class="leaf l4" size={48} rotate={-50} />
-
-  {eyebrow && <div class="eyebrow">{eyebrow}</div>}
-  <h1>
-    {headlinePre}{headlineAccent && (<>{' '}<em>{headlineAccent}</em></>)}{headlinePost && (<>{' '}{headlinePost}</>)}
-  </h1>
-  <p>{body}</p>
-  {(primaryCta || secondaryCta) && (
-    <div class="cta-row">
-      {primaryCta && <a class="btn btn-primary" href={primaryCta.href}>{primaryCta.label}</a>}
-      {secondaryCta && <a class="btn btn-secondary" href={secondaryCta.href}>{secondaryCta.label}</a>}
+<section class="scene">
+  <div class="scene-content">
+    <div class="left">
+      <div class="eyebrow">{eyebrow}</div>
+      <h1>
+        {headlinePre}{headlineAccent && (<>{' '}<em>{headlineAccent}</em></>)}{headlinePost && (<>{' '}{headlinePost}</>)}
+      </h1>
+      <p class="lede">{body}</p>
+      {(primaryCta || secondaryCta) && (
+        <div class="cta-row">
+          {primaryCta && <a class="cta-primary" href={primaryCta.href}>{primaryCta.label}</a>}
+          {secondaryCta && <a class="cta-quiet" href={secondaryCta.href}>{secondaryCta.label}</a>}
+        </div>
+      )}
     </div>
-  )}
+    {featured && (
+      <div class="right">
+        <div class="photo-tag">
+          <div class="label">{featured.label}</div>
+          <div class="ttl">{featured.name}</div>
+          <div class="sub">{featured.blurb}</div>
+        </div>
+      </div>
+    )}
+  </div>
 </section>
 
 <style>
-  .hero {
-    padding: 84px var(--sp-7) 64px;
-    text-align: center;
+  .scene {
     position: relative;
+    height: 92vh;
+    min-height: 600px;
     overflow: hidden;
+    color: var(--apo-paper);
   }
-  .leaf { position: absolute; opacity: 0.5; color: var(--sage); }
-  .leaf.l1 { top: 48px; left: 64px; }
-  .leaf.l2 { top: 80px; right: 90px; }
-  .leaf.l3 { bottom: 32px; left: 140px; }
-  .leaf.l4 { bottom: 60px; right: 160px; }
+  .scene::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 1000px 700px at 30% 30%, rgba(184, 134, 42, 0.10), transparent 65%),
+      linear-gradient(170deg, var(--apo-hero-1) 0%, var(--apo-hero-2) 60%, var(--apo-hero-3) 100%);
+  }
+  .scene::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 600px 350px at 50% 0%, rgba(212, 165, 72, 0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .scene-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 140px var(--sp-7) 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 64px;
+  }
+  .scene-content .left .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 24px;
+  }
   h1 {
     font-family: var(--font-serif);
-    font-size: var(--fs-4xl);
-    margin: 18px auto 22px;
-    font-weight: 400;
-    line-height: 1.05;
-    max-width: 800px;
-    color: var(--ink);
+    font-size: 80px;
+    line-height: 0.98;
     letter-spacing: var(--ls-tight);
+    font-weight: 300;
+    margin: 0 0 28px;
+    max-width: 13ch;
+    color: var(--apo-paper);
   }
-  h1 em { font-style: italic; color: var(--accent); }
-  p {
+  h1 em { font-style: italic; color: var(--accent-soft); font-weight: 300; }
+  p.lede {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 20px;
-    max-width: 500px;
-    margin: 0 auto 28px;
-    color: var(--ink-soft);
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--apo-paper-dim);
+    max-width: 36ch;
+    margin: 0 0 32px;
     font-weight: 300;
+  }
+  .cta-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .cta-primary {
+    font-family: var(--font-sans);
+    font-size: 11.5px;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--apo-paper);
+    padding: 14px 22px;
+    transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+    font-weight: 500;
+  }
+  .cta-primary:hover { background: var(--accent); color: var(--apo-paper); }
+  .cta-quiet {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--apo-paper);
+    border-bottom: 1px solid var(--accent-soft);
+    padding-bottom: 1px;
+    opacity: 0.9;
+  }
+  .cta-quiet:hover { color: var(--accent-soft); opacity: 1; }
+
+  .right { align-self: end; text-align: right; }
+  .photo-tag {
+    display: inline-block;
+    background: rgba(12, 10, 8, 0.62);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 24px 26px;
+    text-align: left;
+    max-width: 360px;
+    border-left: 1px solid var(--accent);
+  }
+  .photo-tag .label {
+    font-family: var(--font-sans);
+    font-size: 10.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 10px;
+  }
+  .photo-tag .ttl {
+    font-family: var(--font-script);
+    font-size: 36px;
+    color: var(--apo-paper);
+    line-height: 1;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .photo-tag .sub {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--apo-paper-dim);
     line-height: 1.4;
   }
-  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-  @media (max-width: 880px) {
-    .hero { padding: 56px var(--sp-5) 48px; }
-    h1 { font-size: 40px; }
-    p { font-size: 17px; }
-    .leaf { display: none; }
+  @media (max-width: 980px) {
+    .scene { height: auto; min-height: 0; }
+    .scene-content {
+      padding: 120px var(--sp-5) 56px;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    h1 { font-size: 48px; }
+    .right { text-align: left; }
   }
 </style>

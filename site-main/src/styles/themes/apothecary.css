@@ -1,0 +1,45 @@
+/* Theme — Apothecary.
+   Warm-black + cream + a single amber/brass accent. Aesop-coded.
+   Most restrained palette in the system. */
+
+:root[data-theme="apothecary"] {
+  --surface:         #f4ecdb;   /* warm cream paper */
+  --surface-deep:    #ebe1c9;
+  --surface-deepest: #e0d4b9;
+
+  --card:            #fbf6ea;
+  --card-text:       #1a1612;
+  --card-text-soft:  #4a3f33;
+  --card-rule:       rgba(26, 22, 18, 0.16);
+
+  --ink:             #1a1612;   /* deep warm black */
+  --ink-soft:        #4a3f33;
+  --ink-faint:       #8a7e6e;
+
+  --rule:            rgba(26, 22, 18, 0.14);
+  --rule-strong:     rgba(26, 22, 18, 0.26);
+  --hover:           rgba(26, 22, 18, 0.04);
+
+  /* Sage slot is repurposed as putty — the only "secondary neutral".
+     Keeps existing component references working without re-themeing. */
+  --sage:            #8a7e6e;
+  --sage-soft:       #b8a98e;
+
+  --accent:          #b8862a;   /* warm amber / aged brass — the only color */
+  --accent-soft:     #d4a548;
+
+  /* Apothecary-specific tokens used by the new components.
+     Prefixed --apo to avoid collision with theme primitives. */
+  --apo-paper:       #fbf6ea;
+  --apo-paper-dim:   rgba(251, 246, 234, 0.78);
+  --apo-paper-faint: rgba(251, 246, 234, 0.55);
+  --apo-hero-1:      #1a1612;
+  --apo-hero-2:      #0e0b09;
+  --apo-hero-3:      #050403;
+  --apo-tile-notes:   #2a1a14;
+  --apo-tile-kitchen: #2a2218;
+  --apo-tile-studio:  #1a2218;
+  --apo-tile-field:   #0c0a08;
+
+  color-scheme: light;
+}

@@ -15,7 +15,7 @@ const featuredJournalPosts = allPosts
   .slice(0, 3)
   .map((p) => ({
     href: `/journal/${p.id}`,
-    category: p.data.category ?? 'letter',
+    category: p.data.category ?? 'Letter',
     readTime: p.data.readTime ?? '',
     title: p.data.title,
     blurb: p.data.description,
@@ -25,42 +25,32 @@ const featuredJournalPosts = allPosts
   title="Soothemade — slow, considered things for the quiet parts of life"
   description="Soothemade is a small studio making slow, considered things for the parts of life no one is photographing. Printables, planners, journals, and cards — made by hand."
 >
-  <Nav />
+  <Nav variant="overlay" />
 
   <Hero
     headlinePre="Made for the parts of life"
     headlineAccent="no one is photographing."
-    body="Soothemade is a small studio of slow, considered things. We make planners, journals, printables, and cards for the seasons that move at the pace of weather, not the pace of work."
-    primaryCta={{ href: 'https://notes.soothemade.com', label: 'Visit Soothemade Notes ↗' }}
-    secondaryCta={{ href: '/journal', label: 'Read the journal' }}
+    body="A small studio of slow, considered things. Planners, journals, printables, and cards for the seasons that move at the pace of weather, not the pace of work."
+    primaryCta={{ href: 'https://notes.soothemade.com', label: 'Visit the first room ↗' }}
+    secondaryCta={{ href: '/about', label: 'More about us' }}
+    featured={{
+      label: '— in the window —',
+      name: 'Soothemade Notes',
+      blurb: 'for the long, mostly-unphotographed first year of new parenthood. open today.',
+    }}
   />
 
-  <section class="lead rule-top">
-    <div class="inner">
-      <p>
-        There is a kind of time that doesn't show up in any photograph.
-        The hour before anyone else is up. The walk you took because you
-        couldn't sit still. The Tuesday with nothing planned. The
-        recovery month no one warned you about.
-      </p>
-      <p>
-        Most of a life is made of these hours. The ones with the
-        photographs in them are the foam on top. We make things — mostly
-        paper things — for the hours under the foam.
-      </p>
-    </div>
+  <section class="about-strip">
+    <div class="eyebrow-mark">— about the studio —</div>
+    <p>
+      Soothemade is a small house with one room finished and a few more
+      being built. We make planners, journals, printables, and cards for
+      the <em>hours under the foam</em>. The Tuesday with nothing planned.
+      The recovery month nobody warned you about.
+    </p>
   </section>
 
-  <section class="lines-section rule-top">
-    <div class="head">
-      <div class="eyebrow">— the rooms in the house —</div>
-      <h2>A small house. <em>One room open.</em> More being built.</h2>
-    </div>
-    <LineCards />
-    <div class="lines-foot">
-      <a href="/lines">See all the rooms →</a>
-    </div>
-  </section>
+  <LineCards />
 
   <Manifesto
     quote="We make things at the"
@@ -68,7 +58,13 @@ const featuredJournalPosts = allPosts
     tail="Some weeks something gets finished. Some weeks it doesn't. It evens out the way a season does."
   />
 
-  {featuredJournalPosts.length > 0 && <JournalRow posts={featuredJournalPosts} title="— Letters from the studio —" />}
+  {featuredJournalPosts.length > 0 && (
+    <JournalRow
+      posts={featuredJournalPosts}
+      title="Three"
+      titleAccent="recent notes."
+    />
+  )}
 
   <Newsletter />
 
@@ -76,55 +72,35 @@ const featuredJournalPosts = allPosts
 </BaseLayout>
 
 <style>
-  .lead {
-    padding: 72px var(--sp-7);
-    background: var(--surface);
-  }
-  .inner {
-    max-width: var(--container-narrow);
+  .about-strip {
+    padding: 88px var(--sp-7);
+    max-width: 1100px;
     margin: 0 auto;
+    text-align: center;
+  }
+  .about-strip .eyebrow-mark {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  .about-strip p {
     font-family: var(--font-serif);
-    font-size: 21px;
+    font-size: 22px;
     line-height: 1.55;
     color: var(--ink);
-    text-align: center;
+    margin: 0 auto;
+    max-width: 58ch;
+    font-weight: 300;
   }
-  .inner p { margin: 0 0 22px; font-weight: 300; }
-  .inner p:last-child { margin-bottom: 0; }
-
-  .lines-section { padding-bottom: 32px; }
-  .lines-section .head {
-    text-align: center;
-    padding: 64px var(--sp-7) 0;
-  }
-  .lines-section h2 {
-    font-family: var(--font-serif);
-    font-size: 36px;
-    margin: 14px 0 8px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.15;
-  }
-  .lines-section h2 em { font-style: italic; color: var(--accent); }
-
-  .lines-foot {
-    text-align: center;
-    padding: 0 var(--sp-7) 56px;
-  }
-  .lines-foot a {
-    font-family: var(--font-serif);
+  .about-strip p em {
     font-style: italic;
-    color: var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 1px;
-    font-size: 16px;
+    color: var(--accent);
   }
-  .lines-foot a:hover { color: var(--accent); border-color: var(--accent); }
-
   @media (max-width: 880px) {
-    .lead { padding: 48px var(--sp-5); }
-    .inner { font-size: 18px; }
-    .lines-section .head { padding: 48px var(--sp-5) 0; }
-    .lines-section h2 { font-size: 28px; }
+    .about-strip { padding: 56px var(--sp-5); }
+    .about-strip p { font-size: 18px; }
   }
 </style>
