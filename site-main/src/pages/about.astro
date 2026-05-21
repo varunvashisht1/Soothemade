@@ -9,9 +9,13 @@ import Footer from '~/components/Footer.astro';
   description="A small studio making slow, considered things for the parts of life no one is photographing."
 >
   <Nav />
+  <section class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">— about the studio —</div>
+      <h1>A small studio, made <em>slowly</em>, in plain language.</h1>
+    </div>
+  </section>
   <article class="about">
-    <div class="eyebrow">— about the studio —</div>
-    <h1>A small studio, made <em>slowly</em>, in plain language.</h1>
     <div class="body">
       <p>
         Soothemade is a small studio that makes things — mostly paper
@@ -95,21 +99,9 @@ import Footer from '~/components/Footer.astro';
   .about {
     max-width: var(--container-narrow);
     margin: 0 auto;
-    padding: 72px var(--sp-7) 80px;
+    padding: 72px var(--sp-7) 96px;
   }
-  .eyebrow { text-align: center; margin-bottom: 16px; }
-  h1 {
-    font-family: var(--font-serif);
-    font-size: var(--fs-4xl);
-    margin: 0 0 40px;
-    text-align: center;
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: var(--ls-tight);
-    color: var(--ink);
-  }
-  h1 em { font-style: italic; color: var(--accent); }
-  .body { font-size: 18px; line-height: 1.75; color: var(--ink); }
+  .body { font-size: 18px; line-height: 1.75; color: var(--apo-paper); }
   .body h2 {
     font-family: var(--font-serif);
     font-style: italic;
@@ -119,13 +111,12 @@ import Footer from '~/components/Footer.astro';
     color: var(--ink);
   }
   .body p { margin: 0 0 20px; }
-  .body em { font-style: italic; color: var(--accent); }
+  .body em { font-style: italic; color: var(--accent-soft); }
   .body ul { margin: 0 0 22px 24px; padding: 0; }
   .body li { margin-bottom: 10px; }
-  .body a { color: var(--accent); border-bottom: 1px solid var(--rule-strong); }
+  .body a { color: var(--accent-soft); border-bottom: 1px solid var(--apo-rule-strong); }
   @media (max-width: 880px) {
-    .about { padding: 48px var(--sp-5) 64px; }
-    h1 { font-size: 38px; }
+    .about { padding: 56px var(--sp-5) 72px; }
     .body { font-size: 16px; }
   }
 </style>

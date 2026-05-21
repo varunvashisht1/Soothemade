@@ -8,10 +8,13 @@ import Footer from '~/components/Footer.astro';
   description="The Soothemade Notes returns policy, privacy approach, and licensing terms."
 >
   <Nav />
+  <section class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">— the fine print, plainly —</div>
+      <h1>Returns, privacy, and what you can do with your files.</h1>
+    </div>
+  </section>
   <article class="legal">
-    <div class="eyebrow">— the fine print, plainly —</div>
-    <h1>Returns, privacy, and what you can do with your files.</h1>
-
     <h2>Returns</h2>
     <p>Soothemade Notes products are digital downloads — instant PDFs. Because the file is delivered at purchase, we do not offer refunds as a default. If something genuinely doesn't work for you, write to <a href="mailto:notes@soothemade.com">notes@soothemade.com</a> and we'll figure it out. Quietly.</p>
 
@@ -34,18 +37,7 @@ import Footer from '~/components/Footer.astro';
   .legal {
     max-width: var(--container-narrow);
     margin: 0 auto;
-    padding: 72px var(--sp-7) 100px;
-  }
-  .eyebrow { text-align: center; font-size: var(--fs-xs); letter-spacing: var(--ls-widest); text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
-  h1 {
-    font-family: var(--font-serif);
-    font-size: 42px;
-    margin: 0 0 40px;
-    text-align: center;
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: var(--ls-tight);
-    color: var(--ink);
+    padding: 64px var(--sp-7) 104px;
   }
   h2 {
     font-family: var(--font-serif);
@@ -55,10 +47,10 @@ import Footer from '~/components/Footer.astro';
     font-weight: 500;
     color: var(--ink);
   }
+  h2:first-child { margin-top: 0; }
   p { font-size: 16px; line-height: 1.7; color: var(--ink); margin: 0 0 16px; }
-  a { color: var(--accent); border-bottom: 1px solid var(--rule-strong); }
+  a { color: var(--accent-soft); border-bottom: 1px solid var(--n-rule-strong); }
   @media (max-width: 880px) {
     .legal { padding: 48px var(--sp-5) 72px; }
-    h1 { font-size: 30px; }
   }
 </style>

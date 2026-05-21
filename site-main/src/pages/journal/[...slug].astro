@@ -27,8 +27,8 @@ const fmt = (d: Date) =>
 ---
 <BaseLayout title={`${post.data.title} — Soothemade journal`} description={post.data.description}>
   <Nav />
-  <article class="essay">
-    <header>
+  <header class="essay-head">
+    <div class="essay-head-inner">
       <div class="meta">
         <span class="cat">{post.data.category}</span>
         <span class="dot" aria-hidden="true">·</span>
@@ -37,7 +37,9 @@ const fmt = (d: Date) =>
       </div>
       <h1>{post.data.title}</h1>
       <p class="lede">{post.data.description}</p>
-    </header>
+    </div>
+  </header>
+  <article class="essay">
     <div class="prose">
       <Content />
     </div>
@@ -50,48 +52,57 @@ const fmt = (d: Date) =>
 </BaseLayout>
 
 <style>
+  .essay-head {
+    background:
+      radial-gradient(ellipse 800px 500px at 30% 25%, rgba(184, 134, 42, 0.14), transparent 60%),
+      linear-gradient(170deg, var(--apo-hero-1) 0%, var(--apo-hero-2) 60%, var(--apo-hero-3) 100%);
+    padding: 96px var(--sp-7) 64px;
+    text-align: center;
+  }
+  .essay-head-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
   .essay {
     max-width: 680px;
     margin: 0 auto;
-    padding: 64px var(--sp-7) 64px;
+    padding: 72px var(--sp-7) 80px;
   }
   .meta {
     font-size: 10.5px;
     letter-spacing: var(--ls-wider);
     text-transform: uppercase;
-    color: var(--ink-faint);
-    text-align: center;
+    color: var(--apo-paper-faint);
     margin-bottom: 22px;
     display: flex;
     justify-content: center;
     gap: 8px;
   }
-  .cat { color: var(--accent); }
+  .cat { color: var(--accent-soft); }
   h1 {
     font-family: var(--font-serif);
-    font-size: 46px;
-    text-align: center;
+    font-size: 52px;
     margin: 0 0 18px;
-    line-height: 1.1;
-    font-weight: 500;
+    line-height: 1.05;
+    font-weight: 300;
     letter-spacing: var(--ls-tight);
-    color: var(--ink);
+    color: var(--apo-paper);
   }
   .lede {
     font-family: var(--font-serif);
     font-style: italic;
-    text-align: center;
-    color: var(--ink-soft);
-    font-size: 19px;
-    margin: 0 auto 44px;
+    color: var(--apo-paper-dim);
+    font-size: 20px;
+    margin: 0 auto;
     max-width: 540px;
     line-height: 1.5;
+    font-weight: 300;
   }
   .prose {
     font-family: var(--font-serif);
     font-size: 19px;
     line-height: 1.75;
-    color: var(--ink);
+    color: var(--apo-paper);
   }
   .prose :global(p) { margin: 0 0 22px; }
   .prose :global(h2) {
@@ -104,36 +115,37 @@ const fmt = (d: Date) =>
   .prose :global(ul),
   .prose :global(ol) { margin: 0 0 22px 28px; }
   .prose :global(li) { margin-bottom: 8px; }
-  .prose :global(em) { font-style: italic; color: var(--accent); }
+  .prose :global(em) { font-style: italic; color: var(--accent-soft); }
   .prose :global(a) {
-    color: var(--accent);
-    border-bottom: 1px solid var(--rule-strong);
+    color: var(--accent-soft);
+    border-bottom: 1px solid var(--apo-rule-strong);
   }
   .prose :global(blockquote) {
-    border-left: 2px solid var(--accent);
+    border-left: 2px solid var(--accent-soft);
     padding-left: 18px;
     margin: 24px 0;
     font-style: italic;
-    color: var(--ink-soft);
+    color: var(--apo-paper-dim);
   }
   .back {
-    margin-top: 48px;
+    margin-top: 56px;
     padding-top: 24px;
-    border-top: 1px solid var(--rule);
+    border-top: 1px solid var(--apo-rule-light);
     text-align: center;
   }
   .back a {
     font-family: var(--font-serif);
     font-style: italic;
-    color: var(--ink);
-    border-bottom: 1px solid var(--rule-strong);
+    color: var(--apo-paper);
+    border-bottom: 1px solid var(--apo-rule-strong);
     padding-bottom: 1px;
   }
-  .back a:hover { color: var(--accent); border-color: var(--accent); }
+  .back a:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
 
   @media (max-width: 880px) {
-    .essay { padding: 48px var(--sp-5); }
-    h1 { font-size: 32px; }
+    .essay-head { padding: 64px var(--sp-5) 48px; }
+    .essay { padding: 56px var(--sp-5); }
+    h1 { font-size: 36px; }
     .lede { font-size: 17px; }
     .prose { font-size: 17px; }
   }

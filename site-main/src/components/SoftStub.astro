@@ -15,54 +15,63 @@ const {
 } = Astro.props;
 ---
 <section class="stub">
-  <div class="eyebrow">{eyebrow}</div>
-  <h1>{heading}</h1>
-  <p>{body}</p>
-  <a class="back" href={backHref}>{backLabel}</a>
+  <div class="stub-inner">
+    <div class="eyebrow">{eyebrow}</div>
+    <h1>{heading}</h1>
+    <p>{body}</p>
+    <a class="back" href={backHref}>{backLabel}</a>
+  </div>
 </section>
 
 <style>
   .stub {
+    background:
+      radial-gradient(ellipse 800px 500px at 30% 25%, rgba(184, 134, 42, 0.14), transparent 60%),
+      linear-gradient(170deg, var(--apo-hero-1) 0%, var(--apo-hero-2) 60%, var(--apo-hero-3) 100%);
+  }
+  .stub-inner {
     max-width: 640px;
     margin: 0 auto;
-    padding: 120px var(--sp-7) 140px;
+    padding: 140px var(--sp-7) 160px;
     text-align: center;
   }
   .eyebrow {
-    font-size: var(--fs-xs);
-    letter-spacing: var(--ls-widest);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 18px;
+    color: var(--accent-soft);
+    margin-bottom: 22px;
   }
   h1 {
     font-family: var(--font-serif);
-    font-size: 48px;
-    margin: 0 0 22px;
-    font-weight: 400;
+    font-size: 52px;
+    margin: 0 0 24px;
+    font-weight: 300;
     line-height: 1.1;
     letter-spacing: var(--ls-tight);
-    color: var(--ink);
+    color: var(--apo-paper);
   }
   p {
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 20px;
-    color: var(--ink-soft);
-    line-height: 1.5;
-    margin: 0 0 32px;
+    color: var(--apo-paper-dim);
+    line-height: 1.55;
+    margin: 0 0 36px;
+    font-weight: 300;
   }
   .back {
     font-family: var(--font-serif);
     font-style: italic;
-    color: var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 1px;
+    color: var(--apo-paper);
+    border-bottom: 1px solid var(--apo-rule-strong);
+    padding-bottom: 2px;
     font-size: 17px;
   }
-  .back:hover { color: var(--accent); border-color: var(--accent); }
+  .back:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
   @media (max-width: 880px) {
-    .stub { padding: 80px var(--sp-5) 100px; }
+    .stub-inner { padding: 96px var(--sp-5) 112px; }
     h1 { font-size: 34px; }
     p { font-size: 17px; }
   }

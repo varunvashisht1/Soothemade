@@ -34,16 +34,18 @@ const related = (post.data.relatedProducts ?? [])
       <a href="/journal">← back to the journal</a>
     </div>
 
-    <header class="head">
-      <div class="meta">
-        {post.data.categories?.[0] && <span>{post.data.categories[0]}</span>}
-        {post.data.readTime && <span>· {post.data.readTime}</span>}
-        <span>· {dtf.format(post.data.date)}</span>
-      </div>
-      <h1>{post.data.title}</h1>
-      <p class="dek">{post.data.description}</p>
-      <div class="byline">By {post.data.author}</div>
-    </header>
+    <div class="head-wrap">
+      <header class="head">
+        <div class="meta">
+          {post.data.categories?.[0] && <span>{post.data.categories[0]}</span>}
+          {post.data.readTime && <span>· {post.data.readTime}</span>}
+          <span>· {dtf.format(post.data.date)}</span>
+        </div>
+        <h1>{post.data.title}</h1>
+        <p class="dek">{post.data.description}</p>
+        <div class="byline">By {post.data.author}</div>
+      </header>
+    </div>
 
     <div class="body">
       <Content />
@@ -83,10 +85,15 @@ const related = (post.data.relatedProducts ?? [])
   .crumbs a { color: var(--ink-soft); }
   .crumbs a:hover { color: var(--accent); }
 
+  .head-wrap {
+    background:
+      radial-gradient(ellipse 800px 500px at 25% 30%, rgba(214, 138, 114, 0.14), transparent 60%),
+      linear-gradient(170deg, var(--n-hero-1) 0%, var(--n-hero-2) 60%, var(--n-hero-3) 100%);
+  }
   .head {
     max-width: var(--container-narrow);
     margin: 0 auto;
-    padding: 48px var(--sp-7) 32px;
+    padding: 80px var(--sp-7) 56px;
     text-align: center;
   }
   .meta {
@@ -190,13 +197,13 @@ const related = (post.data.relatedProducts ?? [])
   .body :global(a:hover) { border-bottom-color: var(--accent); }
   .body :global(code) {
     font-family: ui-monospace, monospace;
-    background: var(--surface-deep);
+    background: rgba(235, 226, 200, 0.08);
     padding: 2px 6px;
     border-radius: 3px;
     font-size: 0.9em;
   }
   .body :global(pre) {
-    background: var(--surface-deep);
+    background: rgba(235, 226, 200, 0.06);
     padding: 18px 20px;
     border-radius: var(--radius-md);
     overflow-x: auto;
@@ -205,18 +212,20 @@ const related = (post.data.relatedProducts ?? [])
 
   /* Related */
   .related {
-    border-top: 1px solid var(--rule);
-    padding: 64px var(--sp-7) 48px;
-    background: var(--surface-deep);
+    border-top: 1px solid var(--n-rule-light);
+    padding: 88px var(--sp-7) 72px;
+    background:
+      radial-gradient(ellipse 800px 400px at 50% 0%, rgba(168, 184, 138, 0.10), transparent 70%),
+      linear-gradient(170deg, var(--n-prods-1) 0%, var(--n-prods-2) 60%, var(--n-prods-3) 100%);
   }
   .related h2 {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 28px;
-    margin: 0 0 32px;
+    font-size: 30px;
+    margin: 0 0 36px;
     text-align: center;
     color: var(--ink);
-    font-weight: 400;
+    font-weight: 300;
   }
   .related-grid {
     display: grid;

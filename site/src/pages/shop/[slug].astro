@@ -84,9 +84,11 @@ const heroImage = coverFor(product.data.code);
       </aside>
     )}
 
-    <section class="body">
-      <Content />
-    </section>
+    <div class="body-wrap">
+      <section class="body">
+        <Content />
+      </section>
+    </div>
 
     {crossSell.length > 0 && (
       <section class="cross">
@@ -114,20 +116,26 @@ const heroImage = coverFor(product.data.code);
 </BaseLayout>
 
 <style>
-  .product { padding: 0; }
+  .product {
+    padding: 0;
+    background:
+      radial-gradient(ellipse 700px 400px at 25% 30%, rgba(214, 138, 114, 0.12), transparent 60%),
+      radial-gradient(ellipse 600px 700px at 80% 75%, rgba(168, 184, 138, 0.10), transparent 60%),
+      linear-gradient(170deg, var(--n-hero-1) 0%, var(--n-hero-2) 60%, var(--n-hero-3) 100%);
+  }
   .crumbs {
-    padding: 24px var(--sp-7) 0;
+    padding: 32px var(--sp-7) 0;
     font-family: var(--font-serif);
     font-style: italic;
   }
-  .crumbs a { color: var(--ink-soft); }
-  .crumbs a:hover { color: var(--accent); }
+  .crumbs a { color: var(--n-paper-soft); }
+  .crumbs a:hover { color: var(--accent-soft); }
 
   .hero {
-    padding: 48px var(--sp-7) 72px;
+    padding: 56px var(--sp-7) 80px;
     display: grid;
     grid-template-columns: 1.4fr 1fr;
-    gap: 48px;
+    gap: 56px;
     align-items: center;
   }
   .code {
@@ -140,9 +148,9 @@ const heroImage = coverFor(product.data.code);
   h1 {
     font-family: var(--font-serif);
     font-size: var(--fs-4xl);
-    margin: 0 0 22px;
-    font-weight: 400;
-    line-height: 1.05;
+    margin: 0 0 24px;
+    font-weight: 300;
+    line-height: 1.02;
     letter-spacing: var(--ls-tight);
     color: var(--ink);
   }
@@ -150,10 +158,11 @@ const heroImage = coverFor(product.data.code);
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 21px;
-    color: var(--ink-soft);
-    margin: 0 0 28px;
-    line-height: 1.4;
+    color: var(--n-paper-dim);
+    margin: 0 0 30px;
+    line-height: 1.5;
     max-width: 540px;
+    font-weight: 300;
   }
   .actions {
     display: flex;
@@ -217,22 +226,26 @@ const heroImage = coverFor(product.data.code);
   }
 
   .ymyl {
-    background: var(--surface-deep);
-    color: var(--ink-soft);
-    padding: 22px var(--sp-7);
-    border-bottom: 1px solid var(--rule);
-    font-size: 14px;
-    line-height: 1.55;
+    background: linear-gradient(170deg, var(--n-quote-1) 0%, var(--n-quote-2) 100%);
+    color: var(--n-paper-dim);
+    padding: 28px var(--sp-7);
+    border-top: 1px solid var(--n-rule-light);
+    border-bottom: 1px solid var(--n-rule-light);
+    font-size: 14.5px;
+    line-height: 1.6;
   }
-  .ymyl strong { color: var(--accent); font-weight: 500; }
+  .ymyl strong { color: var(--accent-soft); font-weight: 500; }
   .ymyl em { font-style: italic; color: var(--ink); }
-  .ymyl a { color: var(--accent); text-decoration: underline; }
+  .ymyl a { color: var(--accent-soft); text-decoration: underline; }
 
   /* Long-form body */
+  .body-wrap {
+    background: linear-gradient(170deg, var(--n-letters-1) 0%, var(--n-letters-2) 60%, var(--n-letters-3) 100%);
+  }
   .body {
     max-width: 720px;
     margin: 0 auto;
-    padding: 64px var(--sp-7) 80px;
+    padding: 88px var(--sp-7) 96px;
     color: var(--ink);
     font-size: 17px;
     line-height: 1.7;
@@ -255,31 +268,33 @@ const heroImage = coverFor(product.data.code);
   .body :global(ul), .body :global(ol) { margin: 0 0 22px 22px; padding: 0; }
   .body :global(li) { margin-bottom: 8px; }
   .body :global(strong) { color: var(--ink); font-weight: 500; }
-  .body :global(em) { font-style: italic; color: var(--accent); }
+  .body :global(em) { font-style: italic; color: var(--accent-soft); }
   .body :global(blockquote) {
-    border-left: 2px solid var(--accent);
+    border-left: 2px solid var(--accent-soft);
     padding: 8px 0 8px 18px;
     margin: 22px 0;
     font-family: var(--font-serif);
     font-style: italic;
-    color: var(--ink-soft);
+    color: var(--n-paper-dim);
   }
-  .body :global(a) { color: var(--accent); border-bottom: 1px solid var(--rule-strong); }
+  .body :global(a) { color: var(--accent-soft); border-bottom: 1px solid var(--n-rule-strong); }
 
   /* Cross-sell */
   .cross {
-    border-top: 1px solid var(--rule);
-    padding: 64px var(--sp-7) 48px;
-    background: var(--surface-deep);
+    border-top: 1px solid var(--n-rule-light);
+    padding: 88px var(--sp-7) 72px;
+    background:
+      radial-gradient(ellipse 800px 400px at 50% 0%, rgba(168, 184, 138, 0.10), transparent 70%),
+      linear-gradient(170deg, var(--n-prods-1) 0%, var(--n-prods-2) 60%, var(--n-prods-3) 100%);
   }
   .cross h2 {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 28px;
-    margin: 0 0 32px;
+    font-size: 30px;
+    margin: 0 0 36px;
     text-align: center;
     color: var(--ink);
-    font-weight: 400;
+    font-weight: 300;
   }
   .cross-grid {
     display: grid;

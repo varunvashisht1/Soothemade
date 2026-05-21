@@ -21,14 +21,13 @@ const fmt = (d: Date) =>
   description="Short letters from the studio. Slowness, pace, the unphotographed life."
 >
   <Nav />
-  <header class="head">
-    <div class="eyebrow">— letters from the studio —</div>
-    <h1>The <em>journal.</em></h1>
-    <p class="lede">
-      A short letter, every other Sunday. Specific observations, slow
-      arguments, the occasional free printable. No life-hacks. No tips.
-    </p>
-  </header>
+  <section class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">— letters from the studio —</div>
+      <h1>The <em>journal.</em></h1>
+      <p class="lede">A short letter, every other Sunday. Specific observations, slow arguments, the occasional free printable. No life-hacks. No tips.</p>
+    </div>
+  </section>
 
   <main class="list">
     {posts.map((p) => (
@@ -51,84 +50,55 @@ const fmt = (d: Date) =>
 </BaseLayout>
 
 <style>
-  .head {
-    text-align: center;
-    padding: 72px var(--sp-7) 48px;
-    max-width: var(--container-narrow);
-    margin: 0 auto;
-  }
-  .eyebrow { margin-bottom: 16px; }
-  h1 {
-    font-family: var(--font-serif);
-    font-size: var(--fs-4xl);
-    margin: 0 0 18px;
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: var(--ls-tight);
-    color: var(--ink);
-  }
-  h1 em { font-style: italic; color: var(--accent); }
-  .lede {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 19px;
-    color: var(--ink-soft);
-    line-height: 1.5;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
   .list {
     max-width: var(--container-narrow);
     margin: 0 auto;
-    padding: 0 var(--sp-7) 64px;
+    padding: 56px var(--sp-7) 80px;
   }
   .entry {
     padding: 36px 0;
-    border-top: 1px solid var(--rule);
+    border-top: 1px solid var(--apo-rule-light);
   }
-  .entry:last-child { border-bottom: 1px solid var(--rule); }
+  .entry:last-child { border-bottom: 1px solid var(--apo-rule-light); }
   .meta {
     font-size: 10.5px;
     letter-spacing: var(--ls-wider);
     text-transform: uppercase;
-    color: var(--ink-faint);
+    color: var(--apo-paper-faint);
     margin-bottom: 14px;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     align-items: center;
   }
-  .cat { color: var(--accent); }
+  .cat { color: var(--accent-soft); }
   .entry h2 {
     font-family: var(--font-serif);
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.15;
     margin: 0 0 10px;
   }
-  .entry h2 a { color: var(--ink); }
-  .entry h2 a:hover { color: var(--accent); }
+  .entry h2 a { color: var(--apo-paper); }
+  .entry h2 a:hover { color: var(--accent-soft); }
   .desc {
     font-size: 16px;
-    color: var(--ink-soft);
+    color: var(--apo-paper-dim);
     line-height: 1.55;
     margin-bottom: 14px;
   }
   .read {
     font-family: var(--font-serif);
     font-style: italic;
-    color: var(--ink);
-    border-bottom: 1px solid var(--rule-strong);
+    color: var(--apo-paper);
+    border-bottom: 1px solid var(--apo-rule-strong);
     padding-bottom: 1px;
     font-size: 15px;
   }
-  .read:hover { color: var(--accent); border-color: var(--accent); }
+  .read:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
 
   @media (max-width: 880px) {
-    .head { padding: 48px var(--sp-5) 32px; }
-    h1 { font-size: 40px; }
-    .list { padding: 0 var(--sp-5) 48px; }
+    .list { padding: 40px var(--sp-5) 64px; }
     .entry h2 { font-size: 24px; }
   }
 </style>

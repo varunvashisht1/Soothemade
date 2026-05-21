@@ -9,12 +9,16 @@ import Footer from '~/components/Footer.astro';
   description="Get in touch with the Soothemade Notes studio."
 >
   <Nav />
+  <section class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">— get in touch —</div>
+      <h1>Write us a <em>letter.</em></h1>
+      <p class="lede">Questions about a product, requests for a specific kind of printable, press inquiries, complaints, kindness — they all go to the same inbox.</p>
+    </div>
+  </section>
   <section class="contact">
-    <div class="eyebrow">— get in touch —</div>
-    <h1>Write us a letter.</h1>
-    <p>Questions about a product, requests for a specific kind of printable, press inquiries, complaints, kindness — they all go to the same inbox. We read everything. We reply when we can.</p>
     <a class="email" href="mailto:notes@soothemade.com">notes@soothemade.com</a>
-    <p class="fine">A web contact form is in the queue. For now, plain email is the most direct route.</p>
+    <p class="fine">We read everything. We reply when we can. A web contact form is in the queue — for now, plain email is the most direct route.</p>
   </section>
   <Newsletter />
   <Footer />
@@ -24,49 +28,28 @@ import Footer from '~/components/Footer.astro';
   .contact {
     max-width: 580px;
     margin: 0 auto;
-    padding: 100px var(--sp-7) 120px;
+    padding: 64px var(--sp-7) 104px;
     text-align: center;
-  }
-  .eyebrow {
-    font-size: var(--fs-xs);
-    letter-spacing: var(--ls-widest);
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 18px;
-  }
-  h1 {
-    font-family: var(--font-serif);
-    font-size: 48px;
-    margin: 0 0 22px;
-    font-weight: 400;
-    line-height: 1.1;
-    color: var(--ink);
-    letter-spacing: var(--ls-tight);
-  }
-  p {
-    font-size: 17px;
-    color: var(--ink-soft);
-    line-height: 1.6;
-    margin: 0 0 28px;
   }
   .email {
     font-family: var(--font-serif);
     font-style: italic;
-    color: var(--accent);
-    font-size: 26px;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 2px;
+    color: var(--accent-soft);
+    font-size: 30px;
+    border-bottom: 1px solid var(--accent-soft);
+    padding-bottom: 4px;
   }
+  .email:hover { color: var(--ink); border-color: var(--ink); }
   .fine {
-    margin-top: 32px;
-    font-size: 13px;
-    color: var(--ink-faint);
+    margin-top: 36px;
+    font-size: 14px;
+    color: var(--n-paper-dim);
     font-style: italic;
     font-family: var(--font-serif);
+    line-height: 1.55;
   }
   @media (max-width: 880px) {
-    .contact { padding: 72px var(--sp-5) 88px; }
-    h1 { font-size: 34px; }
-    .email { font-size: 21px; }
+    .contact { padding: 48px var(--sp-5) 72px; }
+    .email { font-size: 22px; }
   }
 </style>
