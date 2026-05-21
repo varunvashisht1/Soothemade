@@ -29,14 +29,9 @@ const columns = [
 ];
 const year = new Date().getFullYear();
 ---
-<footer class="foot rule-top">
+<footer class="foot">
   <div class="row">
     <div class="brand-block">
-      <svg class="brand-sprig" viewBox="370 125 60 95" fill="none" aria-hidden="true">
-        <path d="M 400 215 Q 397 175 401 130" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
-        <ellipse cx="386" cy="190" rx="11" ry="4" fill="currentColor" transform="rotate(-45 386 190)"/>
-        <ellipse cx="414" cy="160" rx="11" ry="4" fill="currentColor" transform="rotate(45 414 160)"/>
-      </svg>
       <div class="logo">Soothemade</div>
       <p>A small studio of slow, considered things. Made for the parts of life no one is photographing.</p>
     </div>
@@ -63,41 +58,34 @@ const year = new Date().getFullYear();
 
 <style>
   .foot {
-    background: var(--surface-deepest);
-    color: var(--ink-soft);
-    padding: 48px var(--sp-7) 32px;
+    background: var(--apo-tile-footer);
+    color: var(--apo-paper-dim);
+    padding: 64px var(--sp-7) 36px;
   }
   .row {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 40px;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
   }
   h4 {
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 16px;
     margin: 0 0 14px;
-    color: var(--ink);
+    color: var(--apo-paper);
     font-weight: 500;
   }
   ul { list-style: none; padding: 0; margin: 0; }
   li { margin-bottom: 8px; font-size: 13px; }
-  a { color: var(--ink-soft); transition: color var(--t-fast) var(--ease); }
-  a:hover { color: var(--accent); }
-  .brand-block .brand-sprig {
-    width: 22px;
-    height: 36px;
-    color: var(--sage);
-    display: block;
-    margin-bottom: 14px;
-  }
+  a { color: var(--apo-paper-dim); transition: color var(--t-fast) var(--ease); }
+  a:hover { color: var(--accent-soft); }
   .brand-block .logo {
     font-family: var(--font-script);
-    font-size: 32px;
+    font-size: 36px;
     line-height: 1;
-    color: var(--ink);
-    margin-bottom: 14px;
+    color: var(--apo-paper);
+    margin-bottom: 16px;
     font-weight: 500;
   }
   .brand-block p {
@@ -105,21 +93,22 @@ const year = new Date().getFullYear();
     max-width: 280px;
     margin: 0;
     line-height: 1.55;
+    color: var(--apo-paper-soft);
   }
   .bottom {
-    border-top: 1px solid var(--rule);
-    padding-top: 18px;
+    border-top: 1px solid var(--apo-rule-light);
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
     font-size: 11px;
     letter-spacing: var(--ls-wide);
     text-transform: uppercase;
-    color: var(--ink-faint);
+    color: var(--apo-paper-faint);
     flex-wrap: wrap;
     gap: var(--sp-3);
   }
   @media (max-width: 880px) {
-    .foot { padding: 40px var(--sp-5) 24px; }
+    .foot { padding: 48px var(--sp-5) 28px; }
     .row { grid-template-columns: 1fr 1fr; gap: 28px; }
   }
 </style>

@@ -91,30 +91,33 @@ const featuredJournalPosts = allPosts
 </BaseLayout>
 
 <style>
-  /* "Dear stranger" — a short letter from the studio.
-     Sits between the hero and the rooms, narrow column, intimate. */
+  /* "Dear stranger" — a candlelit warm tile between the hero
+     and the rooms. Narrow column, intimate, dark gradient bg. */
   .dear-stranger {
-    padding: 96px var(--sp-7) 88px;
-    max-width: 620px;
-    margin: 0 auto;
-    text-align: left;
     position: relative;
+    padding: 112px var(--sp-7) 104px;
+    background:
+      radial-gradient(ellipse 800px 500px at 30% 25%, rgba(184, 134, 42, 0.14), transparent 60%),
+      linear-gradient(180deg, var(--apo-tile-letter-1) 0%, var(--apo-tile-letter-2) 60%, var(--apo-tile-letter-3) 100%);
+    color: var(--apo-paper);
+    overflow: hidden;
   }
+  .dear-stranger > * { position: relative; z-index: 1; max-width: 620px; margin-left: auto; margin-right: auto; }
   .dear-stranger .eyebrow-mark {
     font-family: var(--font-sans);
     font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--ink-faint);
-    margin-bottom: 28px;
+    color: var(--accent-soft);
+    margin-bottom: 32px;
     text-align: center;
   }
   .dear-stranger .salutation {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 30px;
+    font-size: 32px;
     line-height: 1.2;
-    color: var(--ink);
+    color: var(--apo-paper);
     margin: 0 0 28px;
     font-weight: 300;
   }
@@ -122,37 +125,35 @@ const featuredJournalPosts = allPosts
     font-family: var(--font-serif);
     font-size: 18px;
     line-height: 1.75;
-    color: var(--ink);
+    color: var(--apo-paper-dim);
     margin: 0 0 22px;
     font-weight: 300;
   }
   .dear-stranger .letter-body p:last-child { margin-bottom: 0; }
   .dear-stranger .letter-body em {
     font-style: italic;
-    color: var(--accent);
+    color: var(--accent-soft);
   }
-  .dear-stranger .signoff {
-    margin-top: 36px;
-  }
+  .dear-stranger .signoff { margin-top: 40px; }
   .dear-stranger .with-care {
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 17px;
-    color: var(--ink-soft);
+    color: var(--apo-paper-soft);
     margin: 0 0 4px;
     font-weight: 300;
   }
   .dear-stranger .signature {
     font-family: var(--font-script);
-    font-size: 40px;
+    font-size: 42px;
     line-height: 1;
-    color: var(--ink);
+    color: var(--apo-paper);
     margin: 0;
     font-weight: 500;
   }
   @media (max-width: 880px) {
-    .dear-stranger { padding: 64px var(--sp-5); }
-    .dear-stranger .salutation { font-size: 24px; }
+    .dear-stranger { padding: 72px var(--sp-5); }
+    .dear-stranger .salutation { font-size: 26px; }
     .dear-stranger .letter-body p { font-size: 16.5px; }
     .dear-stranger .signature { font-size: 34px; }
   }
