@@ -5,9 +5,10 @@
  * <style> the layout injects to apply the chosen preset + any hybrid
  * token overrides.
  *
- * The umbrella site defaults to `daylight`. Notes' three dark themes
- * are also available for visual continuity if we ever want a darker
- * page.
+ * The umbrella site defaults to `apothecary` (warm-black hero + cream
+ * paper). `daylight` is preserved as a light alternate; Notes' three
+ * dark themes (`forest`, `charcoal`, `mossy`) are also available for
+ * visual continuity.
  */
 
 import themeData from '~/data/theme.json';
