@@ -1,6 +1,4 @@
 ---
-import BotanicalLeaf from './BotanicalLeaf.astro';
-
 interface Props {
   eyebrow?: string;
   headlinePre: string;
@@ -22,63 +20,74 @@ const {
 } = Astro.props;
 ---
 <section class="hero">
-  <BotanicalLeaf class="leaf l1" size={70} rotate={-25} />
-  <BotanicalLeaf class="leaf l2" size={56} rotate={45} />
-  <BotanicalLeaf class="leaf l3" size={60} rotate={110} />
-  <BotanicalLeaf class="leaf l4" size={48} rotate={-50} />
-
-  {eyebrow && <div class="eyebrow">{eyebrow}</div>}
-  <h1>
-    {headlinePre}{headlineAccent && (<>{' '}<em>{headlineAccent}</em></>)}{headlinePost && (<>{' '}{headlinePost}</>)}
-  </h1>
-  <p>{body}</p>
-  {(primaryCta || secondaryCta) && (
-    <div class="cta-row">
-      {primaryCta && <a class="btn btn-primary" href={primaryCta.href}>{primaryCta.label}</a>}
-      {secondaryCta && <a class="btn btn-secondary" href={secondaryCta.href}>{secondaryCta.label}</a>}
-    </div>
-  )}
+  <div class="hero-inner">
+    {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+    <h1>
+      {headlinePre}{headlineAccent && (<>{' '}<em>{headlineAccent}</em></>)}{headlinePost && (<>{' '}{headlinePost}</>)}
+    </h1>
+    <p>{body}</p>
+    {(primaryCta || secondaryCta) && (
+      <div class="cta-row">
+        {primaryCta && <a class="btn btn-primary" href={primaryCta.href}>{primaryCta.label}</a>}
+        {secondaryCta && <a class="btn btn-secondary" href={secondaryCta.href}>{secondaryCta.label}</a>}
+      </div>
+    )}
+  </div>
 </section>
 
 <style>
   .hero {
-    padding: 84px var(--sp-7) 64px;
+    padding: 120px var(--sp-7) 100px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    background:
+      radial-gradient(ellipse 800px 500px at 25% 30%, rgba(214, 138, 114, 0.16), transparent 60%),
+      radial-gradient(ellipse 600px 700px at 80% 75%, rgba(168, 184, 138, 0.16), transparent 60%),
+      linear-gradient(170deg, var(--n-hero-1) 0%, var(--n-hero-2) 60%, var(--n-hero-3) 100%);
   }
-  .leaf { position: absolute; opacity: 0.5; color: var(--sage); }
-  .leaf.l1 { top: 48px; left: 64px; }
-  .leaf.l2 { top: 80px; right: 90px; }
-  .leaf.l3 { bottom: 32px; left: 140px; }
-  .leaf.l4 { bottom: 60px; right: 160px; }
+  .hero::after {
+    /* soft top light spill */
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 700px 320px at 50% 0%, rgba(235, 226, 200, 0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 24px;
+  }
   h1 {
     font-family: var(--font-serif);
     font-size: var(--fs-4xl);
-    margin: 18px auto 22px;
-    font-weight: 400;
-    line-height: 1.05;
-    max-width: 800px;
+    margin: 0 auto 26px;
+    font-weight: 300;
+    line-height: 1.02;
+    max-width: 840px;
     color: var(--ink);
     letter-spacing: var(--ls-tight);
   }
-  h1 em { font-style: italic; color: var(--accent); }
+  h1 em { font-style: italic; color: var(--accent); font-weight: 300; }
   p {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 20px;
-    max-width: 500px;
-    margin: 0 auto 28px;
-    color: var(--ink-soft);
+    font-size: 21px;
+    max-width: 520px;
+    margin: 0 auto 36px;
+    color: var(--n-paper-dim);
     font-weight: 300;
-    line-height: 1.4;
+    line-height: 1.5;
   }
-  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
   @media (max-width: 880px) {
-    .hero { padding: 56px var(--sp-5) 48px; }
+    .hero { padding: 72px var(--sp-5) 56px; }
     h1 { font-size: 40px; }
     p { font-size: 17px; }
-    .leaf { display: none; }
   }
 </style>

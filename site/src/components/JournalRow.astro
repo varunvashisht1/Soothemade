@@ -7,85 +7,123 @@ interface Post {
   blurb: string;
 }
 interface Props { title?: string; allHref?: string; posts: Post[]; }
-const { title = '— From the journal —', allHref = '/journal', posts } = Astro.props;
+const { title = '— Letters from the studio —', allHref = '/journal', posts } = Astro.props;
 ---
-<section class="journal rule-top">
+<section class="letters">
   <div class="head">
-    <h2>{title}</h2>
-    <a href={allHref}>read all letters</a>
+    <div>
+      <div class="eyebrow-mark">{title}</div>
+      <h2>Recent <em>notes</em>.</h2>
+    </div>
+    <a class="more" href={allHref}>All letters →</a>
   </div>
-  {posts.map((p) => (
-    <article>
-      <a href={p.href}>
-        <div class="meta">{p.category} · {p.readTime}</div>
-        <h3>{p.title}</h3>
-        <p>{p.blurb}</p>
-        <span class="read">read the letter →</span>
-      </a>
-    </article>
-  ))}
+  <div class="list">
+    {posts.map((p) => (
+      <article>
+        <a href={p.href}>
+          <div class="meta">{p.category} · {p.readTime}</div>
+          <div class="body">
+            <h3>{p.title}</h3>
+            <p>{p.blurb}</p>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </article>
+    ))}
+  </div>
 </section>
 
 <style>
-  .journal {
-    padding: 64px var(--sp-7);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+  .letters {
+    padding: 104px var(--sp-7);
+    color: var(--ink);
+    background:
+      radial-gradient(ellipse 900px 500px at 20% 80%, rgba(214, 138, 114, 0.06), transparent 65%),
+      linear-gradient(170deg, var(--n-letters-1) 0%, var(--n-letters-2) 60%, var(--n-letters-3) 100%);
   }
   .head {
-    grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 8px;
-    gap: var(--sp-4);
+    align-items: end;
+    margin-bottom: 36px;
+    gap: var(--sp-5);
     flex-wrap: wrap;
+  }
+  .eyebrow-mark {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 6px;
   }
   .head h2 {
     font-family: var(--font-serif);
-    font-style: italic;
     font-size: 30px;
+    font-weight: 300;
     margin: 0;
+    line-height: 1.2;
     color: var(--ink);
-    font-weight: 400;
   }
-  .head a {
+  .head h2 em { font-style: italic; color: var(--accent-soft); }
+  .head .more {
     font-family: var(--font-serif);
     font-style: italic;
+    font-size: 15px;
     color: var(--ink);
-    border-bottom: 1px solid var(--ink);
+    border-bottom: 1px solid var(--n-rule-strong);
     padding-bottom: 1px;
   }
-  article a { color: var(--ink); display: block; }
+  .head .more:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
+
+  .list { display: flex; flex-direction: column; }
+  .list article {
+    border-top: 1px solid var(--n-rule-light);
+  }
+  .list article:last-child { border-bottom: 1px solid var(--n-rule-light); }
+  .list article a {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 32px;
+    padding: 24px 0;
+    align-items: baseline;
+    color: var(--ink);
+    transition: background var(--t-fast) var(--ease);
+  }
+  .list article a:hover { background: rgba(235, 226, 200, 0.04); }
   .meta {
+    font-family: var(--font-sans);
     font-size: 10.5px;
     letter-spacing: var(--ls-wider);
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 10px;
+    color: var(--n-paper-faint);
   }
+  .body { min-width: 0; }
   h3 {
     font-family: var(--font-serif);
     font-size: 22px;
-    margin: 0 0 10px;
-    line-height: 1.2;
-    font-weight: 500;
+    font-weight: 400;
+    margin: 0 0 6px;
+    line-height: 1.25;
+    color: var(--ink);
   }
   p {
-    font-size: 14px;
-    color: var(--ink-soft);
-    margin: 0 0 14px;
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--n-paper-dim);
     line-height: 1.55;
+    max-width: 540px;
   }
-  .read {
+  .arrow {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 14px;
-    color: var(--ink);
-    border-bottom: 1px solid var(--rule-strong);
-    padding-bottom: 1px;
+    font-size: 22px;
+    color: var(--accent-soft);
   }
-  @media (max-width: 1000px) { .journal { grid-template-columns: 1fr; } }
-  @media (max-width: 880px)  { .journal { padding: 48px var(--sp-5); } }
+
+  @media (max-width: 880px) {
+    .letters { padding: 72px var(--sp-5); }
+    .list article a { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
+    .arrow { display: none; }
+  }
 </style>

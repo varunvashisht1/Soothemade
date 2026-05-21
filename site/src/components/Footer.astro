@@ -57,9 +57,9 @@ const year = new Date().getFullYear();
 
 <style>
   .foot {
-    background: var(--surface-deepest);
-    color: var(--ink-soft);
-    padding: 48px var(--sp-7) 32px;
+    background: var(--n-footer);
+    color: var(--n-paper-dim);
+    padding: 64px var(--sp-7) 36px;
   }
   .row {
     display: grid;
@@ -77,8 +77,8 @@ const year = new Date().getFullYear();
   }
   ul { list-style: none; padding: 0; margin: 0; }
   li { margin-bottom: 8px; font-size: 13px; }
-  a { color: var(--ink-soft); transition: color var(--t-fast) var(--ease); }
-  a:hover { color: var(--accent); }
+  a { color: var(--n-paper-dim); transition: color var(--t-fast) var(--ease); }
+  a:hover { color: var(--accent-soft); }
   .brand-block .brand-sprig {
     width: 22px;
     height: 36px;
@@ -108,14 +108,14 @@ const year = new Date().getFullYear();
     line-height: 1.55;
   }
   .bottom {
-    border-top: 1px solid var(--rule);
-    padding-top: 18px;
+    border-top: 1px solid var(--n-rule-light);
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
     font-size: 11px;
     letter-spacing: var(--ls-wide);
     text-transform: uppercase;
-    color: var(--ink-faint);
+    color: var(--n-paper-faint);
     flex-wrap: wrap;
     gap: var(--sp-3);
   }

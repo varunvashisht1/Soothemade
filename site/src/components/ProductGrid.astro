@@ -48,33 +48,39 @@ const {
 </section>
 
 <style>
-  .shop { padding: 64px var(--sp-7) 48px; }
+  .shop {
+    padding: 96px var(--sp-7) 88px;
+    background:
+      radial-gradient(ellipse 900px 600px at 80% 20%, rgba(168, 184, 138, 0.10), transparent 60%),
+      linear-gradient(170deg, var(--n-prods-1) 0%, var(--n-prods-2) 60%, var(--n-prods-3) 100%);
+  }
   .title-row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 40px;
+    margin-bottom: 44px;
     gap: var(--sp-4);
     flex-wrap: wrap;
   }
   h2 {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 32px;
+    font-size: 34px;
     margin: 0;
     color: var(--ink);
-    font-weight: 400;
+    font-weight: 300;
   }
   .see-all {
     font-family: var(--font-serif);
     font-style: italic;
     color: var(--ink);
-    border-bottom: 1px solid var(--ink);
+    border-bottom: 1px solid var(--n-rule-strong);
     padding-bottom: 1px;
     font-size: 15px;
   }
+  .see-all:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
   .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
   @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 800px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 880px)  { .shop { padding: 48px var(--sp-5) 32px; } }
+  @media (max-width: 880px)  { .shop { padding: 64px var(--sp-5) 56px; } h2 { font-size: 26px; } }
 </style>

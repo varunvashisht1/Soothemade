@@ -44,27 +44,37 @@ const { categories } = Astro.props;
   .categories {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    background:
+      radial-gradient(ellipse 800px 300px at 50% 100%, rgba(168, 184, 138, 0.08), transparent 70%),
+      linear-gradient(170deg, var(--n-cats-1) 0%, var(--n-cats-2) 60%, var(--n-cats-3) 100%);
   }
   .categories a {
-    padding: 36px 24px;
+    padding: 44px 24px;
     text-align: center;
     color: var(--ink);
-    border-right: 1px solid var(--rule);
+    border-right: 1px solid var(--n-rule-light);
     transition: background var(--t-fast) var(--ease);
   }
   .categories a:last-child { border-right: none; }
-  .categories a:hover { background: var(--hover); }
-  .glyph { width: 36px; height: 36px; margin: 0 auto 14px; color: var(--sage); }
-  .name { font-family: var(--font-serif); font-size: 17px; font-weight: 500; margin-bottom: 4px; }
+  .categories a:hover { background: rgba(168, 184, 138, 0.06); }
+  .categories a:hover .glyph { color: var(--accent-soft); }
+  .glyph {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 16px;
+    color: var(--sage);
+    transition: color var(--t-fast) var(--ease);
+  }
+  .name { font-family: var(--font-serif); font-size: 17px; font-weight: 500; margin-bottom: 6px; color: var(--ink); }
   .count {
     font-size: 10.5px;
     letter-spacing: var(--ls-wider);
     text-transform: uppercase;
-    color: var(--ink-faint);
+    color: var(--n-paper-faint);
   }
   @media (max-width: 880px) {
     .categories { grid-template-columns: repeat(2, 1fr); }
     .categories a:nth-child(2n) { border-right: none; }
-    .categories a:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .categories a:nth-child(-n+2) { border-bottom: 1px solid var(--n-rule-light); }
   }
 </style>
