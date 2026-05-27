@@ -12,7 +12,7 @@ This planner is the structured version of the conversation no one had with you a
 
 The Back-to-Work Pumping Planner (P17) handles feeding logistics. This is the broader question: the schedule, the identity, the meetings, the new dynamic with whoever you used to be at work.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not employment law advice. For specific questions about leave, accommodation, or discrimination, please talk to HR, an employment lawyer, or your state's department of labor.*
 

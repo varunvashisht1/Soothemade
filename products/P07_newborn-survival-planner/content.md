@@ -14,7 +14,7 @@ This planner is the thing I wish I'd had on the kitchen counter. Not a methodolo
 
 It assumes you are doing your best. It assumes some days will be worse than the day before. It assumes you will sometimes skip a page. All of that is allowed.
 
-*Soothemade*
+*With care, Maya*
 
 > *None of this is medical advice. If something feels wrong with your baby or with you, call your provider. The trusted numbers are listed in the back of this planner. If you are in crisis, do not look it up in here. Call 988 or the US Maternal Mental Health Hotline at 1-833-852-6262.*
 

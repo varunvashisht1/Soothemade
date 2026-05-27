@@ -14,7 +14,7 @@ The point of these cards is not to ask a melting-down child to identify their fe
 
 Over time, you'll notice they reach for the same one or two cards. That is the door. That's the conversation that wasn't possible before.
 
-*Soothemade*
+*With care, Maya*
 
 > *These cards are not a substitute for child mental health care. If your child has prolonged or severe difficulty regulating, sleep disturbances tied to mood, or any thoughts about self-harm, please see a pediatric provider. Children's mental health is a real medical field and worth the appointment.*
 
@@ -253,7 +253,7 @@ Some things that are true about toddlers and emotions, in case you needed to hea
 
 If this is helpful, more cards may come. There are no extra cards yet. The forty here are the ones I needed when my kids were small.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

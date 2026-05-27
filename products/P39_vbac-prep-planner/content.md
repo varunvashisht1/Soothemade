@@ -14,7 +14,7 @@ This planner does not have an opinion either. It is not pro-VBAC. It is not pro-
 
 What the planner does is hold the conversation. The questions you want to bring. The answers you get back. The decision as it is right now (which may not be the decision a month from now). The plans for whichever way it goes.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning and tracking tool, not medical advice. The decision to attempt a vaginal birth after cesarean or to schedule a repeat cesarean is medical, situation-specific, and belongs to you and your obstetric provider. This planner does not recommend either direction. It records the conversation.*
 
@@ -544,4 +544,4 @@ What the planner cannot do is decide for you. What it can do is hold the questio
 
 You are going to meet them. The how is between you and your provider.
 
-*Soothemade*
+*With care, Maya*

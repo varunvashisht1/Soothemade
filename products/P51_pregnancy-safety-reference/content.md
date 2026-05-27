@@ -14,7 +14,7 @@ This reference is the bridge. It organizes the categories of questions pregnant 
 
 It does not answer your questions. It does not say "this is safe" or "this is dangerous." Your specific pregnancy, your specific health history, your specific risk factors, all of those belong to a real human provider who knows them. The reference is the prep work for the conversation.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a question-organization reference, not medical advice. For specific safety questions about your pregnancy, please follow your obstetric provider's guidance. This reference does NOT name medications. It does NOT make safety verdicts. It does NOT specify thresholds. The reference is the list. The answers belong to your provider.*
 
@@ -642,4 +642,4 @@ When you find yourself googling something at 11pm, write it down here instead. B
 
 You are not being difficult by asking. You are being a good advocate for the pregnancy. Good providers want patients who ask.
 
-*Soothemade*
+*With care, Maya*

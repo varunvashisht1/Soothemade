@@ -14,7 +14,7 @@ A baby cannot tell you what is wrong with words. So they tell you in faces, soun
 
 It is not a diagnosis tool. If something feels wrong in a way the deck does not explain, the right move is the pediatrician, not the next card.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not medical advice. For specific concerns about feeding, sleep, breathing, or behavior, please call your pediatric provider.*
 
@@ -192,7 +192,7 @@ A note before you start: a baby who is crying is communicating, not malfunctioni
 - Step out of the room for a minute. Take a breath. Drink water.
 - Call your partner, your mother, a friend. Have someone come hold the baby while you take 10 minutes.
 
-**Call the pediatrician if:** The cry is high-pitched and different from any cry you've heard before, the baby has been crying inconsolably for more than two hours, the baby has a fever, the baby is hard to wake or feels unusually limp, or your gut is telling you something is wrong. Trust the gut.
+**Call the pediatrician if:** The cry is high-pitched and different from any cry you've heard before. The baby has been crying inconsolably for more than two hours. The baby has a fever. The baby is hard to wake or feels unusually limp. Or your gut is telling you something is wrong. Trust the gut.
 
 ---
 
@@ -594,4 +594,4 @@ The deck is the bridge. After the bridge, you will not need it. Many parents do 
 
 Until then, keep watching. You are reading a language that is being invented in real time, by a tiny person, and you are getting better at it every day.
 
-*Soothemade*
+*With care, Maya*

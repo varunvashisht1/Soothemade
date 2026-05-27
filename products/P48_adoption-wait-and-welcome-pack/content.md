@@ -14,7 +14,7 @@ This planner is for that route. It is not a manual on how to adopt. The agency, 
 
 The brand voice in this planner respects the complexity. There is grief in many adoption journeys, sometimes from infertility, sometimes from prior loss, sometimes from the birth family's loss that is the necessary other half of every adoption. There is also joy. The planner holds both.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not legal or social-work advice. Your agency, attorney, and social worker are the right resources for the procedural and clinical aspects of your adoption. The crisis-line page is at the back. Infertility, prior loss, and birth-family grief are real parts of many adoption journeys. perinatal mental-health care applies to adoptive parents too.*
 
@@ -663,4 +663,4 @@ The first year is hard for most adoptive families. The bonding is sometimes imme
 
 You are doing it. The planner closes here. The family begins.
 
-*Soothemade*
+*With care, Maya*

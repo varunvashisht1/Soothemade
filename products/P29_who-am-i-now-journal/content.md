@@ -14,7 +14,7 @@ This is a journal for that meeting.
 
 It is for any stretch of postpartum or post-postpartum where the language for who you are now has not arrived yet. Year one. Year three. The week your kid started school. The morning you found a pair of pants in the back of the closet that no longer fit a person you no longer are.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a journaling tool, not therapy or medical advice. If you are in crisis or sustained low mood, please talk to a real provider. The numbers are at the back.*
 

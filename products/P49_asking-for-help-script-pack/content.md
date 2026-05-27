@@ -14,7 +14,7 @@ This pack is the words. Thirty scripts. Specific people. Specific requests. Spec
 
 Because the difference between a successful ask and a failed one is rarely the relationship. It is the specificity.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool. Asking for help around financial matters does not replace a financial planner. Asking for emotional help does not replace a therapist. The scripts route to professionals where relevant.*
 
@@ -494,4 +494,4 @@ The thirty scripts are templates. The way you use them is yours. The relationshi
 
 You are not alone, even when the work feels like it. The asking is the bridge.
 
-*Soothemade*
+*With care, Maya*

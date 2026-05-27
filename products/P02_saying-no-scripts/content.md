@@ -14,7 +14,7 @@ So here are the words. Pre-made. Use them, modify them, hand them to your partne
 
 You don't owe anyone access to your body, your baby, your house, or your decisions. Not your in-laws. Not your best friend. Not your mother. The fact that they love you doesn't entitle them to your fourth trimester.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not advice for your specific situation. Trust your instincts and call your providers when something feels off.*
 
@@ -301,7 +301,7 @@ The right people will respect you for this. The wrong people will reveal themsel
 
 Either outcome is useful.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

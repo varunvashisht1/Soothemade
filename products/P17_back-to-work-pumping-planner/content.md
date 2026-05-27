@@ -12,7 +12,7 @@ This planner is for the logistics. It assumes nothing about your supply, your em
 
 It does not tell you to keep feeding for any specific length of time. It does not tell you to stop. It is here for whichever direction you decide.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not medical advice. If anything feels wrong with your body or with the baby's feeding, talk to a real provider. The trusted numbers are listed at the back of this planner.*
 

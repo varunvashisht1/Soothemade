@@ -14,7 +14,7 @@ This planner is not a medical book. It is the place to write down what your body
 
 You can use it cover to cover, or you can skip to the week you are in.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning and tracking tool, not medical advice. For specific medical concerns, please follow your obstetric provider's guidance. We do not name medications. We do not prescribe a delivery method. The decisions in this pregnancy belong to you and your provider, together.*
 
@@ -1474,4 +1474,4 @@ The planner runs out at delivery. The other Soothemade products take over from t
 
 You are going to be a good parent. You already are.
 
-*Soothemade*
+*With care, Maya*

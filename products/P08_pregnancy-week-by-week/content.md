@@ -14,7 +14,7 @@ You do not have to write something every week. There are no consequences for ski
 
 This journal does not assume forty smooth weeks. It does not assume one baby, or a first baby, or a planned pregnancy. It assumes you are pregnant now, however that came to be. That is the only entry requirement.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is not a medical record. If anything is concerning, call your provider. Your country's emergency obstetric line should be saved in your phone before you need it. There is a numbers-to-keep page at the back.*
 

@@ -16,7 +16,7 @@ If you have intrusive thoughts about harming the baby or yourself, that is a fla
 
 This companion is for the long stretch. The acute hour belongs to a real human on a phone.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 
@@ -28,7 +28,7 @@ A therapist asked me, much later, when I had eaten that day. I could not remembe
 
 This companion is the thing I wish I'd had on the bedside table in those weeks. Not to fix anything. To help me see, on paper, that what was happening in my head was a pattern, and that the pattern had a name.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is not medical advice. It is a noticing tool. If you suspect you are dealing with postpartum anxiety, please talk to a real provider. The numbers are at the back.*
 

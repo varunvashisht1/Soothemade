@@ -16,7 +16,7 @@ For two weeks, you log what is actually happening. Bedtime. Wakings. Naps. Mood.
 
 What you do with the pattern, after, is yours to decide. Maybe with your partner. Maybe with your pediatrician. Maybe with the consultant you are about to hire. Maybe you just wait it out, because now you know waiting is what you are choosing.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a logging tool, not medical advice. For specific concerns about your child's sleep, breathing, or behavior, please call your pediatric provider. This journal does not endorse or describe any sleep-training method.*
 
@@ -835,4 +835,4 @@ If you are still here in two weeks, you can re-print and run the journal again. 
 
 You are doing the work. The kid is going to be okay. So are you.
 
-*Soothemade*
+*With care, Maya*

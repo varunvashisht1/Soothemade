@@ -14,7 +14,7 @@ I'm not a doctor. I'm a person who had one c-section, planned for it badly the f
 
 This planner is for tracking, planning, and reflecting. **It is not medical advice.** Anything that feels physically wrong, call your OB. If something feels wrong, it usually is.
 
-*Soothemade*
+*With care, Maya*
 
 > *Always follow your surgeon's specific instructions. Each c-section recovery is different. This is a general framework based on common recovery timelines, not a prescription. When in doubt, call your provider.*
 
@@ -334,7 +334,7 @@ _____________________________________________________
 What I want my partner to keep doing: ________________
 _____________________________________________________
 
-What I want to do for myself going forward: __________
+What I want to do for myself from here: ______________
 _____________________________________________________
 
 A note to a friend who's about to have a c-section: _
@@ -418,7 +418,7 @@ If something feels wrong, physically or mentally, call. Always call.
 
 You're doing the thing.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

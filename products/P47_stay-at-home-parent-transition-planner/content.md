@@ -14,7 +14,7 @@ What needs to be planned for is the money. The retirement account. The identity.
 
 This planner is for the planning. It is not a feminist treatise. It is not a defense of the choice. The choice has been made or is being made by you and your family for your reasons. The planner does the work that comes after the choice.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not financial or legal advice. The financial and legal aspects of this transition should be reviewed by a financial planner and, if relevant, an attorney. The mental-health pages list crisis lines. Stay-at-home parents have elevated rates of depression and isolation. Knowing this in advance helps you watch for it.*
 
@@ -676,4 +676,4 @@ What you are doing matters. It is also tiring, and it is also not the entirety o
 
 When the kids are grown, the planner is still here. The pages about you are still about you.
 
-*Soothemade*
+*With care, Maya*

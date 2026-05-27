@@ -16,7 +16,7 @@ This is the playbook.
 
 It is written assuming you are showing up. You will not need every page. The pages you do need will be there.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning and support tool, not medical advice. For specific questions about the pregnancy or your partner's health, the provider is the right person. Partner mental health is real. the crisis-line page is at the back.*
 
@@ -654,7 +654,7 @@ WHAT I AM SCARED OF LOSING IN MY RELATIONSHIP
 
    _______________________________________________
 
-WHAT I WANT FOR MYSELF, IN THIS NEW CHAPTER
+WHAT I WANT FOR MYSELF, ONCE THE BABY IS HERE
 
    _______________________________________________
    _______________________________________________
@@ -842,4 +842,4 @@ Your role does not look like hers. It is not the same job. But it is still a job
 
 You did not have to read this. You did. That is the thing your partner will remember.
 
-*Soothemade*
+*With care, Maya*

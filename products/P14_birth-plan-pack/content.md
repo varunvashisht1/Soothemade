@@ -14,7 +14,7 @@ This pack is the version of that document I wish I'd brought in. One page she ca
 
 You can fill this out alone. You can fill it out with a partner. You can take it to your provider and ask them to look at it. You can bring it to the hospital, scan it, share it, leave it on the bedside table. You can also decide not to bring it at all. The thinking is the point. The piece of paper is just the receipt of the thinking.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is not a medical document. It is a communication tool. Your provider's plan, in the moment, will always supersede this. If the medical team says something has to change, listen. The point of writing it down ahead of time is to have thought about it, not to bind anyone to it.*
 
@@ -491,7 +491,7 @@ What you want will not always be what happens. The version of you who is in acti
 
 The plan is a starting point. The day is yours.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

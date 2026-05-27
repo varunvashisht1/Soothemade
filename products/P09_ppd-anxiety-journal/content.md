@@ -24,7 +24,7 @@ If you're using this, you might already suspect something is going on. Or someon
 
 All of those are fine reasons.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 
@@ -329,7 +329,7 @@ What would I have wanted them to say instead?
 
 ________________________________________________________
 
-Is there a version of this I can ask for going forward?
+Is there a version of this I can ask for from here?
 
 ________________________________________________________
 
@@ -574,7 +574,7 @@ Whatever you're feeling, even if you can't name it yet, it is real. It is happen
 
 The bravest sentence in postpartum motherhood is *"I am not okay, and I think I need help."* It is also the sentence that, over and over again, turns out to be the start of feeling better.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

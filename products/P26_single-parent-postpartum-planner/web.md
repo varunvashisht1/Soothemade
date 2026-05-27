@@ -23,7 +23,7 @@ crossSell: [newborn-survival-planner, visitor-welcome-packet, ppd-anxiety-journa
 
 The available postpartum planning materials almost universally assume two parents. They use phrases like "while your partner does the night feed" and "ask your partner to take the baby." For about a quarter of mothers in the US, that script does not apply.
 
-This planner is for you. The version of you who is doing this on your own, whether that is by choice, by donor, by surrogacy, by separation, by loss, by an absent partner, by a partner who is deployed, or by a partner who is not yet (or never going to be) the partner you would have chosen.
+This planner is for you. The version of you who is doing this on your own. Whether that is by choice, by donor, by surrogacy, by separation, by loss, by an absent partner, by a partner who is deployed, or by a partner who is not yet (or never going to be) the partner you would have chosen.
 
 This planner does not have an opinion about the path. It assumes you are here, doing this, with whoever you do have, and that the work of postpartum is large and is yours.
 

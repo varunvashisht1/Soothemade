@@ -14,7 +14,7 @@ What this checklist will not do is tell you which brand of outlet cover to buy. 
 
 The "I cannot do all this today" page at the back ranks the fixes if you have one weekend and not three.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool. For specific safety questions, your pediatric provider, your fire department, or a certified car-seat technician are the right people to call. Poison Control: 1-800-222-1222 in the US.*
 
@@ -419,4 +419,4 @@ The checklist is the start. The supervision is the rest of it.
 
 You are doing the work. They are about to move.
 
-*Soothemade*
+*With care, Maya*

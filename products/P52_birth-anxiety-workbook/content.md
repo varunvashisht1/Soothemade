@@ -14,7 +14,7 @@ This workbook treats the fear seriously. It names what you are actually afraid o
 
 It does not promise that the birth will go your way. No book can. What it does is give the fear somewhere to go besides the pit of your stomach at 3am.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a workbook, not therapy. If your birth anxiety is interfering with eating, sleeping, daily function, or your bond with the pregnancy, please see a perinatal mental-health therapist. They specialize in exactly this. Crisis lines are at the back of the workbook.*
 
@@ -919,4 +919,4 @@ The labor will end. The baby will arrive. The fear, for the most part, lifts in 
 
 You are not alone in this, even when the room is full of strangers.
 
-*Soothemade*
+*With care, Maya*

@@ -10,7 +10,7 @@ Every time you leave your kid with someone, you have a small choice. You can re-
 
 Fill it in once. Update it when something changes (a new word, a new fear, a new allergy, a new bedtime). The work is in the first hour. After that, you are mostly handing it over.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not medical advice. For specific medical or care concerns, please follow your pediatric provider's guidance. We do not name medications in this pack. Call the parent first, always.*
 

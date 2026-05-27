@@ -14,7 +14,7 @@ This planner is for that stretch. Not for what twin parenting will look like at 
 
 It is also for the partner. The first six weeks of twin postpartum is a two-person job for nearly everyone. The pages that have a "partner" header are for the second adult to read and write in.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not medical advice. For specific concerns about recovery, feeding, mental health, or your babies' health, please follow your obstetric and pediatric providers' guidance. The planner does not name medications. The mental-health crisis line page is at the back. bookmark it now.*
 
@@ -802,4 +802,4 @@ You did the hardest first six weeks of the first year. With two of them. With le
 
 That is the planner. That is the work. That is enough.
 
-*Soothemade*
+*With care, Maya*
