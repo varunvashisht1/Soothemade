@@ -6,13 +6,13 @@
 
 ## A note before you start
 
-You are pregnant. You are also working. Almost no widely-used resource respects both at the same time.
+You are pregnant. You are also working. You have a 10am meeting tomorrow, an OB appointment Thursday afternoon, and you have not told anyone at the office yet.
 
-Most pregnancy books assume a stay-at-home transition. Most career advice assumes you are not currently growing a human. The actual experience of pregnancy at a job, telling the boss, asking for accommodations, planning the handoff, deciding about return, falls into a gap that this planner is built to fill.
+Almost no widely-used resource respects all three of those facts at the same time. Most pregnancy books assume a stay-at-home transition. Most career advice assumes you are not currently growing a human. The actual experience of pregnancy at a job, telling the boss, asking for accommodations, planning the handoff, deciding about return, falls into the gap this planner is built to fill.
 
 It is not legal advice. It points you to your country's laws. It is not financial advice. It points you to your HR. It is the prep work between you and the conversations you need to have.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not legal or financial advice. For specific questions about your rights at work, please consult an employment attorney, your union representative, or your HR department. For benefits and pay questions during leave, please consult your HR and a financial advisor.*
 
@@ -721,4 +721,4 @@ You are not the first to do this. You are part of a long line of people figuring
 
 Good luck. Both with the leave and with everything after.
 
-*Soothemade*
+*With care, Maya*

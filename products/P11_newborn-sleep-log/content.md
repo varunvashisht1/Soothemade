@@ -14,7 +14,7 @@ This log is the version of that envelope, built for the dark.
 
 It is not a sleep training program. It does not tell you what to do. It does not score your baby's sleep against any chart. It only asks you to write down what actually happened, one line at a time, so you stop trying to guess.
 
-*Soothemade*
+*With care, Maya*
 
 > *This log is a tracking tool, not medical advice. If your baby is not gaining weight, is sleeping unusually much, is hard to wake for feeds, or you are worried, call your pediatrician. The trusted numbers are at the back.*
 

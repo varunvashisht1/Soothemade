@@ -12,7 +12,7 @@ This deck is not a method. It is not a "perfect bedtime in seven nights." It is 
 
 The child is doing something for themselves, instead of being moved through a routine. That small piece of agency is, often, the thing that ends the negotiation.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

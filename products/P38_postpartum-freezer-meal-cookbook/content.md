@@ -16,7 +16,7 @@ The pre-cook day is a real thing. Not the day before delivery, you will be too p
 
 What you eat in the postpartum window matters. Not because you have to lose weight (you do not). Not because there are foods that make milk (the body does that). But because eating well makes a tired person less tired. Eating well makes a sad person less sad. Eating well is one of the cheapest things you can do for yourself, in a season when expensive things are not available.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a cookbook, not medical advice. Allergies and dietary restrictions in your household are between you and your provider. Adjust freely.*
 
@@ -1111,4 +1111,4 @@ But you will eat warm food. With one hand. While someone tiny falls asleep on yo
 
 That is the cookbook doing its job.
 
-*Soothemade*
+*With care, Maya*

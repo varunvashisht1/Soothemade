@@ -12,7 +12,7 @@ These cards are the prep work. One card per visit. You fill in the "what to brin
 
 After two years, you have a record. Of what was measured. Of what they recommended. Of what you asked and what you got back. It is yours.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not medical advice. For specific concerns about your child's health, please follow your pediatric provider's guidance. The cards do not name vaccines or medications. Your pediatrician will tell you the current schedule.*
 
@@ -939,4 +939,4 @@ Keep the filled cards in a folder. The pediatrician changes practices, you move,
 
 You are doing the work. They are growing.
 
-*Soothemade*
+*With care, Maya*

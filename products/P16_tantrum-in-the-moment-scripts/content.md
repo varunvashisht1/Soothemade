@@ -14,7 +14,7 @@ They do not require you to remember a framework. They do not require you to crou
 
 You will say these out loud, even when it feels strange. Saying them out loud does two things: it tells the child their state is being witnessed (which is most of what they need), and it pulls a small piece of your own prefrontal cortex back online (which is what *you* need).
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a parenting companion, not a substitute for child mental health care. If your child has prolonged or severe difficulty regulating, sleep disturbances tied to mood, or any signs of self-harm, please see a pediatric provider.*
 

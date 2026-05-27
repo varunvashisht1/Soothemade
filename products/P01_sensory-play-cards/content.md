@@ -21,7 +21,7 @@ Pick one card from the kid's age band. Set it up. Walk away while they explore. 
 
 That's the entire system.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not pediatric advice. Always supervise infants and toddlers during play. Adjust materials for your child's specific developmental stage and any allergies. When in doubt, call your pediatrician.*
 
@@ -986,7 +986,7 @@ If a card works, run it again next week. If a kid loves one specific card, do it
 
 The deck is here to give you options when your brain runs out. It's a basket of "yeses" so you don't have to be the no.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

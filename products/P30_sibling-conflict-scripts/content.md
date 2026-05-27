@@ -12,7 +12,7 @@ The scripts in this deck do not solve the fights. They give you, the adult, some
 
 These work best when used repeatedly. The first time you say "I'm not refereeing this one, you two figure it out," it will sound strange to everyone, including you. The tenth time, it will sound normal. The thirtieth time, the kids will start figuring it out before you say anything.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 
@@ -398,7 +398,7 @@ That is fine. The question itself is the lesson.)
 
 ### When YOU lost it
 
-Adult repair is the biggest leverage point. The kids will model it.
+Adult repair is the biggest single thing you can do. The kids will model it.
 
 ```
 "Earlier, when you two were fighting, I yelled. I

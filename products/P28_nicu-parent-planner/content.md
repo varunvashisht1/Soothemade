@@ -14,7 +14,7 @@ If you are in crisis right now, please put this planner down and call one of the
 
 The acute hour belongs to a human on a phone, not to a planner.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 
@@ -26,7 +26,7 @@ This planner is the structured version of that notebook. It is what I wish I had
 
 It does not assume one ending or another. Some NICU stays are short. Some are long. Some go home with both babies. Some do not. The planner holds all of them with care.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a companion, not a medical document. The clinical decisions belong to your team. The planner is here to help you participate in those decisions with notes, language, and a place to put what you are carrying.*
 

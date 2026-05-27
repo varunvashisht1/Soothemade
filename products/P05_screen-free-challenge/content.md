@@ -22,7 +22,7 @@ The cards are designed to:
 - Be doable with one parent + a few kids
 - Not require Pinterest-perfect execution
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not parenting advice. You know your kids better than any deck of cards. Adapt freely.*
 
@@ -497,7 +497,7 @@ When the 30 days end, two things usually happen:
 
 You can re-run the challenge any time. Different season, different rotation. Or just keep the basket of cards in the kitchen as the fallback when you're about to default-screen and you stop yourself.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

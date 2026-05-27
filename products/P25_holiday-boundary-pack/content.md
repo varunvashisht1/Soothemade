@@ -12,7 +12,7 @@ You can do hard. You have been doing hard. The thing that makes the holiday gath
 
 This pack is for that. The scripts so you don't have to invent them in the moment. The grounding cards so you have somewhere to go. The debrief page so the drive home doesn't become another loop.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

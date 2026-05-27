@@ -12,11 +12,11 @@ Injections at specific times. Multiple appointments per week. Bloodwork numbers 
 
 The clinic has the data. You have the days. This planner is for the days.
 
-It is not a medical book. It does not tell you which protocol to use. It does not name any medication. It is the place to write down what your clinic prescribed (by purpose, in your own words), what your numbers were today, what the nurse said on the phone, what you are scared of, what you are angry about, and what you want to remember when this cycle is behind you.
+It is not a medical book. It does not tell you which protocol to use. It does not name any medication. It is the place to write down what your clinic prescribed (by purpose, in your own words). What your numbers were today. What the nurse said on the phone. What you are scared of. What you are angry about. What you want to remember when this cycle is behind you.
 
 You can use the planner for one cycle. If there is a next cycle, you re-print.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning and tracking tool, not medical advice. For specific medical questions about your IVF cycle, please contact your reproductive endocrinologist or clinical team. We do not name medications, prescribe a protocol, or predict outcomes. The clinical decisions in this cycle belong to you and your provider.*
 
@@ -1109,4 +1109,4 @@ If you are between cycles, sitting in the room where the decision lives, you do 
 
 The planner runs out at the beta. The rest of your life does not. Whatever the number was, you carried this cycle. That was the work.
 
-*Soothemade*
+*With care, Maya*

@@ -12,7 +12,7 @@ This checklist is the version of that bag I packed the second time, after the fi
 
 If you have already started packing, throw out half of what you have. The hospital provides most of it. The half that remains is what matters.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not medical advice. If your provider has given you specific instructions for the hospital bag, follow theirs over this one.*
 

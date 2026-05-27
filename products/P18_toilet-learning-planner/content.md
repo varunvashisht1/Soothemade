@@ -12,7 +12,7 @@ The honest version is this: toilet learning usually takes a stretch of two to tw
 
 This planner does not promise a method. It offers a pace. It assumes you are paying attention, going at the kid's speed, and willing to wait through the parts that are inconvenient.
 
-*Soothemade*
+*With care, Maya*
 
 > *If a pediatric provider has flagged any concerns about your child's toileting, follow their guidance over this planner. This is for typically-developing toddlers in the usual window.*
 

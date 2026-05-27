@@ -14,7 +14,7 @@ This pack is the printable bag of tricks. Scavenger hunts. I Spy. Conversation s
 
 The pack is not magic. It will not turn a hard trip into an easy one. What it will do is give you ten minutes back at hour three, when you have run out of every other idea.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool. For any travel-related medical questions, including motion sickness, ear pain on flights, or feeding considerations, please follow your pediatric provider's guidance. The pack does not name medications.*
 
@@ -810,4 +810,4 @@ The pack carried you for a few of those hours. The rest was you.
 
 You did the thing. You are home.
 
-*Soothemade*
+*With care, Maya*

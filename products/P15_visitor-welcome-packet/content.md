@@ -12,7 +12,7 @@ The trouble with these people is not that they aren't welcome. It is that they o
 
 This packet does the teaching part ahead of time. You print it once, in week 35 of pregnancy. You leave it where the front door meets the kitchen. You point at it when someone arrives.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

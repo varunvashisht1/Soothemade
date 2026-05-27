@@ -18,7 +18,7 @@ When the baby is here, you can keep this on a shelf. You can give it to them whe
 
 Whatever you write becomes a thing they have. Or a thing you have. Either is the right answer.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a keepsake journal, not a medical record. For specific concerns about the pregnancy, please follow your obstetric provider's guidance.*
 
@@ -802,4 +802,4 @@ The journal closes here. The conversation continues for the rest of your life to
 
 We are so glad they are here.
 
-*Soothemade*
+*With care, Maya*

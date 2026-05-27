@@ -18,7 +18,7 @@ Read it before the baby comes. Re-read week one. Reference week-by-week as you g
 
 You're going to do great. You're also going to mess some of this up. Both are fine. The point is to start.
 
-*Soothemade*
+*With care, Maya*
 
 > *This isn't medical advice. If something seems wrong with your partner or the baby, call your provider. The US Maternal Mental Health Hotline is 1-833-852-6262 if she ever sounds like she's drowning, or if you are.*
 
@@ -276,7 +276,7 @@ Things you can do for yourself, without guilt:
 
 - 30 minutes of exercise a day, even on bad days. Walks count.
 - Tell *one* friend what's actually going on. Not the sanitized version.
-- Stay off Instagram if it's making you feel bad. Other parents look like they're crushing it. They're not. The post is from their best 8 seconds of the week.
+- Stay off Instagram if it's making you feel bad. Other parents look like they have it figured out. They don't. The post is from their best 8 seconds of the week.
 - If *you* feel detached, anxious, hopeless, or numb, call a provider. The hotline above works for you too.
 
 You're allowed to be tired. You're allowed to be sad. You're allowed to find this hard.
@@ -308,7 +308,7 @@ You are doing one of the most important things a human can do.
 
 You've got this.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

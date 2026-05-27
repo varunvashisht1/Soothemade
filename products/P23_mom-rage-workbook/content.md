@@ -16,19 +16,19 @@ If you are afraid that you might, the bar to call is the same. Calling is not an
 
 This workbook is for the long stretch. The acute hour belongs to a human on a phone.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 
 ## A note from me
 
-I screamed at my three-year-old in the laundry room when he was four. The reason was not, in fact, the spilled apple juice. It was the third time that hour I had cleaned the apple juice. It was the fact that I had not eaten since breakfast. It was the fact that I had not slept more than four hours in nine months. It was the fact that I had spent the morning with my mother-in-law, who had implied that I was "doing it wrong." It was the fact that my husband was on a work call and could not come in even when I knocked.
+I screamed at my three-year-old in the laundry room. The reason was not, in fact, the spilled apple juice. It was the third time that hour I had cleaned the apple juice. It was the fact that I had not eaten since breakfast. It was the fact that I had not slept more than four hours in nine months. It was the fact that I had spent the morning with my mother-in-law, who had implied that I was "doing it wrong." It was the fact that my husband was on a work call and could not come in even when I knocked.
 
 I did not know any of that, in the moment. I only knew that something in my chest had cracked, and a voice came out of me that I did not know I had.
 
 This workbook is for that. For seeing, on paper, what was actually underneath. For building the muscle to notice it earlier. For learning that the repair afterward is the work, not the perfect non-event.
 
-*Soothemade*
+*With care, Maya*
 
 > *Intense anger in postpartum and parenting is more common than the culture admits. It can also be a sign of something that warrants a real provider. If your rage is frequent, escalating, paired with intrusive thoughts, or making you afraid for yourself or your family, please call. The numbers are at the back.*
 

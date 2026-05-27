@@ -16,7 +16,7 @@ You are not the patient. You are the person who has been recruited, sometimes wi
 
 This planner is the structure. It does not tell you which decisions to make. It is the place to write them down, and the questions to ask of the team who is helping you make them.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning and tracking tool, not medical or legal advice. The clinical decisions in your loved one's care belong to them, their medical team, and you and your family acting on their behalf. Financial and legal decisions belong to you, your family, and the financial planner or attorney working with you. The planner does not name medications. It does not recommend a specific living situation. It is the surface where the conversation gets recorded.*
 
@@ -932,4 +932,4 @@ If the next chapter is ongoing caregiving, P50 Family Caregiver Workbook is the 
 
 You are not alone in this, even when it feels like you are.
 
-*Soothemade*
+*With care, Maya*

@@ -16,7 +16,7 @@ If you have heavy bleeding, severe pain, signs of infection, or anything physica
 
 If you are not in crisis but you are in the long stretch that comes after, this companion is for that stretch. Take it slowly. Skip pages. Read the same one twice. Cry on it if you want. The pages can hold it.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 
@@ -28,7 +28,7 @@ What those friends and I learned, over hours and years, is that pregnancy loss d
 
 This companion is the thing I wish I'd had. Not to fix anything. Not to "heal" anyone on a timeline. Just to keep a record. To give some sentences to the difficult conversations. To not be alone in the quiet rooms.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

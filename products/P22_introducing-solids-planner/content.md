@@ -12,7 +12,7 @@ It wasn't a failure. That's actually most of what a first solids feed looks like
 
 This planner is the version of the conversation I wish I'd had on the kitchen counter. Not a book about baby-led weaning versus purees. Not a chart of what nutrients you must hit by month seven. Just a planner: when, what, how, and what to do when something goes sideways.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not medical or nutritional advice. If your baby has feeding concerns, weight concerns, allergies in the family, or any complexity, please talk to a pediatric provider. The numbers are at the back.*
 

@@ -14,7 +14,7 @@ This planner is for you. It does not assume the partner. Where help exists in yo
 
 This planner does not have an opinion about how you got here. It just assumes you are here, doing this, and that the work is real and is yours.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not medical advice. If anything is physically wrong or you are in crisis, please call a real provider or one of the lines at the back.*
 

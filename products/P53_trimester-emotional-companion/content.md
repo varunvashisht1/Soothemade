@@ -16,7 +16,7 @@ You are also, possibly, excited. Curious. Tired in a new way. Bonded to a child 
 
 The medical chart has no row for any of this. This journal does.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a journaling companion, not therapy. If the feelings get heavier than journaling can hold (intrusive thoughts, persistent sadness, inability to function), please see a perinatal mental-health therapist. The "if you are not okay" page at the back has crisis lines.*
 
@@ -782,4 +782,4 @@ This is not the journal that helps you remember what week you were in. It is the
 
 Both kinds of remembering matter. This one matters more, often, than the chart.
 
-*Soothemade*
+*With care, Maya*

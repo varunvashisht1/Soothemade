@@ -14,7 +14,7 @@ What you may not have is sustainability. The person you are caring for has needs
 
 This workbook is for the version of you doing this for the long haul. The structure to make it sustainable. The honest pages for the anger and the exhaustion. The reckoning page for the day you realize you cannot do this forever and the question of what comes next.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool, not medical or legal advice. The clinical decisions in your loved one's care belong to them, the medical team, and you and your family acting on their behalf. Financial and legal decisions belong to you and the professionals working with you. This workbook does not name medications. The crisis-line page is at the back. Caregivers are at meaningfully elevated risk for depression, anxiety, substance use, and their own health collapse. Knowing this in advance is one of the only ways to prevent it.*
 
@@ -769,7 +769,7 @@ OPTIONS TO CONSIDER
    ☐ A different employer with better caregiving support
    ☐ A career pause (with eyes open to financial and re-entry
      implications)
-   ☐ Leveraging employer's Employee Assistance Program (EAP)
+   ☐ Using employer's Employee Assistance Program (EAP)
 
 THE CONVERSATION WITH MY MANAGER OR HR
 
@@ -951,4 +951,4 @@ You are still that person. You are still showing up.
 
 The workbook closes here. The work continues. So do you.
 
-*Soothemade*
+*With care, Maya*

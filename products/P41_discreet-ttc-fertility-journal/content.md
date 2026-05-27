@@ -16,9 +16,9 @@ This journal is structured around six months of cycle-tracking, with the data fi
 
 There is no judgment in this journal. There is no projected timeline. There is no "this is how long it should take." There is just the place to write things down, in your own quiet, for as long as you need it.
 
-*Soothemade*
+*With care, Maya*
 
-> *This is a tracking journal, not medical advice. For specific concerns about your fertility journey, please consult a reproductive endocrinologist or your general provider. This journal does not interpret your data or predict ovulation. It is a place for the data to live.*
+> *This is a tracking journal, not medical advice. For specific concerns about your fertility, please consult a reproductive endocrinologist or your general provider. This journal does not interpret your data or predict ovulation. It is a place for the data to live.*
 
 ---
 
@@ -813,4 +813,4 @@ Whatever the next step is, the journal carried this stretch. The next stretch ma
 
 For now, you wrote things down. That counts.
 
-*Soothemade*
+*With care, Maya*

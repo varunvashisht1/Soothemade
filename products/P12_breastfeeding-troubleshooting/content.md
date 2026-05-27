@@ -18,7 +18,7 @@ The US National Breastfeeding Helpline is **1-800-994-9662**, Monday to Friday, 
 
 This guide is a reference. It is not a diagnosis tool. A trained lactation consultant (IBCLC) is the right person to actually see what is happening. Use this guide to organize what you've noticed, then bring it to them.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

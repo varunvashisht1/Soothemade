@@ -18,7 +18,7 @@ This planner is for that experience. It is not a grief book. P20 Pregnancy Loss 
 
 You can use it for the whole pregnancy. You can use it for a season and then put it down. You can use it together with a regular pregnancy planner, the way two stories sit next to each other. You can put it in a drawer the day the baby comes home, or you can use it for the next pregnancy too. There is no right way.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning and tracking tool, not medical advice. For specific medical questions about this pregnancy, please follow your obstetric provider's guidance. This planner does not name medications or recommend specific care, and it does not replace mental-health care for perinatal anxiety or trauma. Crisis lines are listed at the back.*
 
@@ -679,4 +679,4 @@ You are not crazy. You are not selfish. You are not "being too much." You are pr
 
 Whatever you write in this planner, or do not write, is yours.
 
-*Soothemade*
+*With care, Maya*

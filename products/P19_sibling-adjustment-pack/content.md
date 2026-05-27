@@ -12,7 +12,7 @@ The advice you'll find online tends to focus on the newborn (which is well-trodd
 
 This pack is for the in-between weeks. The third trimester. The hospital stay. The first six weeks home. The first three months. With the older one held in mind throughout, because they are the person in your house whose entire universe is about to expand without their consent.
 
-*Soothemade*
+*With care, Maya*
 
 ---
 

@@ -14,7 +14,7 @@ This kit is the version of planning that respects that. You will not need a vend
 
 The 6-week countdown is the work. After the countdown, you have a day. The day will be fine. The kid will not remember it. Your photos will.
 
-*Soothemade*
+*With care, Maya*
 
 > *This is a planning tool. Allergies and dietary restrictions in your guest list are between you and the families involved.*
 
@@ -554,4 +554,4 @@ The letter you wrote, the photos you took, the quote-book your guests signed, th
 
 You made it through year one. That is the milestone the cake is actually for.
 
-*Soothemade*
+*With care, Maya*
