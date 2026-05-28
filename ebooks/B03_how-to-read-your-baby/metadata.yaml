@@ -1,0 +1,34 @@
+---
+title: "How to Read Your Baby"
+subtitle: "Thirty cues, from the cries to the smiles"
+author:
+  - "Soothemade"
+publisher: "Soothemade"
+rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
+language: en-US
+date: 2026-05-28
+identifier:
+  - scheme: "private"
+    text: "soothemade-b03"
+description: |
+  A newborn cannot tell you what is wrong. So they tell you in faces,
+  sounds, hands, and feet. This book is the translator. Thirty cues
+  across five packs, cries, sleep cues, hunger cues, overstimulation
+  cues, and the small connection cues most parents miss in the haze.
+  Plus when the cue is not fixing it and when to call the pediatrician.
+keywords:
+  - newborn
+  - new parent
+  - postpartum
+  - infant cues
+  - crying baby
+  - sleep cues
+  - baby behavior
+subjects:
+  - "Parenting & Relationships"
+  - "Early Childhood"
+cover-image: cover.png
+css: epub.css
+toc: true
+toc-depth: 1
+---
