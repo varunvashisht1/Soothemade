@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 TARGETS = sorted(
     list((ROOT / "products").glob("P*_*/content.md"))
     + list((ROOT / "products").glob("P*_*/web.md"))
+    + list((ROOT / "ebooks").glob("B*_*/manuscript.md"))
 )
 
 
