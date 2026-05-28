@@ -1,0 +1,35 @@
+---
+title: "Caregiving, the First 90 Days"
+subtitle: "For the family member who has just had everything change"
+author:
+  - "Soothemade"
+publisher: "Soothemade"
+rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
+language: en-US
+date: 2026-05-28
+identifier:
+  - scheme: "private"
+    text: "soothemade-b11"
+description: |
+  A book for the family member who has just had a parent or partner's
+  situation change. The stroke. The fall. The dementia diagnosis. The
+  hospital discharge to "now what." Three months of structure for the
+  medical team, the legal paperwork, the where-they-will-live
+  conversation, the siblings, and the caregiver's own collapse. With
+  chapters that name what most resources skirt, the grief, the
+  resentment, the burnout.
+keywords:
+  - eldercare
+  - caregiver
+  - aging parent
+  - dementia
+  - family caregiving
+  - sandwich generation
+subjects:
+  - "Family & Relationships"
+  - "Self-Help"
+cover-image: cover.png
+css: epub.css
+toc: true
+toc-depth: 1
+---
