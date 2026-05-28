@@ -1,0 +1,162 @@
+/*
+ * Soothemade ebook PDF stylesheet
+ *
+ * For the PDF version of a Soothemade ebook. Reading-flow optimized
+ * (vs. the WeasyPrint product.css which is built for fillable
+ * journals). Sage paper, Fraunces body, Caveat for chapter titles,
+ * generous margins. Kindle-aspect page (1600x2560 css px) so the
+ * cover.png drops in as page 1 without scaling.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #EAEEE2;
+  --text: #2E2A24;
+  --ink-soft: #5C5347;
+  --accent: #8C9B7A;
+  --accent-3: #A8B894;
+  --muted: #B8AC9A;
+}
+
+@page {
+  size: 1600px 2560px;
+  margin: 220px 200px;
+  background: var(--bg);
+  @bottom-center {
+    content: counter(page);
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    color: var(--muted);
+    margin-top: 60px;
+  }
+}
+
+@page :first {
+  margin: 0;
+  @bottom-center { content: none; }
+}
+
+@page cover {
+  margin: 0;
+  background: var(--bg);
+  @bottom-center { content: none; }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Fraunces', serif;
+  font-variation-settings: 'opsz' 20, 'SOFT' 0, 'WONK' 0;
+  font-size: 36px;
+  line-height: 1.65;
+}
+
+.cover-page {
+  page: cover;
+  page-break-after: always;
+  width: 1600px;
+  height: 2560px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: var(--bg);
+}
+
+.cover-page img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+h1 {
+  page-break-before: always;
+  page-break-after: avoid;
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  font-size: 110px;
+  line-height: 1.1;
+  color: var(--accent);
+  margin: 60px 0 80px 0;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  page-break-after: avoid;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 30, 'SOFT' 0, 'WONK' 0;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1.25;
+  color: var(--ink-soft);
+  margin: 80px 0 30px 0;
+}
+
+h3 {
+  page-break-after: avoid;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 60px 0 20px 0;
+}
+
+p {
+  margin: 0 0 28px 0;
+  text-indent: 0;
+}
+
+blockquote {
+  margin: 32px 60px 32px 60px;
+  padding: 20px 36px;
+  border-left: 4px solid var(--accent);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 38px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+blockquote p:last-child { margin-bottom: 0; }
+
+pre, code {
+  font-family: 'Inter', monospace;
+  font-size: 26px;
+}
+
+pre {
+  background: rgba(168, 184, 148, 0.18);
+  padding: 32px 40px;
+  border: 1px solid var(--accent-3);
+  border-radius: 8px;
+  margin: 32px 0;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  page-break-inside: avoid;
+}
+
+hr {
+  border: none;
+  height: 0;
+  margin: 80px auto;
+  width: 200px;
+  border-top: 2px solid var(--accent-3);
+}
+
+em { font-style: italic; }
+strong {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: 'opsz' 30, 'SOFT' 0, 'WONK' 0, 'wght' 600;
+  font-weight: 600;
+  font-style: normal;
+}
+
+ul, ol { margin: 0 0 28px 60px; }
+li { margin-bottom: 14px; }

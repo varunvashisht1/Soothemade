@@ -1,0 +1,32 @@
+---
+title: "The First Six Weeks"
+subtitle: "A newborn survival book, week by week"
+author:
+  - "Soothemade"
+publisher: "Soothemade"
+rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
+language: en-US
+date: 2026-05-28
+identifier:
+  - scheme: "private"
+    text: "soothemade-b10"
+description: |
+  Six weeks of week-by-week scaffolding for the first six weeks home
+  with a newborn. Built for the version of you who walks into a room
+  and forgets why. Not a methodology. Not a parenting philosophy. A
+  scaffold for the kind of week where you cannot keep track of anything.
+keywords:
+  - newborn
+  - new mom
+  - postpartum
+  - first six weeks
+  - newborn survival
+  - fourth trimester
+subjects:
+  - "Parenting & Relationships"
+  - "Early Childhood"
+cover-image: cover.png
+css: epub.css
+toc: true
+toc-depth: 1
+---

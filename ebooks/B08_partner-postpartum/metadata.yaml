@@ -1,0 +1,35 @@
+---
+title: "The Partner's Postpartum Playbook"
+subtitle: "Twelve weeks of what to actually do, written to you"
+author:
+  - "Soothemade"
+publisher: "Soothemade"
+rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
+language: en-US
+date: 2026-05-28
+identifier:
+  - scheme: "private"
+    text: "soothemade-b08"
+description: |
+  A guide written TO the non-birthing partner, not to her. Twelve weeks
+  of what to actually do, in what order. Hospital + homecoming. Week-by-
+  week through twelve weeks. Special situations (c-section, breastfeeding,
+  bottle, difficult delivery, same-sex couple, return to work). The
+  conversation to have before the baby. What you'll want to hear that
+  you may never hear. A page for you, including a reminder that partner
+  postpartum depression is real.
+keywords:
+  - partner
+  - new dad
+  - postpartum
+  - non-birthing parent
+  - new parent
+  - co-parenting
+subjects:
+  - "Parenting & Relationships"
+  - "Family"
+cover-image: cover.png
+css: epub.css
+toc: true
+toc-depth: 1
+---

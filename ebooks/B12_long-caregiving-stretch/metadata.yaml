@@ -1,0 +1,35 @@
+---
+title: "The Long Caregiving Stretch"
+subtitle: "For the months and years after the first 90 days"
+author:
+  - "Soothemade"
+publisher: "Soothemade"
+rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
+language: en-US
+date: 2026-05-28
+identifier:
+  - scheme: "private"
+    text: "soothemade-b12"
+description: |
+  For the long-haul family caregiver. The ongoing months and years of
+  caring for an aging parent or a partner with chronic illness. Sister
+  book to Caregiving, the First 90 Days. Respite-care planning, the
+  honest pages for anger and exhaustion, the sibling-conflict
+  conversation, marriage and career considerations, and a "what they
+  would want, if they could tell me" page. Caregiver crisis lines
+  included.
+keywords:
+  - caregiver
+  - eldercare
+  - long-term caregiving
+  - caregiver burnout
+  - aging parent
+  - sandwich generation
+subjects:
+  - "Family & Relationships"
+  - "Self-Help"
+cover-image: cover.png
+css: epub.css
+toc: true
+toc-depth: 1
+---
