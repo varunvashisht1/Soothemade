@@ -1,0 +1,34 @@
+---
+title: "Nine Months You Are Also Living"
+subtitle: "A pregnancy companion for the partner"
+author:
+  - "Soothemade"
+publisher: "Soothemade"
+rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
+language: en-US
+date: 2026-05-28
+identifier:
+  - scheme: "private"
+    text: "soothemade-b09"
+description: |
+  Written for the non-birthing partner during pregnancy. The prequel to
+  The Partner's Postpartum Playbook. Trimester-by-trimester, what is
+  happening for your pregnant partner and how to be useful. Your own
+  grief and fear, the page most partners do not give themselves time
+  for. Things to say. Things to never say. A page on the relationship
+  you are both inside, and how to keep it standing.
+keywords:
+  - partner
+  - new dad
+  - pregnancy
+  - non-birthing parent
+  - expectant father
+  - co-parenting
+subjects:
+  - "Parenting & Relationships"
+  - "Pregnancy & Childbirth"
+cover-image: cover.png
+css: epub.css
+toc: true
+toc-depth: 1
+---
