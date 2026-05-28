@@ -1,0 +1,18 @@
+# Claude Code working state (worktrees, settings, session files).
+# Per AS_BUILT § 8: ".claude/ is gitignored. The real working tree (main repo)
+# is C:/Users/varun/Documents/GitHub/Soothemade/ and is usually on main."
+.claude/
+
+# Temp scratch space for build artifacts (Dockerfiles for image builds,
+# preview PNGs, etc.). Files inside .tmp/ that should ship are explicitly
+# git-added; the directory as a whole is ignored.
+.tmp/preview*
+.tmp/canva-previews/
+.tmp/P*_cover-*.png
+.tmp/P*_p*-*.png
+.tmp/B*_cover-*.png
+.tmp/B*_p*-*.png
+
+# Python bytecode
+__pycache__/
+*.pyc

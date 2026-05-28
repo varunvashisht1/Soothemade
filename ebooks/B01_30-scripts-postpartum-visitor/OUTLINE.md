@@ -5,14 +5,14 @@
 **30 Scripts for the Postpartum Visitor**
 *What to say when you don't have the energy to find your own words*
 
-By Maya | Soothemade Press
+By Maya | Soothemade
 
 ## Structure
 
 ### Front matter
 
 - **Title page**: Title, subtitle, author, imprint
-- **Copyright page**: © 2026 Soothemade Press / Soothemade. Personal use. Crisis-line reference.
+- **Copyright page**: © 2026 Soothemade / Soothemade. Personal use. Crisis-line reference.
 - **Dedication**: "For the parent at the door, in the third day, in the fourth trimester."
 - **Table of Contents**: Generated from headings
 - **A note from Maya**: ~300 words, expanded from the PDF intro
@@ -42,7 +42,7 @@ By Maya | Soothemade Press
 ### Back matter
 
 - **About Maya**: ~100 words, fictional-founder framing per brand persona.
-- **About Soothemade Press**: ~100 words, the imprint's mission.
+- **About Soothemade**: ~100 words, the imprint's mission.
 - **Also from Soothemade**: cross-sell to the printable version (P02) + adjacent products (P04, P15, P49, P55).
 - **Crisis-line page**: PSI, MMH hotline, 988, international equivalents.
 
@@ -59,6 +59,6 @@ Nothing significant. The PDF was already content-dense; the ebook is the same co
 
 1. The "Why No Is Hard Postpartum" chapter (the most important addition — frames the whole book)
 2. Section intros for each chapter (gives reading flow vs. just-a-list-of-scripts)
-3. "About Maya" + "About Soothemade Press"
+3. "About Maya" + "About Soothemade"
 4. Cross-sells / "Also from..." back-matter page
 5. Expanded crisis-line page (more lines, US + UK + Canada + Australia)
