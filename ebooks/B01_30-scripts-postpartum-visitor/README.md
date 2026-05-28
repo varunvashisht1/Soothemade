@@ -1,6 +1,6 @@
 # B01 — 30 Scripts for the Postpartum Visitor
 
-The first book under **Soothemade Press**. Adapted from the printable P02 "Saying No" Script Pack.
+The first book under **Soothemade**. Adapted from the printable P02 "Saying No" Script Pack.
 
 ## Source
 
@@ -16,7 +16,7 @@ Type 1 conversion (read-ready). The PDF was already 95% narrative content. The a
 - Each PDF "Section" becomes a numbered **Chapter** with a 150-250 word chapter intro that frames the scripts.
 - The 30 scripts and 5 templates are kept **verbatim** — they are the core product.
 - A new chapter "Why 'No' Is Hard Postpartum" expands the intro.
-- Back matter (about Maya, about Soothemade Press, also-from-the-imprint cross-sells, crisis line) added.
+- Back matter (about Maya, about Soothemade, also-from-the-imprint cross-sells, crisis line) added.
 - No fillable elements (this is a read, not a journal).
 
 ## Files

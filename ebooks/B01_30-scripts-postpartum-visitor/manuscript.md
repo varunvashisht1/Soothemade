@@ -1,8 +1,8 @@
 ---
 title: "30 Scripts for the Postpartum Visitor"
 subtitle: "What to say when you don't have the energy to find your own words"
-author: "Maya"
-publisher: "Soothemade Press"
+author: "Soothemade"
+publisher: "Soothemade"
 rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
 language: en-US
 ---
@@ -440,13 +440,13 @@ Maya is the voice behind Soothemade. A postpartum doula and mother of two, she w
 
 She is a fictional founder, a composite of every parent who has emailed Soothemade to say "I felt like you had been in my house." That composite voice is the brand voice. The decisions, the products, and this book were all written under that voice.
 
-# About Soothemade Press
+# About Soothemade
 
-Soothemade Press is the books imprint of Soothemade, a small apothecary of printables, planners, and cards for new parents.
+Soothemade is a small apothecary of printables, planners, cards, and books for new parents.
 
-The Press exists for the moments when a journal does not fit the need. When you want to read, not write. When you are looking up the chapter at 3am on your phone, not pulling a printed page out of a drawer.
+The books exist for the moments when a journal does not fit the need. When you want to read, not write. When you are looking up the chapter at 3am on your phone, not pulling a printed page out of a drawer.
 
-Each book in the Press is adapted from a Soothemade Notes printable. The printable version contains writing space and prompts. The book version contains the reading. Both work. Some readers want one, some want the other, some want both. You can find the printable version of every book at notes.soothemade.com.
+Each book is adapted from a Soothemade printable. The printable version contains writing space and prompts. The book version contains the reading. Both work. Some readers want one, some want the other, some want both. You can find the printable version of every book at notes.soothemade.com.
 
 # Also from Soothemade
 
@@ -456,7 +456,7 @@ Other Soothemade products that pair with this book:
 
 - **The Partner's Postpartum Playbook**, for the non-birthing partner. Many of the scripts in this book are most effective when your partner is the one delivering them. The Playbook is their companion.
 - **The Visitor Welcome Packet**, for when you are ready for visitors. Ground rules, food drop menu, "how to help" list, and a meal-train tracker.
-- **The Asking for Help Script Pack**, the inverse of this book. Thirty scripts for asking specific people for specific help. The book version is coming as the second title from Soothemade Press.
+- **The Asking for Help Script Pack**, the inverse of this book. Thirty scripts for asking specific people for specific help. The book version is the second Soothemade title, coming next.
 
 # Crisis lines
 
@@ -486,4 +486,4 @@ Postpartum mood disorders are common and treatable. Asking for help is not a sig
 
 *This book is for planning and personal use only. It is not legal, medical, or psychological advice. For specific concerns about your postpartum recovery or your baby's health, please follow your obstetric and pediatric providers' guidance.*
 
-*A Soothemade Press book. Made slowly, in plain language.*
+*A Soothemade book. Made slowly, in plain language.*
