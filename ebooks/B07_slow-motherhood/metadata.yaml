@@ -1,0 +1,32 @@
+---
+title: "Slow Motherhood"
+subtitle: "A short manifesto for the mom who is tired of optimizing"
+author:
+  - "Soothemade"
+publisher: "Soothemade"
+rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
+language: en-US
+date: 2026-05-28
+identifier:
+  - scheme: "private"
+    text: "soothemade-b07"
+description: |
+  A short manifesto for slow motherhood. Not the Sunday in a sunbeam
+  with a sourdough loaf. The Tuesday at 4pm when you have four minutes
+  and an equally valid case for the laundry, and you pick the coffee
+  instead. The book is permission, written down.
+keywords:
+  - slow motherhood
+  - motherhood
+  - new mom
+  - parenting philosophy
+  - mom life
+  - postpartum
+subjects:
+  - "Parenting & Relationships"
+  - "Self-Help"
+cover-image: cover.png
+css: epub.css
+toc: true
+toc-depth: 1
+---
