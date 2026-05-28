@@ -1,0 +1,32 @@
+---
+title: "Big Feelings"
+subtitle: "Forty cards for the toddler on the kitchen floor"
+author:
+  - "Soothemade"
+publisher: "Soothemade"
+rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
+language: en-US
+date: 2026-05-28
+identifier:
+  - scheme: "private"
+    text: "soothemade-b04"
+description: |
+  A field guide for the toddler who is on the kitchen floor and cannot say
+  why. Forty cards across four packs, naming the feelings, where they
+  live in the body, calm-down tools, and reset language. Plus the parent
+  guide for after the storm.
+keywords:
+  - toddler
+  - emotional regulation
+  - big feelings
+  - parenting
+  - tantrum
+  - feelings vocabulary
+subjects:
+  - "Parenting & Relationships"
+  - "Early Childhood"
+cover-image: cover.png
+css: epub.css
+toc: true
+toc-depth: 1
+---
