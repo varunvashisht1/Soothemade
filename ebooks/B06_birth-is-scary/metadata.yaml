@@ -1,0 +1,35 @@
+---
+title: "Birth Is Scary"
+subtitle: "A field guide to the fear of giving birth"
+author:
+  - "Soothemade"
+publisher: "Soothemade"
+rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
+language: en-US
+date: 2026-05-28
+identifier:
+  - scheme: "private"
+    text: "soothemade-b06"
+description: |
+  A field guide for the fear of giving birth. Validates the fear as data,
+  not weakness. Names the specific sub-fears, pain, loss of control,
+  complications for you, complications for the baby, interventions you
+  did not want, the unknown. Offers tools that are not platitudes.
+  Scripts for telling the team you are scared. The night-before-labor
+  page. Crisis-line routing for when the anxiety is bigger than the
+  book can hold.
+keywords:
+  - birth anxiety
+  - birth fear
+  - tokophobia
+  - pregnancy anxiety
+  - labor and delivery
+  - perinatal mental health
+subjects:
+  - "Parenting & Relationships"
+  - "Pregnancy & Childbirth"
+cover-image: cover.png
+css: epub.css
+toc: true
+toc-depth: 1
+---
