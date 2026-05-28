@@ -1,0 +1,33 @@
+---
+title: "The Pregnancy Safety Reference"
+subtitle: "The questions, organized. The answers belong to your provider."
+author:
+  - "Soothemade"
+publisher: "Soothemade"
+rights: "© 2026 Soothemade. Personal use only. All other rights reserved."
+language: en-US
+date: 2026-05-28
+identifier:
+  - scheme: "private"
+    text: "soothemade-b05"
+description: |
+  A pregnancy reference for the everyday "is this okay" questions.
+  Organized by category, food, drink, activity, environment, medication
+  classes, workplace, travel, so the parent can write down what they
+  want to ask the provider in one conversation instead of ten 2am
+  Google searches. The book does not make safety verdicts. It
+  organizes the questions. The answers belong to the provider.
+keywords:
+  - pregnancy safety
+  - prenatal
+  - new mom
+  - pregnancy guide
+  - first trimester
+subjects:
+  - "Parenting & Relationships"
+  - "Pregnancy & Childbirth"
+cover-image: cover.png
+css: epub.css
+toc: true
+toc-depth: 1
+---
