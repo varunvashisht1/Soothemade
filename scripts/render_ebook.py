@@ -60,6 +60,54 @@ def render_cover(book_dir: Path) -> Path:
     return cover_png
 
 
+def render_pdf(book_dir: Path) -> Path:
+    """Render manuscript.md + cover.png -> book.pdf via WeasyPrint.
+
+    Output is Kindle-aspect (1600x2560 px page). Page 1 is the cover.
+    Pages 2+ are the manuscript body styled via book.css.
+    """
+    manuscript = book_dir / "manuscript.md"
+    cover_png = book_dir / "cover.png"
+    book_css = book_dir / "book.css"
+    book_pdf = book_dir / "book.pdf"
+
+    if not manuscript.exists():
+        sys.exit(f"Missing {manuscript}")
+    if not book_css.exists():
+        sys.exit(f"Missing {book_css} (the PDF stylesheet)")
+
+    print(f"Rendering PDF: {manuscript.name} -> {book_pdf.name}")
+
+    import frontmatter
+    import markdown
+    from weasyprint import HTML, CSS
+
+    post = frontmatter.load(str(manuscript))
+    body_html = markdown.markdown(
+        post.content,
+        extensions=["fenced_code", "tables", "sane_lists"],
+    )
+
+    cover_block = ""
+    if cover_png.exists():
+        cover_block = (
+            f'<div class="cover-page"><img src="cover.png" alt="cover" /></div>\n'
+        )
+
+    full_html = (
+        '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>'
+        f"{cover_block}{body_html}"
+        "</body></html>"
+    )
+
+    HTML(string=full_html, base_url=str(book_dir)).write_pdf(
+        str(book_pdf),
+        stylesheets=[CSS(filename=str(book_css))],
+    )
+
+    return book_pdf
+
+
 def render_epub(book_dir: Path) -> Path:
     """Run Pandoc to convert manuscript.md + metadata.yaml -> book.epub."""
     manuscript = book_dir / "manuscript.md"
@@ -102,6 +150,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("book_dir", type=Path, help="Path like ebooks/Bnn_<slug>/")
     parser.add_argument("--skip-cover", action="store_true", help="Skip cover rendering (use existing cover.png)")
+    parser.add_argument("--skip-epub", action="store_true", help="Skip EPUB rendering")
+    parser.add_argument("--skip-pdf", action="store_true", help="Skip PDF rendering")
     args = parser.parse_args()
 
     book_dir = args.book_dir.resolve() if args.book_dir.is_absolute() else (ROOT / args.book_dir).resolve()
@@ -113,9 +163,16 @@ def main() -> None:
         size = cover.stat().st_size
         print(f"  cover: {cover.name} ({size:,} bytes)")
 
-    epub = render_epub(book_dir)
-    size = epub.stat().st_size
-    print(f"  ebook: {epub.name} ({size:,} bytes)")
+    if not args.skip_epub:
+        epub = render_epub(book_dir)
+        size = epub.stat().st_size
+        print(f"  epub:  {epub.name} ({size:,} bytes)")
+
+    if not args.skip_pdf:
+        pdf = render_pdf(book_dir)
+        size = pdf.stat().st_size
+        print(f"  pdf:   {pdf.name} ({size:,} bytes)")
+
     print("Done.")
 
 
