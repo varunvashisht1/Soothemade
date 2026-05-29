@@ -69,11 +69,15 @@ const motif = coverImage ? null : coverMotif(code);
   .pcard:hover .frame { border-color: var(--accent); transform: translateY(-2px); }
 
   /* "Apothecary label" cover for products without a lifestyle photo.
-     Cream paper, inset keyline, celestial ink mark, centered title. */
+     Warm paper-at-dusk gradient + a soft light bloom behind the mark,
+     so it reads like a sky on paper rather than a flat cream card. */
   .frame--label {
     align-items: center;
     text-align: center;
     padding: 14px;
+    background:
+      radial-gradient(ellipse 62% 46% at 50% 36%, rgba(255, 252, 244, 0.6), transparent 72%),
+      linear-gradient(158deg, #f4eedc 0%, #eaddc1 56%, #dccba8 100%);
   }
   .frame--label::after {
     content: '';

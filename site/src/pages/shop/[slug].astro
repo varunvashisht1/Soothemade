@@ -202,7 +202,9 @@ const heroMotif = heroImage ? null : coverMotif(product.data.code);
   }
   .cover-plate {
     position: relative;
-    background: var(--card);
+    background:
+      radial-gradient(ellipse 60% 44% at 50% 36%, rgba(255, 252, 244, 0.6), transparent 72%),
+      linear-gradient(158deg, #f4eedc 0%, #eaddc1 56%, #dccba8 100%);
     border: 1px solid var(--rule-strong);
     width: 100%;
     max-width: 340px;
