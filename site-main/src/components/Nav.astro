@@ -62,9 +62,10 @@ const links = [
     flex-shrink: 0;
     align-self: center;
   }
-  .topnav.default .logo { color: var(--ink); }
-  .topnav.default .logo .sprig { color: var(--accent-soft); }
+  /* Body is dark gradient on every page now — both variants use light text. */
+  .topnav.default .logo,
   .topnav.overlay .logo { color: var(--apo-paper); }
+  .topnav.default .logo .sprig,
   .topnav.overlay .logo .sprig { color: var(--accent-soft); }
 
   .links {
@@ -75,9 +76,9 @@ const links = [
     letter-spacing: var(--ls-wider);
     text-transform: uppercase;
   }
-  .topnav.default .links a { color: var(--ink-soft); }
-  .topnav.default .links a:hover { color: var(--accent); }
+  .topnav.default .links a,
   .topnav.overlay .links a { color: var(--apo-paper-dim); }
+  .topnav.default .links a:hover,
   .topnav.overlay .links a:hover { color: var(--accent-soft); }
 
   .cta {
@@ -89,9 +90,9 @@ const links = [
     text-transform: uppercase;
     transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
   }
-  .topnav.default .cta { color: var(--ink); border-color: var(--rule-strong); }
-  .topnav.default .cta:hover { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+  .topnav.default .cta,
   .topnav.overlay .cta { color: var(--apo-paper); border-color: var(--apo-paper-dim); }
+  .topnav.default .cta:hover,
   .topnav.overlay .cta:hover { background: var(--apo-paper); color: var(--ink); border-color: var(--apo-paper); }
 
   @media (max-width: 880px) {
