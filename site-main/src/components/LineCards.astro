@@ -8,12 +8,61 @@ interface Props {
 const { detailed = false } = Astro.props;
 
 /* Map line ids to room-tile gradient classes for the polaroid backs.
-   Notes always live, others use the Apothecary "warm-black undertone" set. */
+   Notes is forest green (matching notes.soothemade.com), Kitchen bronze,
+   Studio slate, Field deep earth. */
 const roomClass: Record<string, string> = {
   notes: 'live',
   kitchen: 'r-kitchen',
   studio: 'r-studio',
   field: 'r-field',
+};
+
+/* Botanical line-art motif per room — same hand-drawn grammar as the
+   nav/footer sprig, one distinct plant each. Rendered faded in cream
+   over the colored tile, like a pressed-botanical plate. */
+const motif: Record<string, string> = {
+  // upright sprig, five alternating leaves
+  notes: `
+    <path d="M100 26 Q95 165 104 300" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M99 74 Q68 60 46 78 Q70 90 99 82" fill="currentColor"/>
+    <path d="M101 118 Q132 104 154 122 Q128 134 101 126" fill="currentColor"/>
+    <path d="M99 164 Q68 150 46 168 Q70 180 99 172" fill="currentColor"/>
+    <path d="M101 208 Q132 194 154 212 Q128 224 101 216" fill="currentColor"/>
+    <path d="M99 252 Q72 240 52 256 Q74 266 99 260" fill="currentColor"/>`,
+  // wheat stalk — central stem, paired grains up top
+  kitchen: `
+    <path d="M100 150 L100 300" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M100 150 L100 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M100 72 Q83 60 82 40 Q97 52 100 72" fill="currentColor"/>
+    <path d="M100 72 Q117 60 118 40 Q103 52 100 72" fill="currentColor"/>
+    <path d="M100 104 Q83 92 82 72 Q97 84 100 104" fill="currentColor"/>
+    <path d="M100 104 Q117 92 118 72 Q103 84 100 104" fill="currentColor"/>
+    <path d="M100 136 Q85 125 84 105 Q98 116 100 136" fill="currentColor"/>
+    <path d="M100 136 Q115 125 116 105 Q102 116 100 136" fill="currentColor"/>
+    <path d="M100 166 Q87 156 86 138 Q99 148 100 166" fill="currentColor"/>
+    <path d="M100 166 Q113 156 114 138 Q101 148 100 166" fill="currentColor"/>`,
+  // single stem, an aster bloom at the top, two low leaves
+  studio: `
+    <path d="M100 92 L100 300" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M100 206 Q74 194 55 206 Q76 218 100 212" fill="currentColor"/>
+    <path d="M100 240 Q126 228 145 240 Q124 252 100 246" fill="currentColor"/>
+    <circle cx="100" cy="72" r="10" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M100 60 L100 44"/>
+      <path d="M108 63 L118 52"/>
+      <path d="M113 70 L130 67"/>
+      <path d="M112 80 L126 88"/>
+      <path d="M92 80 L78 88"/>
+      <path d="M87 70 L70 67"/>
+      <path d="M92 63 L82 52"/>
+    </g>`,
+  // curved branch with leaves along the arc
+  field: `
+    <path d="M66 300 Q86 168 140 42" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M80 246 Q60 248 48 262 Q68 266 84 252" fill="currentColor"/>
+    <path d="M92 198 Q105 178 101 153 Q86 175 89 200" fill="currentColor"/>
+    <path d="M106 152 Q86 144 70 154 Q89 166 110 158" fill="currentColor"/>
+    <path d="M120 104 Q134 84 131 60 Q113 82 115 106" fill="currentColor"/>`,
 };
 ---
 <section class={`rooms-section ${detailed ? 'detailed' : ''}`}>
@@ -28,10 +77,14 @@ const roomClass: Record<string, string> = {
       <article class={`polaroid ${roomClass[line.id] ?? ''}`}>
         {line.status === 'live' ? (
           <a class="photo" href={line.href} rel="noopener">
+            <svg class="tile-motif" viewBox="0 0 200 320" aria-hidden="true" set:html={motif[line.id] ?? motif.notes} />
             <span class="room-stamp">{line.name}</span>
           </a>
         ) : (
-          <div class="photo"><span class="room-stamp">{line.name}</span></div>
+          <div class="photo">
+            <svg class="tile-motif" viewBox="0 0 200 320" aria-hidden="true" set:html={motif[line.id] ?? motif.notes} />
+            <span class="room-stamp">{line.name}</span>
+          </div>
         )}
         <div class="caption">
           <div class="meta">
@@ -110,25 +163,44 @@ const roomClass: Record<string, string> = {
     position: relative;
     overflow: hidden;
   }
+  /* Notes = forest green (matches notes.soothemade.com) */
   .polaroid.live .photo {
-    background: linear-gradient(160deg, #3d251a 0%, var(--apo-tile-notes) 60%, #1a0f0b 100%);
+    background: linear-gradient(160deg, #38503a 0%, #1f2c1d 55%, #0d140b 100%);
   }
+  /* Kitchen = warm bronze */
   .polaroid.r-kitchen .photo {
-    background: linear-gradient(160deg, #3d322c 0%, var(--apo-tile-kitchen) 60%, #1a1410 100%);
+    background: linear-gradient(160deg, #463624 0%, #2a2018 55%, #14100a 100%);
   }
+  /* Studio = slate indigo (moved off green so Notes owns green) */
   .polaroid.r-studio .photo {
-    background: linear-gradient(160deg, #2a3528 0%, var(--apo-tile-studio) 60%, #0e160c 100%);
+    background: linear-gradient(160deg, #34414f 0%, #1d2530 55%, #0c1016 100%);
   }
+  /* Field = deep earth */
   .polaroid.r-field .photo {
-    background: linear-gradient(160deg, #18140e 0%, var(--apo-tile-field) 55%, #030302 100%);
+    background: linear-gradient(160deg, #2c2118 0%, #160f0a 55%, #050302 100%);
   }
   .polaroid .photo::before {
     content: '';
     position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse at 30% 30%, rgba(184, 134, 42, 0.12), transparent 55%),
-      radial-gradient(ellipse at 75% 80%, rgba(0,0,0,0.28), transparent 55%);
+      radial-gradient(ellipse at 30% 25%, rgba(255, 248, 235, 0.10), transparent 55%),
+      radial-gradient(ellipse at 75% 85%, rgba(0,0,0,0.30), transparent 55%);
+    z-index: 1;
   }
+  .tile-motif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -56%);
+    width: 56%;
+    height: auto;
+    color: var(--apo-paper);
+    opacity: 0.22;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .polaroid.live .tile-motif { opacity: 0.26; }
+  .polaroid:hover .tile-motif { opacity: 0.34; transition: opacity var(--t-base) var(--ease); }
   .polaroid .room-stamp {
     position: absolute;
     bottom: 18px;
