@@ -16,6 +16,11 @@ const links = [
 ---
 <nav class:list={['topnav', variant]}>
   <a href="/" class="logo" aria-label="Soothemade — home">
+    <svg class="sprig" viewBox="370 125 60 95" fill="none" width="20" height="32" aria-hidden="true">
+      <path d="M 400 215 Q 397 175 401 130" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+      <ellipse cx="386" cy="190" rx="11" ry="4" fill="currentColor" transform="rotate(-45 386 190)"/>
+      <ellipse cx="414" cy="160" rx="11" ry="4" fill="currentColor" transform="rotate(45 414 160)"/>
+    </svg>
     <span>Soothemade</span>
   </a>
   <div class="links">
@@ -49,9 +54,18 @@ const links = [
     font-size: 32px;
     line-height: 1;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo .sprig {
+    flex-shrink: 0;
+    align-self: center;
   }
   .topnav.default .logo { color: var(--ink); }
+  .topnav.default .logo .sprig { color: var(--accent-soft); }
   .topnav.overlay .logo { color: var(--apo-paper); }
+  .topnav.overlay .logo .sprig { color: var(--accent-soft); }
 
   .links {
     display: flex;
