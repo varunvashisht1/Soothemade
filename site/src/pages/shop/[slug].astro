@@ -5,7 +5,7 @@ import Nav from '~/components/Nav.astro';
 import ProductCard from '~/components/ProductCard.astro';
 import Newsletter from '~/components/Newsletter.astro';
 import Footer from '~/components/Footer.astro';
-import { coverFor } from '~/lib/cover-image';
+import { coverFor, coverMotif } from '~/lib/cover-image';
 
 export const prerender = true;
 
@@ -24,6 +24,7 @@ const crossSell = (product.data.crossSell ?? [])
 
 const ymyl = product.data.ymyl;
 const heroImage = coverFor(product.data.code);
+const heroMotif = heroImage ? null : coverMotif(product.data.code);
 ---
 <BaseLayout
   title={`${product.data.title} — Soothemade Notes`}
@@ -65,11 +66,13 @@ const heroImage = coverFor(product.data.code);
             <img src={heroImage} alt={product.data.title} loading="eager" />
           </div>
         ) : (
-          <div class="jar">
-            <div class="jar-inner">
-              <div class="jar-label" set:html={product.data.heroLabel.replace(/\n/g, '<br/>')} />
-              <div class="jar-meta">{product.data.specs}</div>
+          <div class="cover-plate">
+            <span class="cp-code">{product.data.code}</span>
+            <div class="cp-mid">
+              <svg class:list={['cp-motif', `tint-${heroMotif!.tint}`]} viewBox="0 0 100 100" set:html={heroMotif!.art} />
+              <div class="cp-title" set:html={product.data.heroLabel.replace(/\n/g, '<br/>')} />
             </div>
+            <span class="cp-meta">{product.data.specs}</span>
           </div>
         )}
       </aside>
@@ -197,32 +200,63 @@ const heroImage = coverFor(product.data.code);
     object-position: center;
     display: block;
   }
-  .jar {
+  .cover-plate {
+    position: relative;
     background: var(--card);
     border: 1px solid var(--rule-strong);
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
     aspect-ratio: 3/4;
-    padding: 32px 28px;
+    padding: 30px 26px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     text-align: center;
   }
-  .jar-label {
+  .cover-plate::after {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border: 1px solid var(--card-rule);
+    pointer-events: none;
+  }
+  .cp-code {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--card-text-soft);
+    padding-top: 8px;
+  }
+  .cp-mid {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+  .cp-motif { width: 84px; height: 84px; display: block; }
+  .cp-motif.tint-terracotta { color: var(--accent); }
+  .cp-motif.tint-sage { color: var(--card-text); }
+  .cp-title {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 22px;
+    font-size: 24px;
     color: var(--card-text);
     line-height: 1.2;
   }
-  .jar-meta {
+  .cp-meta {
+    position: relative;
+    z-index: 1;
     font-size: 11px;
     letter-spacing: var(--ls-widest);
     text-transform: uppercase;
     color: var(--card-text-soft);
-    border-top: 1px solid var(--card-rule);
-    padding-top: 14px;
+    padding-bottom: 8px;
   }
 
   .ymyl {
@@ -307,7 +341,7 @@ const heroImage = coverFor(product.data.code);
   @media (max-width: 880px) {
     .hero { grid-template-columns: 1fr; padding: 32px var(--sp-5) 48px; gap: 36px; }
     .hero-art { order: -1; }
-    .jar { max-width: 260px; }
+    .cover-plate { max-width: 280px; }
     h1 { font-size: 40px; }
     .body { padding: 48px var(--sp-5) 64px; font-size: 16px; }
     .cross { padding: 48px var(--sp-5) 32px; }

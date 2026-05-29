@@ -1,47 +1,39 @@
 ---
+import { coverMotif } from '~/lib/cover-image';
+
 interface Props {
   href: string;
-  /** Apothecary jar label text — multi-line allowed via "\n". */
+  /** Cover title text — multi-line allowed via "\n". */
   label: string;
-  /** Small meta line at the bottom of the jar. */
+  /** Small spec line (e.g. "80 cards · 0–3 yrs"). */
   meta: string;
-  /** Tagline shown below the jar, in the brand voice. */
+  /** Tagline shown below the cover, in the brand voice. */
   tagline: string;
   /** Display price (e.g. "$14"). */
   price: string;
   /** Product code (e.g. "P09"). */
   code: string;
-  /** Optional cover image URL — if provided, displayed instead of the jar glyph + label. */
+  /** Optional cover image URL — if provided, displayed instead of the label cover. */
   coverImage?: string;
-  /** Single-keyword glyph selector for the jar art (used when coverImage is not provided). */
-  glyph?: 'circle' | 'jar' | 'square' | 'partner' | 'house' | 'cup' | 'heart' | 'twins' | 'card';
 }
-const { href, label, meta, tagline, price, code, coverImage, glyph = 'circle' } = Astro.props;
+const { href, label, meta, tagline, price, code, coverImage } = Astro.props;
+const motif = coverImage ? null : coverMotif(code);
 ---
 <a class="pcard" href={href}>
-  <div class={coverImage ? 'frame frame--image' : 'frame'}>
-    {coverImage ? (
+  {coverImage ? (
+    <div class="frame frame--image">
       <img src={coverImage} alt={label.replace(/\n/g, ' ')} loading="lazy" />
-    ) : (
-      <>
-        <div class="top">
-          <svg class="glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-            {glyph === 'circle' && <><circle cx="18" cy="18" r="11" /><path d="M11 18 L 25 18 M 18 11 L 18 25" stroke-linecap="round" /></>}
-            {glyph === 'jar' && <><path d="M8 12 Q 18 4, 28 12 L 28 28 L 8 28 Z" /><path d="M12 18 L 24 18" stroke-linecap="round" /></>}
-            {glyph === 'square' && <><rect x="8" y="8" width="20" height="20" /><path d="M8 15 L 28 15 M 12 21 L 22 21" /></>}
-            {glyph === 'partner' && <><circle cx="13" cy="14" r="4" /><circle cx="23" cy="14" r="4" /><path d="M7 28 Q 18 20, 29 28" /></>}
-            {glyph === 'house' && <><path d="M8 28 L 8 8 L 28 8 L 28 28 Z" /><path d="M8 14 L 28 14 M 8 20 L 28 20" /></>}
-            {glyph === 'cup' && <><path d="M18 8 L 14 16 L 22 16 Z M 14 16 L 14 28 L 22 28 L 22 16" /></>}
-            {glyph === 'heart' && <><circle cx="18" cy="18" r="11" /><path d="M11 22 Q 18 14, 25 22" stroke-linecap="round" /></>}
-            {glyph === 'twins' && <><circle cx="12" cy="18" r="5" /><circle cx="24" cy="18" r="5" /><path d="M8 26 L 28 26" /></>}
-            {glyph === 'card' && <><rect x="6" y="10" width="24" height="16" rx="2" /><path d="M6 16 L 30 16" /></>}
-          </svg>
-          <div class="label" set:html={label.replace(/\n/g, '<br/>')} />
-        </div>
-        <div class="bottom">{meta}</div>
-      </>
-    )}
-  </div>
+    </div>
+  ) : (
+    <div class="frame frame--label">
+      <div class="cover-code">{code}</div>
+      <div class="cover-mid">
+        <svg class:list={['cover-motif', `tint-${motif!.tint}`]} viewBox="0 0 100 100" aria-hidden="true" set:html={motif!.art} />
+        <div class="cover-title" set:html={label.replace(/\n/g, '<br/>')} />
+      </div>
+      <div class="cover-foot">{meta}</div>
+    </div>
+  )}
   <h3>{tagline}</h3>
   <div class="meta-row">
     <span>{price}</span>
@@ -75,28 +67,59 @@ const { href, label, meta, tagline, price, code, coverImage, glyph = 'circle' } 
     display: block;
   }
   .pcard:hover .frame { border-color: var(--accent); transform: translateY(-2px); }
-  .top { text-align: center; }
-  .glyph {
-    width: 36px;
-    height: 36px;
-    margin: 6px auto 14px;
-    color: var(--sage);
-  }
-  .label {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 16px;
-    color: var(--card-text);
-    line-height: 1.25;
-  }
-  .bottom {
+
+  /* "Apothecary label" cover for products without a lifestyle photo.
+     Cream paper, inset keyline, celestial ink mark, centered title. */
+  .frame--label {
+    align-items: center;
     text-align: center;
-    font-size: 10.5px;
+    padding: 14px;
+  }
+  .frame--label::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid var(--card-rule);
+    pointer-events: none;
+  }
+  .cover-code {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-sans);
+    font-size: 10px;
     letter-spacing: var(--ls-wider);
     text-transform: uppercase;
     color: var(--card-text-soft);
-    border-top: 1px solid var(--card-rule);
-    padding-top: 10px;
+    padding-top: 6px;
+  }
+  .cover-mid {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .cover-motif { width: 58px; height: 58px; display: block; }
+  .cover-motif.tint-terracotta { color: var(--accent); }
+  .cover-motif.tint-sage { color: var(--card-text); }
+  .pcard:hover .cover-motif.tint-terracotta { color: var(--accent-soft); }
+  .cover-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--card-text);
+    line-height: 1.25;
+    max-width: 80%;
+  }
+  .cover-foot {
+    position: relative;
+    z-index: 1;
+    font-size: 9.5px;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--card-text-soft);
+    padding-bottom: 6px;
   }
   h3 {
     font-family: var(--font-serif);
