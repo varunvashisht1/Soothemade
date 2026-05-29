@@ -130,8 +130,8 @@ a { color: inherit; text-decoration: none; }
 }
 .btn-primary { background: var(--accent); color: var(--surface); }
 .btn-primary:hover { opacity: 0.88; }
-.btn-secondary { background: transparent; color: var(--ink); border-color: var(--rule-strong); }
-.btn-secondary:hover { border-color: var(--ink); }
+.btn-secondary { background: transparent; color: var(--apo-paper); border-color: var(--rule-strong); }
+.btn-secondary:hover { border-color: var(--apo-paper); }
 
 /* Page-level rules */
 .rule-top { border-top: 1px solid var(--rule); }
