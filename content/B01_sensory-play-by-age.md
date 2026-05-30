@@ -16,7 +16,7 @@ The supplies are still in a tub in my basement.
 
 What I learned, mostly the hard way: sensory play is not a Pinterest project. It's the thing you do between the third feeding and the second meltdown, using a colander and a bowl of dried beans you didn't even know you had.
 
-This is the guide I wish I'd had then. It's sorted by age. The materials are stuff you almost certainly own. And it doesn't require you to be a Montessori-trained craft warrior — just a tired parent who has 10 minutes.
+This is the guide I wish I'd had then. It's sorted by age. The materials are stuff you almost certainly own. And it doesn't require you to be a Montessori-trained craft warrior, just a tired parent who has 10 minutes.
 
 ## Why "by age" matters more than "by activity"
 
@@ -34,15 +34,15 @@ Once you sort by age, everything else gets simpler.
 
 I'm not going to lecture you on the neuroscience. Here's the part that matters for our purposes:
 
-Babies and toddlers learn through their senses before they learn through anything else. The texture of a wooden spoon, the sound of a colander hitting the floor, the temperature of an ice cube on their hand — all of these build the foundational maps that later sit underneath language, fine motor skills, and emotional regulation.
+Babies and toddlers learn through their senses before they learn through anything else. The texture of a wooden spoon, the sound of a colander hitting the floor, the temperature of an ice cube on their hand, all of these build the foundational maps that later sit underneath language, fine motor skills, and emotional regulation.
 
-You don't need to *teach* this. You don't need to be Montessori-certified. You need to put the colander and the wooden spoon and the dried beans within reach, and walk away (or sit close enough to intervene if they start eating beans — see below).
+You don't need to *teach* this. You don't need to be Montessori-certified. You need to put the colander and the wooden spoon and the dried beans within reach, and walk away (or sit close enough to intervene if they start eating beans, see below).
 
 The American Academy of Pediatrics is pretty clear on this: [active, hands-on play](https://www.aap.org/en/patient-care/early-childhood/early-childhood-health-development/) is foundational. Sensory play is one of the lowest-friction ways to do it.
 
 ## Sensory play 0–6 months: the work is in noticing
 
-At this age, the baby's "play" is mostly looking, listening, and feeling — and your job is to give them something worth noticing.
+At this age, the baby's "play" is mostly looking, listening, and feeling, and your job is to give them something worth noticing.
 
 ### What works
 
@@ -54,13 +54,13 @@ At this age, the baby's "play" is mostly looking, listening, and feeling — and
 
 ### What to skip at this age
 
-- Rice bins, kinetic sand, water tables — too young, choke risk
-- "Sensory bottles" with small objects — fun but not interactive at this age
+- Rice bins, kinetic sand, water tables, too young, choke risk
+- "Sensory bottles" with small objects, fun but not interactive at this age
 - Anything that requires sitting up unassisted (they can't yet)
 
 ### The one trick
 
-Talk while you do this. Narrate. "Now I'm putting the soft scarf on your hand. Can you feel it? It's so soft. Now the wooden spoon — that's hard." This is also language exposure.
+Talk while you do this. Narrate. "Now I'm putting the soft scarf on your hand. Can you feel it? It's so soft. Now the wooden spoon, that's hard." This is also language exposure.
 
 ## Sensory play 6–12 months: bigger spaces, edible exploration
 
@@ -69,7 +69,7 @@ Now they can sit. Then they crawl. Then they pull up. The activities can get big
 ### What works
 
 - **Spoons in a bowl.** A mixing bowl with 5–6 wooden or metal spoons. Sit baby on the floor. They dump, pick up, bang, put back. Twenty minutes can disappear into this.
-- **Edible sensory bin.** Cooked, cooled pasta on a tray. They poke, squish, mouth. If it gets eaten, it gets eaten — it's pasta.
+- **Edible sensory bin.** Cooked, cooled pasta on a tray. They poke, squish, mouth. If it gets eaten, it gets eaten, it's pasta.
 - **Fabric pull box.** An empty tissue box stuffed with scarves or fabric scraps tied together. They pull. It's "endless," which is fascinating at this age.
 - **Pots and pans drum circle.** Sit on the kitchen floor with 2–3 pots and a wooden spoon. They bang. You tolerate the noise. (This is in fact a developmental win, even if your nervous system disagrees.)
 - **Water pour station.** A shallow tub with a tiny amount of water, two cups, and a small sponge. They scoop, pour, squeeze. Towel underneath.
@@ -104,11 +104,11 @@ This is where sensory play starts to look like the Pinterest version. Bigger sen
 
 - Activities that require following a 6-step sequence
 - "Crafts" with a fixed end result they're supposed to make
-- Anything with high parent expectation — they will not match your vision
+- Anything with high parent expectation, they will not match your vision
 
 ### The one trick
 
-At this age, repeat the same activity often. Toddlers learn through repetition. Don't feel like you need a new activity every day — running "spoons in a bowl" three times a week for two months is normal and good.
+At this age, repeat the same activity often. Toddlers learn through repetition. Don't feel like you need a new activity every day, running "spoons in a bowl" three times a week for two months is normal and good.
 
 ## Sensory play 24–36 months: pretend, problem-solving, real fine motor
 
@@ -120,7 +120,7 @@ Now they're walking, talking (sometimes), and beginning pretend play. Sensory pl
 - **Treasure hunts with picture clues.** Draw 5 simple picture clues that lead from one location to the next, ending in a small "treasure." Sequencing + memory + problem-solving.
 - **Salad spinner painting.** Cut paper to fit a salad spinner. Drop blobs of washable paint. Spin. Open the lid. Repeat. Pure delight + cause-effect.
 - **Big body trace.** Roll out a giant sheet of paper. Have them lie on it. Trace their outline. They color in their hair, face, clothes. Body awareness + identity.
-- **Magic disappearing pictures.** Draw a hidden picture on white paper with a white crayon. Hand them watercolor paint — the picture "appears" as they paint over it. Cause-effect + delight.
+- **Magic disappearing pictures.** Draw a hidden picture on white paper with a white crayon. Hand them watercolor paint, the picture "appears" as they paint over it. Cause-effect + delight.
 - **Story stones.** Paint simple pictures on 5–10 small smooth stones (a sun, a bird, a heart, a tree). They pick 3 at random and tell a story using them. Narrative + imagination + fine motor.
 - **Mini garden planting.** A pot, soil, fast-growing seeds (basil, beans, radishes). They water, they wait, they harvest. Patience + nature + responsibility.
 - **Frozen treasure hunt.** Freeze small plastic toys in a block of water overnight. They "rescue" the toys using warm water in a cup. Problem-solving + cause-effect + 25 minutes of focus.
@@ -128,19 +128,19 @@ Now they're walking, talking (sometimes), and beginning pretend play. Sensory pl
 ### What to skip at this age
 
 - Anything you'd be devastated to see ruined
-- Activities that require materials they need to "save for the right step" — they don't
+- Activities that require materials they need to "save for the right step", they don't
 - Crafts where the end product matters more than the process
 
 ### The one trick
 
-Let them lead. Set up the materials. Maybe demonstrate the first move. Then step back. They will use the materials in ways you didn't expect — that's exactly the point.
+Let them lead. Set up the materials. Maybe demonstrate the first move. Then step back. They will use the materials in ways you didn't expect, that's exactly the point.
 
 ## What didn't work for me
 
 A few things I tried that I'd skip if I were starting over:
 
 - **Rainbow rice (the dyed kind).** Beautiful in photos. Stains hands, stains carpet, the dye fades after one use. Not worth the prep time. Plain uncooked rice works just as well.
-- **Slime.** Fun for the first 20 minutes, terrible to clean up, ends up in hair. (For age 24+ months specifically — I know it's a developmental favorite. Just know what you're signing up for.)
+- **Slime.** Fun for the first 20 minutes, terrible to clean up, ends up in hair. (For age 24+ months specifically, I know it's a developmental favorite. Just know what you're signing up for.)
 - **"Sensory bottles."** They look great. Babies and toddlers play with them for 4 minutes max. Not worth the prep time of layering oil and water and beads.
 - **Anything I made the night before, expecting a 45-minute Wednesday morning of magic.** It was usually 8 minutes of magic and 6 minutes of teardown. I had to adjust my expectations.
 
@@ -148,8 +148,8 @@ A few things I tried that I'd skip if I were starting over:
 
 After a year of running activities most days of the week, the things I actually use regularly:
 
-- **My Slow Motherhood Weekly Planner** — to actually *plan* the week instead of inventing each day. Sensory play is fine, but if I'm doing it on top of also planning meals + appointments + everything else, I burn out. The planner gives me one structured place to slot in "two sensory activities per week" without it becoming a thing. → [Get it here](/products/slow-motherhood-planner)
-- **A printable sensory play card deck** — when my brain runs out, I pull a card from a basket on the kitchen counter. Eighty cards across four age bands, all using stuff I already own. I built it because every "100 sensory play ideas" list online made me close the tab. → [Get the full deck or a single age band](/products/sensory-play-cards)
+- **My Slow Motherhood Weekly Planner**, to actually *plan* the week instead of inventing each day. Sensory play is fine, but if I'm doing it on top of also planning meals + appointments + everything else, I burn out. The planner gives me one structured place to slot in "two sensory activities per week" without it becoming a thing. → [Get it here](/products/slow-motherhood-planner)
+- **A printable sensory play card deck**, when my brain runs out, I pull a card from a basket on the kitchen counter. Eighty cards across four age bands, all using stuff I already own. I built it because every "100 sensory play ideas" list online made me close the tab. → [Get the full deck or a single age band](/products/sensory-play-cards)
 - **A colander.** Genuinely. The single most-used "toy" my kid has ever had. It costs $4 at Target. Don't skip a colander.
 
 ## FAQ
@@ -160,19 +160,19 @@ Both. Sensory play is the foundational scaffolding under language, motor skills,
 
 ### Do I need to do sensory play every day?
 
-No. Twice a week is plenty. Some weeks once. Some weeks not at all. The goal isn't a daily curriculum — it's having something other than screens or constant entertainment when you need an alternative.
+No. Twice a week is plenty. Some weeks once. Some weeks not at all. The goal isn't a daily curriculum, it's having something other than screens or constant entertainment when you need an alternative.
 
 ### My baby just eats everything in the bin. Should I stop?
 
-If they're under 12 months, yes — limit to edible materials (cooked pasta, yogurt, whipped cream, frozen fruit). After 12 months, demonstrate "no eating" and stay close. They'll learn. Until then, edible-only.
+If they're under 12 months, yes, limit to edible materials (cooked pasta, yogurt, whipped cream, frozen fruit). After 12 months, demonstrate "no eating" and stay close. They'll learn. Until then, edible-only.
 
 ### My toddler loses interest after 5 minutes. Am I doing it wrong?
 
-No. Toddler attention spans for new activities are notoriously short. Run the activity for as long as it works. Pull it back out 2 hours later — novelty re-engages. Repetition is also fine: the same playdough session three times a week is doing more developmental work than three different activities once each.
+No. Toddler attention spans for new activities are notoriously short. Run the activity for as long as it works. Pull it back out 2 hours later, novelty re-engages. Repetition is also fine: the same playdough session three times a week is doing more developmental work than three different activities once each.
 
 ### Do I need to buy anything?
 
-Almost nothing. Look around your kitchen first — measuring cups, wooden spoons, a muffin tin, dried pasta, a colander. That's most of the toolkit. The only thing I'd recommend buying eventually: a shallow plastic bin or tray (under $10) for containment. Everything else, you have.
+Almost nothing. Look around your kitchen first, measuring cups, wooden spoons, a muffin tin, dried pasta, a colander. That's most of the toolkit. The only thing I'd recommend buying eventually: a shallow plastic bin or tray (under $10) for containment. Everything else, you have.
 
 ## A closing note
 
@@ -186,7 +186,7 @@ A colander on the kitchen floor. A bowl of dried beans. A baby who's curious for
 
 That's the whole thing.
 
-— Maya
+Maya
 
 ---
 
@@ -196,9 +196,9 @@ That's the whole thing.
 
 ### Related from Soothemade Notes
 
-- **The Sensory Play Activity Card Deck (Ages 0–3)** — 80 cards across 4 age bands. Stuff you already own. → [See it on Etsy →](/products/sensory-play-cards) or [Gumroad →](https://gumroad.com/l/sensory-play-cards)
-- **The Slow Motherhood Weekly Planner** — to plan the week so sensory play actually happens (and so you don't burn out fitting it in). → [See it →](/products/slow-motherhood-planner)
-- **The 30-Day Screen-Free Family Challenge** — for when your kids age past the sensory-play stage and you still want non-screen alternatives. → [See it →](/products/screen-free-challenge)
+- **The Sensory Play Activity Card Deck (Ages 0–3)**, 80 cards across 4 age bands. Stuff you already own. → [See it on Etsy →](/products/sensory-play-cards) or [Gumroad →](https://gumroad.com/l/sensory-play-cards)
+- **The Slow Motherhood Weekly Planner**, to plan the week so sensory play actually happens (and so you don't burn out fitting it in). → [See it →](/products/slow-motherhood-planner)
+- **The 30-Day Screen-Free Family Challenge**, for when your kids age past the sensory-play stage and you still want non-screen alternatives. → [See it →](/products/screen-free-challenge)
 
 ### Free download
 
