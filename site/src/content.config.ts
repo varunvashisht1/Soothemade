@@ -26,6 +26,9 @@ const products = defineCollection({
     code: z.string(),
 
     price: z.number(),
+    // Optional INR price, used for the Buy button label + structured data when
+    // a product is sold via the INR-locked Lemon Squeezy store.
+    priceInr: z.number().optional(),
     format: z.string().default('PDF'),
     specs: z.string(),
 
