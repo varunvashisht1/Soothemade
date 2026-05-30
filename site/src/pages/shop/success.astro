@@ -1,0 +1,144 @@
+---
+export const prerender = false;
+
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Nav from "~/components/Nav.astro";
+import Footer from "~/components/Footer.astro";
+import { getCollection } from "astro:content";
+import { retrieveSession } from "~/lib/stripe";
+
+const env = Astro.locals.runtime?.env;
+const sessionId = Astro.url.searchParams.get("session_id") ?? "";
+
+type Dl = { token: string; title: string };
+let downloads: Dl[] = [];
+let paid = false;
+
+if (env && sessionId) {
+  const products = await getCollection("products");
+  try {
+    const rows = await env.DB.prepare(
+      `SELECT t.token AS token, t.product_code AS code
+       FROM download_tokens t JOIN orders o ON o.id = t.order_id
+       WHERE o.platform = 'stripe' AND o.external_id LIKE ?`,
+    )
+      .bind(`${sessionId}#%`)
+      .all<{ token: string; code: string }>();
+    downloads = (rows.results ?? []).map((r) => ({
+      token: r.token,
+      title: products.find((p) => p.data.code === r.code)?.data.title ?? r.code,
+    }));
+  } catch {
+    downloads = [];
+  }
+
+  if (downloads.length > 0) {
+    paid = true;
+  } else if (env.STRIPE_SECRET_KEY) {
+    const s = await retrieveSession(env.STRIPE_SECRET_KEY, sessionId);
+    paid = s?.payment_status === "paid";
+  }
+}
+
+const preparing = paid && downloads.length === 0;
+---
+
+<BaseLayout title="Thank you — Soothemade Notes" noindex={true}>
+  <Nav />
+  <main class="ty">
+    {downloads.length > 0 ? (
+      <Fragment>
+        <div class="eyebrow">— order complete —</div>
+        <h1>Thank you. Here are your downloads.</h1>
+        <p class="lead">
+          Save this page. Your links are valid for 30 days. Each file is a PDF,
+          sized for US Letter and A4.
+        </p>
+        <ul class="dl-list">
+          {downloads.map((d) => (
+            <li>
+              <a class="btn btn-primary" href={`/files/dl/${d.token}`}>
+                Download · {d.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="back"><a href="/shop">← back to the shop</a></p>
+      </Fragment>
+    ) : preparing ? (
+      <Fragment>
+        <div class="eyebrow">— payment received —</div>
+        <h1>Thank you. Preparing your downloads…</h1>
+        <p class="lead">This page will refresh on its own in a few seconds.</p>
+        <p class="back"><a href="/shop">← back to the shop</a></p>
+        <script is:inline>
+          (function () {
+            var k = "ty-retries";
+            var n = parseInt(sessionStorage.getItem(k) || "0", 10);
+            if (n < 5) {
+              sessionStorage.setItem(k, String(n + 1));
+              setTimeout(function () { location.reload(); }, 3500);
+            }
+          })();
+        </script>
+      </Fragment>
+    ) : (
+      <Fragment>
+        <div class="eyebrow">— hmm —</div>
+        <h1>We couldn't find that order.</h1>
+        <p class="lead">
+          If you were charged, please <a href="/contact">contact us</a> and we'll
+          sort it out right away.
+        </p>
+        <p class="back"><a href="/shop">← back to the shop</a></p>
+      </Fragment>
+    )}
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .ty {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 96px var(--sp-5) 120px;
+    text-align: center;
+    min-height: 50vh;
+  }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: var(--fs-3xl);
+    color: var(--ink);
+    margin: 0 0 18px;
+    letter-spacing: var(--ls-tight);
+  }
+  .lead {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--n-paper-dim);
+    line-height: 1.6;
+    margin: 0 auto 36px;
+    max-width: 520px;
+  }
+  .dl-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  .back { font-family: var(--font-serif); font-style: italic; }
+  .back a { color: var(--accent-soft); }
+</style>
