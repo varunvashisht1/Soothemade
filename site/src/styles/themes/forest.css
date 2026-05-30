@@ -26,9 +26,9 @@
 
   /* Premium gradient tile tokens. Each section gets its own undertone
      so the page reads as a sequence of dark scenes, not one flat color. */
-  --n-paper-dim:     rgba(235, 226, 200, 0.82);
-  --n-paper-soft:    rgba(235, 226, 200, 0.62);
-  --n-paper-faint:   rgba(235, 226, 200, 0.42);
+  --n-paper-dim:     rgba(235, 226, 200, 0.86);
+  --n-paper-soft:    rgba(235, 226, 200, 0.72);
+  --n-paper-faint:   rgba(235, 226, 200, 0.56);
   --n-rule-light:    rgba(235, 226, 200, 0.14);
   --n-rule-strong:   rgba(235, 226, 200, 0.28);
 

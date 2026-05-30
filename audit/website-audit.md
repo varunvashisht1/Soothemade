@@ -11,6 +11,34 @@ contrast, emotional landing of the hero), it is marked "verify visually".*
 
 ---
 
+## Status — fixed 2026-05-30
+
+Every code-fixable finding below has been implemented and build-verified:
+
+- ✅ **#1 / #6 dead Buy button →** working "Email me when it's ready" capture that
+  posts to `/api/subscribe` (tagged `notify:<code>`). No more dead `#hold` anchor.
+- ✅ **#2 OG image →** branded `public/og-default.png` (1200×630, rendered via the
+  cover pipeline). Shares now preview correctly.
+- ✅ **#3 →** `sitemap.xml` (prerendered endpoint, 79 URLs) + `robots.txt`.
+- ✅ **#4 bundles →** "Bundles" filter chip on `/shop` + "Save with a set" row on
+  the homepage.
+- ✅ **#7 →** homepage and `/shop` now prerender static; category filtering moved
+  client-side (progressive enhancement).
+- ✅ **#8 →** `Product` JSON-LD on every product page (`PreOrder` until a store URL
+  is set) + `ItemList` on `/shop`.
+- ✅ **#9 →** faint/soft cream-on-dark text tiers lifted (faint 0.42→0.56,
+  soft 0.62→0.72, dim 0.82→0.86) for WCAG AA.
+
+**Still needs you (cannot be done from code):**
+- 🔲 **#1 real fix:** list on Etsy and paste each `etsyUrl` into the product
+  `web.md`. The Buy button goes live automatically when the URL is present.
+- 🔲 **#5 photos:** the thumbnail batch — ~37 cards (P34–P56 + the 14 bundles)
+  still use the tasteful placeholder, not a photo.
+- 🔲 **#10 search reindex:** re-run `scripts/index_products_vectorize.mjs` against
+  the deployed site so the new titles + 14 bundles are findable in semantic search.
+- 🔲 **#10 skip-link:** deferred — a correct fix needs moving Nav/Footer into the
+  layout, a refactor out of scope for this pass.
+
 ## How it looks (the qualitative read)
 
 The design system is genuinely strong and on-brand. It is the "premium

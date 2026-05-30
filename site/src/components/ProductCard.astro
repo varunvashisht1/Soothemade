@@ -15,11 +15,13 @@ interface Props {
   code: string;
   /** Optional cover image URL — if provided, displayed instead of the label cover. */
   coverImage?: string;
+  /** Optional category, emitted as data-cat for client-side filtering. */
+  category?: string;
 }
-const { href, label, meta, tagline, price, code, coverImage } = Astro.props;
+const { href, label, meta, tagline, price, code, coverImage, category } = Astro.props;
 const motif = coverImage ? null : coverMotif(code);
 ---
-<a class="pcard" href={href}>
+<a class="pcard" href={href} data-code={code} data-cat={category}>
   {coverImage ? (
     <div class="frame frame--image">
       <img src={coverImage} alt={label.replace(/\n/g, ' ')} loading="lazy" />

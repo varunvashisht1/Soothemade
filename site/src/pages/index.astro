@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import { getCollection } from 'astro:content';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import Nav from '~/components/Nav.astro';
@@ -27,6 +29,22 @@ const featured = allProducts
     coverImage: coverFor(p.data.code),
     glyph: p.data.glyph,
   }));
+
+const bundles = allProducts
+  .filter((p) => p.data.code.startsWith('K'))
+  .sort((a, b) => a.data.code.localeCompare(b.data.code))
+  .slice(0, 4)
+  .map((p) => ({
+    slug: p.id,
+    code: p.data.code,
+    label: p.data.heroLabel,
+    meta: p.data.specs,
+    tagline: p.data.tagline,
+    price: `$${p.data.price}`,
+    coverImage: coverFor(p.data.code),
+    glyph: p.data.glyph,
+  }));
+const bundleCount = allProducts.filter((p) => p.data.code.startsWith('K')).length;
 
 const allPosts = await getCollection('journal');
 const featuredJournalPosts = allPosts
@@ -73,6 +91,15 @@ const homeCategories = [
     seeAllHref="/shop"
     seeAllLabel={`see all ${allProducts.length} →`}
   />
+
+  {bundles.length > 0 && (
+    <ProductGrid
+      products={bundles}
+      title="— Save with a set —"
+      seeAllHref="/shop?cat=sets"
+      seeAllLabel={`all ${bundleCount} sets →`}
+    />
+  )}
 
   <Manifesto
     quote="Made for the version of you"

@@ -25,12 +25,35 @@ const crossSell = (product.data.crossSell ?? [])
 const ymyl = product.data.ymyl;
 const heroImage = coverFor(product.data.code);
 const heroMotif = heroImage ? null : coverMotif(product.data.code);
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const productLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: product.data.title,
+  description: product.data.summary,
+  sku: product.data.code,
+  image: new URL(heroImage ?? '/og-default.png', Astro.site).toString(),
+  brand: { '@type': 'Brand', name: 'Soothemade' },
+  category: product.data.category,
+  offers: {
+    '@type': 'Offer',
+    price: product.data.price,
+    priceCurrency: 'USD',
+    url: product.data.etsyUrl ?? pageUrl,
+    availability: product.data.etsyUrl
+      ? 'https://schema.org/InStock'
+      : 'https://schema.org/PreOrder',
+  },
+};
 ---
 <BaseLayout
   title={`${product.data.title} — Soothemade Notes`}
   description={product.data.summary}
 >
   <Nav />
+
+  <script type="application/ld+json" set:html={JSON.stringify(productLd)} is:inline />
 
   <article class="product">
     <div class="crumbs">
@@ -48,9 +71,14 @@ const heroMotif = heroImage ? null : coverMotif(product.data.code);
               Buy on Etsy · ${product.data.price}
             </a>
           ) : (
-            <a class="btn btn-primary" href="#hold" aria-disabled="true">
-              Buy on Etsy · ${product.data.price}
-            </a>
+            <form class="notify" data-code={product.data.code}>
+              <span class="notify-label">${product.data.price} · coming soon</span>
+              <div class="notify-row">
+                <input type="email" name="email" required placeholder="your email" aria-label="Email address" autocomplete="email" />
+                <button type="submit" class="btn btn-primary">Email me when it's ready</button>
+              </div>
+              <p class="notify-status" role="status" aria-live="polite" hidden></p>
+            </form>
           )}
           {product.data.gumroadUrl && (
             <a class="btn btn-secondary" href={product.data.gumroadUrl} rel="nofollow noopener" target="_blank">
@@ -340,6 +368,37 @@ const heroMotif = heroImage ? null : coverMotif(product.data.code);
     margin: 0 auto;
   }
 
+  /* Notify-me capture (shown when there is no live store URL yet) */
+  .notify { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 480px; }
+  .notify-label {
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .notify-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .notify-row input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 16px;
+    border: 1px solid var(--n-rule-strong);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 16px;
+  }
+  .notify-row input::placeholder { color: var(--n-paper-faint); }
+  .notify-row input:focus { outline: none; border-color: var(--accent-soft); }
+  .notify-status {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--n-paper-dim);
+    margin: 0;
+  }
+
   @media (max-width: 880px) {
     .hero { grid-template-columns: 1fr; padding: 32px var(--sp-5) 48px; gap: 36px; }
     .hero-art { order: -1; }
@@ -350,3 +409,43 @@ const heroMotif = heroImage ? null : coverMotif(product.data.code);
     .cross-grid { grid-template-columns: 1fr; }
   }
 </style>
+
+<script>
+  document.querySelectorAll('form.notify').forEach((formEl) => {
+    const form = formEl as HTMLFormElement;
+    const status = form.querySelector('.notify-status') as HTMLElement;
+    const row = form.querySelector('.notify-row') as HTMLElement;
+    const input = form.querySelector('input[name="email"]') as HTMLInputElement;
+    const btn = form.querySelector('button') as HTMLButtonElement;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = input.value.trim();
+      if (!email) return;
+      const code = form.getAttribute('data-code') ?? '';
+      btn.disabled = true;
+      const show = (msg: string) => { status.hidden = false; status.textContent = msg; };
+      try {
+        const r = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: `notify:${code}` }),
+        });
+        const data = (await r.json()) as { ok: boolean; error?: string };
+        if (data.ok) {
+          row.hidden = true;
+          show("Thank you. We'll email you the moment it's for sale.");
+        } else if (data.error === 'rate_limited') {
+          show("You're already on the list — we'll be in touch.");
+          btn.disabled = false;
+        } else {
+          show("That email didn't look right. Mind trying again?");
+          btn.disabled = false;
+        }
+      } catch {
+        show("Couldn't reach us just now. Try again in a moment.");
+        btn.disabled = false;
+      }
+    });
+  });
+</script>

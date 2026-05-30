@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import { getCollection } from 'astro:content';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import Nav from '~/components/Nav.astro';
@@ -11,11 +13,8 @@ const products = (await getCollection('products')).sort(
   (a, b) => (a.data.featuredOrder ?? 999) - (b.data.featuredOrder ?? 999),
 );
 
-const url = new URL(Astro.request.url);
-const activeCategory = url.searchParams.get('cat');
-
 const categories = [
-  { slug: null, label: 'All' },
+  { slug: 'all', label: 'All' },
   { slug: 'pregnancy', label: 'Pregnancy' },
   { slug: 'postpartum', label: 'Postpartum' },
   { slug: 'recovery', label: 'Recovery' },
@@ -23,17 +22,28 @@ const categories = [
   { slug: 'partner', label: 'For the partner' },
   { slug: 'early-years', label: '0–3 years' },
   { slug: 'family', label: 'Family' },
+  { slug: 'sets', label: 'Bundles' },
 ];
 
-const filtered = activeCategory
-  ? products.filter((p) => p.data.category === activeCategory)
-  : products;
+const itemListLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Soothemade Notes catalog',
+  numberOfItems: products.length,
+  itemListElement: products.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: new URL(`/shop/${p.id}`, Astro.site).toString(),
+    name: p.data.title,
+  })),
+};
 ---
 <BaseLayout
   title="The catalog — Soothemade Notes"
   description="The full Soothemade Notes catalog of printables, planners, and cards for the unphotographed parts of new parenthood."
 >
   <Nav />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListLd)} is:inline />
 
   <header class="shop-header rule-bottom">
     <div class="eyebrow">— the catalog —</div>
@@ -58,8 +68,9 @@ const filtered = activeCategory
   <nav class="filter-row rule-bottom" id="filter-row" aria-label="Category filter">
     {categories.map((c) => (
       <a
-        href={c.slug ? `/shop?cat=${c.slug}` : '/shop'}
-        class:list={['chip', { active: activeCategory === c.slug || (activeCategory === null && c.slug === null) }]}
+        href={c.slug === 'all' ? '/shop' : `/shop?cat=${c.slug}`}
+        data-cat={c.slug}
+        class:list={['chip', { active: c.slug === 'all' }]}
       >
         {c.label}
       </a>
@@ -68,28 +79,70 @@ const filtered = activeCategory
 
   <section id="search-results" class="search-results" hidden></section>
 
-  {filtered.length === 0 ? (
-    <p class="empty" id="catalog-empty">No items in this category yet — check back soon.</p>
-  ) : (
-    <section class="grid" id="catalog-grid">
-      {filtered.map((p) => (
-        <ProductCard
-          href={`/shop/${p.id}`}
-          label={p.data.heroLabel}
-          meta={p.data.specs}
-          tagline={p.data.tagline}
-          price={`$${p.data.price}`}
-          code={p.data.code}
-          coverImage={coverFor(p.data.code)}
-          glyph={p.data.glyph}
-        />
-      ))}
-    </section>
-  )}
+  <p class="empty" id="catalog-empty" hidden>No items in this category yet — check back soon.</p>
+  <section class="grid" id="catalog-grid">
+    {products.map((p) => (
+      <ProductCard
+        href={`/shop/${p.id}`}
+        label={p.data.heroLabel}
+        meta={p.data.specs}
+        tagline={p.data.tagline}
+        price={`$${p.data.price}`}
+        code={p.data.code}
+        coverImage={coverFor(p.data.code)}
+        glyph={p.data.glyph}
+        category={p.data.category}
+      />
+    ))}
+  </section>
 
   <Newsletter />
   <Footer />
 </BaseLayout>
+
+<script>
+  // Category filter — runs client-side because /shop is now prerendered static.
+  (() => {
+    const grid = document.getElementById('catalog-grid');
+    const empty = document.getElementById('catalog-empty');
+    const resultsEl = document.getElementById('search-results');
+    const searchInput = document.getElementById('q') as HTMLInputElement | null;
+    if (!grid) return;
+    const chips = Array.from(document.querySelectorAll('#filter-row .chip')) as HTMLAnchorElement[];
+    const cards = Array.from(grid.querySelectorAll('.pcard')) as HTMLElement[];
+
+    const apply = (cat: string) => {
+      let shown = 0;
+      cards.forEach((card) => {
+        const cardCat = card.dataset.cat || '';
+        const code = card.dataset.code || '';
+        const show = cat === 'all' ? true : cat === 'sets' ? code.startsWith('K') : cardCat === cat;
+        card.style.display = show ? '' : 'none';
+        if (show) shown += 1;
+      });
+      if (empty) (empty as HTMLElement).hidden = shown !== 0;
+      chips.forEach((ch) => ch.classList.toggle('active', (ch.dataset.cat || 'all') === cat));
+    };
+
+    const catFromUrl = () => new URLSearchParams(location.search).get('cat') || 'all';
+    apply(catFromUrl());
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', (e) => {
+        e.preventDefault();
+        const cat = chip.dataset.cat || 'all';
+        history.pushState({}, '', cat === 'all' ? '/shop' : `/shop?cat=${cat}`);
+        // Leave any open search view and return to the filtered catalog.
+        if (searchInput) searchInput.value = '';
+        if (resultsEl) { resultsEl.hidden = true; resultsEl.innerHTML = ''; }
+        (grid as HTMLElement).hidden = false;
+        apply(cat);
+      });
+    });
+
+    window.addEventListener('popstate', () => apply(catFromUrl()));
+  })();
+</script>
 
 <script>
   const form = document.getElementById('search-form') as HTMLFormElement | null;
