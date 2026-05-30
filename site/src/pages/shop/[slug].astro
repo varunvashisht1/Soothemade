@@ -31,6 +31,16 @@ const heroMotif = heroImage ? null : coverMotif(product.data.code);
 // zip is uploaded.
 const deliverable = /^P\d{2,3}$/.test(product.data.code);
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Lemon Squeezy (Merchant of Record) is the chosen store. When set, its hosted
+// checkout opens as an on-brand overlay via lemon.js and LS handles payment,
+// tax, and file delivery. Falls back to Etsy / Stripe / notify when unset.
+const lsUrl = product.data.lemonSqueezyUrl;
+const lsEmbed = lsUrl
+  ? `${lsUrl}${lsUrl.includes("?") ? "&" : "?"}embed=1`
+  : null;
+const forSale = Boolean(lsUrl || product.data.etsyUrl);
+
 const productLd = {
   '@context': 'https://schema.org',
   '@type': 'Product',
@@ -44,8 +54,8 @@ const productLd = {
     '@type': 'Offer',
     price: product.data.price,
     priceCurrency: 'USD',
-    url: product.data.etsyUrl ?? pageUrl,
-    availability: product.data.etsyUrl
+    url: lsUrl ?? product.data.etsyUrl ?? pageUrl,
+    availability: forSale
       ? 'https://schema.org/InStock'
       : 'https://schema.org/PreOrder',
   },
@@ -58,6 +68,7 @@ const productLd = {
   <Nav />
 
   <script type="application/ld+json" set:html={JSON.stringify(productLd)} is:inline />
+  {lsUrl && <script src="https://app.lemonsqueezy.com/js/lemon.js" defer is:inline></script>}
 
   <article class="product">
     <div class="crumbs">
@@ -70,7 +81,11 @@ const productLd = {
         <h1>{product.data.title}</h1>
         <p class="tagline">{product.data.summary}</p>
         <div class="actions">
-          {product.data.etsyUrl ? (
+          {lsEmbed ? (
+            <a class="btn btn-primary lemonsqueezy-button" href={lsEmbed} rel="nofollow noopener">
+              Buy · ${product.data.price}
+            </a>
+          ) : product.data.etsyUrl ? (
             <a class="btn btn-primary" href={product.data.etsyUrl} rel="nofollow noopener" target="_blank">
               Buy on Etsy · ${product.data.price}
             </a>
