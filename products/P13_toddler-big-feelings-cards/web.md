@@ -1,7 +1,7 @@
 ---
-title: "The Toddler Big Feelings Cards"
+title: "Toddler Emotions Flash Cards: Feelings, Calm-Down and Repair Cards for Big Feelings, Ages 2 to 5"
 code: "P13"
-price: 12
+price: 14
 format: "PDF"
 specs: "40 cards, ages 2 to 5"
 category: "early-years"

@@ -2,6 +2,8 @@
 
 A bundle is a zip of existing PDFs — near-zero cost to create, biggest lever on average order value.
 
+> **As-built note (2026-05-30):** These 14 bundles are now live listings at `products/K01`–`K14`. One correction vs the table below: the workflow's megabundle was a 6-item set at $65 (too small to anchor). The as-built **Complete Soothemade Library (K14)** is instead *all 55 printables* at **$189** against ~$752 a-la-carte — a real high-price anchor. Bundles are listings-ready but not yet buyable (they need zip files of their constituent PDFs and an `etsyUrl`/`gumroadUrl`, same status as the singles).
+
 | Bundle | Products | A la carte | Bundle price | Save | Target buyer |
 |---|---|---|---|---|---|
 | **The Birth Day Bundle: Everything for the Hospital Bag and the Worry Before It** | P14, P27, P51, P52, B06 | $49 | **$29** | 41% | Third-trimester parents getting ready to give birth, often buying around weeks 34 to 38 when nesting kicks in. |

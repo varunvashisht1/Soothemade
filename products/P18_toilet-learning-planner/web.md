@@ -1,7 +1,7 @@
 ---
-title: "A Toilet Learning Planner"
+title: "Potty Training Planner and Tracker: For the Long Week"
 code: "P18"
-price: 12
+price: 14
 format: "PDF"
 specs: "28 pages, ages 18 months to 4 years"
 category: "early-years"

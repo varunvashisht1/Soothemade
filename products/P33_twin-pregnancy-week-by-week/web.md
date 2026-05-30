@@ -1,5 +1,5 @@
 ---
-title: "A Twin Pregnancy Week-by-Week Planner"
+title: "Twin Pregnancy Planner and Journal, Week by Week: For the pregnancy the other planners don't cover"
 code: "P33"
 price: 16
 format: "PDF"

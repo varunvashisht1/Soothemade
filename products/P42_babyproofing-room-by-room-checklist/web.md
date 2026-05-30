@@ -1,7 +1,7 @@
 ---
-title: "Babyproofing Room-by-Room Checklist"
+title: "Baby Proofing Checklist Printable: Room by Room, in Plain Language"
 code: "P42"
-price: 7
+price: 9
 format: "PDF"
 specs: "14 pages, printable + fillable"
 category: "early-years"

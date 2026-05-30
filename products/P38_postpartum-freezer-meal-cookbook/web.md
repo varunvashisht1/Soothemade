@@ -1,7 +1,7 @@
 ---
-title: "Postpartum Freezer Meal Cookbook"
+title: "Postpartum Freezer Meals: 30 Make-Ahead Recipes You Can Eat With One Hand"
 code: "P38"
-price: 11
+price: 12
 format: "PDF"
 specs: "24 pages, 30 recipes, printable"
 category: "postpartum"

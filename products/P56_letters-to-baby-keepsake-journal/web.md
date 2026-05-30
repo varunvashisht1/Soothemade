@@ -1,5 +1,5 @@
 ---
-title: "Letters to Baby, a Pregnancy Keepsake Journal"
+title: "Letters to My Unborn Baby: A Pregnancy Keepsake Journal and Expecting Mom Gift"
 code: "P56"
 price: 14
 format: "PDF"

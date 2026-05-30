@@ -1,7 +1,7 @@
 ---
-title: "A Postpartum Mind Journal"
+title: "Postpartum Depression and Anxiety Journal: A Mood Tracker for the First Year"
 code: "P09"
-price: 14
+price: 16
 format: "PDF"
 specs: "60 pages · noticing tool"
 category: "mental-health"

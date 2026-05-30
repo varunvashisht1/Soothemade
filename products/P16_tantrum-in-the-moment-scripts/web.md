@@ -1,7 +1,7 @@
 ---
-title: "The Tantrum-in-the-Moment Scripts"
+title: "What to Say During a Toddler Tantrum: 30 In-the-Moment Scripts for the Kitchen Floor"
 code: "P16"
-price: 9
+price: 12
 format: "PDF"
 specs: "30 scripts, for the adult"
 category: "early-years"

@@ -1,5 +1,5 @@
 ---
-title: "An Introducing Solids Planner"
+title: "Starting Solids Planner: baby first foods, allergen log, and the readiness signs. For the first spoon."
 code: "P22"
 price: 12
 format: "PDF"

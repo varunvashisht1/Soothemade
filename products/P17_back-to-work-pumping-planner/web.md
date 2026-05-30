@@ -1,7 +1,7 @@
 ---
-title: "A Back-to-Work Pumping Planner"
+title: "Pumping at Work Schedule and Planner: For the Day Before, and Every Day After"
 code: "P17"
-price: 14
+price: 16
 format: "PDF"
 specs: "32 pages, returning to work"
 category: "postpartum"

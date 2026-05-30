@@ -1,5 +1,5 @@
 ---
-title: "A Returning-to-Work Plan"
+title: "Back to Work After Baby: a return plan for the first day and the next ninety"
 code: "P31"
 price: 14
 format: "PDF"

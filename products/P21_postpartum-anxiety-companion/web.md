@@ -1,5 +1,5 @@
 ---
-title: "A Postpartum Anxiety Companion"
+title: "Postpartum Anxiety Workbook: For the Racing Nights"
 code: "P21"
 price: 14
 format: "PDF"

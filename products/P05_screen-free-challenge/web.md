@@ -1,7 +1,7 @@
 ---
-title: "The 30-Day Screen-Free Family Challenge"
+title: "Screen-Free Activities for Kids 3 to 10: 30 Printable Activity Cards and a Tracker. For the Quiet Month."
 code: "P05"
-price: 9
+price: 11
 format: "PDF"
 specs: "30 cards · ages 3–10"
 category: "family"

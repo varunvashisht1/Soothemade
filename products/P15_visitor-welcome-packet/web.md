@@ -1,7 +1,7 @@
 ---
-title: "The Visitor Welcome Packet"
+title: "Newborn Visitor Rules Sign and New Baby Help Checklist: The Visitor Welcome Packet"
 code: "P15"
-price: 9
+price: 12
 format: "PDF"
 specs: "12 pages, printable + door sign"
 category: "postpartum"

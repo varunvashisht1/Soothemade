@@ -1,7 +1,7 @@
 ---
-title: "A 'Who Am I Now' Journal"
+title: "Postpartum Identity Journal: Who Am I Now. 48 Prompts for Matrescence and the New-Mom Self"
 code: "P29"
-price: 14
+price: 15
 format: "PDF"
 specs: "48 pages, prompted journal"
 category: "mental-health"

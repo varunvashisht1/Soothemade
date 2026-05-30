@@ -1,7 +1,7 @@
 ---
-title: "A VBAC Prep Planner"
+title: "VBAC Birth Plan and Prep Planner, TOLAC vs Repeat Cesarean: hold the questions, the conversation, and both paths"
 code: "P39"
-price: 12
+price: 14
 format: "PDF"
 specs: "24 pages, printable + fillable"
 category: "pregnancy"

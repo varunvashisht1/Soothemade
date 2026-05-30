@@ -1,7 +1,7 @@
 ---
-title: "A Birth Plan Worksheet Pack"
+title: "Birth Plan Template, Printable and Fillable PDF: The One Page the Nurse Can Actually Read"
 code: "P14"
-price: 9
+price: 12
 format: "PDF"
 specs: "16 pages, fillable"
 category: "pregnancy"

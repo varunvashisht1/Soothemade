@@ -1,7 +1,7 @@
 ---
-title: "Stay-at-Home Parent Transition Planner"
+title: "Stay-at-Home Parent Planner: Money, Retirement, and Identity After You Leave Work"
 code: "P47"
-price: 11
+price: 14
 format: "PDF"
 specs: "30 pages, printable + fillable"
 category: "family"

@@ -1,7 +1,7 @@
 ---
-title: "The C-Section Recovery Planner"
+title: "C-Section Recovery Planner: Week by Week, Printable Postpartum Surgery Tracker"
 code: "P06"
-price: 14
+price: 15
 format: "PDF"
 specs: "36 pages · 5 phases"
 category: "recovery"

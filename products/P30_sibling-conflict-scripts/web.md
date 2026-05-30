@@ -1,7 +1,7 @@
 ---
-title: "The Sibling Conflict Scripts"
+title: "Sibling Fighting Scripts for Parents: 40 Calm Things to Say When Your Kids Won't Stop"
 code: "P30"
-price: 9
+price: 12
 format: "PDF"
 specs: "40 scripts, ages 3 to 12"
 category: "family"

@@ -1,7 +1,7 @@
 ---
-title: "The Babysitter & Daycare Handoff Pack"
+title: "Babysitter Information Sheet and Daycare Forms: Everything They Need to Know"
 code: "P32"
-price: 9
+price: 14
 format: "PDF"
 specs: "16 pages, printable + fillable"
 category: "family"

@@ -1,7 +1,7 @@
 ---
-title: "Pediatrician Visit Prep Cards"
+title: "Well Baby Visit Tracker: Questions to Ask + Checkup Record, Newborn to 2 Years"
 code: "P37"
-price: 9
+price: 11
 format: "PDF"
 specs: "12 cards, one per well-child visit through 2y"
 category: "early-years"

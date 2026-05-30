@@ -1,7 +1,7 @@
 ---
-title: "Adoption Wait + Welcome Pack"
+title: "Adoption Planner and Home Study Organizer: For the Pregnancy That Does Not Show"
 code: "P48"
-price: 12
+price: 16
 format: "PDF"
 specs: "30 pages, printable + fillable"
 category: "pregnancy"

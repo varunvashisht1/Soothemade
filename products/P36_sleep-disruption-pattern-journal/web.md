@@ -1,7 +1,7 @@
 ---
-title: "A Sleep-Disruption Pattern Journal"
+title: "Baby Sleep Regression Journal: a two-week log to find the pattern before you pick a method"
 code: "P36"
-price: 9
+price: 12
 format: "PDF"
 specs: "30 pages, printable, two-week log"
 category: "early-years"

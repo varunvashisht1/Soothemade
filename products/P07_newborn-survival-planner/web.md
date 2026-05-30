@@ -1,7 +1,7 @@
 ---
-title: "The Newborn Survival Planner"
+title: "Newborn Feeding and Diaper Log: A First Six Weeks Survival Planner"
 code: "P07"
-price: 14
+price: 15
 format: "PDF"
 specs: "40 pages, first six weeks"
 category: "postpartum"

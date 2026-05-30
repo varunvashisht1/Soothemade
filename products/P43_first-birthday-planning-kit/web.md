@@ -1,7 +1,7 @@
 ---
-title: "A First Birthday Planning Kit"
+title: "First Birthday Party Planner: 1st Birthday Checklist, 6-Week Countdown + Keepsake. A day, not a wedding."
 code: "P43"
-price: 9
+price: 11
 format: "PDF"
 specs: "20 pages, printable + fillable"
 category: "family"

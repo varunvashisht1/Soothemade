@@ -1,5 +1,5 @@
 ---
-title: "A NICU Parent Planner"
+title: "NICU Planner and Journal: notes for rounds, a plain-language glossary, the long hallway"
 code: "P28"
 price: 16
 format: "PDF"
