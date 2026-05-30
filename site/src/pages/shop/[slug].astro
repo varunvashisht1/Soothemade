@@ -26,6 +26,10 @@ const ymyl = product.data.ymyl;
 const heroImage = coverFor(product.data.code);
 const heroMotif = heroImage ? null : coverMotif(product.data.code);
 
+// Only the single printables (P##) have a deliverable PDF in R2 today, so only
+// they get a live Buy button. Bundles (K##) keep the notify capture until their
+// zip is uploaded.
+const deliverable = /^P\d{2,3}$/.test(product.data.code);
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 const productLd = {
   '@context': 'https://schema.org',
@@ -70,6 +74,19 @@ const productLd = {
             <a class="btn btn-primary" href={product.data.etsyUrl} rel="nofollow noopener" target="_blank">
               Buy on Etsy · ${product.data.price}
             </a>
+          ) : deliverable ? (
+            <div class="buy-block" data-code={product.data.code}>
+              <button type="button" class="btn btn-primary buy-stripe">Buy · ${product.data.price}</button>
+              <form class="notify" data-code={product.data.code} hidden>
+                <span class="notify-label">${product.data.price} · coming soon</span>
+                <div class="notify-row">
+                  <input type="email" name="email" required placeholder="your email" aria-label="Email address" autocomplete="email" />
+                  <button type="submit" class="btn btn-primary">Email me when it's ready</button>
+                </div>
+                <p class="notify-status" role="status" aria-live="polite" hidden></p>
+              </form>
+              <p class="buy-status" role="status" aria-live="polite" hidden></p>
+            </div>
           ) : (
             <form class="notify" data-code={product.data.code}>
               <span class="notify-label">${product.data.price} · coming soon</span>
@@ -368,7 +385,15 @@ const productLd = {
     margin: 0 auto;
   }
 
-  /* Notify-me capture (shown when there is no live store URL yet) */
+  /* Buy block + notify-me capture */
+  .buy-block { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; width: 100%; }
+  .buy-status {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--n-paper-dim);
+    margin: 0;
+  }
   .notify { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 480px; }
   .notify-label {
     font-size: var(--fs-xs);
@@ -411,12 +436,53 @@ const productLd = {
 </style>
 
 <script>
+  // Buy buttons -> Stripe Checkout. If Stripe isn't configured yet, fall back
+  // to the notify-me form so the page is never a dead end.
+  document.querySelectorAll('.buy-block').forEach((blockEl) => {
+    const block = blockEl as HTMLElement;
+    const code = block.getAttribute('data-code') ?? '';
+    const buyBtn = block.querySelector('.buy-stripe') as HTMLButtonElement | null;
+    const notify = block.querySelector('form.notify') as HTMLElement | null;
+    const status = block.querySelector('.buy-status') as HTMLElement | null;
+    if (!buyBtn) return;
+    const label = buyBtn.textContent;
+    const fail = (msg: string) => {
+      if (status) { status.hidden = false; status.textContent = msg; }
+      buyBtn.disabled = false;
+      buyBtn.textContent = label;
+    };
+    buyBtn.addEventListener('click', async () => {
+      buyBtn.disabled = true;
+      buyBtn.textContent = 'Taking you to checkout…';
+      try {
+        const r = await fetch('/api/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code }),
+        });
+        const data = (await r.json()) as { ok: boolean; url?: string; error?: string };
+        if (data.ok && data.url) { window.location.href = data.url; return; }
+        if (data.error === 'not_configured') {
+          buyBtn.hidden = true;
+          if (notify) notify.hidden = false;
+          return;
+        }
+        fail(data.error === 'rate_limited' ? 'One moment — please try again shortly.' : "Couldn't start checkout. Try again in a moment.");
+      } catch {
+        fail("Couldn't reach checkout. Check your connection and try again.");
+      }
+    });
+  });
+
+  // Notify-me forms -> /api/subscribe (coming-soon capture).
   document.querySelectorAll('form.notify').forEach((formEl) => {
     const form = formEl as HTMLFormElement;
-    const status = form.querySelector('.notify-status') as HTMLElement;
-    const row = form.querySelector('.notify-row') as HTMLElement;
-    const input = form.querySelector('input[name="email"]') as HTMLInputElement;
-    const btn = form.querySelector('button') as HTMLButtonElement;
+    const status = form.querySelector('.notify-status') as HTMLElement | null;
+    const row = form.querySelector('.notify-row') as HTMLElement | null;
+    const input = form.querySelector('input[name="email"]') as HTMLInputElement | null;
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    if (!input || !btn) return;
+    const show = (msg: string) => { if (status) { status.hidden = false; status.textContent = msg; } };
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -424,7 +490,6 @@ const productLd = {
       if (!email) return;
       const code = form.getAttribute('data-code') ?? '';
       btn.disabled = true;
-      const show = (msg: string) => { status.hidden = false; status.textContent = msg; };
       try {
         const r = await fetch('/api/subscribe', {
           method: 'POST',
@@ -433,7 +498,7 @@ const productLd = {
         });
         const data = (await r.json()) as { ok: boolean; error?: string };
         if (data.ok) {
-          row.hidden = true;
+          if (row) row.hidden = true;
           show("Thank you. We'll email you the moment it's for sale.");
         } else if (data.error === 'rate_limited') {
           show("You're already on the list — we'll be in touch.");

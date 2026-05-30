@@ -17,7 +17,7 @@
 | 5 | **Title architecture: two surfaces.** The brand site (notes.soothemade.com) uses short, clean, brand-voice titles. Etsy uses the long keyword-maxed titles in `audit/etsy-titles.md`. Same product, two titles, on purpose. | 2026-05-30 | `audit/site-titles-applied.md`, `audit/etsy-titles.md` |
 | 6 | **Pricing.** The conversion-audit reprice is applied: singles $9–24, bundles $25–41, and one megabundle anchor at $189 (the whole library vs ~$752 a-la-carte). | 2026-05-30 | `audit/pricing-model.md` |
 | 7 | **Bundles K01–K14.** Defined, priced, and live as listings. The megabundle is the price anchor, not the expected bestseller. | 2026-05-30 | `products/K*/web.md`, `audit/bundle-matrix.md` |
-| 8 | **Distribution sequence.** Fix the conversion surface (done) → list on Etsy + KDP → drive Pinterest traffic → **first customer** → then, and only then, data-driven iteration. | 2026-05-30 | `KDP-RUNBOOK.md`, AS_BUILT §18 |
+| 8 | **Sales channel + sequence.** Primary channel is **self-hosted Stripe on soothemade.com** (built, lowest fee, owns the customer) — not Etsy. Etsy + KDP are optional *additional* channels, not the default. Sequence: conversion surface (done) → wire Stripe keys (`STRIPE-SETUP.md`) → drive Pinterest traffic → **first customer** → then data-driven iteration. | 2026-05-30 | `STRIPE-SETUP.md`, AS_BUILT §18 |
 
 ---
 
