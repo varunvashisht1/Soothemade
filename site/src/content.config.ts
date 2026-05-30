@@ -57,6 +57,7 @@ const products = defineCollection({
 
     etsyUrl: z.string().url().optional(),
     gumroadUrl: z.string().url().optional(),
+    lemonSqueezyUrl: z.string().url().optional(),
 
     crossSell: z.array(z.string()).optional(),
   }),
