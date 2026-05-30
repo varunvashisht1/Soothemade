@@ -1,5 +1,5 @@
 ---
-title: "An IVF Cycle Planner and Journal"
+title: "IVF Cycle Planner and Journal: stim phase to beta day, one full cycle"
 code: "P35"
 price: 16
 format: "PDF"

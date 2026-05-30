@@ -1,7 +1,7 @@
 ---
-title: "The Partner's Postpartum Playbook"
+title: "The Partner's Postpartum Playbook: How to Help in the First Weeks"
 code: "P04"
-price: 9
+price: 14
 format: "PDF"
 specs: "24 pages · for the partner"
 category: "partner"

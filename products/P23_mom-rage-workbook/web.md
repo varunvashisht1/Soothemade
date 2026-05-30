@@ -1,5 +1,5 @@
 ---
-title: "The Mom Rage Workbook"
+title: "Postpartum Mom Rage Workbook: anger, yelling, and the repair that comes after"
 code: "P23"
 price: 14
 format: "PDF"

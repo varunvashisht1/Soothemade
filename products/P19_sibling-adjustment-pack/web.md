@@ -1,7 +1,7 @@
 ---
-title: "A Sibling Adjustment Pack"
+title: "Preparing Older Sibling for New Baby: Scripts, Hospital Plan and a Keepsake Letter. For the Bigger One"
 code: "P19"
-price: 12
+price: 14
 format: "PDF"
 specs: "24 pages, for the older sibling and the family"
 category: "family"

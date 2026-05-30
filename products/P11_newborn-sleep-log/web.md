@@ -1,7 +1,7 @@
 ---
-title: "A Newborn Sleep Log"
+title: "Baby Sleep and Feeding Tracker, Printable Newborn Log: For the Foggy Weeks"
 code: "P11"
-price: 12
+price: 14
 format: "PDF"
 specs: "60 pages, undated"
 category: "postpartum"

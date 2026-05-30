@@ -1,7 +1,7 @@
 ---
-title: "A Trimester-by-Trimester Emotional Companion"
+title: "Pregnancy Journal for Emotions and Identity: The Feelings No Chart Tracks"
 code: "P53"
-price: 11
+price: 14
 format: "PDF"
 specs: "30 pages, printable + fillable"
 category: "pregnancy"

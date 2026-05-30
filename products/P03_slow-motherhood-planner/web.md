@@ -1,7 +1,7 @@
 ---
-title: "The Slow Motherhood Weekly Planner"
+title: "Slow Motherhood Planner: An Undated Weekly Planner for Tired Moms"
 code: "P03"
-price: 12
+price: 13
 format: "PDF"
 specs: "36 pages · undated"
 category: "postpartum"

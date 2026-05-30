@@ -1,7 +1,7 @@
 ---
-title: "Twin Postpartum, the First Six Weeks"
+title: "Twin Newborn Planner and Feeding Log: The First Six Weeks Home With Two"
 code: "P45"
-price: 14
+price: 16
 format: "PDF"
 specs: "40 pages, printable + fillable"
 category: "postpartum"

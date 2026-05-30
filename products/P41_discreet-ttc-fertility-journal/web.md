@@ -1,7 +1,7 @@
 ---
-title: "A Daily Notes Journal"
+title: "Discreet Fertility Tracker Journal: TTC and BBT Tracking That Looks Like a Plain Notebook"
 code: "P41"
-price: 11
+price: 14
 format: "PDF"
 specs: "60 pages, six months of tracking"
 category: "pregnancy"

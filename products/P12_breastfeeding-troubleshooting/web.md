@@ -1,7 +1,7 @@
 ---
-title: "A Breastfeeding Troubleshooting Guide"
+title: "Breastfeeding Latch Help and Troubleshooting Guide: For the Early Latches"
 code: "P12"
-price: 9
+price: 12
 format: "PDF"
 specs: "28 pages, with a decision tree"
 category: "recovery"

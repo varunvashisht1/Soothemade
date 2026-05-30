@@ -1,7 +1,7 @@
 ---
-title: "The Partner-During-Pregnancy Companion"
+title: "Pregnancy Guide for Partners and Dads-to-Be: The Nine Months You Are Also Living"
 code: "P55"
-price: 11
+price: 13
 format: "PDF"
 specs: "30 pages, printable + fillable"
 category: "partner"

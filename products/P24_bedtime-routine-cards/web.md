@@ -1,7 +1,7 @@
 ---
-title: "The Bedtime Routine Cards"
+title: "Toddler Bedtime Routine Cards, Printable Visual Schedule Kids Build Themselves: For the Long Hour"
 code: "P24"
-price: 9
+price: 12
 format: "PDF"
 specs: "30 cards, ages 1 to 6"
 category: "early-years"

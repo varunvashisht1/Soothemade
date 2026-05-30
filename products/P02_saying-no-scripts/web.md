@@ -1,7 +1,7 @@
 ---
-title: "The \"Saying No\" Script Pack"
+title: "Postpartum Visitor Boundary Scripts: For the Doorbell"
 code: "P02"
-price: 7
+price: 9
 format: "PDF"
 specs: "30 scripts · postpartum"
 category: "postpartum"

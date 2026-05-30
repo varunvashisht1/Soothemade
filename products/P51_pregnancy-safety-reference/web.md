@@ -1,7 +1,7 @@
 ---
-title: "The Pregnancy Safety Reference"
+title: "Is It Safe During Pregnancy: Questions To Ask Your OB, Organized. A 30-Page Reference"
 code: "P51"
-price: 11
+price: 12
 format: "PDF"
 specs: "30 pages, printable + fillable"
 category: "pregnancy"

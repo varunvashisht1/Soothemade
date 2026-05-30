@@ -1,7 +1,7 @@
 ---
-title: "The Hospital Bag Checklist"
+title: "Hospital Bag Checklist Printable: For Mom, Partner, and Baby. The bag by the door"
 code: "P27"
-price: 7
+price: 9
 format: "PDF"
 specs: "8 pages, fillable + printable"
 category: "pregnancy"

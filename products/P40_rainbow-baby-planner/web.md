@@ -1,7 +1,7 @@
 ---
-title: "A Rainbow Baby Planner"
+title: "Pregnancy After Loss Planner: a calm place for the second story. Rainbow Baby"
 code: "P40"
-price: 14
+price: 16
 format: "PDF"
 specs: "30 pages, printable + fillable"
 category: "pregnancy"

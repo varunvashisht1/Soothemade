@@ -1,7 +1,7 @@
 ---
-title: "The Asking for Help Script Pack"
+title: "How to Ask for Help: 30 Scripts for Postpartum and Caregiving"
 code: "P49"
-price: 7
+price: 12
 format: "PDF"
 specs: "20 pages, 30 scripts"
 category: "family"

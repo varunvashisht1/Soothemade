@@ -1,5 +1,5 @@
 ---
-title: "A Pregnancy Week-by-Week Journal"
+title: "Pregnancy Journal Week by Week: a record of being there, weeks 6 to 40"
 code: "P08"
 price: 16
 format: "PDF"

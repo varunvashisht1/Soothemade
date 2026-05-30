@@ -1,7 +1,7 @@
 ---
-title: "The Birth Anxiety Workbook"
+title: "Fear of Childbirth Workbook: birth anxiety, tokophobia, scared to give birth. The fear is allowed."
 code: "P52"
-price: 12
+price: 16
 format: "PDF"
 specs: "40 pages, printable + fillable"
 category: "pregnancy"

@@ -1,5 +1,5 @@
 ---
-title: "The Family Caregiver Workbook"
+title: "Caregiver Planner for Aging Parents: The Long Stretch"
 code: "P50"
 price: 14
 format: "PDF"

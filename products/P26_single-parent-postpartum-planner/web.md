@@ -1,5 +1,5 @@
 ---
-title: "A Single-Parent Postpartum Planner"
+title: "Single Mom Postpartum Planner: For the Version of You Doing It Alone"
 code: "P26"
 price: 14
 format: "PDF"

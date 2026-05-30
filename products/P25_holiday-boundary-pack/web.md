@@ -1,7 +1,7 @@
 ---
-title: "A Holiday Boundary Pack"
+title: "What to Say to Family at the Holidays: Boundary Scripts for the Table You Have to Sit At"
 code: "P25"
-price: 9
+price: 14
 format: "PDF"
 specs: "16 pages, scripts + worksheets"
 category: "family"

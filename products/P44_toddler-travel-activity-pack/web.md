@@ -1,7 +1,7 @@
 ---
-title: "A Toddler Travel Activity Pack"
+title: "Toddler Travel Activity Pack: Airplane and Road Trip Printables, Ages 2 to 5"
 code: "P44"
-price: 9
+price: 12
 format: "PDF"
 specs: "30 pages, printable, road trips + flights"
 category: "early-years"

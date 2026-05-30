@@ -1,7 +1,7 @@
 ---
-title: "A Gentle Companion for Pregnancy Loss"
+title: "Miscarriage Journal and Keepsake: A Gentle Companion for Pregnancy Loss at Any Week"
 code: "P20"
-price: 12
+price: 14
 format: "PDF"
 specs: "40 pages, for any week"
 category: "pregnancy"

@@ -1,5 +1,5 @@
 ---
-title: "The Sensory Play Activity Card Deck"
+title: "Baby Sensory Play Cards: 80 Activities for 0 to 3, Most Using What's in Your Kitchen"
 code: "P01"
 price: 24
 format: "PDF"

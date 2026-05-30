@@ -1,7 +1,7 @@
 ---
-title: "Newborn Cue Decoder Cards"
+title: "What Does My Baby's Cry Mean: Newborn Cue Cards for the First Six Weeks"
 code: "P34"
-price: 9
+price: 12
 format: "PDF"
 specs: "30 cards, printable"
 category: "postpartum"

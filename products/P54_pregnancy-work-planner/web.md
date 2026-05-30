@@ -1,7 +1,7 @@
 ---
-title: "The Pregnancy + Work Planner"
+title: "Maternity Leave Planner: Telling Your Boss, HR Scripts, Handoff Template. Pregnant at Work, Sorted."
 code: "P54"
-price: 12
+price: 15
 format: "PDF"
 specs: "30 pages, printable + fillable"
 category: "pregnancy"
