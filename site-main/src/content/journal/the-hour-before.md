@@ -17,7 +17,7 @@ You know the pitch. *5 a.m. club. Morning routine. Stack of habits. Cold plunge.
 
 This is, I think, the cruelest thing that has been done to that hour.
 
-The hour before anyone else is up is not a productive hour. It is the opposite of a productive hour. It is the only hour in your day that has not yet been claimed by anyone — including, if you can manage it, by yourself. It is the hour in which you can be a person who is not yet doing anything. That is the point of it. That is the *whole* point of it.
+The hour before anyone else is up is not a productive hour. It is the opposite of a productive hour. It is the only hour in your day that has not yet been claimed by anyone, including, if you can manage it, by yourself. It is the hour in which you can be a person who is not yet doing anything. That is the point of it. That is the *whole* point of it.
 
 A list of things that hour is good for, none of which require a stack:
 

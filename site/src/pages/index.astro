@@ -72,14 +72,14 @@ const homeCategories = [
   { href: '/shop?cat=partner', name: 'For the partner', count: `${String(counts.partner).padStart(2, '0')} items`, glyph: 'partner' as const },
 ];
 ---
-<BaseLayout title="Soothemade Notes — quiet tools for new parenthood">
+<BaseLayout title="Soothemade Notes, quiet tools for new parenthood">
   <Nav />
 
   <Hero
     headlinePre="Quiet tools for the"
     headlineAccent="tender"
     headlinePost="parts of new parenthood."
-    body="Printables, planners, and cards — made slowly, in plain language, for the unphotographed days."
+    body="Printables, planners, and cards, made slowly, in plain language, for the unphotographed days."
     primaryCta={{ href: '/shop', label: 'Visit the shop' }}
     secondaryCta={{ href: '/freebies', label: 'Free printable' }}
   />
@@ -95,7 +95,7 @@ const homeCategories = [
   {bundles.length > 0 && (
     <ProductGrid
       products={bundles}
-      title="— Save with a set —"
+      title="Save with a set"
       seeAllHref="/shop?cat=sets"
       seeAllLabel={`all ${bundleCount} sets →`}
     />
@@ -104,7 +104,7 @@ const homeCategories = [
   <Manifesto
     quote="Made for the version of you"
     quoteAccent="no one tells you about"
-    tail="— the one at four in the morning, the one in the parking lot, the one who doesn't recognize her own week."
+    tail="the one at four in the morning, the one in the parking lot, the one who doesn't recognize her own week."
   />
 
   {featuredJournalPosts.length > 0 && <JournalRow posts={featuredJournalPosts} />}

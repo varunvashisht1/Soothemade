@@ -1,5 +1,5 @@
 ---
-/* The photographic hero — warm-black scene with a left text column
+/* The photographic hero, warm-black scene with a left text column
    and a right "photo tag" overlay describing what's currently in the window.
 
    Keeps the same prop shape as the original Hero so other surfaces
@@ -15,14 +15,14 @@ interface Props {
   primaryCta?: { href: string; label: string };
   secondaryCta?: { href: string; label: string };
   featured?: {
-    label: string;       /* e.g. "— in the window —" */
+    label: string;       /* e.g. "in the window" */
     name: string;        /* e.g. "Soothemade Notes" */
     blurb: string;       /* one-liner */
   };
 }
 
 const {
-  eyebrow = '— a small studio · est. MMXXVI —',
+  eyebrow = 'a small studio · est. MMXXVI',
   headlinePre,
   headlineAccent,
   headlinePost,

@@ -24,7 +24,7 @@ const related = (post.data.relatedProducts ?? [])
   .filter((p): p is (typeof allProducts)[number] => Boolean(p));
 ---
 <BaseLayout
-  title={`${post.data.title} — Soothemade Notes`}
+  title={`${post.data.title}, Soothemade Notes`}
   description={post.data.description}
 >
   <Nav />
@@ -53,7 +53,7 @@ const related = (post.data.relatedProducts ?? [])
 
     {related.length > 0 && (
       <section class="related">
-        <h2>Things from the shop, while you're here —</h2>
+        <h2>Things from the shop, while you're here</h2>
         <div class="related-grid">
           {related.map((p) => (
             <ProductCard

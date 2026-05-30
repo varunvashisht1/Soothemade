@@ -1,7 +1,7 @@
 /**
  * Featured-on-homepage product summaries.
  *
- * This is a temporary in-code list — in the next milestone it becomes
+ * This is a temporary in-code list, in the next milestone it becomes
  * an Astro Content Collection that reads the source-of-truth markdown
  * at ../../products/<P##>/content.md.
  */
@@ -118,7 +118,7 @@ export const featuredJournalPosts = [
     readTime: '8 min',
     title: 'The doorbell, the visitors, and the script library.',
     blurb:
-      "The hardest part of postpartum isn't the baby. It's the people who keep arriving — and the version of yourself who keeps saying \"of course, come in.\"",
+      "The hardest part of postpartum isn't the baby. It's the people who keep arriving, and the version of yourself who keeps saying \"of course, come in.\"",
   },
   {
     href: '/journal/three-list-slots',

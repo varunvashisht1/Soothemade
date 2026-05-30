@@ -1,7 +1,7 @@
 /**
  * Astro Content Collections.
  *
- * The umbrella site has its own journal — separate from Notes.
+ * The umbrella site has its own journal, separate from Notes.
  * Notes' journal stays on notes.soothemade.com and uses its own voice
  * (parenthood-specific). The umbrella journal is broader: slowness,
  * pace, the unphotographed life.

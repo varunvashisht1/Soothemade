@@ -13,7 +13,7 @@ body { line-height: 1.5; }
 img, picture, svg, video { display: block; max-width: 100%; }
 button, input, select, textarea { font: inherit; color: inherit; }
 
-/* Base — body carries a fixed dark-gradient canvas so every page
+/* Base, body carries a fixed dark-gradient canvas so every page
    feels like it sits in the same lit gallery. Section components
    paint their own gradient tiles on top of this. */
 body {
@@ -29,7 +29,7 @@ body {
   font-weight: 400;
 }
 
-/* Premium gradient tile utilities — apply to any page section that
+/* Premium gradient tile utilities, apply to any page section that
    should pop as its own dark scene. */
 .page-canvas-hero {
   background:

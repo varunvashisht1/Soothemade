@@ -11,7 +11,7 @@ body { line-height: 1.5; }
 img, picture, svg, video { display: block; max-width: 100%; }
 button, input, select, textarea { font: inherit; color: inherit; }
 
-/* Base — body carries a fixed dark-gradient canvas so every page feels
+/* Base, body carries a fixed dark-gradient canvas so every page feels
    like it sits in the same lit room. Section components paint their
    own gradient tiles on top of this. */
 body {
@@ -27,7 +27,7 @@ body {
   font-weight: 400;
 }
 
-/* Premium gradient tile utility classes — apply to any page section
+/* Premium gradient tile utility classes, apply to any page section
    that should pop as its own dark scene. */
 .page-canvas-hero {
   background:
@@ -46,7 +46,7 @@ body {
     linear-gradient(170deg, var(--n-letters-1) 0%, var(--n-letters-2) 60%, var(--n-letters-3) 100%);
 }
 
-/* Premium page-header utility — give text-heavy interior pages
+/* Premium page-header utility, give text-heavy interior pages
    their own gradient header tile above the body content. */
 .page-header {
   padding: 96px var(--sp-7) 56px;
