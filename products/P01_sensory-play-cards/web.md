@@ -2,7 +2,6 @@
 title: "Baby Sensory Play Cards: 80 Activities for 0 to 3, Most Using What's in Your Kitchen"
 code: "P01"
 price: 24
-priceInr: 1599
 format: "PDF"
 specs: "80 cards · 0–3 yrs"
 category: "early-years"
@@ -10,7 +9,7 @@ buyer: "parents of 0–3 year olds"
 heroLabel: "Sensory Play\nCard Deck"
 tagline: "For the new senses"
 glyph: "circle"
-lemonSqueezyUrl: "https://soothemade.lemonsqueezy.com/checkout/buy/b4b4aa92-9f37-44e1-865f-3d0b5fa92ce2"
+gumroadUrl: "https://soothemade.gumroad.com/l/ssslv"
 publishedAt: 2026-04-12
 featured: true
 featuredOrder: 1
