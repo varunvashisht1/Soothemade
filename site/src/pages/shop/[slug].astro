@@ -32,17 +32,29 @@ const heroMotif = heroImage ? null : coverMotif(product.data.code);
 const deliverable = /^P\d{2,3}$/.test(product.data.code);
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 
-// Lemon Squeezy (Merchant of Record) is the chosen store. When set, its hosted
-// checkout opens as an on-brand overlay via lemon.js and LS handles payment,
-// tax, and file delivery. Falls back to Etsy / Stripe / notify when unset.
+// Checkout precedence: Gumroad (USD — the chosen store for US buyers) first,
+// then Lemon Squeezy (INR overlay), then Etsy, then Stripe, then the notify-me
+// capture. Gumroad + LS both open as on-brand overlays.
+const gumUrl = product.data.gumroadUrl;
 const lsUrl = product.data.lemonSqueezyUrl;
 const lsEmbed = lsUrl
   ? `${lsUrl}${lsUrl.includes("?") ? "&" : "?"}embed=1`
   : null;
-const forSale = Boolean(lsUrl || product.data.etsyUrl);
-// LS is INR-locked, so when a product sells via LS and has an INR price, the Buy
-// button + structured data show ₹ to match what the buyer is actually charged.
-const sellInInr = Boolean(lsUrl && product.data.priceInr);
+
+const activeCheckout = gumUrl
+  ? 'gumroad'
+  : lsEmbed
+    ? 'lemonsqueezy'
+    : product.data.etsyUrl
+      ? 'etsy'
+      : deliverable
+        ? 'stripe'
+        : 'notify';
+
+const forSale = Boolean(gumUrl || lsUrl || product.data.etsyUrl);
+// Only Lemon Squeezy is INR-priced; Gumroad and Etsy are USD. Show ₹ on the
+// button + structured data only when LS is the active checkout.
+const sellInInr = activeCheckout === 'lemonsqueezy' && Boolean(product.data.priceInr);
 const buyLabel = sellInInr ? `₹${product.data.priceInr}` : `$${product.data.price}`;
 
 const productLd = {
@@ -58,7 +70,7 @@ const productLd = {
     '@type': 'Offer',
     price: sellInInr ? product.data.priceInr : product.data.price,
     priceCurrency: sellInInr ? 'INR' : 'USD',
-    url: lsUrl ?? product.data.etsyUrl ?? pageUrl,
+    url: gumUrl ?? lsUrl ?? product.data.etsyUrl ?? pageUrl,
     availability: forSale
       ? 'https://schema.org/InStock'
       : 'https://schema.org/PreOrder',
@@ -72,7 +84,8 @@ const productLd = {
   <Nav />
 
   <script type="application/ld+json" set:html={JSON.stringify(productLd)} is:inline />
-  {lsUrl && <script src="https://app.lemonsqueezy.com/js/lemon.js" defer is:inline></script>}
+  {activeCheckout === 'gumroad' && <script src="https://gumroad.com/js/gumroad.js" defer is:inline></script>}
+  {activeCheckout === 'lemonsqueezy' && <script src="https://app.lemonsqueezy.com/js/lemon.js" defer is:inline></script>}
 
   <article class="product">
     <div class="crumbs">
@@ -85,7 +98,11 @@ const productLd = {
         <h1>{product.data.title}</h1>
         <p class="tagline">{product.data.summary}</p>
         <div class="actions">
-          {lsEmbed ? (
+          {gumUrl ? (
+            <a class="btn btn-primary gumroad-button" href={gumUrl} rel="nofollow noopener">
+              Buy · ${product.data.price}
+            </a>
+          ) : lsEmbed ? (
             <a class="btn btn-primary lemonsqueezy-button" href={lsEmbed} rel="nofollow noopener">
               Buy · {buyLabel}
             </a>
@@ -115,11 +132,6 @@ const productLd = {
               </div>
               <p class="notify-status" role="status" aria-live="polite" hidden></p>
             </form>
-          )}
-          {product.data.gumroadUrl && (
-            <a class="btn btn-secondary" href={product.data.gumroadUrl} rel="nofollow noopener" target="_blank">
-              Buy on Gumroad
-            </a>
           )}
           {product.data.badge && (<span class="badge">{product.data.badge}</span>)}
         </div>
