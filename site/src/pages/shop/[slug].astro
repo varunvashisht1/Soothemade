@@ -40,6 +40,10 @@ const lsEmbed = lsUrl
   ? `${lsUrl}${lsUrl.includes("?") ? "&" : "?"}embed=1`
   : null;
 const forSale = Boolean(lsUrl || product.data.etsyUrl);
+// LS is INR-locked, so when a product sells via LS and has an INR price, the Buy
+// button + structured data show ₹ to match what the buyer is actually charged.
+const sellInInr = Boolean(lsUrl && product.data.priceInr);
+const buyLabel = sellInInr ? `₹${product.data.priceInr}` : `$${product.data.price}`;
 
 const productLd = {
   '@context': 'https://schema.org',
@@ -52,8 +56,8 @@ const productLd = {
   category: product.data.category,
   offers: {
     '@type': 'Offer',
-    price: product.data.price,
-    priceCurrency: 'USD',
+    price: sellInInr ? product.data.priceInr : product.data.price,
+    priceCurrency: sellInInr ? 'INR' : 'USD',
     url: lsUrl ?? product.data.etsyUrl ?? pageUrl,
     availability: forSale
       ? 'https://schema.org/InStock'
@@ -83,7 +87,7 @@ const productLd = {
         <div class="actions">
           {lsEmbed ? (
             <a class="btn btn-primary lemonsqueezy-button" href={lsEmbed} rel="nofollow noopener">
-              Buy · ${product.data.price}
+              Buy · {buyLabel}
             </a>
           ) : product.data.etsyUrl ? (
             <a class="btn btn-primary" href={product.data.etsyUrl} rel="nofollow noopener" target="_blank">
