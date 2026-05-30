@@ -1,4 +1,4 @@
-/* Theme — Apothecary.
+/* Theme, Apothecary.
    Warm-black + cream + a single amber/brass accent. Aesop-coded.
    Most restrained palette in the system. */
 
@@ -17,18 +17,18 @@
   --ink-faint:       #8a7e6e;
 
   /* The page canvas is dark on every page, so generic rule/hover
-     tokens are paper-tinted (light) — visible as hairlines on dark.
+     tokens are paper-tinted (light), visible as hairlines on dark.
      Dark-on-cream dividers inside cards use --card-rule instead. */
   --rule:            rgba(245, 236, 217, 0.14);
   --rule-strong:     rgba(245, 236, 217, 0.28);
   --hover:           rgba(245, 236, 217, 0.05);
 
-  /* Sage slot is repurposed as putty — the only "secondary neutral".
+  /* Sage slot is repurposed as putty, the only "secondary neutral".
      Keeps existing component references working without re-themeing. */
   --sage:            #8a7e6e;
   --sage-soft:       #b8a98e;
 
-  --accent:          #b8862a;   /* warm amber / aged brass — the only color */
+  --accent:          #b8862a;   /* warm amber / aged brass, the only color */
   --accent-soft:     #d4a548;
 
   /* Apothecary-specific tokens used by the new components.

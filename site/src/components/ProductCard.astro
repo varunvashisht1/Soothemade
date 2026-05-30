@@ -3,7 +3,7 @@ import { coverMotif } from '~/lib/cover-image';
 
 interface Props {
   href: string;
-  /** Cover title text — multi-line allowed via "\n". */
+  /** Cover title text, multi-line allowed via "\n". */
   label: string;
   /** Small spec line (e.g. "80 cards · 0–3 yrs"). */
   meta: string;
@@ -13,7 +13,7 @@ interface Props {
   price: string;
   /** Product code (e.g. "P09"). */
   code: string;
-  /** Optional cover image URL — if provided, displayed instead of the label cover. */
+  /** Optional cover image URL, if provided, displayed instead of the label cover. */
   coverImage?: string;
   /** Optional category, emitted as data-cat for client-side filtering. */
   category?: string;

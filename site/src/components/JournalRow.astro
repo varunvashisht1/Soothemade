@@ -7,7 +7,7 @@ interface Post {
   blurb: string;
 }
 interface Props { title?: string; allHref?: string; posts: Post[]; }
-const { title = '— Letters from the studio —', allHref = '/journal', posts } = Astro.props;
+const { title = 'Letters from the studio', allHref = '/journal', posts } = Astro.props;
 ---
 <section class="letters">
   <div class="head">

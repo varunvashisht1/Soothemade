@@ -13,11 +13,11 @@ It does not have a launch date. It has not picked a vertical. It is not optimizi
 
 I think about this when I am behind on something.
 
-Most of what we do at the studio is paced by a calendar that came from somewhere else. A product launches in October because retailers buy in March. An essay goes out on Sunday because Sundays are when people read. A newsletter is biweekly because that's what we said. These are useful rhythms. I am not against them. But underneath them is a different pace — the pace at which a thing actually wants to be made. The pace at which a thing is *ready*.
+Most of what we do at the studio is paced by a calendar that came from somewhere else. A product launches in October because retailers buy in March. An essay goes out on Sunday because Sundays are when people read. A newsletter is biweekly because that's what we said. These are useful rhythms. I am not against them. But underneath them is a different pace, the pace at which a thing actually wants to be made. The pace at which a thing is *ready*.
 
 That pace looks, from the outside, like weather.
 
-Some weeks something gets made. Some weeks it doesn't. Some weeks the thing that gets made is small — a few pages, a fixed line in an old card deck — and some weeks a whole product walks out of the studio with its shoes on. Looked at week by week, this is uneven and slightly worrying. Looked at over a year, it evens out the way a season does. The summer is hot. November is not. Aggregating them gives you a year, which is the unit at which a life is actually lived.
+Some weeks something gets made. Some weeks it doesn't. Some weeks the thing that gets made is small, a few pages, a fixed line in an old card deck, and some weeks a whole product walks out of the studio with its shoes on. Looked at week by week, this is uneven and slightly worrying. Looked at over a year, it evens out the way a season does. The summer is hot. November is not. Aggregating them gives you a year, which is the unit at which a life is actually lived.
 
 The hard part is not believing in weather. Most people believe in weather. The hard part is sitting through a slow week without translating it into a moral problem.
 

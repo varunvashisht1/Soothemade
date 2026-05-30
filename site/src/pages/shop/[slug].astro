@@ -32,7 +32,7 @@ const heroMotif = heroImage ? null : coverMotif(product.data.code);
 const deliverable = /^P\d{2,3}$/.test(product.data.code);
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 
-// Checkout precedence: Gumroad (USD — the chosen store for US buyers) first,
+// Checkout precedence: Gumroad (USD, the chosen store for US buyers) first,
 // then Lemon Squeezy (INR overlay), then Etsy, then Stripe, then the notify-me
 // capture. Gumroad + LS both open as on-brand overlays.
 const gumUrl = product.data.gumroadUrl;
@@ -78,7 +78,7 @@ const productLd = {
 };
 ---
 <BaseLayout
-  title={`${product.data.title} — Soothemade Notes`}
+  title={`${product.data.title}, Soothemade Notes`}
   description={product.data.summary}
 >
   <Nav />
@@ -171,7 +171,7 @@ const productLd = {
 
     {crossSell.length > 0 && (
       <section class="cross">
-        <h2>You might also want —</h2>
+        <h2>You might also want</h2>
         <div class="cross-grid">
           {crossSell.map((p) => (
             <ProductCard
@@ -498,7 +498,7 @@ const productLd = {
           if (notify) notify.hidden = false;
           return;
         }
-        fail(data.error === 'rate_limited' ? 'One moment — please try again shortly.' : "Couldn't start checkout. Try again in a moment.");
+        fail(data.error === 'rate_limited' ? 'One moment, please try again shortly.' : "Couldn't start checkout. Try again in a moment.");
       } catch {
         fail("Couldn't reach checkout. Check your connection and try again.");
       }
@@ -532,7 +532,7 @@ const productLd = {
           if (row) row.hidden = true;
           show("Thank you. We'll email you the moment it's for sale.");
         } else if (data.error === 'rate_limited') {
-          show("You're already on the list — we'll be in touch.");
+          show("You're already on the list, we'll be in touch.");
           btn.disabled = false;
         } else {
           show("That email didn't look right. Mind trying again?");

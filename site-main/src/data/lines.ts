@@ -1,5 +1,5 @@
 /**
- * Sub-lines of Soothemade — the "rooms in the house."
+ * Sub-lines of Soothemade, the "rooms in the house."
  *
  * Notes is live. The rest are reserved per brand/architecture.md and
  * appear as quiet "in the workshop" placeholders. When one opens, flip
@@ -52,7 +52,7 @@ export const lines: Line[] = [
     name: 'Studio',
     audience: 'solo work',
     descShort:
-      'Templates and rhythms for one-person work — launch weeks, slow weeks, the calm catalog.',
+      'Templates and rhythms for one-person work, launch weeks, slow weeks, the calm catalog.',
     descLong:
       'For people building one small thing at a time. Launch checklists that do not yell. Quiet quarterly reviews. Templates that assume you are the whole team, and you are also a person.',
     href: '',
@@ -65,7 +65,7 @@ export const lines: Line[] = [
     descShort:
       'Slow itineraries, road-trip pages, and guides for the parts of a trip that are not on a map.',
     descLong:
-      'For people who travel like weather — slowly, off-itinerary, with time to read at a kitchen table that is not theirs. Walking notes, slow-train logs, road-trip pages for the days that go long on purpose.',
+      'For people who travel like weather, slowly, off-itinerary, with time to read at a kitchen table that is not theirs. Walking notes, slow-train logs, road-trip pages for the days that go long on purpose.',
     href: '',
     status: 'coming',
   },

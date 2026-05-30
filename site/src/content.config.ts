@@ -2,7 +2,7 @@
  * Astro Content Collections.
  *
  * Source of truth lives OUTSIDE the site/ folder, in the repo's
- * top-level products/ and content/ directories — so the markdown
+ * top-level products/ and content/ directories, so the markdown
  * is shared between this site and the PDF render pipeline.
  *
  * - products: `../products/<slug>/web.md`

@@ -12,14 +12,14 @@ const posts = (await getCollection('journal')).sort(
 const dtf = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 ---
 <BaseLayout
-  title="The journal — Soothemade Notes"
+  title="The journal, Soothemade Notes"
   description="Letters from the studio. Short, slow, in plain language. New essays every other Sunday."
 >
   <Nav />
 
   <section class="page-header">
     <div class="page-header-inner">
-      <div class="eyebrow">— the journal —</div>
+      <div class="eyebrow">the journal</div>
       <h1>Letters from the <em>studio.</em></h1>
       <p class="lede">Short pieces about the slow, ordinary parts of new parenthood. New letter every other Sunday.</p>
     </div>

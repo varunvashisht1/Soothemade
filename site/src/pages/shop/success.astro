@@ -43,12 +43,12 @@ if (env && sessionId) {
 const preparing = paid && downloads.length === 0;
 ---
 
-<BaseLayout title="Thank you — Soothemade Notes" noindex={true}>
+<BaseLayout title="Thank you, Soothemade Notes" noindex={true}>
   <Nav />
   <main class="ty">
     {downloads.length > 0 ? (
       <Fragment>
-        <div class="eyebrow">— order complete —</div>
+        <div class="eyebrow">order complete</div>
         <h1>Thank you. Here are your downloads.</h1>
         <p class="lead">
           Save this page. Your links are valid for 30 days. Each file is a PDF,
@@ -67,7 +67,7 @@ const preparing = paid && downloads.length === 0;
       </Fragment>
     ) : preparing ? (
       <Fragment>
-        <div class="eyebrow">— payment received —</div>
+        <div class="eyebrow">payment received</div>
         <h1>Thank you. Preparing your downloads…</h1>
         <p class="lead">This page will refresh on its own in a few seconds.</p>
         <p class="back"><a href="/shop">← back to the shop</a></p>
@@ -84,7 +84,7 @@ const preparing = paid && downloads.length === 0;
       </Fragment>
     ) : (
       <Fragment>
-        <div class="eyebrow">— hmm —</div>
+        <div class="eyebrow">hmm</div>
         <h1>We couldn't find that order.</h1>
         <p class="lead">
           If you were charged, please <a href="/contact">contact us</a> and we'll

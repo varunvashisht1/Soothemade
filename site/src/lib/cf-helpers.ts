@@ -1,5 +1,5 @@
 // Small shared helpers for Cloudflare-runtime API routes.
-// Keep this file tiny — anything bigger belongs in its own module.
+// Keep this file tiny, anything bigger belongs in its own module.
 
 export const nowSec = () => Math.floor(Date.now() / 1000);
 

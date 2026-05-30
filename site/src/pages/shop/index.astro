@@ -39,14 +39,14 @@ const itemListLd = {
 };
 ---
 <BaseLayout
-  title="The catalog — Soothemade Notes"
+  title="The catalog, Soothemade Notes"
   description="The full Soothemade Notes catalog of printables, planners, and cards for the unphotographed parts of new parenthood."
 >
   <Nav />
   <script type="application/ld+json" set:html={JSON.stringify(itemListLd)} is:inline />
 
   <header class="shop-header rule-bottom">
-    <div class="eyebrow">— the catalog —</div>
+    <div class="eyebrow">the catalog</div>
     <h1>Everything in the shop.</h1>
     <p>Made slowly, in plain language, for the unphotographed days. Currently {products.length} items, with more on the way each month.</p>
 
@@ -79,7 +79,7 @@ const itemListLd = {
 
   <section id="search-results" class="search-results" hidden></section>
 
-  <p class="empty" id="catalog-empty" hidden>No items in this category yet — check back soon.</p>
+  <p class="empty" id="catalog-empty" hidden>No items in this category yet, check back soon.</p>
   <section class="grid" id="catalog-grid">
     {products.map((p) => (
       <ProductCard
@@ -101,7 +101,7 @@ const itemListLd = {
 </BaseLayout>
 
 <script>
-  // Category filter — runs client-side because /shop is now prerendered static.
+  // Category filter, runs client-side because /shop is now prerendered static.
   (() => {
     const grid = document.getElementById('catalog-grid');
     const empty = document.getElementById('catalog-empty');
