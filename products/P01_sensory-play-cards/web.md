@@ -9,6 +9,7 @@ buyer: "parents of 0–3 year olds"
 heroLabel: "Sensory Play\nCard Deck"
 tagline: "For the new senses"
 glyph: "circle"
+lemonSqueezyUrl: "https://soothemade.lemonsqueezy.com/checkout/buy/b4b4aa92-9f37-44e1-865f-3d0b5fa92ce2"
 publishedAt: 2026-04-12
 featured: true
 featuredOrder: 1
